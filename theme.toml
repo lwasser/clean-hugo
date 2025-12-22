@@ -13,5 +13,5 @@ min_version = "0.118.2"
 [original]
   author = "Leah A. Wasser"
   homepage = "https://leahwasser.com"
-  repo = "https://github.com/lwasser/lwasser.github.io"
+  repo = "https://github.com/lwasser/clean-hugo"
 
