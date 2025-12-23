@@ -15,3 +15,31 @@ min_version = "0.118.2"
   homepage = "https://leahwasser.com"
   repo = "https://github.com/lwasser/clean-hugo"
 
+# Default theme parameters (can be overridden in site's hugo.toml)
+[params.theme.colors]
+  # Admonition colors
+  admonitionInfoBg = "#EFF6FF"      # Blue-50
+  admonitionInfoBorder = "#3B82F6"  # Blue-500
+  admonitionInfoText = "#1E40AF"    # Blue-800
+  admonitionInfoIcon = "#2563EB"    # Blue-600
+
+  admonitionSuccessBg = "#F0FDF4"   # Green-50
+  admonitionSuccessBorder = "#22C55E" # Green-500
+  admonitionSuccessText = "#166534" # Green-800
+  admonitionSuccessIcon = "#16A34A" # Green-600
+
+  admonitionWarningBg = "#FEFCE8"   # Yellow-50
+  admonitionWarningBorder = "#EAB308" # Yellow-500
+  admonitionWarningText = "#854D0E" # Yellow-800
+  admonitionWarningIcon = "#CA8A04" # Yellow-600
+
+  admonitionDangerBg = "#FEF2F2"   # Red-50
+  admonitionDangerBorder = "#EF4444" # Red-500
+  admonitionDangerText = "#991B1B" # Red-800
+  admonitionDangerIcon = "#DC2626" # Red-600
+
+  admonitionNoteBg = "#F9FAFB"     # Gray-50
+  admonitionNoteBorder = "#6B7280"  # Gray-500
+  admonitionNoteText = "#1F2937"   # Gray-800
+  admonitionNoteIcon = "#4B5563"    # Gray-600
+
