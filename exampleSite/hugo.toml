@@ -52,6 +52,13 @@ theme = 'clean-hugo'
     linkHover = "#1F4345"
     footerBg = "#115E59"
     featureCard = "#EBC1D3"
+    
+    # Admonition colors (one base color per type)
+    admonition-info = "#3B82F6"
+    admonition-success = "#22C55E"
+    admonition-warning = "#EAB308"
+    admonition-danger = "#EF4444"
+    admonition-note = "#6B7280"
 
 [[menu.main]]
   name = "Blog"
