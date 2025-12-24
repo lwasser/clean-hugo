@@ -52,7 +52,7 @@ theme = 'clean-hugo'
     linkHover = "#1F4345"
     footerBg = "#115E59"
     featureCard = "#EBC1D3"
-    
+
     # Admonition colors (one base color per type)
     admonition-info = "#3B82F6"
     admonition-success = "#22C55E"
@@ -64,4 +64,9 @@ theme = 'clean-hugo'
   name = "Blog"
   url = "/blog/"
   weight = 1
+
+[[menu.main]]
+  name = "Packages"
+  url = "/packages/"
+  weight = 2
 
