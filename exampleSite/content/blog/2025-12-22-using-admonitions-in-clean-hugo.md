@@ -1,6 +1,6 @@
 ---
 title: "Using Admonitions in Clean Hugo Theme"
-date: 2024-12-22
+date: 2025-12-22
 draft: false
 excerpt: "Learn how to use the admonition shortcode to add beautiful callout boxes to your Hugo content. This post demonstrates all five admonition types with code examples."
 category: "Tutorial"

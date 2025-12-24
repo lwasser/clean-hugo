@@ -1,6 +1,6 @@
 ---
 title: "Building Filterable Package Listing Pages"
-date: 2024-12-24
+date: 2025-12-24
 draft: false
 excerpt: "Learn how to create dynamic, filterable package listing pages using Hugo data files and Alpine.js. Perfect for showcasing software packages, plugins, or any collection of items."
 category: "Tutorial"

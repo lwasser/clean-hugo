@@ -1,6 +1,6 @@
 ---
 title: "Adding Images to Your Content"
-date: 2024-12-23
+date: 2025-12-23
 draft: false
 excerpt: "Learn the different ways to add images to your Hugo content with the Clean Hugo theme. From standard Markdown syntax to the powerful figure shortcode with automatic WebP support."
 category: "Tutorial"

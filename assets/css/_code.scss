@@ -1,7 +1,8 @@
 @layer components {
   /* Code block and syntax highlighting styles */
+  /* These styles apply globally across all pages (blog, content, packages, etc.) */
   
-  /* Base code styles */
+  /* Base inline code styles */
   code {
     @apply rounded px-1.5 py-0.5;
     font-size: 0.875em;
@@ -10,7 +11,7 @@
     color: #e83e8c;
   }
 
-  /* Code blocks */
+  /* Code blocks (pre elements) */
   pre {
     @apply rounded-lg p-4 overflow-x-auto mb-4;
     background-color: #272822;
@@ -28,7 +29,7 @@
     }
   }
 
-  /* Hugo syntax highlighting wrapper (.highlight) */
+  /* Hugo syntax highlighting wrapper (.highlight) - used by Chroma */
   .highlight {
     @apply mb-4;
     position: relative;
@@ -36,10 +37,21 @@
     pre {
       @apply m-0;
       border-radius: 0.5rem;
+      padding: 1rem;
     }
   }
 
-  /* Inline code within paragraphs */
+  /* Chroma syntax highlighter wrapper */
+  .highlight .chroma {
+    background-color: #272822;
+    border-radius: 0.5rem;
+    
+    pre {
+      background-color: transparent;
+    }
+  }
+
+  /* Inline code within paragraphs, lists, and tables */
   p code,
   li code,
   td code {
@@ -51,14 +63,35 @@
 
   /* Code blocks should not have inline code styling */
   pre code,
-  .highlight code {
+  .highlight code,
+  .chroma code {
     background-color: transparent;
     color: inherit;
+    padding: 0;
   }
 
-  /* Syntax highlighting color overrides for better visibility */
-  .highlight .chroma {
-    background-color: #272822;
+  /* Ensure code blocks are scrollable on mobile */
+  pre,
+  .highlight pre,
+  .chroma pre {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Line numbers (if enabled in Hugo config) */
+  .highlight .lnt,
+  .chroma .lnt {
+    display: inline-block;
+    padding-right: 1em;
+    color: #75715e;
+    user-select: none;
+  }
+
+  /* Ensure proper spacing for code blocks in content */
+  .content-body pre,
+  .blog-post__content pre,
+  article pre {
+    @apply mb-4;
   }
 }
 
