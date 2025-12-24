@@ -1,6 +1,9 @@
 /**
  * Package Filter - AlpineJS component
- * Handles filtering and searching of packages
+ * Handles filtering and searching of cards that contain package data
+ *
+ * IMPORTANT: This script must load WITHOUT 'defer' attribute so it executes
+ * immediately and registers the 'alpine:init' listener before Alpine.js initializes.
  */
 
 document.addEventListener('alpine:init', () => {
@@ -11,7 +14,6 @@ document.addEventListener('alpine:init', () => {
 
     initPackages(packageData) {
       this.packages = packageData || [];
-      console.log('Initialized with packages:', this.packages.length);
     },
 
     get activePackages() {
@@ -19,16 +21,14 @@ document.addEventListener('alpine:init', () => {
     },
 
     get archivedPackages() {
-      return this.filterPackages(false);
+      // Archived packages are never filtered - always show all
+      return this.packages.filter(pkg => pkg.active === false);
     },
 
     filterPackages(activeOnly) {
       let filtered = this.packages;
-
-      // Filter by active status first
       filtered = filtered.filter(pkg => pkg.active === activeOnly);
 
-      // Filter by category
       if (this.activeFilter !== '*') {
         filtered = filtered.filter(pkg => {
           return pkg.categories && pkg.categories.some(cat =>
@@ -38,7 +38,6 @@ document.addEventListener('alpine:init', () => {
         });
       }
 
-      // Filter by search query
       if (this.searchQuery.trim() !== '') {
         const query = this.searchQuery.toLowerCase();
         filtered = filtered.filter(pkg => {
@@ -53,26 +52,6 @@ document.addEventListener('alpine:init', () => {
       }
 
       return filtered;
-    },
-
-    matchesFilter(pkg) {
-      // For static rendered cards
-      if (this.activeFilter === '*') return true;
-
-      return pkg.categories && pkg.categories.some(cat =>
-        cat.includes(this.activeFilter) ||
-        cat === this.activeFilter.replace(/-/g, '_')
-      );
-    },
-
-    matchesSearch(pkg) {
-      if (this.searchQuery.trim() === '') return true;
-
-      const query = this.searchQuery.toLowerCase();
-      const nameMatch = pkg.package_name?.toLowerCase().includes(query);
-      const descMatch = pkg.package_description?.toLowerCase().includes(query);
-
-      return nameMatch || descMatch;
     }
   }));
 });
