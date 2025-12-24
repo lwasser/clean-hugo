@@ -1,49 +1,25 @@
 {{/*
   Package Grid Partial
   Grid container with AlpineJS filtering
-  Usage: {{ partial "packages/grid.html" (dict "packages" .Site.Data.packages "activeOnly" true) }}
+  Usage: {{ partial "packages/grid.html" (dict "activeOnly" true) }}
+  Note: Must be used within parent x-data="packageFilter()" context
 */}}
 
-{{ $packages := .packages }}
 {{ $activeOnly := .activeOnly | default true }}
-{{ $title := .title | default "" }}
+{{ $propName := cond $activeOnly "activePackages" "archivedPackages" }}
 
-{{ if $title }}
-<h3 class="packages-grid__title">{{ $title }}</h3>
-{{ end }}
-
-<div class="packages-grid"
-     x-data="packageFilter()"
-     x-init="initPackages({{ $packages | jsonify }}, {{ $activeOnly }})">
-
-  <template x-for="pkg in filteredPackages" :key="pkg.package_name">
+<div class="packages-grid">
+  <template x-for="pkg in {{ $propName }}" :key="pkg.package_name">
     <div class="package-card">
       <div class="package-card__content">
 
         {{/* Title */}}
         <h3 class="package-card__title" x-text="pkg.package_name"></h3>
 
-        {{/* Maintainers */}}
+        {{/* Maintainers - simplified to avoid nested template issues */}}
         <div class="package-card__meta">
           <i class="fas fa-feather" aria-hidden="true"></i>
-          <span class="package-card__maintainers">
-            <template x-if="pkg.all_current_maintainers && pkg.all_current_maintainers.length > 0">
-              <template x-for="(maintainer, index) in pkg.all_current_maintainers" :key="index">
-                <span>
-                  <a :href="'https://github.com/' + maintainer.github_username"
-                     target="_blank"
-                     class="package-card__maintainer-link"
-                     x-text="maintainer.name || maintainer.github_username"></a><template x-if="index < pkg.all_current_maintainers.length - 1">, </template>
-                </span>
-              </template>
-            </template>
-            <template x-if="!pkg.all_current_maintainers || pkg.all_current_maintainers.length === 0">
-              <a :href="'https://github.com/' + pkg.submitting_author?.github_username"
-                 target="_blank"
-                 class="package-card__maintainer-link"
-                 x-text="pkg.submitting_author?.name || pkg.submitting_author?.github_username"></a>
-            </template>
-          </span>
+          <span class="package-card__maintainers" x-text="pkg.all_current_maintainers?.map(m => m.name || m.github_username).join(', ') || pkg.submitting_author?.name || pkg.submitting_author?.github_username"></span>
         </div>
 
         {{/* Description */}}
@@ -59,7 +35,8 @@
             </li>
           </template>
 
-          <template x-if="pkg.gh_meta?.documentation">
+          {{/* Only show these links for active packages */}}
+          <template x-if="pkg.active === true && pkg.gh_meta?.documentation">
             <li>
               <a :href="pkg.gh_meta.documentation" target="_blank">
                 <i class="fas fa-book-open"></i> View Docs
@@ -67,7 +44,7 @@
             </li>
           </template>
 
-          <template x-if="pkg.issue_link">
+          <template x-if="pkg.active === true && pkg.issue_link">
             <li>
               <a :href="pkg.issue_link" target="_blank">
                 <i class="fa-solid fa-user-pen"></i> View Review
@@ -75,7 +52,7 @@
             </li>
           </template>
 
-          <template x-if="pkg.joss">
+          <template x-if="pkg.active === true && pkg.joss">
             <li>
               <a :href="pkg.archive" target="_blank">
                 <i class="fas fa-bookmark"></i> JOSS Approved
@@ -83,6 +60,7 @@
             </li>
           </template>
 
+          {{/* Archived badge for archived packages */}}
           <template x-if="pkg.active === false">
             <li class="package-card__archived">
               <i class="fa-solid fa-box-archive"></i> Archived

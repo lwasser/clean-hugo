@@ -8,15 +8,25 @@ document.addEventListener('alpine:init', () => {
     packages: [],
     searchQuery: '',
     activeFilter: '*',
-    showActiveOnly: true,
 
-    initPackages(packageData, activeOnly = true) {
+    initPackages(packageData) {
       this.packages = packageData || [];
-      this.showActiveOnly = activeOnly;
+      console.log('Initialized with packages:', this.packages.length);
     },
 
-    get filteredPackages() {
+    get activePackages() {
+      return this.filterPackages(true);
+    },
+
+    get archivedPackages() {
+      return this.filterPackages(false);
+    },
+
+    filterPackages(activeOnly) {
       let filtered = this.packages;
+
+      // Filter by active status first
+      filtered = filtered.filter(pkg => pkg.active === activeOnly);
 
       // Filter by category
       if (this.activeFilter !== '*') {
@@ -40,13 +50,6 @@ document.addEventListener('alpine:init', () => {
           );
           return nameMatch || descMatch || maintainerMatch;
         });
-      }
-
-      // Filter by active status (if section-specific)
-      if (this.showActiveOnly) {
-        filtered = filtered.filter(pkg => pkg.active === true);
-      } else {
-        filtered = filtered.filter(pkg => pkg.active === false);
       }
 
       return filtered;

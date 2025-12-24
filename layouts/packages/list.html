@@ -1,68 +1,102 @@
 {{ define "main" }}
-<article class="packages-page">
 
-  {{/* Page Header */}}
-  <header class="packages-page__header">
-    <h1 class="packages-page__title">{{ .Title }}</h1>
-    {{ with .Params.subtitle }}
-    <p class="packages-page__subtitle">{{ . }}</p>
-    {{ end }}
-    {{ with .Content }}
-    <div class="packages-page__intro">
-      {{ . }}
-    </div>
-    {{ end }}
-  </header>
+{{/* Calculate package metrics */}}
+{{ $allMaintainers := slice }}
+{{ $activePkgCount := 0 }}
+{{ $jossCount := 0 }}
+{{ range .Site.Data.packages }}
+  {{ if .active }}
+    {{ $activePkgCount = add $activePkgCount 1 }}
+  {{ end }}
+  {{ if .joss }}
+    {{ $jossCount = add $jossCount 1 }}
+  {{ end }}
+  {{ range .all_current_maintainers }}
+    {{ $allMaintainers = $allMaintainers | append .github_username }}
+  {{ end }}
+{{ end }}
+{{ $uniqueMaintainers := $allMaintainers | uniq }}
+{{ $uniqueCount := len $uniqueMaintainers }}
 
-  {{/* Package Metrics Bar */}}
-  {{ if .Site.Data.packages }}
-  {{ $totalPackages := len .Site.Data.packages }}
-  {{ $activePackages := where .Site.Data.packages "active" true }}
-  {{ $archivedPackages := where .Site.Data.packages "active" false }}
-  {{ $jossPackages := where .Site.Data.packages "joss" "!=" nil }}
+{{/* Store metrics in scratch for use in content */}}
+{{ .Scratch.Set "totalPackages" (len .Site.Data.packages) }}
+{{ .Scratch.Set "jossCount" $jossCount }}
+{{ .Scratch.Set "activeCount" $activePkgCount }}
+{{ .Scratch.Set "maintainerCount" $uniqueCount }}
 
-  <div class="metrics-bar">
+{{/* Hero section - similar to splash layout */}}
+{{ partial "hero.html" . }}
+
+{{/* Metrics Bar - render directly with calculated values */}}
+<div class="metrics-bar">
+  <div class="metrics-bar__container">
     <div class="metrics-bar__item">
-      <span class="metrics-bar__number">{{ $totalPackages }}</span>
-      <span class="metrics-bar__label">Packages Accepted</span>
+      <div class="metrics-bar__text">
+        <strong>{{ len .Site.Data.packages }}</strong>
+        Packages Accepted
+      </div>
     </div>
     <div class="metrics-bar__item">
-      <span class="metrics-bar__number">{{ len $jossPackages }}</span>
-      <span class="metrics-bar__label">Published in JOSS</span>
+      <div class="metrics-bar__text">
+        <strong>{{ $jossCount }}</strong>
+        Published in JOSS
+      </div>
     </div>
     <div class="metrics-bar__item">
-      <span class="metrics-bar__number">{{ len $activePackages }}</span>
-      <span class="metrics-bar__label">Currently Active</span>
+      <div class="metrics-bar__text">
+        <strong>{{ $activePkgCount }}</strong>
+        Currently Active
+      </div>
+    </div>
+    <div class="metrics-bar__item">
+      <div class="metrics-bar__text">
+        <strong>{{ $uniqueCount }}</strong>
+        Unique Maintainers
+      </div>
     </div>
   </div>
-  {{ end }}
+</div>
 
-  {{/* Filters and Search */}}
+{{/* Page content with metrics and intro text - centered with max-width */}}
+<div class="packages-page__content">
+  {{ .Content }}
+</div>
+
+{{/* Packages listing - full width with inner max-width containers */}}
+{{ if .Site.Data.packages }}
+<div x-data="packageFilter()" x-init="initPackages({{ .Site.Data.packages | jsonify }})">
+
+  {{/* Filters and Search - contained width */}}
   <div class="packages-page__controls">
-    {{ partial "packages/filters.html" . }}
+    <div class="packages-page__controls-inner">
+      {{ partial "packages/filters.html" . }}
+    </div>
   </div>
 
   {{/* Active Packages */}}
-  {{ if .Site.Data.packages }}
   <section class="packages-page__section">
-    <h2 class="packages-page__section-title">Active Packages</h2>
-    {{ partial "packages/grid.html" (dict "packages" .Site.Data.packages "activeOnly" true) }}
+    <div class="packages-page__section-inner">
+      <h2 class="packages-page__section-title">Active Packages</h2>
+      {{ partial "packages/grid.html" (dict "activeOnly" true) }}
+    </div>
   </section>
 
   {{/* Archived Packages */}}
   <section class="packages-page__section">
-    <h2 class="packages-page__section-title">Archived Packages</h2>
-    <p class="packages-page__section-description">
-      Archived packages are packages that have successfully completed peer review
-      but are no longer actively maintained.
-    </p>
-    {{ partial "packages/grid.html" (dict "packages" .Site.Data.packages "activeOnly" false "title" "") }}
+    <div class="packages-page__section-inner">
+      <h2 class="packages-page__section-title">Archived Packages</h2>
+      <p class="packages-page__section-description">
+        Archived packages are packages that have successfully completed peer review
+        but are no longer actively maintained.
+      </p>
+      {{ partial "packages/grid.html" (dict "activeOnly" false) }}
+    </div>
   </section>
-  {{ else }}
-  <div class="packages-page__empty">
-    <p>No package data found. Add packages to <code>data/packages.yml</code> to display them here.</p>
-  </div>
-  {{ end }}
+</div>
+{{ else }}
+<div class="packages-page__empty">
+  <p>No package data found. Add packages to <code>data/packages.yml</code> to display them here.</p>
+</div>
+{{ end }}
 
-</article>
 {{ end }}

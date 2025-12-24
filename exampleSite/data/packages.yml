@@ -8,6 +8,8 @@
       github_username: janedev
     - name: John Coder
       github_username: johncoder
+    - name: Sam Builder
+      github_username: sambuilder
   repository_link: https://github.com/example/package
   version_submitted: 1.0.0
   categories:
@@ -41,6 +43,8 @@
   all_current_maintainers:
     - name: Maria Geographer
       github_username: mariageo
+    - name: Jane Developer
+      github_username: janedev
   repository_link: https://github.com/example/geotools
   version_submitted: 2.1.0
   categories:
@@ -74,6 +78,14 @@
   all_current_maintainers:
     - name: Alex Data
       github_username: alexdata
+    - name: Sam Builder
+      github_username: sambuilder
+    - name: Chris Analytics
+      github_username: chrisanalytics
+    - name: Taylor Code
+      github_username: taylorcode
+    - name: Jordan Dev
+      github_username: jordandev
   repository_link: https://github.com/example/dataextractor
   version_submitted: 3.0.1
   categories:
@@ -137,6 +149,8 @@
   all_current_maintainers:
     - name: Dr. Sarah Teacher
       github_username: sarahteacher
+    - name: Maria Geographer
+      github_username: mariageo
   repository_link: https://github.com/example/edupython
   version_submitted: 1.2.0
   categories:
