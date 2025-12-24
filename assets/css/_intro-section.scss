@@ -8,10 +8,10 @@
   }
 
   .intro-section__content {
-    @apply prose prose-lg md:prose-xl;
     @apply text-center;
+    /* Uses base typography from main.scss, with intentional larger paragraph size */
 
-    /* Override prose defaults for centered, larger text */
+    /* Intentionally larger paragraphs for intro sections - design-specific override */
     p {
       @apply text-xl md:text-2xl leading-relaxed;
       color: var(--color-gray-700);
@@ -23,15 +23,7 @@
       font-weight: 600;
     }
 
-    /* Override prose link colors for accessibility */
-    a {
-      color: var(--color-link);
-
-      &:hover,
-      &:focus {
-        color: var(--color-link-hover);
-      }
-    }
+    /* Links use base styles from main.scss */
   }
 }
 

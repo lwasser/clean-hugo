@@ -254,25 +254,18 @@
   }
 
   .blog-post__content {
-    @apply prose lg:prose-xl mx-auto px-8;
-
-    /* Override prose link colors for accessibility */
-    a {
-      color: var(--color-link);
-
-      &:hover,
-      &:focus {
-        color: var(--color-link-hover);
-      }
-    }
+    @apply mx-auto px-8;
+    /* Uses base typography from main.scss - no prose plugin needed */
 
     /* Left align all headings (h2 and below) and ensure sentence case */
+    /* Headings use base typography scale from main.scss, only override alignment */
     h2, h3, h4, h5, h6 {
       @apply text-left;
       text-transform: none;
       text-align: left !important;
     }
 
+    /* Links use base styles from main.scss */
     /* Code block styles are handled globally in _code.scss */
   }
 
@@ -313,7 +306,7 @@
   }
 
   .blog-highlight .intro h2 {
-    @apply text-3xl md:text-4xl font-sora font-bold mb-4;
+    @apply text-2xl md:text-3xl lg:text-4xl mb-4; /* Uses base h2 scale */
     color: var(--color-white);
   }
 
@@ -367,7 +360,7 @@
   }
 
   .blog-archives .intro h2 {
-    @apply text-3xl md:text-4xl font-sora font-bold mb-4;
+    @apply text-2xl md:text-3xl lg:text-4xl mb-4; /* Uses base h2 scale */
     color: var(--color-gray-900);
   }
 
@@ -417,7 +410,7 @@
 
   .highlight-grid .content h3 {
     @apply font-sora font-semibold mb-3;
-    font-size: 1.25rem; /* 20px - larger than text-xl */
+    font-size: 1.25rem; /* Card-specific: 20px - intentionally smaller than base h3 for card titles */
     line-height: 1.4;
     color: var(--color-gray-900);
 
@@ -458,7 +451,7 @@
   }
 
   .blog-archives .highlight-grid .content h3 {
-    font-size: 1.5rem; /* 24px - much larger */
+    font-size: 1.5rem; /* Card-specific: 24px - intentionally larger for archive cards */
     line-height: 1.5;
     margin-bottom: 1rem;
   }

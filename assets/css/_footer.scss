@@ -9,7 +9,7 @@
   }
 
   .site-footer h3 {
-    @apply text-white text-xl font-semibold mb-6;
+    @apply text-white text-xl font-semibold mb-6; /* Footer-specific: intentionally smaller than base h3 */
   }
 
   .site-footer ul {

@@ -108,13 +108,98 @@ xl: 1280px
     background-color: var(--color-bg);
   }
 
+  /* Typography System - Base Heading Styles */
+  /* All headings use Sora font family */
   h1, h2, h3, h4, h5, h6 {
     @apply font-sora;
     color: inherit;
   }
 
+  /* Base Typography Scale */
+  h1 {
+    @apply text-4xl md:text-5xl lg:text-6xl font-bold leading-tight;
+  }
+
   h2 {
-    @apply text-2xl md:text-3xl font-semibold leading-tight;
+    @apply text-3xl md:text-3xl lg:text-4xl font-semibold leading-tight;
+  }
+
+  h3 {
+    @apply text-xl md:text-2xl lg:text-3xl font-semibold leading-tight;
+  }
+
+  h4 {
+    @apply text-lg md:text-xl lg:text-2xl font-semibold leading-tight;
+  }
+
+  h5 {
+    @apply text-base md:text-lg lg:text-xl font-semibold leading-tight;
+  }
+
+  h6 {
+    @apply text-sm md:text-base lg:text-lg font-semibold leading-tight;
+  }
+
+  /* Base Typography - Paragraphs, Lists, and Text Elements */
+  p {
+    @apply text-base md:text-lg leading-relaxed mb-4;
+    color: var(--color-gray-700);
+  }
+
+  /* Lists */
+  ul, ol {
+    @apply mb-4 ml-6;
+
+    li {
+      @apply mb-2;
+      color: var(--color-gray-700);
+    }
+  }
+
+  ul {
+    @apply list-disc;
+  }
+
+  ol {
+    @apply list-decimal;
+  }
+
+  /* Blockquotes */
+  blockquote {
+    @apply border-l-4 pl-4 italic my-4;
+    border-color: var(--color-gray-300);
+    color: var(--color-gray-600);
+
+    p {
+      @apply mb-0;
+    }
+  }
+
+  /* Horizontal rules */
+  hr {
+    @apply my-8 border-t;
+    border-color: var(--color-gray-300);
+  }
+
+  /* Links - base styles (can be overridden in components) */
+  a {
+    @apply transition-colors duration-200;
+    color: var(--color-link);
+
+    &:hover,
+    &:focus {
+      color: var(--color-link-hover);
+    }
+  }
+
+  /* Strong and emphasis */
+  strong {
+    @apply font-semibold;
+    color: var(--color-gray-900);
+  }
+
+  em {
+    font-style: italic;
   }
 }
 

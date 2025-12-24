@@ -81,8 +81,9 @@
   }
 
   .card-shortcode__content {
-    @apply flex-1 prose prose-lg text-lg leading-[1.7];
+    @apply flex-1 text-lg leading-[1.7];
     color: var(--color-gray-700);
+    /* Uses base typography from main.scss */
 
     ul {
       @apply space-y-2;
@@ -148,8 +149,9 @@
   }
 
   .single-card-wide__content {
-    @apply prose prose-lg text-lg leading-[1.7];
+    @apply text-lg leading-[1.7];
     color: var(--color-gray-700);
+    /* Uses base typography from main.scss */
 
     ul {
       @apply space-y-3;

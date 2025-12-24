@@ -30,7 +30,7 @@
 
   /* Header */
   .gallery-header { @apply mb-8; }
-  .gallery-header h2 { @apply text-3xl font-bold mb-2; }
+  .gallery-header h2 { @apply text-2xl md:text-3xl lg:text-4xl mb-2; /* Uses base h2 scale */ }
   .gallery-header .common-name {
     @apply text-lg mb-4;
     color: var(--color-gray-600);
@@ -38,27 +38,20 @@
 
   /* Markdown body */
   .gallery-description {
-    @apply prose max-w-none;
+    @apply max-w-none;
+    /* Uses base typography from main.scss */
 
     /* Hide h1 in gallery description - title should only be in hero */
     h1 {
       @apply hidden;
     }
 
-    /* Override prose link colors for accessibility */
-    a {
-      color: var(--color-link);
-
-      &:hover,
-      &:focus {
-        color: var(--color-link-hover);
-      }
-    }
+    /* Links use base styles from main.scss */
   }
 
   /* Gallery section wrapper */
   .gallery-images { @apply max-w-7xl mx-auto px-4 md:px-6 py-12; }
-  .gallery-images h2 { @apply text-2xl font-bold mb-4; }
+  .gallery-images h2 { @apply text-xl md:text-2xl lg:text-3xl mb-4; /* Uses base h3 scale for section headings */ }
 
   /* Masonry (CSS columns) */
   .gallery-grid {
