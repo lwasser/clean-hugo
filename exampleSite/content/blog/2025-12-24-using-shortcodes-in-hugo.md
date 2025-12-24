@@ -1,6 +1,6 @@
 ---
 title: "Using Shortcodes to Build Dynamic Content"
-date: 2024-12-24
+date: 2025-12-24
 draft: false
 excerpt: "Learn how to use Hugo shortcodes to create reusable components without writing HTML. This guide covers the built-in shortcodes in Clean Hugo theme with practical examples."
 category: "Tutorial"

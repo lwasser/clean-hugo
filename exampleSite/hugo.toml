@@ -3,6 +3,9 @@ languageCode = 'en-us'
 title = 'Clean Hugo Theme Example'
 theme = 'clean-hugo'
 
+# Build future-dated posts (for development/testing)
+buildFuture = true
+
 # Syntax highlighting configuration
 [markup]
   [markup.highlight]
