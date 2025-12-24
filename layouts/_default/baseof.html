@@ -47,6 +47,32 @@
       {{ with $colors.linkHover }}--color-link-hover: {{ . }};{{ end }}
       {{ with $colors.footerBg }}--color-footer-bg: {{ . }};{{ end }}
       {{ with $colors.featureCard }}--color-feature-card: {{ . }};{{ end }}
+
+      /* Admonition colors */
+      {{ with $colors.admonitionInfoBg }}--color-admonition-info-bg: {{ . }};{{ end }}
+      {{ with $colors.admonitionInfoBorder }}--color-admonition-info-border: {{ . }};{{ end }}
+      {{ with $colors.admonitionInfoText }}--color-admonition-info-text: {{ . }};{{ end }}
+      {{ with $colors.admonitionInfoIcon }}--color-admonition-info-icon: {{ . }};{{ end }}
+
+      {{ with $colors.admonitionSuccessBg }}--color-admonition-success-bg: {{ . }};{{ end }}
+      {{ with $colors.admonitionSuccessBorder }}--color-admonition-success-border: {{ . }};{{ end }}
+      {{ with $colors.admonitionSuccessText }}--color-admonition-success-text: {{ . }};{{ end }}
+      {{ with $colors.admonitionSuccessIcon }}--color-admonition-success-icon: {{ . }};{{ end }}
+
+      {{ with $colors.admonitionWarningBg }}--color-admonition-warning-bg: {{ . }};{{ end }}
+      {{ with $colors.admonitionWarningBorder }}--color-admonition-warning-border: {{ . }};{{ end }}
+      {{ with $colors.admonitionWarningText }}--color-admonition-warning-text: {{ . }};{{ end }}
+      {{ with $colors.admonitionWarningIcon }}--color-admonition-warning-icon: {{ . }};{{ end }}
+
+      {{ with $colors.admonitionDangerBg }}--color-admonition-danger-bg: {{ . }};{{ end }}
+      {{ with $colors.admonitionDangerBorder }}--color-admonition-danger-border: {{ . }};{{ end }}
+      {{ with $colors.admonitionDangerText }}--color-admonition-danger-text: {{ . }};{{ end }}
+      {{ with $colors.admonitionDangerIcon }}--color-admonition-danger-icon: {{ . }};{{ end }}
+
+      {{ with $colors.admonitionNoteBg }}--color-admonition-note-bg: {{ . }};{{ end }}
+      {{ with $colors.admonitionNoteBorder }}--color-admonition-note-border: {{ . }};{{ end }}
+      {{ with $colors.admonitionNoteText }}--color-admonition-note-text: {{ . }};{{ end }}
+      {{ with $colors.admonitionNoteIcon }}--color-admonition-note-icon: {{ . }};{{ end }}
     }
   </style>
 
@@ -111,13 +137,13 @@
 
   {{ block "main" . }}{{ end }}
   {{ partial "footer.html" . }}
-  
+
   {{/* Navigation JavaScript */}}
   <script>
     (function() {
       const toggle = document.querySelector('.site-nav__toggle');
       const menu = document.querySelector('#site-nav-menu');
-      
+
       if (toggle && menu) {
         // Toggle main menu
         toggle.addEventListener('click', function() {
@@ -131,7 +157,7 @@
         dropdowns.forEach(function(dropdown) {
           const dropdownToggle = dropdown.querySelector('.site-nav__link--dropdown');
           const dropdownMenu = dropdown.querySelector('.site-nav__dropdown-menu');
-          
+
           if (dropdownToggle && dropdownMenu) {
             dropdownToggle.addEventListener('click', function(e) {
               // On mobile, toggle dropdown

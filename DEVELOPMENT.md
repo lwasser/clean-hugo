@@ -6,10 +6,13 @@ framework that makes it easy to build custom designs.
 
 ## Get started with development
 
-First install the Node.js dependencies. This gives you access to the build
+### For theme development (exampleSite)
+
+First install the Node.js dependencies in the exampleSite directory. This gives you access to the build
 tools needed to process the CSS:
 
 ```bash
+cd exampleSite
 npm install
 ```
 
@@ -20,6 +23,14 @@ templates will automatically refresh in your browser:
 ```bash
 npm run dev
 ```
+
+Or from the theme root:
+
+```bash
+npm run serve
+```
+
+**Note:** The exampleSite requires `postcss.config.js` and `tailwind.config.js` to be present in the exampleSite directory for CSS processing to work correctly. These files are included in the exampleSite.
 
 When you're ready to create the final version of your site, build it for
 production. This generates optimized, minified CSS and creates your static
@@ -51,6 +62,7 @@ files:
 - `_gallery.scss` - Gallery styles
 - `_gallery_blog.scss` - Blog listing gallery styles
 - `_shortcodes.scss` - Shortcode component styles
+- `_admonition.scss` - Admonition shortcode styles
 - `_figure.scss` - Figure/image styles
 - `_filter.scss` - Filter button styles
 - `_learn-more.scss` - Learn more section styles
