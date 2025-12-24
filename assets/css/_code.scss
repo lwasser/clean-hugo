@@ -1,0 +1,64 @@
+@layer components {
+  /* Code block and syntax highlighting styles */
+  
+  /* Base code styles */
+  code {
+    @apply rounded px-1.5 py-0.5;
+    font-size: 0.875em;
+    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', 'source-code-pro', monospace;
+    background-color: rgba(0, 0, 0, 0.05);
+    color: #e83e8c;
+  }
+
+  /* Code blocks */
+  pre {
+    @apply rounded-lg p-4 overflow-x-auto mb-4;
+    background-color: #272822;
+    color: #f8f8f2;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', 'source-code-pro', monospace;
+    
+    code {
+      @apply p-0;
+      background-color: transparent;
+      color: inherit;
+      font-size: inherit;
+      border-radius: 0;
+    }
+  }
+
+  /* Hugo syntax highlighting wrapper (.highlight) */
+  .highlight {
+    @apply mb-4;
+    position: relative;
+    
+    pre {
+      @apply m-0;
+      border-radius: 0.5rem;
+    }
+  }
+
+  /* Inline code within paragraphs */
+  p code,
+  li code,
+  td code {
+    @apply px-1.5 py-0.5;
+    background-color: rgba(0, 0, 0, 0.05);
+    color: #e83e8c;
+    font-size: 0.875em;
+  }
+
+  /* Code blocks should not have inline code styling */
+  pre code,
+  .highlight code {
+    background-color: transparent;
+    color: inherit;
+  }
+
+  /* Syntax highlighting color overrides for better visibility */
+  .highlight .chroma {
+    background-color: #272822;
+  }
+}
+

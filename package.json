@@ -1,0 +1,21 @@
+{
+  "name": "clean-hugo",
+  "version": "1.0.0",
+  "description": "A clean, modern Hugo theme",
+  "scripts": {
+    "serve": "cd exampleSite && hugo server --disableFastRender",
+    "dev": "cd exampleSite && hugo server --disableFastRender",
+    "build": "cd exampleSite && hugo --minify"
+  },
+  "keywords": ["hugo", "theme"],
+  "author": "Leah A. Wasser",
+  "license": "MIT",
+  "devDependencies": {
+    "@tailwindcss/typography": "^0.5.19",
+    "autoprefixer": "^10.4.21",
+    "postcss": "^8.5.6",
+    "postcss-cli": "^11.0.1",
+    "tailwindcss": "^3.4.18"
+  }
+}
+

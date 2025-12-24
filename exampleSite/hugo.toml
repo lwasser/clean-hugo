@@ -1,0 +1,60 @@
+baseURL = 'http://localhost:1313/'
+languageCode = 'en-us'
+title = 'Clean Hugo Theme Example'
+theme = 'clean-hugo'
+
+# Syntax highlighting configuration
+[markup]
+  [markup.highlight]
+    style = 'monokai'
+    lineNos = false
+    noClasses = false
+    codeFences = true
+    guessSyntax = true
+
+[params]
+  author = "Example Author"
+  tagline = "A clean, modern Hugo theme example"
+  blog_title = "Example Blog"
+
+  [params.blog]
+    sidebar_count = 2
+    excerpt_length = 200
+
+  [params.social]
+    github = "https://github.com/username"
+    linkedin = "https://www.linkedin.com/in/username"
+    mastodon = "https://mastodon.social/@username"
+    bluesky = "https://bsky.app/profile/username.bsky.social"
+
+  [params.footer]
+    title = "Connect With Us"
+
+[params.theme]
+  enableGallery = true
+  enableFontAwesome = true
+
+  [params.theme.fonts]
+    heading = "Sora"
+    body = "Inter"
+
+  [params.theme.colors]
+    primary = "#71B3B5"
+    primaryDark = "#2E6060"
+    primaryLight = "#D6E3E3"
+    secondary = "#EDB88B"
+    accent = "#42213D"
+    accentLight = "#AC87A0"
+    neutral = "#395E66"
+    blogHighlight = "#111827"
+    link = "#2E6060"
+    linkOnDark = "#2DD4BF"
+    linkHover = "#1F4345"
+    footerBg = "#115E59"
+    featureCard = "#EBC1D3"
+
+[[menu.main]]
+  name = "Blog"
+  url = "/blog/"
+  weight = 1
+
