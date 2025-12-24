@@ -1,60 +1,60 @@
 @layer components {
-  /* Packages Page Layout */
-  .packages-page {
-    @apply max-w-7xl mx-auto px-6 py-12;
-  }
+  /* Packages Page Layout - Full Width */
 
-  .packages-page__header {
-    @apply mb-12 text-center;
-  }
+  /* Content area - no width constraint so metrics bar can be full width */
+  .packages-page__content {
+    @apply w-full;
 
-  .packages-page__title {
-    @apply text-4xl md:text-5xl font-extrabold mb-4;
-    color: var(--color-gray-900);
-  }
+    /* Constrain all direct children except full-width elements like metrics-bar */
+    > *:not(.metrics-bar) {
+      @apply max-w-7xl mx-auto px-6 text-lg md:text-xl;
+    }
 
-  .packages-page__subtitle {
-    @apply text-xl md:text-2xl mb-6;
-    color: var(--color-gray-700);
-  }
+    /* Responsive heading sizes - override text size from parent selector */
+    > h2 {
+      @apply text-3xl md:text-4xl lg:text-5xl font-bold mb-4;
+      color: var(--color-gray-900);
+    }
 
-  .packages-page__intro {
-    @apply max-w-3xl mx-auto text-lg;
-    color: var(--color-gray-600);
-  }
+    > h3 {
+      @apply text-2xl md:text-3xl lg:text-4xl font-bold mb-3;
+      color: var(--color-gray-900);
+    }
 
-  /* Metrics Bar */
-  .metrics-bar {
-    @apply flex justify-center gap-12 mb-12 p-8 rounded-lg;
-    background: linear-gradient(135deg, var(--color-primary-light) 0%, var(--color-accent-light) 100%);
-  }
+    /* List styling */
+    ul, ol {
+      @apply mb-6;
 
-  .metrics-bar__item {
-    @apply flex flex-col items-center;
-  }
+      li {
+        @apply mb-2;
+        color: var(--color-gray-700);
+      }
+    }
 
-  .metrics-bar__number {
-    @apply text-5xl font-extrabold mb-2;
-    color: var(--color-primary-dark);
-  }
-
-  .metrics-bar__label {
-    @apply text-sm font-semibold uppercase tracking-wide;
-    color: var(--color-gray-700);
-  }
-
-  .packages-page__stats {
-    @apply mb-8 p-6 rounded-lg;
-    background-color: var(--color-gray-50);
-
+    /* Paragraph spacing */
     p {
-      @apply text-center text-lg m-0;
+      @apply mb-4;
       color: var(--color-gray-700);
     }
   }
 
+  /* Controls Section - contained width */
+  .packages-page__controls {
+    @apply w-full py-8 mb-8;
+    background-color: var(--color-gray-50);
+  }
+
+  .packages-page__controls-inner {
+    @apply max-w-7xl mx-auto px-6;
+  }
+
+  /* Section Container - full width with inner constraint */
   .packages-page__section {
     @apply mb-16;
+  }
+
+  .packages-page__section-inner {
+    @apply max-w-7xl mx-auto px-6;
   }
 
   .packages-page__section-title {
@@ -68,11 +68,11 @@
   }
 
   .packages-page__empty {
-    @apply text-center py-16;
+    @apply max-w-7xl mx-auto px-6 py-12 text-center;
 
     p {
-      @apply text-xl;
-      color: var(--color-gray-500);
+      @apply text-lg;
+      color: var(--color-gray-600);
     }
   }
 

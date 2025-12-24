@@ -19,22 +19,6 @@ hero:
 
 To use this on your site, add your package data to `data/packages.yml` and create a page with `type: packages` in the front matter.
 
-You can customize the metrics bar below as you wish. 
-
-```markdown 
-{{</* metrics-bar
-  stat1="**5** Packages Accepted"
-  stat2="**2** Published in JOSS"
-  stat3="**4** Currently Active"
-*/>}}
-
-```
-
-
-{{< metrics-bar
-  stat1="**5** Packages Accepted"
-  stat2="**2** Published in JOSS"
-  stat3="**4** Currently Active"
->}}
+The metrics bar above is automatically calculated from your package data.
 
 Here is what is left - we 
