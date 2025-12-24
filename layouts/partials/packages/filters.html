@@ -1,0 +1,58 @@
+{{/*
+  Package Filters Partial
+  Category filter buttons for package grid
+  Usage: {{ partial "packages/filters.html" . }}
+*/}}
+
+<div class="packages-filters">
+  <p class="packages-filters__search">
+    <input type="text"
+           id="quicksearch"
+           placeholder="Search packages..."
+           x-model="searchQuery"
+           class="packages-filters__input" />
+  </p>
+
+  <div class="packages-filters__buttons">
+    <button @click="activeFilter = '*'"
+            :class="{ 'is-checked': activeFilter === '*' }"
+            class="packages-filters__button">
+      show all
+    </button>
+    <button @click="activeFilter = 'data-munging'"
+            :class="{ 'is-checked': activeFilter === 'data-munging' }"
+            class="packages-filters__button">
+      data munging
+    </button>
+    <button @click="activeFilter = 'data-extraction'"
+            :class="{ 'is-checked': activeFilter === 'data-extraction' }"
+            class="packages-filters__button">
+      data extraction
+    </button>
+    <button @click="activeFilter = 'data-retrieval'"
+            :class="{ 'is-checked': activeFilter === 'data-retrieval' }"
+            class="packages-filters__button">
+      data retrieval
+    </button>
+    <button @click="activeFilter = 'data-visualization'"
+            :class="{ 'is-checked': activeFilter === 'data-visualization' }"
+            class="packages-filters__button">
+      data visualization
+    </button>
+    <button @click="activeFilter = 'education'"
+            :class="{ 'is-checked': activeFilter === 'education' }"
+            class="packages-filters__button">
+      education
+    </button>
+    <button @click="activeFilter = 'geospatial'"
+            :class="{ 'is-checked': activeFilter === 'geospatial' }"
+            class="packages-filters__button">
+      geospatial
+    </button>
+    <button @click="activeFilter = 'reproducibility'"
+            :class="{ 'is-checked': activeFilter === 'reproducibility' }"
+            class="packages-filters__button">
+      reproducibility
+    </button>
+  </div>
+</div>

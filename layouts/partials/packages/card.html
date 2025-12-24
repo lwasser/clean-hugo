@@ -1,0 +1,108 @@
+{{/*
+  Package Card Partial
+  Renders a single package card from YAML data
+  Usage: {{ partial "packages/card.html" (dict "package" $package "isotope" false) }}
+*/}}
+{{ $package := .package }}
+{{ $useIsotope := .isotope | default false }}
+
+<div class="{{ if $useIsotope }}element-item {{ range $package.categories }}{{ . }} {{ end }}{{ end }}package-card">
+  <div class="package-card__content">
+    
+    {{/* Package Title */}}
+    <h3 class="package-card__title">
+      {{ $package.package_name }}
+    </h3>
+
+    {{/* Maintainer Info */}}
+    <div class="package-card__meta">
+      <i class="fas fa-feather" aria-hidden="true"></i>
+      <span class="package-card__maintainers">
+        {{ if $package.all_current_maintainers }}
+          {{ range $index, $maintainer := $package.all_current_maintainers }}
+            <a href="https://github.com/{{ $maintainer.github_username }}" 
+               rel="maintainer" 
+               target="_blank"
+               class="package-card__maintainer-link">
+              {{ if $maintainer.name }}
+                {{ $maintainer.name }}{{ if ne (add $index 1) (len $package.all_current_maintainers) }}, {{ end }}
+              {{ else }}
+                {{ $maintainer.github_username }}{{ if ne (add $index 1) (len $package.all_current_maintainers) }}, {{ end }}
+              {{ end }}
+            </a>
+          {{ end }}
+        {{ else if and $package.submitting_author.name (ne $package.submitting_author.name "Name") }}
+          <a href="https://github.com/{{ $package.submitting_author.github_username }}" 
+             rel="maintainer" 
+             target="_blank"
+             class="package-card__maintainer-link">
+            {{ $package.submitting_author.name }}
+          </a>
+        {{ else if $package.submitting_author.github_username }}
+          <a href="https://github.com/{{ $package.submitting_author.github_username }}" 
+             rel="maintainer" 
+             target="_blank"
+             class="package-card__maintainer-link">
+            {{ $package.submitting_author.github_username }}
+          </a>
+        {{ end }}
+      </span>
+    </div>
+
+    {{/* Package Description */}}
+    <div class="package-card__description">
+      {{ $package.package_description | markdownify }}
+    </div>
+
+    {{/* Package Links */}}
+    <ul class="package-card__links">
+      {{ with $package.repository_link }}
+      <li>
+        <a href="{{ . }}" rel="permalink" target="_blank">
+          <i class="fab fa-github" aria-hidden="true"></i> View Code
+        </a>
+      </li>
+      {{ end }}
+      
+      {{ with $package.gh_meta.documentation }}
+      <li>
+        <a href="{{ . }}" rel="permalink" target="_blank">
+          <i class="fas fa-book-open" aria-hidden="true"></i> View Docs
+        </a>
+      </li>
+      {{ end }}
+      
+      {{ with $package.issue_link }}
+      <li>
+        <a href="{{ . }}" target="_blank">
+          <i class="fa-solid fa-user-pen" aria-hidden="true"></i> View Review
+        </a>
+      </li>
+      {{ end }}
+      
+      {{ if $package.joss }}
+      <li>
+        <a href="{{ $package.archive }}" rel="permalink" target="_blank">
+          <i class="fas fa-bookmark fa-fw" aria-hidden="true"></i> JOSS Approved
+        </a>
+      </li>
+      {{ end }}
+      
+      {{ if in $package.partners "astropy" }}
+      <li>
+        <a href="/communities/astropy.html">
+          <i class="fa-solid fa-check-double" aria-hidden="true"></i>
+          <img src="https://img.shields.io/badge/Affiliated-Astropy-orange.svg?style=flat" alt="Astropy" />
+        </a>
+      </li>
+      {{ end }}
+      
+      {{ if eq $package.active false }}
+      <li class="package-card__archived">
+        <i class="fa-solid fa-box-archive" aria-hidden="true"></i> Archived
+      </li>
+      {{ end }}
+    </ul>
+
+  </div>
+</div>

@@ -100,6 +100,12 @@
     <!-- Plausible Analytics -->
     <script defer data-domain="{{ . }}" src="https://plausible.io/js/script.js"></script>
   {{ end }}
+
+  {{/* AlpineJS for interactive components (packages filtering, etc.) */}}
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+  {{/* Package filter component - loads after Alpine */}}
+  <script src="/js/package-filter.js"></script>
 </head>
 <body>
   <!-- Navigation -->
