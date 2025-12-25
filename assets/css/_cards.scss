@@ -2,7 +2,8 @@
   /* Highlight section */
   .highlight { @apply max-w-7xl mx-auto px-6 py-20; }
   .highlight__grid { @apply grid grid-cols-1 md:grid-cols-2 md:grid-rows-3 gap-8; }
-  .highlight__item { @apply contents; } /* wrapper is neutral; card handles its own layout */
+  /* Unused - kept for potential future use (CSS Grid contents technique) */
+  .highlight__item { @apply contents; }
 
   .card--text  {
     @apply rounded-2xl p-10 md:p-12 h-full;
@@ -12,7 +13,6 @@
       min-height: 260px;
     }
 
-    /* Inner wrapper - styled via child selector */
     > div {
       @apply flex items-center justify-center text-center h-full;
 
@@ -21,38 +21,36 @@
         color: var(--color-gray-900);
       }
 
-      /* Body paragraph - styled via child selector */
       p {
         @apply text-lg md:text-xl lg:text-2xl;
         color: var(--color-gray-700);
-        /* Standard transition: 200ms for color changes */
         transition: color 200ms ease;
       }
 
-      /* CTA wrapper - styled via child selector */
       > div:last-child {
         @apply mt-6;
       }
     }
   }
 
+  /* Unused - kept for potential future use */
   .card-hover {
     @apply transition-transform duration-200 ease-in-out;
     will-change: transform, box-shadow;
+
+    &:hover,
+    &:focus-visible {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 30px rgba(17,24,39,0.08);
+    }
+
+    /* ensure hover does NOT change text color */
+    :is(.card__cta, h2, h3, p, li, a) {
+      color: inherit;
+    }
   }
 
-  .card-hover:hover,
-  .card-hover:focus-visible {
-    transform: translateY(-4px);
-    box-shadow: 0 10px 30px rgba(17,24,39,0.08);
-  }
-
-  /* ensure hover does NOT change text color */
-  .card-hover :is(.card__cta, h2, h3, p, li, a) {
-    color: inherit;
-  }
-
-  /* optional compact variant */
+  /* Unused - kept for potential future use */
   .card-hover--compact:hover {
     transform: translateY(-2px);
     box-shadow: 0 6px 18px rgba(17,24,39,0.06);
@@ -67,24 +65,19 @@
     background-color: var(--color-white);
     border-color: var(--color-gray-200);
 
-    /* Hover effect */
     &:hover {
       transform: translateY(-4px);
       box-shadow: 0 10px 30px rgba(17,24,39,0.08);
     }
 
-    /* Card title - styled via child selector */
     h3 {
       @apply text-xl md:text-2xl lg:text-3xl font-extrabold mb-4; /* Card-specific: uses base h3 scale but with extrabold weight */
-      /* Standard transition: 200ms for color changes */
       transition: color 200ms ease;
     }
 
-    /* Card body - styled via adjacent sibling selector (div after h3) */
     > div > h3 + div {
       @apply text-base md:text-lg lg:text-xl;
       color: var(--color-gray-700);
-      /* Standard transition: 200ms for color changes */
       transition: color 200ms ease;
     }
   }
@@ -102,7 +95,6 @@
   .card__cta {
     @apply mt-4 text-sm md:text-base;
     color: var(--color-link);
-    /* Standard transition: 200ms for color changes */
     transition: color 200ms ease;
 
     &:hover,
