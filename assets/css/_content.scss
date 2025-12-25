@@ -13,13 +13,6 @@
     @apply max-w-3xl mx-auto px-4 py-16;
   }
 
-  .content-header {
-    h1 {
-      @apply text-4xl font-bold mb-4;
-      color: var(--color-gray-900);
-    }
-  }
-
   .content-date {
     @apply mb-8;
     color: var(--color-gray-600);
@@ -35,10 +28,6 @@
   .section-container {
     @apply py-12;
     /* Uses .container utility class in template */
-  }
-
-  .section-title {
-    @apply text-3xl font-semibold mb-4;
   }
 
   .section-content {

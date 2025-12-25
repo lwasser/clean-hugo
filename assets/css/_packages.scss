@@ -89,7 +89,7 @@
         box-shadow: 0 10px 30px rgba(17,24,39,0.1);
       }
 
-      /* Title */
+      /* Title - Card-specific: smaller than base h3 for card layout */
       > h3 {
         @apply text-xl font-semibold mb-3;
         color: var(--color-gray-900);

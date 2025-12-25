@@ -91,7 +91,7 @@
         letter-spacing: 0.05em;
       }
 
-      /* Card title - default grid size */
+      /* Card title - Card-specific: smaller than base h2 for grid card layout */
       h2 {
         @apply font-semibold leading-tight text-left;
         font-size: 1.25rem; /* 20px for grid cards */
@@ -122,7 +122,7 @@
     > a > div {
       @apply space-y-3 p-6;
 
-      /* Featured title - larger */
+      /* Featured title - Card-specific: larger than default grid card for featured post */
       h2 {
         @apply font-bold text-left;
         font-size: 2rem; /* 32px */
@@ -155,7 +155,7 @@
 
     .blog-card { @apply flex-1; }
 
-    /* Sidebar card titles - medium size */
+    /* Sidebar card titles - Card-specific: medium size between grid and featured */
     .blog-card > a > div h2 {
       font-size: 1.5rem; /* 24px for sidebar cards */
     }
@@ -339,6 +339,7 @@
       }
 
       > div:last-child {
+        /* Card-specific: smaller h3 for highlight grid cards */
         h3 {
           @apply mb-3;
           font-size: 1.25rem;
@@ -352,6 +353,8 @@
           }
         }
 
+        /* Card-specific: smaller paragraph for highlight grid cards */
+        /* Card-specific: smaller paragraph for highlight grid cards */
         > p {
           @apply leading-relaxed mb-4;
           font-size: 1rem;
@@ -383,12 +386,14 @@
     > div:first-child { font-size: 1rem; }
 
     > div:last-child {
+      /* Card-specific: larger h3 for archive cards */
       h3 {
         font-size: 1.5rem;
         line-height: 1.5;
         margin-bottom: 1rem;
       }
 
+      /* Card-specific: larger paragraph for archive cards */
       > p {
         font-size: 1.125rem;
         line-height: 1.7;
