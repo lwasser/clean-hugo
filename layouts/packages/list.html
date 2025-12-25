@@ -26,6 +26,16 @@
 {{ if .Site.Data.packages }}
 <div x-data="packageFilter()" x-init="initPackages({{ .Site.Data.packages | jsonify }})">
 
+  {{/* Partner Button - above filters */}}
+  <div class="packages-page__partner-nav">
+    <div class="container">
+      <a href="/packages/astropy/" class="partner-button partner-button--astropy">
+        <img src="https://img.shields.io/badge/Affiliated-Astropy-orange.svg?style=flat" alt="Astropy Affiliated" />
+        <span>View Astropy Packages</span>
+      </a>
+    </div>
+  </div>
+
   {{/* Filters and Search - contained width */}}
   <div class="packages-page__controls">
     <div class="container">

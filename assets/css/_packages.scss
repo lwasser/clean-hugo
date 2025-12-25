@@ -6,6 +6,12 @@
     /* Child elements use .container utility class */
   }
 
+  .packages-page__partner-nav {
+    @apply w-full py-6;
+    background-color: var(--color-primary-light);
+    /* Child div uses .container utility class */
+  }
+
   .packages-page__controls {
     @apply w-full py-8 mb-8;
     background-color: var(--color-gray-50);
@@ -124,7 +130,7 @@
 
             &:hover { color: var(--color-link-hover); }
             i { @apply text-sm; }
-            
+
             /* Partner badge styling */
             img.partner-badge {
               @apply h-5;
@@ -140,6 +146,38 @@
         @apply inline-flex items-center gap-2;
         color: var(--color-gray-500);
         font-style: italic;
+      }
+    }
+  }
+
+  /* Partner Navigation Button */
+  .partner-button {
+    @apply inline-flex items-center gap-3 px-6 py-3 rounded-lg font-semibold;
+    @apply transition-all duration-200 no-underline;
+    background-color: white;
+    border: 2px solid var(--color-gray-300);
+    color: var(--color-text);
+
+    &:hover {
+      @apply shadow-lg;
+      transform: translateY(-2px);
+      border-color: var(--color-primary);
+    }
+
+    img {
+      @apply h-5;
+    }
+
+    span {
+      font-size: 1rem;
+    }
+
+    &--astropy {
+      border-color: #FF8C00;
+
+      &:hover {
+        background-color: #FFF5E6;
+        border-color: #FF8C00;
       }
     }
   }

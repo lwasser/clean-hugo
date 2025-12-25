@@ -153,5 +153,88 @@
       @apply outline-none;
     }
   }
+
+  /* Navigation CTA Button */
+  .site-nav__button {
+    @apply px-5 py-2 rounded-lg font-semibold text-base;
+    @apply transition-all duration-200 no-underline;
+    @apply block md:inline-block text-center;
+    @apply mt-4 md:mt-0 md:ml-4;
+
+    &:hover {
+      @apply shadow-lg;
+      transform: translateY(-1px);
+    }
+
+    &:focus {
+      @apply outline-none ring-2 ring-offset-2;
+    }
+
+    /* Color variants */
+    &--primary {
+      background-color: var(--color-primary);
+      color: white;
+
+      &:hover {
+        background-color: var(--color-primary-dark);
+      }
+
+      &:focus {
+        --tw-ring-color: var(--color-primary);
+      }
+    }
+
+    &--secondary {
+      background-color: var(--color-secondary);
+      color: var(--color-text);
+
+      &:hover {
+        opacity: 0.9;
+      }
+
+      &:focus {
+        --tw-ring-color: var(--color-secondary);
+      }
+    }
+
+    &--accent {
+      background-color: var(--color-accent);
+      color: white;
+
+      &:hover {
+        opacity: 0.9;
+      }
+
+      &:focus {
+        --tw-ring-color: var(--color-accent);
+      }
+    }
+
+    &--neutral {
+      background-color: var(--color-neutral);
+      color: white;
+
+      &:hover {
+        opacity: 0.9;
+      }
+
+      &:focus {
+        --tw-ring-color: var(--color-neutral);
+      }
+    }
+
+    &--dark-green {
+      background-color: #115E59;
+      color: white;
+
+      &:hover {
+        background-color: #0d4b47;
+      }
+
+      &:focus {
+        --tw-ring-color: #115E59;
+      }
+    }
+  }
 }
 
