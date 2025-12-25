@@ -124,7 +124,13 @@
 
             &:hover { color: var(--color-link-hover); }
             i { @apply text-sm; }
-            img { @apply h-4; vertical-align: middle; }
+            
+            /* Partner badge styling */
+            img.partner-badge {
+              @apply h-5;
+              vertical-align: middle;
+              margin-left: 0.25rem;
+            }
           }
         }
       }
