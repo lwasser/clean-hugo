@@ -33,7 +33,8 @@
 
   /* Section styles for list pages */
   .section-container {
-    @apply max-w-7xl mx-auto px-6 py-12;
+    @apply py-12;
+    /* Uses .container utility class in template */
   }
 
   .section-title {

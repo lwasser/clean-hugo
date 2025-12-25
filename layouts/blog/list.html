@@ -1,13 +1,13 @@
 {{ define "main" }}
 <!-- Blog header with teal background -->
 <section class="blog-hero">
-  <div>
+  <div class="container">
     <h1>{{ .Site.Params.blog_title | default "Latest Articles" }}</h1>
   </div>
 </section>
 
 <section class="blog-grid">
-  <div>
+  <div class="container">
 
     {{/* Get all blog posts */}}
     {{ $allPosts := where .Site.RegularPages "Type" "blog" }}

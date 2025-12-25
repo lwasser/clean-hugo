@@ -66,3 +66,4 @@ To change when posts become archived, edit `layouts/blog/list.html`:
 
 Posts dated before this cutoff date AND without images will be archived.
 
+

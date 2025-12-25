@@ -3,22 +3,23 @@
 
   .packages-page__content {
     @apply w-full;
-    > *:not(.metrics-bar) { @apply max-w-7xl mx-auto px-6; }
+    /* Child elements use .container utility class */
   }
 
   .packages-page__controls {
     @apply w-full py-8 mb-8;
     background-color: var(--color-gray-50);
-    > div { @apply max-w-7xl mx-auto px-6; }
+    /* Child div uses .container utility class */
   }
 
   .packages-page__section {
     @apply mb-16;
-    > div { @apply max-w-7xl mx-auto px-6; }
+    /* Child div uses .container utility class */
   }
 
   .packages-page__empty {
-    @apply max-w-7xl mx-auto px-6 py-12 text-center;
+    @apply py-12 text-center;
+    /* Uses .container utility class in template */
   }
 
   /* Package Filters */

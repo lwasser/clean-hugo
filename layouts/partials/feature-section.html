@@ -1,7 +1,7 @@
 {{/* Feature section partial - reads from page front matter (.Params.feature_section) */}}
 {{ $feature := .Params.feature_section }}
 {{ if $feature }}
-<section class="feature-section">
+<section class="feature-section container">
   <header class="feature-section__header">
     <h2>{{ $feature.title | default "Featured Content" }}</h2>
     {{ with $feature.subtitle }}

@@ -4,8 +4,8 @@
     @apply py-8 md:py-12 mb-12;
     background-color: var(--color-primary-dark);
 
-    > div {
-      @apply max-w-7xl mx-auto px-4 md:px-6;
+    > .container {
+      /* Uses .container utility class in template */
 
       h1 {
         color: var(--color-white);
@@ -15,7 +15,8 @@
 
   /* Blog grid page */
   .blog-grid {
-    @apply max-w-7xl mx-auto px-4 md:px-6 py-12;
+    @apply py-12;
+    /* Uses .container utility class in template */
 
     /* Category filter buttons */
     > div:first-child {
@@ -253,8 +254,8 @@
     @apply w-full py-12;
     background-color: var(--color-blog-highlight);
 
-    > div {
-      @apply max-w-7xl mx-auto px-4 md:px-6;
+    > .container {
+      /* Uses .container utility class in template */
 
       > div:first-child {
         @apply mb-8;
@@ -297,8 +298,8 @@
     @apply w-full py-12;
     background-color: var(--color-primary-light);
 
-    > div {
-      @apply max-w-7xl mx-auto px-4 md:px-6;
+    > .container {
+      /* Uses .container utility class in template */
 
       > div:first-child {
         @apply mb-8;
