@@ -1,58 +1,15 @@
-{{- /* Renders all theme colors from hugo.toml as color swatches */ -}}
+{{- /* 
+  Renders all theme colors from hugo.toml as color swatches
+  Styles defined in assets/css/_shortcodes.scss
+  Usage: {{< theme-colors >}}
+*/ -}}
 {{- $colors := .Site.Params.theme.colors | default dict -}}
 
+{{- /* Generate dynamic color classes for each theme color */ -}}
 <style>
-.theme-colors {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 1.5rem;
-  margin: 2rem 0;
-}
-.theme-colors > div {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  padding: 1rem;
-  border: 1px solid #e5e7eb;
-  border-radius: 0.5rem;
-  background: white;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-}
-.theme-colors > div > div:first-child {
-  width: 80px;
-  height: 80px;
-  border-radius: 0.5rem;
-  border: 2px solid rgba(0, 0, 0, 0.1);
-  flex-shrink: 0;
-}
-.theme-colors > div > div:last-child {
-  display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
-  min-width: 0;
-}
-.theme-colors > div > div:last-child strong {
-  font-size: 1rem;
-  color: #111827;
-  word-break: break-word;
-}
-.theme-colors > div > div:last-child code {
-  font-size: 0.875rem;
-  font-family: 'Courier New', monospace;
-  color: #6b7280;
-  background: #f3f4f6;
-  padding: 0.25rem 0.5rem;
-  border-radius: 0.25rem;
-  display: inline-block;
-}
 {{- range $name, $hex := $colors }}
 .color-{{ $name | urlize }} { background-color: {{ $hex }}; }
 {{- end }}
-@media (max-width: 640px) {
-  .theme-colors { grid-template-columns: 1fr; }
-  .theme-colors > div { flex-direction: column; text-align: center; }
-  .theme-colors > div > div:first-child { width: 100%; height: 100px; }
-}
 </style>
 
 <div class="theme-colors">
