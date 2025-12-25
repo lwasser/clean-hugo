@@ -14,7 +14,7 @@
   }
   .card__inner { @apply flex items-center justify-center text-center h-full;
     h2 {
-      @apply text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight max-w-lg;
+      @apply text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight max-w-lg; /* Hero card: intentionally larger than base h2 */
       color: var(--color-gray-900);
     }
     }
@@ -70,13 +70,13 @@
   }
 
   .card__icon { @apply text-4xl md:text-5xl mb-4; }
-  .card__title { 
-    @apply text-xl md:text-2xl lg:text-3xl font-extrabold mb-4; 
+  .card__title {
+    @apply text-xl md:text-2xl lg:text-3xl font-extrabold mb-4; /* Card-specific: uses base h3 scale but with extrabold weight */
     /* Standard transition: 200ms for color changes */
-    transition: color 200ms ease; 
+    transition: color 200ms ease;
   }
   .card__body {
-    @apply text-base md:text-lg lg:text-xl prose prose-sm;
+    @apply text-base md:text-lg lg:text-xl;
     color: var(--color-gray-700);
     /* Standard transition: 200ms for color changes */
     transition: color 200ms ease;

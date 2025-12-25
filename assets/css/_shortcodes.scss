@@ -81,8 +81,9 @@
   }
 
   .card-shortcode__content {
-    @apply flex-1 prose prose-lg text-lg leading-[1.7];
+    @apply flex-1 text-lg leading-[1.7];
     color: var(--color-gray-700);
+    /* Uses base typography from main.scss */
 
     ul {
       @apply space-y-2;
@@ -148,8 +149,9 @@
   }
 
   .single-card-wide__content {
-    @apply prose prose-lg text-lg leading-[1.7];
+    @apply text-lg leading-[1.7];
     color: var(--color-gray-700);
+    /* Uses base typography from main.scss */
 
     ul {
       @apply space-y-3;
@@ -176,6 +178,35 @@
       color: var(--color-text);
       font-weight: 600;
     }
+  }
+
+  /* YouTube Video Embed */
+  .youtube-container {
+    @apply my-8;
+    /* Automatically breaks out to full-width in blog posts via auto-detection */
+  }
+
+  /* Constrained width variant - stays within content width */
+  .youtube-container--constrained {
+    /* Override full-width breakout - stay constrained */
+    width: auto !important;
+    position: static !important;
+    left: auto !important;
+    right: auto !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  .youtube-wrapper {
+    @apply relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+  }
+
+  .youtube-iframe {
+    @apply absolute top-0 left-0 w-full h-full;
+    border: 0;
   }
 
   /* Section Heading Shortcode */

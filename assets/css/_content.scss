@@ -1,8 +1,9 @@
 @layer components {
   /* Center h2 headings in content (blog posts override this with left alignment) */
+  /* Headings use base typography scale from main.scss */
   .content h2,
   article h2 {
-    @apply text-center;
+    @apply text-center; /* Only override alignment, sizes come from base */
   }
 
 
@@ -25,18 +26,8 @@
   }
 
   .content-body {
-    @apply prose lg:prose-xl;
-
-    /* Override prose link colors for accessibility */
-    a {
-      color: var(--color-link);
-
-      &:hover,
-      &:focus {
-        color: var(--color-link-hover);
-      }
-    }
-
+    /* Uses base typography from main.scss - no prose plugin needed */
+    /* Links use base styles from main.scss */
     /* Code block styles are handled globally in _code.scss */
   }
 
@@ -50,7 +41,8 @@
   }
 
   .section-content {
-    @apply prose mb-6;
+    /* Uses base typography from main.scss */
+    @apply mb-6;
   }
 
   .section-list {
