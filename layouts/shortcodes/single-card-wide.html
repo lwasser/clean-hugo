@@ -4,8 +4,8 @@
 {{ $content := .Inner }}
 
 <div class="single-card-wide">
-  <div class="single-card-wide__container container">
-    <div class="single-card-wide__inner">
+  <div class="container">
+    <div>
       {{ if $icon }}
       <div class="single-card-wide__icon">
         {{ if in $icon "fa-" }}
@@ -16,9 +16,9 @@
       </div>
     {{ end }}
     {{ if $title }}
-    <h3 class="single-card-wide__title">{{ $title }}</h3>
+    <h3>{{ $title }}</h3>
     {{ end }}
-    <div class="single-card-wide__content">
+    <div>
       {{ $content | markdownify }}
     </div>
     </div>

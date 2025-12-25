@@ -23,7 +23,7 @@
         <p>{{ . }}</p>
       {{ end }}
       {{ with .url }}
-        <div class="card__cta-wrapper">
+        <div>
           <a class="card__cta" href="{{ . }}">{{ $.cta | default "Learn more →" }}</a>
         </div>
       {{ end }}
