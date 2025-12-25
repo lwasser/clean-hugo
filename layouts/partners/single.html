@@ -1,5 +1,13 @@
 {{ define "main" }}
 
+{{/*
+  ⚠️ IMPORTANT: Package card markup in this file is DUPLICATED from layouts/partials/packages/grid.html
+  If you update card structure, links, badges, or styling:
+  1. Update layouts/partials/packages/grid.html (AlpineJS version with x-text, :href)
+  2. Update THIS file (Hugo version with {{ .field }})
+  See: /blog/2025-12-25-package-architecture/ for architecture details
+*/}}
+
 {{/* Get partner ID from front matter */}}
 {{ $partnerId := .Params.partner_id }}
 {{ $partnerName := .Params.partner_name | default $partnerId }}

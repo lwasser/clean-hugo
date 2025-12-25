@@ -21,4 +21,6 @@ To use this on your site, add your package data to `data/packages.yml` and creat
 
 The metrics bar above is automatically calculated from your package data.
 
-Here is what is left - we 
+## Developer Documentation
+
+For technical details about the filtering architecture, AlpineJS integration, and maintenance guidelines, see the [Package Filtering Architecture](/blog/2025-12-25-package-architecture/) documentation. 
