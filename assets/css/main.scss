@@ -115,45 +115,59 @@ xl: 1280px
     color: inherit;
   }
 
-  /* Base Typography Scale */
+  /* Base Typography Scale - Increased by ~20% for cleaner typography */
   h1 {
-    @apply text-4xl md:text-5xl lg:text-6xl font-bold leading-tight;
+    @apply text-5xl md:text-6xl lg:text-7xl font-bold leading-tight;
+    margin-top: 0; /* h1 typically at top of page */
+    margin-bottom: 0.5rem; /* Small padding below h1 */
   }
 
   h2 {
-    @apply text-3xl md:text-3xl lg:text-4xl font-semibold leading-tight;
+    @apply text-4xl md:text-4xl lg:text-5xl font-semibold leading-tight;
+    margin-top: 2.8rem; /* 2.5rem + 0.3rem = 44.8px - spacing above h2 */
+    margin-bottom: 0.5rem; /* Small padding below h2 */
   }
 
   h3 {
-    @apply text-xl md:text-2xl lg:text-3xl font-semibold leading-tight;
+    @apply text-2xl md:text-3xl lg:text-4xl font-semibold leading-tight;
+    margin-top: 2.3rem; /* 2rem + 0.3rem = 36.8px - spacing above h3 */
+    margin-bottom: 0.5rem; /* Small padding below h3 */
   }
 
   h4 {
-    @apply text-lg md:text-xl lg:text-2xl font-semibold leading-tight;
+    @apply text-xl md:text-2xl lg:text-3xl font-semibold leading-tight;
+    margin-top: 1.8rem; /* 1.5rem + 0.3rem = 28.8px - spacing above h4 */
+    margin-bottom: 0.5rem; /* Small padding below h4 */
   }
 
   h5 {
-    @apply text-base md:text-lg lg:text-xl font-semibold leading-tight;
+    @apply text-lg md:text-xl lg:text-2xl font-semibold leading-tight;
+    margin-top: 1.55rem; /* 1.25rem + 0.3rem = 24.8px - spacing above h5 */
+    margin-bottom: 0.5rem; /* Small padding below h5 */
   }
 
   h6 {
-    @apply text-sm md:text-base lg:text-lg font-semibold leading-tight;
+    @apply text-base md:text-lg lg:text-xl font-semibold leading-tight;
+    margin-top: 1.3rem; /* 1rem + 0.3rem = 20.8px - spacing above h6 */
+    margin-bottom: 0.5rem; /* Small padding below h6 */
   }
 
-  /* Base Typography - Paragraphs, Lists, and Text Elements */
-  p {
-    @apply text-base md:text-lg leading-relaxed mb-4;
+  /* Base Typography - Paragraphs and Lists share the same text size and line-height */
+  p,
+  ul, ol,
+  li {
+    @apply text-lg md:text-xl mb-4;
+    line-height: 1.75; /* Increased leading for larger text size - better readability */
     color: var(--color-gray-700);
   }
 
-  /* Lists */
+  /* List-specific styling */
   ul, ol {
-    @apply mb-4 ml-6;
+    @apply ml-6;
+  }
 
-    li {
-      @apply mb-2;
-      color: var(--color-gray-700);
-    }
+  li {
+    @apply mb-2;
   }
 
   ul {
@@ -215,6 +229,18 @@ xl: 1280px
 
   .bg-secondary {
     background-color: var(--color-secondary);
+  }
+
+  /* Full-width breakout utility - breaks out of constrained containers */
+  /* Use this class on any element that needs to span full viewport width */
+  /* Works within blog posts, packages page, or any constrained container */
+  .full-width {
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
   }
 }
 

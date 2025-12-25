@@ -254,8 +254,25 @@
   }
 
   .blog-post__content {
-    @apply mx-auto px-8;
+    @apply max-w-4xl mx-auto px-8;
+    /* Constrained width for readable text (matches excerpt and tags footer) */
     /* Uses base typography from main.scss - no prose plugin needed */
+
+    /* Auto-detect and make full-width shortcodes break out of container */
+    /* These shortcodes automatically become full-width */
+    /* Note: youtube-container--constrained is excluded to stay within content width */
+    > .metrics-bar,
+    > .blog-highlight,
+    > .single-card-wide,
+    > .youtube-container:not(.youtube-container--constrained),
+    > .two-card-row {
+      width: 100vw;
+      position: relative;
+      left: 50%;
+      right: 50%;
+      margin-left: -50vw;
+      margin-right: -50vw;
+    }
 
     /* Left align all headings (h2 and below) and ensure sentence case */
     /* Headings use base typography scale from main.scss, only override alignment */
