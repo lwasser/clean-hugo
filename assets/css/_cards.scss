@@ -11,18 +11,29 @@
     @media (min-width: 768px) {
       min-height: 260px;
     }
-  }
-  .card__inner { @apply flex items-center justify-center text-center h-full;
-    h2 {
-      @apply text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight max-w-lg; /* Hero card: intentionally larger than base h2 */
-      color: var(--color-gray-900);
+
+    /* Inner wrapper - styled via child selector */
+    > div {
+      @apply flex items-center justify-center text-center h-full;
+
+      h2 {
+        @apply text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight max-w-lg; /* Hero card: intentionally larger than base h2 */
+        color: var(--color-gray-900);
+      }
+
+      /* Body paragraph - styled via child selector */
+      p {
+        @apply text-lg md:text-xl lg:text-2xl;
+        color: var(--color-gray-700);
+        /* Standard transition: 200ms for color changes */
+        transition: color 200ms ease;
+      }
+
+      /* CTA wrapper - styled via child selector */
+      > div:last-child {
+        @apply mt-6;
+      }
     }
-    }
-  .card__body  {
-    @apply text-lg md:text-xl lg:text-2xl;
-    color: var(--color-gray-700);
-    /* Standard transition: 200ms for color changes */
-    transition: color 200ms ease;
   }
 
   .card-hover {
@@ -37,7 +48,7 @@
   }
 
   /* ensure hover does NOT change text color */
-  .card-hover :is(.card__title, .card__body, .card__cta, h2, h3, p, li, a) {
+  .card-hover :is(.card__cta, h2, h3, p, li, a) {
     color: inherit;
   }
 
@@ -70,19 +81,20 @@
   }
 
   .card__icon { @apply text-4xl md:text-5xl mb-4; }
-  .card__title {
+
+  /* Card title - styled via child selector */
+  .card h3 {
     @apply text-xl md:text-2xl lg:text-3xl font-extrabold mb-4; /* Card-specific: uses base h3 scale but with extrabold weight */
     /* Standard transition: 200ms for color changes */
     transition: color 200ms ease;
   }
-  .card__body {
+
+  /* Card body - styled via adjacent sibling selector (div after h3) */
+  .card > div > h3 + div {
     @apply text-base md:text-lg lg:text-xl;
     color: var(--color-gray-700);
     /* Standard transition: 200ms for color changes */
     transition: color 200ms ease;
-  }
-  .card__cta-wrapper {
-    @apply mt-6;
   }
 
   .card__cta   {

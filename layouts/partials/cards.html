@@ -14,13 +14,13 @@
 
 {{ if $textOnly }}
 <article class="card card--text">
-  <div class="card__inner">
+  <div>
     <div>
       <h2>
         {{ .title }}
       </h2>
       {{ with .excerpt }}
-        <p class="card__body">{{ . }}</p>
+        <p>{{ . }}</p>
       {{ end }}
       {{ with .url }}
         <div class="card__cta-wrapper">
@@ -33,15 +33,13 @@
 {{ else }}
 <article class="card {{ .modifier | default "card--highlight" }}">
   <div>
-
-
-    <h3 class="card__title">{{ if and $icon (in (printf "%s" $icon) "fa-") }}
+    <h3>{{ if and $icon (in (printf "%s" $icon) "fa-") }}
       <i class="card__icon {{ $icon }}" aria-hidden="true" title="{{ $.title }}"></i>
     {{ else if and $icon (ne (printf "%s" $icon) "") }}
       <div class="card__icon">{{ $icon | safeHTML }}</div>
     {{ end }} {{ .title }}</h3>
     {{ with .excerpt }}
-      <div class="card__body">{{ . | markdownify }}</div>
+      <div>{{ . | markdownify }}</div>
     {{ end }}
   </div>
 

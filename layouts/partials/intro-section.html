@@ -2,8 +2,8 @@
 {{ $intro := .Params.intro_section | default dict }}
 {{ if $intro.text }}
 <section class="intro-section">
-  <div class="intro-section__container">
-    <div class="intro-section__content">
+  <div class="container">
+    <div>
       {{ $intro.text | markdownify }}
     </div>
   </div>

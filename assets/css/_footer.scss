@@ -26,7 +26,8 @@
     transition: color 300ms ease;
   }
 
-  .site-footer__icon {
+  /* Style icons directly via parent selector */
+  .site-footer i {
     @apply text-3xl;
   }
 

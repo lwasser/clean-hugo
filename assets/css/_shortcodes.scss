@@ -56,7 +56,8 @@
     }
   }
 
-  .card-shortcode__inner {
+  /* Card shortcode inner wrapper - styled via child selector */
+  .card-shortcode > div {
     @apply h-full flex flex-col;
   }
 
@@ -68,12 +69,14 @@
     }
   }
 
-  .card-shortcode__title {
+  /* Card shortcode title - styled via child selector */
+  .card-shortcode h3 {
     @apply text-2xl md:text-3xl font-extrabold mb-6;
     color: var(--color-text);
   }
 
-  .card-shortcode__content {
+  /* Card shortcode content - styled via child selector */
+  .card-shortcode > div > div:last-child {
     @apply flex-1 text-lg leading-[1.7];
     color: var(--color-gray-700);
     /* Uses base typography from main.scss */
