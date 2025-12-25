@@ -10,23 +10,23 @@
 
 <div class="packages-grid">
   <template x-for="pkg in {{ $propName }}" :key="pkg.package_name">
-    <div class="package-card">
-      <div class="package-card__content">
+    <div class="package_card">
+      <div>
 
         {{/* Title */}}
-        <h3 class="package-card__title" x-text="pkg.package_name"></h3>
+        <h3 x-text="pkg.package_name"></h3>
 
-        {{/* Maintainers - simplified to avoid nested template issues */}}
-        <div class="package-card__meta">
+        {{/* Maintainers */}}
+        <div class="package_card__meta">
           <i class="fas fa-feather" aria-hidden="true"></i>
-          <span class="package-card__maintainers" x-text="pkg.all_current_maintainers?.map(m => m.name || m.github_username).join(', ') || pkg.submitting_author?.name || pkg.submitting_author?.github_username"></span>
+          <span x-text="pkg.all_current_maintainers?.map(m => m.name || m.github_username).join(', ') || pkg.submitting_author?.name || pkg.submitting_author?.github_username"></span>
         </div>
 
         {{/* Description */}}
-        <div class="package-card__description" x-html="pkg.package_description"></div>
+        <p x-html="pkg.package_description"></p>
 
         {{/* Links */}}
-        <ul class="package-card__links">
+        <ul>
           <template x-if="pkg.repository_link">
             <li>
               <a :href="pkg.repository_link" target="_blank">
@@ -62,7 +62,7 @@
 
           {{/* Archived badge for archived packages */}}
           <template x-if="pkg.active === false">
-            <li class="package-card__archived">
+            <li class="package_card__archived">
               <i class="fa-solid fa-box-archive"></i> Archived
             </li>
           </template>

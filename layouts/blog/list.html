@@ -1,13 +1,13 @@
 {{ define "main" }}
 <!-- Blog header with teal background -->
 <section class="blog-hero">
-  <div class="blog-hero__container">
-    <h1 class="blog-hero__title">{{ .Site.Params.blog_title | default "Latest Articles" }}</h1>
+  <div>
+    <h1>{{ .Site.Params.blog_title | default "Latest Articles" }}</h1>
   </div>
 </section>
 
 <section class="blog-grid">
-  <div class="container">
+  <div>
 
     {{/* Get all blog posts */}}
     {{ $allPosts := where .Site.RegularPages "Type" "blog" }}
@@ -62,10 +62,10 @@
 
     {{/* Category filter */}}
     {{ if gt (len $uniqueCategories) 0 }}
-    <div class="blog-grid__filters">
-      <button class="blog-grid__filter-btn active" data-category="all" aria-pressed="true" aria-label="View all blog posts">View All</button>
+    <div>
+      <button class="active" data-category="all" aria-pressed="true" aria-label="View all blog posts">View All</button>
       {{ range $uniqueCategories }}
-        <button class="blog-grid__filter-btn" data-category="{{ . | urlize }}" aria-pressed="false" aria-label="Filter by {{ . }} category">{{ . }}</button>
+        <button data-category="{{ . | urlize }}" aria-pressed="false" aria-label="Filter by {{ . }} category">{{ . }}</button>
       {{ end }}
     </div>
     {{ end }}
