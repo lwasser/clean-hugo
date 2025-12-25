@@ -2,7 +2,7 @@
   .intro-section {
     @apply bg-transparent pt-7 pb-7 md:pt-9 md:pb-9 lg:pt-12 lg:pb-12;
 
-    > .container > div {
+    .container div {
       @apply text-center;
 
       /* Intentionally larger paragraphs for intro sections */

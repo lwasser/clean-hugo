@@ -4,7 +4,7 @@
   .feature-section {
     @apply py-16 md:py-20;
 
-    > header {
+    header {
       @apply mb-10 md:mb-12 text-center;
 
       h2 {
@@ -16,7 +16,7 @@
       }
     }
 
-    > div {
+    div {
       @apply grid grid-cols-1 gap-8;
     }
   }

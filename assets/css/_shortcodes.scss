@@ -32,7 +32,7 @@
   }
 
   .two-card-row__container {
-    @apply grid grid-cols-1 md:grid-cols-2 gap-6;
+    @apply grid grid-cols-1 md:grid-cols-2 gap-6 items-start;
   }
 
   /* Card Shortcode (used in two-card-row) - can use bg-card, bg-primary, or bg-secondary utilities */
@@ -49,8 +49,8 @@
       box-shadow: 0 10px 30px rgba(17,24,39,0.08);
     }
 
-    > div {
-      @apply h-full flex flex-col;
+    div {
+      @apply flex flex-col;
     }
 
     .card-shortcode__icon {
@@ -66,8 +66,8 @@
       color: var(--color-text);
     }
 
-    > div > div:last-child {
-      @apply flex-1 text-lg leading-[1.7];
+    div div:last-child {
+      @apply text-lg leading-[1.7];
       color: var(--color-gray-700);
 
       ul {
@@ -103,7 +103,7 @@
     @apply pt-8 pb-16 mt-10 mb-16;
     background-color: var(--color-bg);
 
-    > .container > div {
+    .container > div {
       @apply rounded-2xl border shadow-sm
            p-6 md:p-8 lg:p-10
            transition-transform duration-200 ease-in-out;
@@ -129,7 +129,7 @@
       color: var(--color-text);
     }
 
-    > .container > div > div:last-child {
+    .container > div > div:last-child {
       @apply text-lg leading-[1.7];
       color: var(--color-gray-700);
 
