@@ -3,33 +3,25 @@
   .metrics-bar {
     @apply w-full pt-24 pb-24 mt-12 mb-20;
     background-color: color-mix(in srgb, var(--color-primary) 8%, var(--color-bg));
-  }
 
-  .metrics-bar__container {
-    @apply w-full px-6 grid gap-8 grid-cols-2 lg:grid-cols-4 max-w-full;
-    max-width: 1280px;
-    margin-left: auto;
-    margin-right: auto;
-  }
+    /* Grid container */
+    > div {
+      @apply w-full px-6 grid gap-8 grid-cols-2 lg:grid-cols-4;
+      max-width: 1280px;
+      margin: 0 auto;
 
-  .metrics-bar__item {
-    @apply text-center;
-  }
+      /* Items */
+      > div {
+        @apply text-center text-base md:text-lg leading-relaxed;
+        color: var(--color-gray-700);
 
-  .metrics-bar__text {
-    @apply text-base md:text-lg leading-relaxed;
-    color: var(--color-gray-700);
-
-    /* Style bold text (numbers) - markdown strong tags get rendered as <strong> */
-    strong {
-      @apply block text-4xl md:text-5xl lg:text-6xl font-black mb-2 md:mb-3 leading-tight;
-      color: var(--color-text);
-      letter-spacing: -0.02em;
-    }
-
-    /* Regular text that follows the bold number */
-    &:not(:has(strong)) {
-      color: var(--color-gray-600);
+        /* Numbers */
+        strong {
+          @apply block text-4xl md:text-5xl lg:text-6xl font-black mb-2 md:mb-3 leading-tight;
+          color: var(--color-text);
+          letter-spacing: -0.02em;
+        }
+      }
     }
   }
 

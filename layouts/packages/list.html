@@ -1,61 +1,19 @@
 {{ define "main" }}
 
-{{/* Calculate package metrics */}}
-{{ $allMaintainers := slice }}
-{{ $activePkgCount := 0 }}
-{{ $jossCount := 0 }}
-{{ range .Site.Data.packages }}
-  {{ if .active }}
-    {{ $activePkgCount = add $activePkgCount 1 }}
-  {{ end }}
-  {{ if .joss }}
-    {{ $jossCount = add $jossCount 1 }}
-  {{ end }}
-  {{ range .all_current_maintainers }}
-    {{ $allMaintainers = $allMaintainers | append .github_username }}
-  {{ end }}
-{{ end }}
-{{ $uniqueMaintainers := $allMaintainers | uniq }}
-{{ $uniqueCount := len $uniqueMaintainers }}
-
-{{/* Store metrics in scratch for use in content */}}
-{{ .Scratch.Set "totalPackages" (len .Site.Data.packages) }}
-{{ .Scratch.Set "jossCount" $jossCount }}
-{{ .Scratch.Set "activeCount" $activePkgCount }}
-{{ .Scratch.Set "maintainerCount" $uniqueCount }}
+{{/* Calculate package metrics using shared partial */}}
+{{ $pkgStats := partial "calculate-package-stats.html" . }}
 
 {{/* Hero section - similar to splash layout */}}
 {{ partial "hero.html" . }}
 
-{{/* Metrics Bar - render directly with calculated values */}}
-<div class="metrics-bar">
-  <div class="metrics-bar__container">
-    <div class="metrics-bar__item">
-      <div class="metrics-bar__text">
-        <strong>{{ len .Site.Data.packages }}</strong>
-        Packages Accepted
-      </div>
-    </div>
-    <div class="metrics-bar__item">
-      <div class="metrics-bar__text">
-        <strong>{{ $jossCount }}</strong>
-        Published in JOSS
-      </div>
-    </div>
-    <div class="metrics-bar__item">
-      <div class="metrics-bar__text">
-        <strong>{{ $activePkgCount }}</strong>
-        Currently Active
-      </div>
-    </div>
-    <div class="metrics-bar__item">
-      <div class="metrics-bar__text">
-        <strong>{{ $uniqueCount }}</strong>
-        Unique Maintainers
-      </div>
-    </div>
-  </div>
-</div>
+{{/* Metrics Bar - render with calculated stats TODO Move this to a separate calculation step in the actually website vs here in the template*/}}
+{{ $stats := slice
+    (printf "**%d** Packages Accepted" $pkgStats.total)
+    (printf "**%d** Published in JOSS" $pkgStats.joss)
+    (printf "**%d** Currently Active" $pkgStats.active)
+    (printf "**%d** Unique Maintainers" $pkgStats.maintainers)
+}}
+{{ partial "metrics-bar-render.html" (dict "stats" $stats) }}
 
 {{/* Page content with metrics and intro text - centered with max-width */}}
 <div class="packages-page__content">
@@ -68,24 +26,24 @@
 
   {{/* Filters and Search - contained width */}}
   <div class="packages-page__controls">
-    <div class="packages-page__controls-inner">
+    <div>
       {{ partial "packages/filters.html" . }}
     </div>
   </div>
 
   {{/* Active Packages */}}
   <section class="packages-page__section">
-    <div class="packages-page__section-inner">
-      <h2 class="packages-page__section-title">Active Packages</h2>
+    <div>
+      <h2>pyOpenSci Accepted Packages</h2>
       {{ partial "packages/grid.html" (dict "activeOnly" true) }}
     </div>
   </section>
 
   {{/* Archived Packages */}}
   <section class="packages-page__section">
-    <div class="packages-page__section-inner">
-      <h2 class="packages-page__section-title">Archived Packages</h2>
-      <p class="packages-page__section-description">
+    <div>
+      <h2>Archived Packages</h2>
+      <p>
         Archived packages are packages that have successfully completed peer review
         but are no longer actively maintained.
       </p>
