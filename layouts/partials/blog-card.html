@@ -13,7 +13,7 @@
 {{ $excerptLength := $post.Site.Params.blog.excerpt_length | default 200 }}
 
 <article class="blog-card {{ $modifier }}" data-category="{{ if $postCategory }}{{ $postCategory | urlize }}{{ end }}">
-  <a href="{{ $post.Permalink }}" class="blog-card__link">
+  <a href="{{ $post.Permalink }}">
     {{ if $post.Params.image }}
     <figure class="blog-card__image">
       <img src="{{ $post.Params.image }}" alt="{{ $post.Title }}" loading="lazy" />
@@ -29,17 +29,17 @@
     {{ $colors := index $gradientColors $postCategory | default (dict "from" "#71B3B5" "to" "#2E6060") }}
     <div class="blog-card__image-placeholder" style="background: linear-gradient(135deg, {{ $colors.from }} 0%, {{ $colors.to }} 100%);"></div>
     {{ end }}
-    <div class="blog-card__content">
+    <div>
       {{ if $postCategory }}
-        <span class="blog-card__category">{{ $postCategory | upper }}</span>
+        <span>{{ $postCategory | upper }}</span>
       {{ end }}
-      <h2 class="blog-list-title {{ if eq $modifier "blog-card--featured" }}title-featured{{ end }}">{{ $post.Title }}</h2>
-      <time class="blog-card__date" datetime="{{ $post.Date.Format "2006-01-02" }}">{{ $post.Date.Format "Jan 2, 2006" }}</time>
+      <h2>{{ $post.Title }}</h2>
+      <time datetime="{{ $post.Date.Format "2006-01-02" }}">{{ $post.Date.Format "Jan 2, 2006" }}</time>
       {{ if $post.Params.show_author }}
-        <p class="blog-card__author">{{ $post.Params.author | default $post.Site.Params.author }}</p>
+        <p>{{ $post.Params.author | default $post.Site.Params.author }}</p>
       {{ end }}
       {{ if $showExcerpt }}
-      <p class="blog-card__excerpt">
+      <p>
         {{ partial "blog-excerpt.html" (dict "." $post "length" $excerptLength) }}
       </p>
       {{ end }}

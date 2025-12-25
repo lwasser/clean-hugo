@@ -1,5 +1,5 @@
 {{ define "main" }}
-<article class="blog-post">
+<article>
   <!-- Hero Banner with Title Overlay -->
   <header class="blog-post__header"{{ if not .Params.image }}{{/* Get gradient colors based on category when no image */}}
     {{ $gradientColors := dict
@@ -13,23 +13,21 @@
     style="background: linear-gradient(135deg, {{ $colors.from }} 0%, {{ $colors.to }} 100%);"
   {{ end }}>
     {{ with .Params.image }}
-    <img src="{{ . }}" alt="{{ $.Params.image_alt | default $.Title }}" class="blog-post__header-image" />
-    <!-- Dark gradient overlay for text readability -->
-    <div class="blog-post__header-overlay"></div>
-    {{ else }}
-    <!-- Dark gradient overlay for text readability when using color background -->
-    <div class="blog-post__header-overlay"></div>
+    <img src="{{ . }}" alt="{{ $.Params.image_alt | default $.Title }}" />
     {{ end }}
+    
+    <!-- Dark gradient overlay -->
+    <div></div>
 
     <!-- Title and metadata overlaid on image -->
-    <div class="blog-post__header-content">
-      <h1 class="blog-post__title">{{ .Title }}</h1>
-      <p class="blog-post__meta">{{ .Date.Format "Jan 2, 2006" }}{{ with .Params.category }} • {{ . }}{{ end }}</p>
+    <div>
+      <h1>{{ .Title }}</h1>
+      <p>{{ .Date.Format "Jan 2, 2006" }}{{ with .Params.category }} • {{ . }}{{ end }}</p>
     </div>
 
     <!-- Photo credit in bottom right -->
     {{ if or .Params.photo_credit_author .Params.photo_credit_description }}
-    <div class="blog-post__photo-credit">
+    <div>
       {{ with .Params.photo_credit_author }}{{ . }}{{ end }}
       {{ if and .Params.photo_credit_author .Params.photo_credit_description }} • {{ end }}
       {{ with .Params.photo_credit_description }}{{ . }}{{ end }}
