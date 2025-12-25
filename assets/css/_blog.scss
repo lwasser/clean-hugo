@@ -255,8 +255,6 @@
     background-color: var(--color-blog-highlight);
 
     > .container {
-      /* Uses .container utility class in template */
-
       > div:first-child {
         @apply mb-8;
 
@@ -299,8 +297,6 @@
     background-color: var(--color-primary-light);
 
     > .container {
-      /* Uses .container utility class in template */
-
       > div:first-child {
         @apply mb-8;
         h2 { color: var(--color-gray-900); }
@@ -353,7 +349,6 @@
           }
         }
 
-        /* Card-specific: smaller paragraph for highlight grid cards */
         /* Card-specific: smaller paragraph for highlight grid cards */
         > p {
           @apply leading-relaxed mb-4;

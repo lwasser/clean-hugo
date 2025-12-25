@@ -3,9 +3,7 @@
   .feature,
   .feature-section {
     @apply py-16 md:py-20;
-    /* Uses .container utility class in template */
 
-    /* Header styled via child selector */
     > header {
       @apply mb-10 md:mb-12 text-center;
 
@@ -18,7 +16,6 @@
       }
     }
 
-    /* Grid styled via child selector */
     > div {
       @apply grid grid-cols-1 gap-8;
     }
