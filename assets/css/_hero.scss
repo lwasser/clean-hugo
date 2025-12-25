@@ -5,8 +5,9 @@
   @apply py-2 flex items-center overflow-hidden mb-12;
   background-color: var(--color-primary-dark);
 
-  &__container {
-    @apply max-w-7xl mx-auto px-4 w-full pt-3.5 pb-3.5 md:pt-8 md:pb-8;
+  /* Direct child .container gets additional padding */
+  > .container {
+    @apply w-full pt-3.5 pb-3.5 md:pt-8 md:pb-8;
   }
 
   &__grid {

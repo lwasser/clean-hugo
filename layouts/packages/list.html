@@ -17,7 +17,9 @@
 
 {{/* Page content with metrics and intro text - centered with max-width */}}
 <div class="packages-page__content">
-  {{ .Content }}
+  <div class="container">
+    {{ .Content }}
+  </div>
 </div>
 
 {{/* Packages listing - full width with inner max-width containers */}}
@@ -26,14 +28,14 @@
 
   {{/* Filters and Search - contained width */}}
   <div class="packages-page__controls">
-    <div>
+    <div class="container">
       {{ partial "packages/filters.html" . }}
     </div>
   </div>
 
   {{/* Active Packages */}}
   <section class="packages-page__section">
-    <div>
+    <div class="container">
       <h2>pyOpenSci Accepted Packages</h2>
       {{ partial "packages/grid.html" (dict "activeOnly" true) }}
     </div>
@@ -41,7 +43,7 @@
 
   {{/* Archived Packages */}}
   <section class="packages-page__section">
-    <div>
+    <div class="container">
       <h2>Archived Packages</h2>
       <p>
         Archived packages are packages that have successfully completed peer review
@@ -52,7 +54,7 @@
   </section>
 </div>
 {{ else }}
-<div class="packages-page__empty">
+<div class="packages-page__empty container">
   <p>No package data found. Add packages to <code>data/packages.yml</code> to display them here.</p>
 </div>
 {{ end }}

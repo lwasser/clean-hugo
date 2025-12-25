@@ -32,7 +32,8 @@
   }
 
   .two-card-row__container {
-    @apply max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-6;
+    @apply grid grid-cols-1 md:grid-cols-2 gap-6;
+    /* Uses .container utility class in template */
   }
 
   /* Ensure cards are full width on mobile */
@@ -111,7 +112,7 @@
   }
 
   .single-card-wide__container {
-    @apply max-w-7xl mx-auto px-6;
+    /* Uses .container utility class in template */
   }
 
   .single-card-wide__inner {
@@ -203,8 +204,8 @@
 
   /* Section Heading Shortcode */
   .section-heading {
-    @apply max-w-7xl mx-auto px-6 text-center;
-    @apply pt-20 pb-8 mb-8;
+    @apply text-center pt-20 pb-8 mb-8;
+    /* Uses .container utility class in template */
   }
 
   .section-heading__title {

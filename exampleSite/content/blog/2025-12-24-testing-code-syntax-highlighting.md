@@ -326,4 +326,3 @@ The new theme will be applied to all code blocks across your site.
 - This file is automatically included in `layouts/_default/baseof.html`
 - You only need to regenerate the CSS when changing themes
 - The theme applies globally to all code blocks on your site
-

@@ -231,6 +231,22 @@ xl: 1280px
     background-color: var(--color-secondary);
   }
 
+  /* Container utilities - standardize container widths across the site */
+  /* Standard container - used throughout site (max-w-7xl) */
+  .container {
+    @apply max-w-7xl mx-auto px-6;
+  }
+
+  /* Narrow container for content (blog posts, etc.) - max-w-4xl */
+  .container-narrow {
+    @apply max-w-4xl mx-auto px-8;
+  }
+
+  /* Wide container for hero sections - responsive padding */
+  .container-wide {
+    @apply max-w-7xl mx-auto px-4 md:px-6;
+  }
+
   /* Full-width breakout utility - breaks out of constrained containers */
   /* Use this class on any element that needs to span full viewport width */
   /* Works within blog posts, packages page, or any constrained container */
