@@ -72,6 +72,21 @@
       transform: translateY(-4px);
       box-shadow: 0 10px 30px rgba(17,24,39,0.08);
     }
+
+    /* Card title - styled via child selector */
+    h3 {
+      @apply text-xl md:text-2xl lg:text-3xl font-extrabold mb-4; /* Card-specific: uses base h3 scale but with extrabold weight */
+      /* Standard transition: 200ms for color changes */
+      transition: color 200ms ease;
+    }
+
+    /* Card body - styled via adjacent sibling selector (div after h3) */
+    > div > h3 + div {
+      @apply text-base md:text-lg lg:text-xl;
+      color: var(--color-gray-700);
+      /* Standard transition: 200ms for color changes */
+      transition: color 200ms ease;
+    }
   }
 
   /* Highlight card - can also use bg-primary utility */
@@ -80,24 +95,11 @@
     @apply transition-colors duration-200 ease-in-out;
   }
 
-  .card__icon { @apply text-4xl md:text-5xl mb-4; }
-
-  /* Card title - styled via child selector */
-  .card h3 {
-    @apply text-xl md:text-2xl lg:text-3xl font-extrabold mb-4; /* Card-specific: uses base h3 scale but with extrabold weight */
-    /* Standard transition: 200ms for color changes */
-    transition: color 200ms ease;
+  .card__icon {
+    @apply text-4xl md:text-5xl mb-4;
   }
 
-  /* Card body - styled via adjacent sibling selector (div after h3) */
-  .card > div > h3 + div {
-    @apply text-base md:text-lg lg:text-xl;
-    color: var(--color-gray-700);
-    /* Standard transition: 200ms for color changes */
-    transition: color 200ms ease;
-  }
-
-  .card__cta   {
+  .card__cta {
     @apply mt-4 text-sm md:text-base;
     color: var(--color-link);
     /* Standard transition: 200ms for color changes */
