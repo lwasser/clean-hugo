@@ -2,14 +2,14 @@
 {{ $feature := .Params.feature_section }}
 {{ if $feature }}
 <section class="feature-section container">
-  <header class="feature-section__header">
+  <header>
     <h2>{{ $feature.title | default "Featured Content" }}</h2>
     {{ with $feature.subtitle }}
       <p>{{ . }}</p>
     {{ end }}
   </header>
 
-  <div class="feature-section__grid">
+  <div>
     <article class="feature-card">
       {{ range $feature.sections }}
         <h3>{{ .title }}</h3>

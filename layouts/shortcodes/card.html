@@ -4,7 +4,7 @@
 {{ $content := .Inner }}
 
 <div class="card-shortcode">
-  <div class="card-shortcode__inner">
+  <div>
     {{ if $icon }}
     <div class="card-shortcode__icon">
       {{ if in $icon "fa-" }}
@@ -15,9 +15,9 @@
     </div>
     {{ end }}
     {{ if $title }}
-    <h3 class="card-shortcode__title">{{ $title }}</h3>
+    <h3>{{ $title }}</h3>
     {{ end }}
-    <div class="card-shortcode__content">
+    <div>
       {{ $content | markdownify }}
     </div>
   </div>

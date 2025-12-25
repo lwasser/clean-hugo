@@ -1,29 +1,26 @@
 @layer components {
   .intro-section {
     @apply bg-transparent pt-7 pb-7 md:pt-9 md:pb-9 lg:pt-12 lg:pb-12;
-  }
 
-  .intro-section__container {
-    @apply max-w-4xl mx-auto px-6;
-  }
+    /* Content wrapper - styled via child selector */
+    > .container > div {
+      @apply text-center;
+      /* Uses base typography from main.scss, with intentional larger paragraph size */
 
-  .intro-section__content {
-    @apply text-center;
-    /* Uses base typography from main.scss, with intentional larger paragraph size */
+      /* Intentionally larger paragraphs for intro sections - design-specific override */
+      p {
+        @apply text-xl md:text-2xl leading-relaxed;
+        color: var(--color-gray-700);
+        font-weight: 400;
+      }
 
-    /* Intentionally larger paragraphs for intro sections - design-specific override */
-    p {
-      @apply text-xl md:text-2xl leading-relaxed;
-      color: var(--color-gray-700);
-      font-weight: 400;
+      strong {
+        color: var(--color-text);
+        font-weight: 600;
+      }
+
+      /* Links use base styles from main.scss */
     }
-
-    strong {
-      color: var(--color-text);
-      font-weight: 600;
-    }
-
-    /* Links use base styles from main.scss */
   }
 }
 

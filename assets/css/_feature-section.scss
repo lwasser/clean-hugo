@@ -4,26 +4,24 @@
   .feature-section {
     @apply py-16 md:py-20;
     /* Uses .container utility class in template */
-  }
 
-  .feature__header,
-  .feature-section__header {
-    @apply mb-10 md:mb-12 text-center;
-  }
+    /* Header styled via child selector */
+    > header {
+      @apply mb-10 md:mb-12 text-center;
 
-  .feature__header h2,
-  .feature-section__header h2 {
-    @apply text-4xl sm:text-5xl md:text-6xl font-bold mb-4; /* Hero section: intentionally larger than base h2 */
-  }
+      h2 {
+        @apply text-4xl sm:text-5xl md:text-6xl font-bold mb-4; /* Hero section: intentionally larger than base h2 */
+      }
 
-  .feature__header p,
-  .feature-section__header p {
-    @apply text-lg sm:text-xl md:text-2xl opacity-80 max-w-3xl mx-auto;
-  }
+      p {
+        @apply text-lg sm:text-xl md:text-2xl opacity-80 max-w-3xl mx-auto;
+      }
+    }
 
-  .feature__grid,
-  .feature-section__grid {
-    @apply grid grid-cols-1 gap-8;
+    /* Grid styled via child selector */
+    > div {
+      @apply grid grid-cols-1 gap-8;
+    }
   }
 
   /* Unified feature card - uses utility classes for background colors */
