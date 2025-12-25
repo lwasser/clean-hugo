@@ -140,6 +140,19 @@
             <a href="{{ .URL }}" class="site-nav__link">{{ .Name }}</a>
           {{ end }}
         {{ end }}
+
+        {{/* Optional CTA Button */}}
+        {{ with .Site.Params.nav_button }}
+          {{ if and .background .textColor }}
+            <a href="{{ .url }}" class="site-nav__button" style="background-color: {{ .background }}; color: {{ .textColor }};">
+              {{ .text }}
+            </a>
+          {{ else }}
+            <a href="{{ .url }}" class="site-nav__button site-nav__button--{{ .color | default "primary" }}">
+              {{ .text }}
+            </a>
+          {{ end }}
+        {{ end }}
       </div>
     </div>
   </nav>

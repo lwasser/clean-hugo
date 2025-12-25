@@ -9,7 +9,11 @@
       "Science Communication" (dict "from" "#71B3B5" "to" "#5A9A9C")
     }}
     {{ $postCategory := .Params.category }}
-    {{ $colors := index $gradientColors $postCategory | default (dict "from" "#71B3B5" "to" "#2E6060") }}
+    {{ $defaultColors := dict "from" "#71B3B5" "to" "#2E6060" }}
+    {{ $colors := $defaultColors }}
+    {{ if $postCategory }}
+      {{ $colors = index $gradientColors $postCategory | default $defaultColors }}
+    {{ end }}
     style="background: linear-gradient(135deg, {{ $colors.from }} 0%, {{ $colors.to }} 100%);"
   {{ end }}>
     {{ with .Params.image }}
