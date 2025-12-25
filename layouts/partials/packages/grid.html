@@ -60,6 +60,16 @@
             </li>
           </template>
 
+          {{/* Astropy partner badge */}}
+          <template x-if="pkg.partners?.includes('astropy')">
+            <li>
+              <a href="#astropy" target="_blank">
+                <i class="fa-solid fa-check-double"></i>
+                <img src="https://img.shields.io/badge/Affiliated-Astropy-orange.svg?style=flat" alt="Astropy Affiliated" class="partner-badge" />
+              </a>
+            </li>
+          </template>
+
           {{/* Archived badge for archived packages */}}
           <template x-if="pkg.active === false">
             <li class="package_card__archived">
