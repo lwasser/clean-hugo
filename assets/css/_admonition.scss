@@ -23,77 +23,83 @@
   }
 
   .admonition__body {
-    @apply prose prose-sm max-w-none;
+    @apply text-sm max-w-none;
+    /* Uses base typography from main.scss - smaller text for compact display */
   }
 
   /* Admonition Type Variants */
   .admonition--info {
-    background-color: var(--color-admonition-info-bg, #EFF6FF);
-    border-color: var(--color-admonition-info-border, #3B82F6);
+    --base-color: var(--color-admonition-info, #3B82F6);
+    background-color: color-mix(in srgb, var(--base-color) 8%, white);
+    border-color: var(--base-color);
 
     .admonition__title,
     .admonition__body {
-      color: var(--color-admonition-info-text, #1E40AF);
+      color: color-mix(in srgb, var(--base-color) 85%, black);
     }
 
     .admonition__icon {
-      color: var(--color-admonition-info-icon, #2563EB);
+      color: color-mix(in srgb, var(--base-color) 90%, black);
     }
   }
 
   .admonition--success {
-    background-color: var(--color-admonition-success-bg, #F0FDF4);
-    border-color: var(--color-admonition-success-border, #22C55E);
+    --base-color: var(--color-admonition-success, #22C55E);
+    background-color: color-mix(in srgb, var(--base-color) 8%, white);
+    border-color: var(--base-color);
 
     .admonition__title,
     .admonition__body {
-      color: var(--color-admonition-success-text, #166534);
+      color: color-mix(in srgb, var(--base-color) 85%, black);
     }
 
     .admonition__icon {
-      color: var(--color-admonition-success-icon, #16A34A);
+      color: color-mix(in srgb, var(--base-color) 90%, black);
     }
   }
 
   .admonition--warning {
-    background-color: var(--color-admonition-warning-bg, #FEFCE8);
-    border-color: var(--color-admonition-warning-border, #EAB308);
+    --base-color: var(--color-admonition-warning, #EAB308);
+    background-color: color-mix(in srgb, var(--base-color) 8%, white);
+    border-color: var(--base-color);
 
     .admonition__title,
     .admonition__body {
-      color: var(--color-admonition-warning-text, #854D0E);
+      color: color-mix(in srgb, var(--base-color) 85%, black);
     }
 
     .admonition__icon {
-      color: var(--color-admonition-warning-icon, #CA8A04);
+      color: color-mix(in srgb, var(--base-color) 90%, black);
     }
   }
 
   .admonition--danger {
-    background-color: var(--color-admonition-danger-bg, #FEF2F2);
-    border-color: var(--color-admonition-danger-border, #EF4444);
+    --base-color: var(--color-admonition-danger, #EF4444);
+    background-color: color-mix(in srgb, var(--base-color) 8%, white);
+    border-color: var(--base-color);
 
     .admonition__title,
     .admonition__body {
-      color: var(--color-admonition-danger-text, #991B1B);
+      color: color-mix(in srgb, var(--base-color) 85%, black);
     }
 
     .admonition__icon {
-      color: var(--color-admonition-danger-icon, #DC2626);
+      color: color-mix(in srgb, var(--base-color) 90%, black);
     }
   }
 
   .admonition--note {
-    background-color: var(--color-admonition-note-bg, #F9FAFB);
-    border-color: var(--color-admonition-note-border, #6B7280);
+    --base-color: var(--color-admonition-note, #6B7280);
+    background-color: color-mix(in srgb, var(--base-color) 8%, white);
+    border-color: var(--base-color);
 
     .admonition__title,
     .admonition__body {
-      color: var(--color-admonition-note-text, #1F2937);
+      color: color-mix(in srgb, var(--base-color) 85%, black);
     }
 
     .admonition__icon {
-      color: var(--color-admonition-note-icon, #4B5563);
+      color: color-mix(in srgb, var(--base-color) 90%, black);
     }
   }
 }
