@@ -257,12 +257,11 @@
     /* Hugo syntax highlighting wrapper */
     .highlight {
       @apply mb-4;
-      
+
       pre {
         @apply m-0;
       }
     }
-  }
 
     /* Links use base styles from main.scss */
     /* Code block styles are handled globally in _code.scss */
