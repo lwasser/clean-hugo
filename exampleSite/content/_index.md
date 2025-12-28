@@ -9,7 +9,6 @@ hero:
   excerpt: "Create beautiful websites with responsive design, customizable colors, and powerful shortcodes—all with simple configuration."
   image: "/images/hero-image.svg"
 cards:
-cards:
   - grid: "md:row-start-1 md:col-start-1"
     modifier: "card--white"
     icon: "fa-solid fa-palette"
