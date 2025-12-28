@@ -1,0 +1,173 @@
+@layer components {
+  .people-page__content {
+    @apply w-full;
+  }
+
+  .people-page__controls {
+    @apply w-full py-8 mb-8;
+    background-color: var(--color-gray-50);
+  }
+
+  .people-page__section {
+    @apply mb-16;
+  }
+
+  .people-page__empty {
+    @apply py-12 text-center;
+  }
+
+  .people-filters {
+    @apply mb-8;
+
+    input {
+      @apply w-full max-w-md px-4 py-2 text-lg border rounded-lg mb-4;
+      border-color: var(--color-gray-300);
+
+      &:focus {
+        @apply outline-none ring-2;
+        ring-color: var(--color-primary);
+        border-color: var(--color-primary);
+      }
+    }
+
+    > div {
+      @apply flex flex-wrap gap-2;
+
+      button {
+        @apply px-4 py-2 rounded-lg border font-medium transition-all duration-200;
+        background-color: var(--color-gray-100);
+        border-color: var(--color-gray-300);
+        color: var(--color-gray-700);
+
+        &:hover {
+          background-color: var(--color-gray-200);
+          transform: translateY(-1px);
+        }
+
+        &.is-checked {
+          background-color: var(--color-primary);
+          border-color: var(--color-primary-dark);
+          color: white;
+        }
+      }
+    }
+  }
+
+  .people-grid {
+    @apply grid gap-4 mt-12;
+    grid-template-columns: 1fr;
+
+    @media (min-width: 640px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (min-width: 1000px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @media (min-width: 1246px) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    @media (min-width: 1536px) {
+      grid-template-columns: repeat(6, 1fr);
+    }
+  }
+
+  .people_card {
+    @apply h-full;
+
+    > div {
+      @apply rounded-lg border shadow-sm h-full flex flex-col transition-all duration-200;
+      background-color: var(--color-white);
+      border-color: var(--color-gray-200);
+      overflow: hidden;
+
+      &:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 10px 30px rgba(17,24,39,0.1);
+      }
+    }
+  }
+
+  .people_card__image {
+    @apply w-full overflow-hidden;
+    aspect-ratio: 1;
+    background-color: var(--color-gray-100);
+
+    img {
+      @apply w-full h-full object-cover;
+    }
+  }
+
+  .people_card__content {
+    @apply p-4 flex flex-col flex-grow;
+
+    h3 {
+      @apply text-lg font-semibold mb-1.5;
+      color: var(--color-gray-900);
+
+      a {
+        @apply no-underline;
+        color: inherit;
+
+        &:hover {
+          color: var(--color-link);
+        }
+      }
+    }
+  }
+
+  .people_card__title {
+    @apply text-xs mb-1.5;
+    color: var(--color-gray-600);
+    line-height: 1.4;
+  }
+
+  .people_card__org {
+    @apply text-xs mb-3;
+    color: var(--color-gray-600);
+    font-style: italic;
+  }
+
+  .people_card__social {
+    @apply flex flex-wrap gap-2 mt-auto;
+    font-size: 0.75rem;
+
+    a {
+      @apply inline-flex items-center gap-1 no-underline;
+      color: var(--color-gray-600);
+      transition: color 0.2s ease;
+
+      &:hover {
+        color: var(--color-link);
+      }
+
+      i {
+        @apply text-sm;
+      }
+    }
+  }
+
+  .people-grid-static {
+    @apply grid gap-4;
+    grid-template-columns: 1fr;
+
+    @media (min-width: 640px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (min-width: 1000px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @media (min-width: 1246px) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    @media (min-width: 1536px) {
+      grid-template-columns: repeat(5, 1fr);
+    }
+  }
+}
+

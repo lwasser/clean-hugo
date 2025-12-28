@@ -83,9 +83,22 @@ buildFuture = true
   weight = 2
 
 [[menu.main]]
-  name = "Packages"
-  url = "/packages/"
+  name = "Filterable Grids"
+  url = "/filterable-grids/"
   weight = 3
+  identifier = "filterable-grids"
+
+[[menu.main]]
+  name = "Packages"
+  parent = "filterable-grids"
+  url = "/packages/"
+  weight = 1
+
+[[menu.main]]
+  name = "People"
+  parent = "filterable-grids"
+  url = "/people/"
+  weight = 2
 
 [[menu.main]]
   name = "Resources"
