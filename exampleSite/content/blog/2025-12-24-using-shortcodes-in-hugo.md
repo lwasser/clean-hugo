@@ -325,7 +325,7 @@ If a shortcode isn't working:
 
 ## Next Steps
 
-- Explore the [Packages feature](../2024-12-24-building-package-listing-pages/) for advanced data-driven components
+- Explore the [Filterable Grids feature](/filterable-grids/) for advanced data-driven components
 - Read about [Admonitions](../2025-12-22-using-admonitions-in-clean-hugo/) for callout boxes
 - Learn [Image handling](../2025-12-23-adding-images-to-your-content/) with the figure shortcode
 

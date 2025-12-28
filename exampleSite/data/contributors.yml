@@ -1,0 +1,225 @@
+# Example Contributors Data
+# This file demonstrates the structure for the people/contributors page
+#
+# Sorting: Use the 'sort' field to control display order within each section.
+# Lower numbers appear first. Default is 9 if not specified.
+# Examples: sort: 1 (appears first), sort: 2 (appears second), sort: 9 (default, appears last)
+
+# Executive Council / Board Members
+- name: Jane Smith
+  github_username: janesmith
+  github_image_id: 12345678
+  title:
+    - Executive Director
+    - Founder
+  sort: 1
+  organization: Example Organization
+  board: true
+  advisory: false
+  editorial_board: false
+  emeritus_advisory: false
+  twitter: janesmith
+  website: https://janesmith.example.com
+  orcidid: 0000-0000-0000-0001
+  contributor_type:
+    - leadership
+    - maintainer
+    - code-contrib
+
+- name: John Doe
+  github_username: johndoe
+  github_image_id: 87654321
+  title: Executive Council
+  sort: 2
+  organization: Tech Corp
+  board: true
+  advisory: false
+  editorial_board: false
+  emeritus_advisory: false
+  twitter: johndoe
+  contributor_type:
+    - leadership
+    - package-guide
+
+# Advisory Council
+- name: Alice Johnson
+  github_username: alicej
+  github_image_id: 11111111
+  title: Advisory Council
+  sort: 1
+  organization: University of Example
+  board: false
+  advisory: true
+  editorial_board: true
+  emeritus_advisory: false
+  twitter: alicej
+  website: https://alicej.example.com
+  mastodon: https://mastodon.social/@alicej
+  contributor_type:
+    - leadership
+    - reviewer
+    - peer-review-guide
+
+- name: Bob Williams
+  github_username: bobw
+  github_image_id: 22222222
+  title: Advisory Council
+  sort: 2
+  organization: Research Institute
+  board: false
+  advisory: true
+  editorial_board: false
+  emeritus_advisory: false
+  website: https://bobw.example.com
+  orcidid: 0000-0000-0000-0002
+  contributor_type:
+    - leadership
+    - package-guide
+    - maintainer
+
+# Emeritus Advisory
+- name: Charlie Brown
+  github_username: charlieb
+  github_image_id: 33333333
+  title:
+    - Emeritus Board Chair
+    - Emeritus Executive Council
+  sort: 9
+  organization: Former Organization
+  board: false
+  advisory: false
+  editorial_board: false
+  emeritus_advisory: true
+  contributor_type:
+    - leadership
+    - web-contrib
+
+# Editorial Board
+- name: Sarah Chen
+  github_username: sarahchen
+  github_image_id: 10101010
+  title: Editor-in-Chief
+  sort: 0
+  organization: Academic Press
+  board: false
+  advisory: false
+  editorial_board: true
+  emeritus_advisory: false
+  twitter: sarahchen
+  website: https://sarahchen.example.com
+  contributor_type:
+    - editor
+    - reviewer
+    - peer-review-guide
+
+- name: Eliot Princeton
+  github_username: eliotprinceton
+  github_image_id: 555555555
+  title:
+    - Peer Review Lead
+    - Editorial Board
+  sort: 1
+  organization: A Great House
+  board: false
+  advisory: false
+  editorial_board: true
+  emeritus_advisory: false
+  twitter: eliotprinceton
+  contributor_type:
+    - editor
+    - reviewer
+    - peer-review-guide
+
+- name: Diana Prince
+  github_username: dianap
+  github_image_id: 44444444
+  title: Editor
+  sort: 2
+  organization: Publishing House
+  board: false
+  advisory: false
+  editorial_board: true
+  emeritus_advisory: false
+  twitter: dianap
+  contributor_type:
+    - editor
+    - reviewer
+    - peer-review-guide
+
+- name: Edward Norton
+  github_username: edwardn
+  github_image_id: 55555555
+  title: Editor
+  sort: 3
+  organization: Science Journal
+  board: false
+  advisory: false
+  editorial_board: true
+  emeritus_advisory: false
+  website: https://edwardn.example.com
+  contributor_type:
+    - editor
+    - reviewer
+
+# Community Contributors
+- name: Frank Miller
+  github_username: frankm
+  github_image_id: 66666666
+  title: Package Maintainer
+  sort: 9
+  organization: Open Source Project
+  board: false
+  advisory: false
+  editorial_board: false
+  emeritus_advisory: false
+  twitter: frankm
+  contributor_type:
+    - maintainer
+    - code-contrib
+
+- name: Grace Lee
+  github_username: gracel
+  github_image_id: 77777777
+  title: Peer Reviewer
+  sort: 9
+  organization: Academic Institution
+  board: false
+  advisory: false
+  editorial_board: false
+  emeritus_advisory: false
+  website: https://gracel.example.com
+  orcidid: 0000-0000-0000-0003
+  contributor_type:
+    - reviewer
+    - peer-review-guide
+
+- name: Henry Ford
+  github_username: henryf
+  github_image_id: 88888888
+  title: Documentation Contributor
+  sort: 9
+  organization: Tech Startup
+  board: false
+  advisory: false
+  editorial_board: false
+  emeritus_advisory: false
+  contributor_type:
+    - package-guide
+    - web-contrib
+
+- name: Isabella Garcia
+  github_username: isabellag
+  github_image_id: 99999999
+  title: Community Organizer
+  sort: 9
+  organization: Community Group
+  board: false
+  advisory: false
+  editorial_board: false
+  emeritus_advisory: false
+  twitter: isabellag
+  mastodon: https://mastodon.social/@isabellag
+  contributor_type:
+    - community
+    - code-contrib
+

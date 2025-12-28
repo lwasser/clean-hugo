@@ -3,12 +3,23 @@
   <header class="content-header">
     <h1>{{ .Title }}</h1>
   </header>
-  {{ if not .Params.hideDate }}
+  {{ if and (not .Params.hero) (not .Params.hideDate) }}
+    {{/* Only show date at top for pages without hero sections */}}
     <p class="content-date">{{ .Date.Format "January 2, 2006" }}</p>
   {{ end }}
-  <div class="content-body">
-    {{ .Content }}
-  </div>
+  {{ if .Params.hero }}
+    {{/* Pages with hero sections use content-page style (like filterable-grids) */}}
+    <div class="content-page">
+      {{ .Content }}
+      {{ partial "last-modified.html" . }}
+    </div>
+  {{ else }}
+    {{/* Regular pages use content-body style */}}
+    <div class="content-body">
+      {{ .Content }}
+      {{ partial "last-modified.html" . }}
+    </div>
+  {{ end }}
 </article>
 {{ end }}
 

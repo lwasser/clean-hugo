@@ -281,6 +281,11 @@
     }
   }
 
+  /* Last modified date for blog posts */
+  .blog-post__content + .content-last-modified {
+    @apply max-w-4xl mx-auto px-8;
+  }
+
   /* Blog highlight section (for shortcode - full-width dark background) */
   .blog-highlight {
     @apply w-full py-12;

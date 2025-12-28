@@ -11,6 +11,11 @@
   /* General content/article styles */
   .content-container {
     @apply max-w-3xl mx-auto px-4 py-16;
+
+    /* Wider container for pages with hero sections (like filterable-grids) */
+    &:has(.content-page) {
+      @apply max-w-4xl px-8;
+    }
   }
 
   .content-date {
@@ -61,6 +66,100 @@
       pre {
         @apply m-0;
       }
+    }
+  }
+
+  /* Generic content page style (similar to blog posts but for documentation pages) */
+  .content-page {
+    @apply max-w-4xl mx-auto px-8;
+    /* Constrained width for readable text (matches blog posts) */
+    /* Uses base typography from main.scss - no prose plugin needed */
+
+    /* Auto-detect and make full-width shortcodes break out of container */
+    /* These shortcodes automatically become full-width */
+    > .metrics-bar,
+    > .blog-highlight,
+    > .single-card-wide,
+    > .youtube-container:not(.youtube-container--constrained),
+    > .two-card-row {
+      width: 100vw;
+      position: relative;
+      left: 50%;
+      right: 50%;
+      margin-left: -50vw;
+      margin-right: -50vw;
+    }
+
+    /* Left align all headings (h2 and below) and ensure sentence case */
+    /* Headings use base typography scale from main.scss, only override alignment */
+    h2, h3, h4, h5, h6 {
+      @apply text-left;
+      text-transform: none;
+      text-align: left !important;
+    }
+
+    /* Code block styles */
+    pre {
+      @apply rounded-lg p-4 overflow-x-auto mb-4;
+      background-color: #272822;
+      color: #f8f8f2;
+      font-size: 0.875rem;
+      line-height: 1.5;
+    }
+
+    code {
+      @apply rounded px-1.5 py-0.5;
+      font-size: 0.875em;
+      background-color: rgba(0, 0, 0, 0.05);
+      color: #e83e8c;
+    }
+
+    pre code {
+      @apply p-0;
+      background-color: transparent;
+      color: inherit;
+      font-size: inherit;
+    }
+
+    /* Hugo syntax highlighting wrapper */
+    .highlight {
+      @apply mb-4;
+
+      pre {
+        @apply m-0;
+      }
+    }
+
+    /* Links use base styles from main.scss */
+    a {
+      color: var(--color-link);
+
+      &:hover,
+      &:focus {
+        color: var(--color-link-hover);
+      }
+    }
+
+    /* Lists */
+    ul, ol {
+      @apply mb-4;
+    }
+
+    li {
+      @apply mb-2;
+    }
+
+    /* Paragraphs */
+    p {
+      @apply mb-4 leading-relaxed;
+      color: var(--color-gray-700);
+    }
+
+    /* Blockquotes */
+    blockquote {
+      @apply border-l-4 pl-4 py-2 my-4;
+      border-color: var(--color-primary);
+      background-color: var(--color-gray-50);
     }
   }
 
@@ -122,6 +221,26 @@
   .term-description {
     @apply text-sm mb-6;
     color: var(--color-gray-600);
+  }
+
+  /* Last modified date footer */
+  .content-last-modified {
+    @apply mt-12 pt-8 border-t;
+    border-color: var(--color-gray-200);
+
+    p {
+      @apply text-sm mb-0;
+      color: var(--color-gray-600);
+
+      strong {
+        @apply font-semibold;
+        color: var(--color-gray-700);
+      }
+
+      time {
+        color: var(--color-gray-600);
+      }
+    }
   }
 }
 
