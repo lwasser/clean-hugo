@@ -57,6 +57,9 @@
   <footer class="blog-post__tags">
     {{ with .Params.tags }}Tags: {{ range $i, $t := . }}{{ if $i }}, {{ end }}<a href="{{ "/tags/" | relURL }}{{ urlize $t }}">{{ $t }}</a>{{ end }}{{ end }}
   </footer>
+
+  <!-- Last modified date -->
+  {{ partial "last-modified.html" . }}
 </article>
 {{ end }}
 
