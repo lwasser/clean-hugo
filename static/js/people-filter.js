@@ -51,23 +51,3 @@ document.addEventListener('alpine:init', () => {
   }));
 });
 
-/**
- * Sort static people grids on page load
- */
-document.addEventListener('DOMContentLoaded', () => {
-  const staticGrids = document.querySelectorAll('.people-grid-static[data-sort="true"]');
-
-  staticGrids.forEach(grid => {
-    const cards = Array.from(grid.querySelectorAll('.people_card'));
-
-    cards.sort((a, b) => {
-      const sortA = parseInt(a.getAttribute('data-sort-value') || '9', 10);
-      const sortB = parseInt(b.getAttribute('data-sort-value') || '9', 10);
-      return sortA - sortB;
-    });
-
-    // Re-append sorted cards
-    cards.forEach(card => grid.appendChild(card));
-  });
-});
-

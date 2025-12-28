@@ -1,4 +1,4 @@
-baseURL = 'http://localhost:1313/'
+baseURL = 'https://leahwasser.com/clean-hugo/'  # Update path if needed
 languageCode = 'en-us'
 title = 'Clean Hugo Theme Example'
 theme = 'clean-hugo'

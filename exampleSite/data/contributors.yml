@@ -41,6 +41,39 @@
     - leadership
     - package-guide
 
+- name: Maria Rodriguez
+  github_username: mariarodriguez
+  github_image_id: 13579246
+  title: Executive Council
+  sort: 3
+  organization: Data Science Institute
+  board: true
+  advisory: false
+  editorial_board: false
+  emeritus_advisory: false
+  website: https://mariarodriguez.dev
+  orcidid: 0000-0001-2345-6789
+  contributor_type:
+    - leadership
+    - code-contrib
+    - reviewer
+
+- name: David Kim
+  github_username: davidkim
+  github_image_id: 24681357
+  title: Executive Council
+  sort: 4
+  organization: Research Computing Center
+  board: true
+  advisory: false
+  editorial_board: false
+  emeritus_advisory: false
+  twitter: davidkim_dev
+  mastodon: https://fosstodon.org/@davidkim
+  contributor_type:
+    - leadership
+    - maintainer
+
 # Advisory Council
 - name: Alice Johnson
   github_username: alicej
@@ -50,7 +83,7 @@
   organization: University of Example
   board: false
   advisory: true
-  editorial_board: true
+  editorial_board: false
   emeritus_advisory: false
   twitter: alicej
   website: https://alicej.example.com
@@ -77,6 +110,120 @@
     - package-guide
     - maintainer
 
+- name: Priya Patel
+  github_username: priyapatel
+  github_image_id: 11223344
+  title: Advisory Council
+  sort: 3
+  organization: University of California
+  board: false
+  advisory: true
+  editorial_board: false
+  emeritus_advisory: false
+  twitter: priya_data
+  website: https://priyapatel.edu
+  orcidid: 0000-0002-3456-7890
+  contributor_type:
+    - leadership
+    - reviewer
+
+- name: James O'Brien
+  github_username: jamesobrien
+  github_image_id: 55667788
+  title: Advisory Council
+  sort: 4
+  organization: National Science Foundation
+  board: false
+  advisory: true
+  editorial_board: false
+  emeritus_advisory: false
+  website: https://jamesobrien.org
+  contributor_type:
+    - leadership
+    - peer-review-guide
+
+- name: Sofia Martinez
+  github_username: sofiamartinez
+  github_image_id: 99887766
+  title: Advisory Council
+  sort: 5
+  organization: MIT
+  board: false
+  advisory: true
+  editorial_board: false
+  emeritus_advisory: false
+  twitter: sofia_codes
+  mastodon: https://mastodon.social/@sofiamartinez
+  orcidid: 0000-0003-4567-8901
+  contributor_type:
+    - leadership
+    - maintainer
+    - code-contrib
+
+- name: Ahmed Hassan
+  github_username: ahmedhassan
+  github_image_id: 33445566
+  title: Advisory Council
+  sort: 6
+  organization: Stanford University
+  board: false
+  advisory: true
+  editorial_board: false
+  emeritus_advisory: false
+  website: https://ahmedhassan.net
+  contributor_type:
+    - leadership
+    - package-guide
+
+- name: Emma Thompson
+  github_username: emmathompson
+  github_image_id: 77889900
+  title: Advisory Council
+  sort: 7
+  organization: European Research Council
+  board: false
+  advisory: true
+  editorial_board: false
+  emeritus_advisory: false
+  twitter: emma_research
+  orcidid: 0000-0004-5678-9012
+  contributor_type:
+    - leadership
+    - reviewer
+    - peer-review-guide
+
+- name: Carlos Mendez
+  github_username: carlosmendez
+  github_image_id: 22334455
+  title: Advisory Council
+  sort: 8
+  organization: University of São Paulo
+  board: false
+  advisory: true
+  editorial_board: false
+  emeritus_advisory: false
+  website: https://carlosmendez.br
+  mastodon: https://scholar.social/@carlos
+  contributor_type:
+    - leadership
+    - maintainer
+
+- name: Yuki Tanaka
+  github_username: yukitanaka
+  github_image_id: 66778899
+  title: Advisory Council
+  sort: 9
+  organization: Tokyo Institute of Technology
+  board: false
+  advisory: true
+  editorial_board: false
+  emeritus_advisory: false
+  twitter: yuki_opensource
+  website: https://yukitanaka.jp
+  contributor_type:
+    - leadership
+    - code-contrib
+
 # Emeritus Advisory
 - name: Charlie Brown
   github_username: charlieb
@@ -84,7 +231,7 @@
   title:
     - Emeritus Board Chair
     - Emeritus Executive Council
-  sort: 9
+  sort: 1
   organization: Former Organization
   board: false
   advisory: false
@@ -94,12 +241,61 @@
     - leadership
     - web-contrib
 
+- name: Margaret Sullivan
+  github_username: margaretsullivan
+  github_image_id: 31313131
+  title: Emeritus Editor-in-Chief
+  sort: 2
+  organization: Yale University
+  board: false
+  advisory: false
+  editorial_board: false
+  emeritus_advisory: true
+  website: https://margaretsullivan.edu
+  orcidid: 0000-0014-5678-9012
+  contributor_type:
+    - editor
+    - reviewer
+    - peer-review-guide
+
+- name: Roberto Sanchez
+  github_username: robertosanchez
+  github_image_id: 32323232
+  title: Emeritus Editorial Board
+  sort: 3
+  organization: Universidad Complutense de Madrid
+  board: false
+  advisory: false
+  editorial_board: false
+  emeritus_advisory: true
+  twitter: roberto_editor
+  contributor_type:
+    - editor
+    - reviewer
+
+- name: Ingrid Petersen
+  github_username: ingridpetersen
+  github_image_id: 35353535
+  title: Emeritus Editor
+  sort: 4
+  organization: University of Bergen
+  board: false
+  advisory: false
+  editorial_board: false
+  emeritus_advisory: true
+  website: https://ingridpetersen.no
+  mastodon: https://scholar.social/@ingrid
+  contributor_type:
+    - editor
+    - reviewer
+    - peer-review-guide
+
 # Editorial Board
 - name: Sarah Chen
   github_username: sarahchen
   github_image_id: 10101010
   title: Editor-in-Chief
-  sort: 0
+  sort: 1
   organization: Academic Press
   board: false
   advisory: false
@@ -118,7 +314,7 @@
   title:
     - Peer Review Lead
     - Editorial Board
-  sort: 1
+  sort: 0
   organization: A Great House
   board: false
   advisory: false
@@ -160,6 +356,119 @@
   contributor_type:
     - editor
     - reviewer
+
+- name: Fatima Al-Rashid
+  github_username: fatimarashid
+  github_image_id: 12121212
+  title: Editor
+  sort: 4
+  organization: King Abdullah University
+  board: false
+  advisory: false
+  editorial_board: true
+  emeritus_advisory: false
+  twitter: fatima_editor
+  orcidid: 0000-0005-6789-0123
+  contributor_type:
+    - editor
+    - reviewer
+
+- name: Michael Chang
+  github_username: michaelchang
+  github_image_id: 34343434
+  title: Editor
+  sort: 5
+  organization: University of Hong Kong
+  board: false
+  advisory: false
+  editorial_board: true
+  emeritus_advisory: false
+  website: https://michaelchang.hk
+  contributor_type:
+    - editor
+    - reviewer
+    - peer-review-guide
+
+- name: Rachel Green
+  github_username: rachelgreen
+  github_image_id: 56565656
+  title: Editor
+  sort: 6
+  organization: Oxford University
+  board: false
+  advisory: false
+  editorial_board: true
+  emeritus_advisory: false
+  twitter: rachel_edits
+  mastodon: https://scholar.social/@rachelgreen
+  orcidid: 0000-0006-7890-1234
+  contributor_type:
+    - editor
+    - reviewer
+
+- name: Lars Anderson
+  github_username: larsanderson
+  github_image_id: 78787878
+  title: Editor
+  sort: 7
+  organization: Stockholm University
+  board: false
+  advisory: false
+  editorial_board: true
+  emeritus_advisory: false
+  website: https://larsanderson.se
+  contributor_type:
+    - editor
+    - reviewer
+
+- name: Nina Kovač
+  github_username: ninakovac
+  github_image_id: 90909090
+  title: Editor
+  sort: 8
+  organization: University of Zagreb
+  board: false
+  advisory: false
+  editorial_board: true
+  emeritus_advisory: false
+  twitter: nina_reviews
+  contributor_type:
+    - editor
+    - reviewer
+    - peer-review-guide
+
+- name: Thomas Wilson
+  github_username: thomaswilson
+  github_image_id: 21212121
+  title: Editor
+  sort: 9
+  organization: Cambridge University
+  board: false
+  advisory: false
+  editorial_board: true
+  emeritus_advisory: false
+  website: https://thomaswilson.ac.uk
+  orcidid: 0000-0007-8901-2345
+  contributor_type:
+    - editor
+    - reviewer
+
+- name: Valentina Rossi
+  github_username: valentinarossi
+  github_image_id: 43434343
+  title: Editor
+  sort: 10
+  organization: University of Bologna
+  board: false
+  advisory: false
+  editorial_board: true
+  emeritus_advisory: false
+  twitter: valentina_edit
+  mastodon: https://scholar.social/@valentina
+  contributor_type:
+    - editor
+    - reviewer
+    - peer-review-guide
 
 # Community Contributors
 - name: Frank Miller
@@ -222,4 +531,436 @@
   contributor_type:
     - community
     - code-contrib
+
+- name: Kenji Yamamoto
+  github_username: kenjiyamamoto
+  github_image_id: 11111122
+  title: Package Maintainer
+  sort: 9
+  organization: Kyoto University
+  board: false
+  advisory: false
+  editorial_board: false
+  emeritus_advisory: false
+  website: https://kenjiyamamoto.jp
+  contributor_type:
+    - maintainer
+    - code-contrib
+
+- name: Lucia Santos
+  github_username: luciasantos
+  github_image_id: 22222233
+  title: Documentation Lead
+  sort: 9
+  organization: University of Lisbon
+  board: false
+  advisory: false
+  editorial_board: false
+  emeritus_advisory: false
+  twitter: lucia_docs
+  contributor_type:
+    - package-guide
+    - web-contrib
+
+- name: Marcus Johnson
+  github_username: marcusjohnson
+  github_image_id: 33333344
+  title: Code Contributor
+  sort: 9
+  organization: Georgia Tech
+  board: false
+  advisory: false
+  editorial_board: false
+  emeritus_advisory: false
+  website: https://marcusjohnson.dev
+  contributor_type:
+    - code-contrib
+    - maintainer
+
+- name: Aisha Mohammed
+  github_username: aishamohammed
+  github_image_id: 44444455
+  title: Peer Reviewer
+  sort: 9
+  organization: University of Cape Town
+  board: false
+  advisory: false
+  editorial_board: false
+  emeritus_advisory: false
+  orcidid: 0000-0008-9012-3456
+  contributor_type:
+    - reviewer
+
+- name: Oliver Schmidt
+  github_username: oliverschmidt
+  github_image_id: 55555566
+  title: Package Developer
+  sort: 9
+  organization: Technical University of Munich
+  board: false
+  advisory: false
+  editorial_board: false
+  emeritus_advisory: false
+  website: https://oliverschmidt.de
+  twitter: oliver_py
+  contributor_type:
+    - maintainer
+    - code-contrib
+
+- name: Zara Khan
+  github_username: zarakhan
+  github_image_id: 66666677
+  title: Community Manager
+  sort: 9
+  organization: University of Toronto
+  board: false
+  advisory: false
+  editorial_board: false
+  emeritus_advisory: false
+  twitter: zara_community
+  mastodon: https://mastodon.social/@zarakhan
+  contributor_type:
+    - community
+    - web-contrib
+
+- name: Felix Dubois
+  github_username: felixdubois
+  github_image_id: 77777788
+  title: Testing Contributor
+  sort: 9
+  organization: Université de Paris
+  board: false
+  advisory: false
+  editorial_board: false
+  emeritus_advisory: false
+  website: https://felixdubois.fr
+  contributor_type:
+    - code-contrib
+    - reviewer
+
+- name: Natalia Ivanova
+  github_username: nataliaivanova
+  github_image_id: 88888899
+  title: Tutorial Writer
+  sort: 9
+  organization: Moscow State University
+  board: false
+  advisory: false
+  editorial_board: false
+  emeritus_advisory: false
+  contributor_type:
+    - package-guide
+    - peer-review-guide
+
+- name: Ryan O'Connor
+  github_username: ryanoconnor
+  github_image_id: 99999900
+  title: Code Reviewer
+  sort: 9
+  organization: University of Dublin
+  board: false
+  advisory: false
+  editorial_board: false
+  emeritus_advisory: false
+  twitter: ryan_codes
+  orcidid: 0000-0009-0123-4567
+  contributor_type:
+    - reviewer
+    - code-contrib
+
+- name: Mei Lin
+  github_username: meilin
+  github_image_id: 10101011
+  title: Package Contributor
+  sort: 9
+  organization: National University of Singapore
+  board: false
+  advisory: false
+  editorial_board: false
+  emeritus_advisory: false
+  website: https://meilin.sg
+  contributor_type:
+    - maintainer
+
+- name: Hassan Ali
+  github_username: hassanali
+  github_image_id: 12121213
+  title: Web Developer
+  sort: 9
+  organization: American University of Beirut
+  board: false
+  advisory: false
+  editorial_board: false
+  emeritus_advisory: false
+  twitter: hassan_dev
+  contributor_type:
+    - web-contrib
+    - code-contrib
+
+- name: Charlotte Martin
+  github_username: charlottemartin
+  github_image_id: 13131314
+  title: Documentation Contributor
+  sort: 9
+  organization: McGill University
+  board: false
+  advisory: false
+  editorial_board: false
+  emeritus_advisory: false
+  mastodon: https://scholar.social/@charlotte
+  contributor_type:
+    - package-guide
+
+- name: Diego Fernandez
+  github_username: diegofernandez
+  github_image_id: 14141415
+  title: Peer Reviewer
+  sort: 9
+  organization: Universidad de Buenos Aires
+  board: false
+  advisory: false
+  editorial_board: false
+  emeritus_advisory: false
+  orcidid: 0000-0010-1234-5678
+  contributor_type:
+    - reviewer
+    - peer-review-guide
+
+- name: Ananya Sharma
+  github_username: ananyasharma
+  github_image_id: 15151516
+  title: Code Maintainer
+  sort: 9
+  organization: Indian Institute of Technology
+  board: false
+  advisory: false
+  editorial_board: false
+  emeritus_advisory: false
+  website: https://ananyasharma.in
+  twitter: ananya_open
+  contributor_type:
+    - maintainer
+    - code-contrib
+
+- name: Erik Larsen
+  github_username: eriklarsen
+  github_image_id: 16161617
+  title: Package Tester
+  sort: 9
+  organization: University of Oslo
+  board: false
+  advisory: false
+  editorial_board: false
+  emeritus_advisory: false
+  contributor_type:
+    - code-contrib
+    - reviewer
+
+- name: Fatou Diop
+  github_username: fatoudiop
+  github_image_id: 17171718
+  title: Community Contributor
+  sort: 9
+  organization: Université Cheikh Anta Diop
+  board: false
+  advisory: false
+  editorial_board: false
+  emeritus_advisory: false
+  twitter: fatou_tech
+  contributor_type:
+    - community
+    - package-guide
+
+- name: Gabriel Costa
+  github_username: gabrielcosta
+  github_image_id: 18181819
+  title: Package Developer
+  sort: 9
+  organization: University of Porto
+  board: false
+  advisory: false
+  editorial_board: false
+  emeritus_advisory: false
+  website: https://gabrielcosta.pt
+  contributor_type:
+    - maintainer
+
+- name: Hannah Kim
+  github_username: hannahkim
+  github_image_id: 19191920
+  title: Tutorial Contributor
+  sort: 9
+  organization: Seoul National University
+  board: false
+  advisory: false
+  editorial_board: false
+  emeritus_advisory: false
+  orcidid: 0000-0011-2345-6789
+  contributor_type:
+    - package-guide
+    - web-contrib
+
+- name: Ibrahim Youssef
+  github_username: ibrahimyoussef
+  github_image_id: 20202021
+  title: Code Contributor
+  sort: 9
+  organization: Cairo University
+  board: false
+  advisory: false
+  editorial_board: false
+  emeritus_advisory: false
+  twitter: ibrahim_code
+  contributor_type:
+    - code-contrib
+
+- name: Julia Novak
+  github_username: julianovak
+  github_image_id: 21212122
+  title: Peer Reviewer
+  sort: 9
+  organization: Charles University
+  board: false
+  advisory: false
+  editorial_board: false
+  emeritus_advisory: false
+  website: https://julianovak.cz
+  mastodon: https://mastodon.social/@julianovak
+  contributor_type:
+    - reviewer
+
+- name: Kwame Mensah
+  github_username: kwamemensah
+  github_image_id: 22222223
+  title: Package Maintainer
+  sort: 9
+  organization: University of Ghana
+  board: false
+  advisory: false
+  editorial_board: false
+  emeritus_advisory: false
+  contributor_type:
+    - maintainer
+    - code-contrib
+
+- name: Lena Müller
+  github_username: lenamuller
+  github_image_id: 23232324
+  title: Documentation Expert
+  sort: 9
+  organization: ETH Zürich
+  board: false
+  advisory: false
+  editorial_board: false
+  emeritus_advisory: false
+  twitter: lena_docs
+  website: https://lenamuller.ch
+  contributor_type:
+    - package-guide
+    - peer-review-guide
+
+- name: Miguel Herrera
+  github_username: miguelherrera
+  github_image_id: 24242425
+  title: Web Contributor
+  sort: 9
+  organization: Universidad Nacional Autónoma de México
+  board: false
+  advisory: false
+  editorial_board: false
+  emeritus_advisory: false
+  orcidid: 0000-0012-3456-7890
+  contributor_type:
+    - web-contrib
+    - code-contrib
+
+- name: Nora Jensen
+  github_username: norajensen
+  github_image_id: 25252526
+  title: Code Reviewer
+  sort: 9
+  organization: University of Copenhagen
+  board: false
+  advisory: false
+  editorial_board: false
+  emeritus_advisory: false
+  twitter: nora_reviews
+  contributor_type:
+    - reviewer
+    - code-contrib
+
+- name: Omar Farooq
+  github_username: omarfarooq
+  github_image_id: 26262627
+  title: Community Organizer
+  sort: 9
+  organization: Lahore University
+  board: false
+  advisory: false
+  editorial_board: false
+  emeritus_advisory: false
+  website: https://omarfarooq.pk
+  contributor_type:
+    - community
+
+- name: Petra Novotná
+  github_username: petranovotna
+  github_image_id: 27272728
+  title: Package Contributor
+  sort: 9
+  organization: Masaryk University
+  board: false
+  advisory: false
+  editorial_board: false
+  emeritus_advisory: false
+  mastodon: https://fosstodon.org/@petra
+  contributor_type:
+    - maintainer
+    - reviewer
+
+- name: Quinn Taylor
+  github_username: quinntaylor
+  github_image_id: 28282829
+  title: Testing Lead
+  sort: 9
+  organization: University of Melbourne
+  board: false
+  advisory: false
+  editorial_board: false
+  emeritus_advisory: false
+  twitter: quinn_tests
+  orcidid: 0000-0013-4567-8901
+  contributor_type:
+    - code-contrib
+    - reviewer
+
+- name: Rafael Silva
+  github_username: rafaelsilva
+  github_image_id: 29292930
+  title: Package Developer
+  sort: 9
+  organization: Universidade de Brasília
+  board: false
+  advisory: false
+  editorial_board: false
+  emeritus_advisory: false
+  website: https://rafaelsilva.br
+  contributor_type:
+    - maintainer
+    - package-guide
+
+- name: Sana Ahmed
+  github_username: sanaahmed
+  github_image_id: 30303031
+  title: Tutorial Creator
+  sort: 9
+  organization: University of Dhaka
+  board: false
+  advisory: false
+  editorial_board: false
+  emeritus_advisory: false
+  twitter: sana_tutorials
+  contributor_type:
+    - package-guide
+    - web-contrib
 
