@@ -17,9 +17,9 @@
     style="background: linear-gradient(135deg, {{ $colors.from }} 0%, {{ $colors.to }} 100%);"
   {{ end }}>
     {{ with .Params.image }}
-    <img src="{{ . }}" alt="{{ $.Params.image_alt | default $.Title }}" />
+    <img src="{{ . | relURL }}" alt="{{ $.Params.image_alt | default $.Title }}" />
     {{ end }}
-    
+
     <!-- Dark gradient overlay -->
     <div></div>
 

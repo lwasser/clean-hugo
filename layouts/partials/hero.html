@@ -28,7 +28,7 @@
     {{- with $img -}}
       <div class="hero__image-wrapper">
         <div class="hero__image-container {{ if $isGallery }}hero__image-container-square{{ end }}">
-          <img src="{{ . }}" alt="{{ $alt }}" class="hero__image">
+          <img src="{{ . | relURL }}" alt="{{ $alt }}" class="hero__image">
         </div>
       </div>
     {{- end -}}

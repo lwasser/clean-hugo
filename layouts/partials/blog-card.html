@@ -16,7 +16,7 @@
   <a href="{{ $post.Permalink }}">
     {{ if $post.Params.image }}
     <figure class="blog-card__image">
-      <img src="{{ $post.Params.image }}" alt="{{ $post.Title }}" loading="lazy" />
+      <img src="{{ $post.Params.image | relURL }}" alt="{{ $post.Title }}" loading="lazy" />
     </figure>
     {{ else }}
     {{/* Get gradient colors based on category - map categories to color pairs */}}
