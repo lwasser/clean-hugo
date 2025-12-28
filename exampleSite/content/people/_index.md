@@ -9,20 +9,12 @@ hero:
 
 ## Our Community
 
-We have a diverse and vibrant community of contributors! Our community includes:
+This is an example of a people listing page that has different types of members with different roles and titles. 
 
-- **Executive Council & Leadership** - Core team members who lead the organization
-- **Advisory Council** - Volunteer experts who provide high-level guidance
-- **Editorial Board** - Team members who oversee the peer review process
-- **Community Contributors** - All the wonderful people who contribute in various ways
+It is driven by the data in the `data/contributors.yml` file.
+So to use this you'd have to have a yml file with that exact format. 
 
-Use the filters below to explore our community by role, or search by name, organization, or title.
+The sorting below uses vanilla Hugo templates and data sorting.
+The filtering for the contributor list is dynamic (client-side) and uses Alpine.js. 
 
-## Features
-
-- **Role Filtering** - Filter by contributor type (leadership, editorial team, reviewers, maintainers, etc.)
-- **Text Search** - Search by name, organization, title, or GitHub username
-- **Organized Sections** - Executive council, advisory council, editorial board, and all community members
-- **Social Links** - Connect via GitHub, Twitter, ORCID, Mastodon, and personal websites
-- **Responsive Grid** - 3 columns on desktop, 2 on tablet, 1 on mobile
-
+The layout is a single page that creates responsive grids.
