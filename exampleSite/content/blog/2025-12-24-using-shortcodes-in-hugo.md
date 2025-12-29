@@ -13,7 +13,7 @@ tags:
 image:
   src: "images/unsplash-images.webp"
   alt: "Collection of scattered vintage photographs"
-  source: "Photo by Unsplash"
+  credit: "Photo by Unsplash"
 ---
 
 Hugo shortcodes are reusable snippets that let you add complex content to your pages without writing HTML. Think of them as pre-built components you can insert anywhere in your content files.

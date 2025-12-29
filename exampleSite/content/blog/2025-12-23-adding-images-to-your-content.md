@@ -13,7 +13,7 @@ tags:
 image:
   src: "images/unsplash-green-fields.webp"
   alt: "Rolling green hills and fields under blue sky"
-  source: "Photo by Unsplash"
+  credit: "Photo by Unsplash"
 ---
 
 Images bring your content to life, and the Clean Hugo theme gives you multiple ways to add them to your posts and pages. Whether you need simple inline images or advanced figures with captions and optimized formats, this guide covers everything you need to know.
@@ -108,12 +108,12 @@ date: 2025-12-23
 image:
   src: "images/my-featured-image.jpg"
   alt: "Description of the image for accessibility"
-  source: "Photo by Jane Doe on Unsplash"  # optional
+  credit: "Photo by Jane Doe on Unsplash"  # optional
 ---
 ```
 
 {{< admonition type="note" >}}
-Both `src` and `alt` are required for accessibility and SEO optimization. The `source` field is optional and displays as a photo credit on the blog post header.
+Both `src` and `alt` are required for accessibility and SEO optimization. The `credit` field is optional and displays as a photo credit on the blog post header.
 {{< /admonition >}}
 
 ### Featured Image Fields
@@ -127,7 +127,7 @@ Both `src` and `alt` are required for accessibility and SEO optimization. The `s
 - Used in social media previews
 - Improves SEO
 
-**`source`** (optional) - Photo credit/attribution
+**`credit`** (optional) - Photo credit/attribution
 - Displays in the bottom-right corner of the blog post header
 - Use for proper image attribution
 - Example: "Photo by John Smith on Unsplash"
@@ -155,7 +155,7 @@ excerpt: "A beginner's guide to building websites with Hugo"
 image:
   src: "images/hugo-tutorial.jpg"
   alt: "Developer working on laptop with Hugo website"
-  source: "Photo by Jane Smith on Unsplash"
+  credit: "Photo by Jane Smith on Unsplash"
 category: "Tutorial"
 tags:
   - hugo

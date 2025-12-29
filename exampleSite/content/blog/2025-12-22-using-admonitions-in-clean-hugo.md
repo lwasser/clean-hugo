@@ -12,7 +12,7 @@ tags:
 image:
   src: "images/unsplash-water.webp"
   alt: "Calm water surface with ripples and reflections"
-  source: "Photo by Unsplash"
+  credit: "Photo by Unsplash"
 ---
 
 The Clean Hugo theme includes a powerful admonition shortcode that lets you create beautiful, color-coded callout boxes in your content. Perfect for highlighting important information, warnings, tips, and more!
@@ -269,15 +269,15 @@ excerpt: "A brief description of what this post is about."
 If you don't provide an excerpt, Hugo will automatically generate one from the first few sentences of your post content.
 {{< /admonition >}}
 
-**`image`** - Featured image with alt text and optional source credit (nested format)
+**`image`** - Featured image with alt text and optional photo credit (nested format)
 ```yaml
 image:
   src: "images/my-featured-image.jpg"
   alt: "Description of the image for accessibility"
-  source: "Photo by Jane Doe on Unsplash"  # optional
+  credit: "Photo by Jane Doe on Unsplash"  # optional
 ```
 {{< admonition type="note" >}}
-Images should be placed in your `static/images/` directory. Both `src` and `alt` are required for accessibility and SEO. The `source` field is optional and displays as a photo credit on the blog post header.
+Images should be placed in your `static/images/` directory. Both `src` and `alt` are required for accessibility and SEO. The `credit` field is optional and displays as a photo credit on the blog post header.
 {{< /admonition >}}
 
 **`category`** - Single category for organizing posts (used for filtering on blog listing page)
@@ -319,7 +319,7 @@ excerpt: "Learn how to set up and customize the Clean Hugo theme for your websit
 image:
   src: "images/hero-image.jpg"
   alt: "Modern workspace with laptop and coffee"
-  source: "Photo by Jane Smith on Unsplash"
+  credit: "Photo by Jane Smith on Unsplash"
 category: "Tutorial"
 show_author: false
 hideDate: false
