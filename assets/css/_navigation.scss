@@ -21,11 +21,14 @@
   color: var(--color-text);
   text-decoration: none;
 
-  &:hover,
+  &:hover {
+    color: var(--color-link);
+  }
+
   &:focus {
     color: var(--color-link);
-    outline: none;
-    box-shadow: 0 0 0 2px var(--color-link), 0 0 0 4px var(--color-white);
+    outline: 2px solid var(--color-link);
+    outline-offset: 2px;
   }
 }
 
