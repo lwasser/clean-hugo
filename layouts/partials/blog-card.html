@@ -14,18 +14,10 @@
 
 <article class="blog-card {{ $modifier }}" data-category="{{ if $postCategory }}{{ $postCategory | urlize }}{{ end }}">
   <a href="{{ $post.Permalink }}">
-    {{ if $post.Params.image }}
+    {{ $img := partial "get-image.html" (dict "image" $post.Params.image "fallbackAlt" $post.Title) }}
+    {{ if $img.exists }}
     <figure class="blog-card__image">
-      {{/* Support both nested (image.src) and simple string formats */}}
-      {{ $imgSrc := "" }}
-      {{ $imgAlt := $post.Title }}
-      {{ if reflect.IsMap $post.Params.image }}
-        {{ $imgSrc = $post.Params.image.src }}
-        {{ $imgAlt = $post.Params.image.alt | default $post.Title }}
-      {{ else }}
-        {{ $imgSrc = $post.Params.image }}
-      {{ end }}
-      <img src="{{ $imgSrc | relURL }}" alt="{{ $imgAlt }}" loading="lazy" />
+      <img src="{{ $img.src | relURL }}" alt="{{ $img.alt }}" loading="lazy" />
     </figure>
     {{ else }}
     {{/* Get gradient colors based on category - map categories to color pairs */}}

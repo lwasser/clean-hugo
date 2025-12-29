@@ -23,18 +23,13 @@
   {{ end }}
 {{ end }}
 
-{{/* Determine image for social sharing - supports both nested and simple formats */}}
+{{/* Determine image for social sharing */}}
+{{ $img := partial "get-image.html" (dict "image" .Params.image "fallbackAlt" .Title) }}
 {{ $image := "" }}
 {{ $imageAlt := .Title }}
-{{ if .Params.image }}
-  {{ if reflect.IsMap .Params.image }}
-    {{/* Nested format: image.src */}}
-    {{ $image = .Params.image.src | absURL }}
-    {{ $imageAlt = .Params.image.alt | default .Title }}
-  {{ else }}
-    {{/* Simple string format (backward compatible) */}}
-    {{ $image = .Params.image | absURL }}
-  {{ end }}
+{{ if $img.exists }}
+  {{ $image = $img.src | absURL }}
+  {{ $imageAlt = $img.alt }}
 {{ else if .Site.Params.seo.default_image }}
   {{ $image = .Site.Params.seo.default_image | absURL }}
 {{ end }}

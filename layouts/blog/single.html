@@ -16,17 +16,9 @@
     {{ end }}
     style="background: linear-gradient(135deg, {{ $colors.from }} 0%, {{ $colors.to }} 100%);"
   {{ end }}>
-    {{ with .Params.image }}
-    {{/* Support both nested (image.src) and simple string formats */}}
-    {{ $imgSrc := "" }}
-    {{ $imgAlt := $.Title }}
-    {{ if reflect.IsMap . }}
-      {{ $imgSrc = .src }}
-      {{ $imgAlt = .alt | default $.Title }}
-    {{ else }}
-      {{ $imgSrc = . }}
-    {{ end }}
-    <img src="{{ $imgSrc | relURL }}" alt="{{ $imgAlt }}" />
+    {{ $img := partial "get-image.html" (dict "image" .Params.image "fallbackAlt" .Title) }}
+    {{ if $img.exists }}
+    <img src="{{ $img.src | relURL }}" alt="{{ $img.alt }}" />
     {{ end }}
 
     <!-- Dark gradient overlay -->
@@ -39,11 +31,9 @@
     </div>
 
     <!-- Photo credit in bottom right -->
-    {{ if or .Params.photo_credit_author .Params.photo_credit_description }}
+    {{ if $img.source }}
     <div>
-      {{ with .Params.photo_credit_author }}{{ . }}{{ end }}
-      {{ if and .Params.photo_credit_author .Params.photo_credit_description }} • {{ end }}
-      {{ with .Params.photo_credit_description }}{{ . }}{{ end }}
+      {{ $img.source }}
     </div>
     {{ end }}
   </header>

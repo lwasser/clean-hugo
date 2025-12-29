@@ -13,6 +13,7 @@ tags:
 image:
   src: "images/unsplash-green-fields.webp"
   alt: "Rolling green hills and fields under blue sky"
+  source: "Photo by Unsplash"
 ---
 
 Images bring your content to life, and the Clean Hugo theme gives you multiple ways to add them to your posts and pages. Whether you need simple inline images or advanced figures with captions and optimized formats, this guide covers everything you need to know.
@@ -92,6 +93,77 @@ The figure shortcode automatically creates a WebP version of your image. Here's 
 */>}}
 ```
 
+## Featured Images in Blog Posts
+
+Every blog post can have a featured image that appears in blog listings and at the top of the post. This image also powers your social media previews when sharing links on LinkedIn, Discord, Slack, and other platforms.
+
+### Required Format
+
+Featured images must use the nested YAML format in your post's front matter:
+
+```yaml
+---
+title: "My Blog Post"
+date: 2025-12-23
+image:
+  src: "images/my-featured-image.jpg"
+  alt: "Description of the image for accessibility"
+  source: "Photo by Jane Doe on Unsplash"  # optional
+---
+```
+
+{{< admonition type="note" >}}
+Both `src` and `alt` are required for accessibility and SEO optimization. The `source` field is optional and displays as a photo credit on the blog post header.
+{{< /admonition >}}
+
+### Featured Image Fields
+
+**`src`** (required) - Path to your image file
+- Place images in `static/images/` directory
+- Reference as `images/filename.jpg` (without leading slash)
+
+**`alt`** (required) - Descriptive alt text
+- Describes the image for screen readers
+- Used in social media previews
+- Improves SEO
+
+**`source`** (optional) - Photo credit/attribution
+- Displays in the bottom-right corner of the blog post header
+- Use for proper image attribution
+- Example: "Photo by John Smith on Unsplash"
+
+### Why This Format Matters
+
+This nested image format provides several benefits:
+
+1. **Social Sharing** - Your images display correctly when shared on LinkedIn, Discord, Slack, Mastodon, Bluesky
+2. **Accessibility** - Screen readers can describe images to visually impaired users
+3. **SEO** - Search engines understand your images better
+4. **Attribution** - Proper credit for photographers and image sources
+5. **Consistency** - One format across all content types
+
+### Complete Example
+
+Here's a complete front matter example showing all image options:
+
+```yaml
+---
+title: "Getting Started with Hugo"
+date: 2025-12-23
+draft: false
+excerpt: "A beginner's guide to building websites with Hugo"
+image:
+  src: "images/hugo-tutorial.jpg"
+  alt: "Developer working on laptop with Hugo website"
+  source: "Photo by Jane Smith on Unsplash"
+category: "Tutorial"
+tags:
+  - hugo
+  - web-development
+  - tutorial
+---
+```
+
 ## Image Optimization Tips
 
 To ensure your images load quickly and look great:
@@ -143,7 +215,9 @@ your-hugo-site/
         └── photo.webp
 ```
 
-Reference them in your content as `/images/photo.jpg` (note the leading slash).
+**Important:** Reference paths differ by context:
+- **In content (Markdown/shortcodes):** Use `/images/photo.jpg` (with leading slash)
+- **In front matter (featured images):** Use `images/photo.jpg` (without leading slash)
 
 ## Choosing Between Markdown and Figure
 
