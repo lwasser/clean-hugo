@@ -22,7 +22,7 @@ xl: 1280px
     font-style: normal;
     font-weight: 100 900;
     font-display: swap;
-    src: url('/fonts/inter-variable.woff2') format('woff2');
+    src: url('../fonts/inter-variable.woff2') format('woff2');
   }
 
   /* Inter Variable font (body text) - italic style */
@@ -31,7 +31,7 @@ xl: 1280px
     font-style: italic;
     font-weight: 100 900;
     font-display: swap;
-    src: url('/fonts/inter-italic-variable.woff2') format('woff2');
+    src: url('../fonts/inter-italic-variable.woff2') format('woff2');
   }
 
   /* Sora Variable font (headings) */
@@ -40,7 +40,7 @@ xl: 1280px
     font-style: normal;
     font-weight: 100 800;
     font-display: swap;
-    src: url('/fonts/sora-variable.woff2') format('woff2');
+    src: url('../fonts/sora-variable.woff2') format('woff2');
   }
 
   /*
@@ -261,5 +261,6 @@ xl: 1280px
   @import 'figure';
   @import 'packages';
   @import 'people';
+  @import 'docs';
 }
 

@@ -1,0 +1,30 @@
+{{ define "main" }}
+{{ $header := .Params.header | default dict }}
+{{ $headerColor := $header.color | default "primaryDark" }}
+{{ $headerTitle := $header.title | default .Title }}
+{{ $isHex := hasPrefix $headerColor "#" }}
+<div class="docs-header {{ if not $isHex }}docs-header--{{ $headerColor }}{{ end }}"{{ if $isHex }} style="background-color: {{ $headerColor }};"{{ end }}>
+  <div class="docs-header__inner">
+    <h1 class="docs-header__title">{{ $headerTitle }}</h1>
+  </div>
+</div>
+
+<div class="docs-layout">
+  <aside class="docs-sidebar">
+    <nav id="docs-nav"></nav>
+  </aside>
+
+  <article class="docs-content">
+    {{ with .Params.excerpt }}<p class="docs-excerpt">{{ . }}</p>{{ end }}
+    {{ .Content }}
+    {{ partial "last-modified.html" . }}
+  </article>
+
+  <button id="scroll-to-top" class="docs-scroll-btn" aria-label="Scroll to top">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+</div>
+
+<script src="{{ "js/docs-nav.js" | relURL }}" defer></script>
+{{ end }}
+
