@@ -1,4 +1,3 @@
-@layer components {
   /* Gallery list page wrapper */
   .gallery-list-wrapper {
     @apply max-w-7xl mx-auto px-4 md:px-6 py-8;
@@ -109,5 +108,4 @@
       color: var(--color-gray-900);
     }
   }
-}
 

@@ -1,21 +1,34 @@
-@layer components {
-  .intro-section {
-    @apply bg-transparent pt-7 pb-7 md:pt-9 md:pb-9 lg:pt-12 lg:pb-12;
+/* Intro Section Component */
+.intro-section {
+  background-color: transparent;
+  padding: 1.75rem 0;
 
-    .container div {
-      @apply text-center;
+  @media (min-width: 768px) {
+    padding: 2.25rem 0;
+  }
 
-      /* Intentionally larger paragraphs for intro sections */
-      p {
-        @apply text-xl md:text-2xl leading-relaxed;
-        color: var(--color-gray-700);
-        font-weight: 400;
+  @media (min-width: 1024px) {
+    padding: 3rem 0;
+  }
+
+  .container div {
+    text-align: center;
+
+    /* Intentionally larger paragraphs for intro sections */
+    p {
+      font-size: 1.25rem;
+      line-height: 1.625;
+      color: var(--color-gray-700);
+      font-weight: 400;
+
+      @media (min-width: 768px) {
+        font-size: 1.5rem;
       }
+    }
 
-      strong {
-        color: var(--color-text);
-        font-weight: 600;
-      }
+    strong {
+      color: var(--color-text);
+      font-weight: 600;
     }
   }
 }

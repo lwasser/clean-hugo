@@ -88,19 +88,14 @@ enableRobotsTXT = true
   textColor = "#FFFFFF"   # White text
 
 [[menu.main]]
-  name = "Home"
-  url = "/"
-  weight = 1
-
-[[menu.main]]
   name = "Blog"
   url = "/blog/"
-  weight = 2
+  weight = 1
 
 [[menu.main]]
   name = "Filterable Grids"
   url = "/filterable-grids/"
-  weight = 3
+  weight = 2
   identifier = "filterable-grids"
 
 [[menu.main]]
@@ -118,10 +113,10 @@ enableRobotsTXT = true
 [[menu.main]]
   name = "Documentation"
   url = "/documentation/"
-  weight = 4
+  weight = 3
 
 [[menu.main]]
   name = "About"
   url = "/about/"
-  weight = 5
+  weight = 4
 

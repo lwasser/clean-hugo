@@ -7,24 +7,24 @@
 .docs-header {
   @apply py-4 mb-8;
   background-color: var(--color-primary-dark); /* Default dark teal */
-  
+
   /* Color variants */
   &--primary {
     background-color: var(--color-primary);
   }
-  
+
   &--primaryDark {
     background-color: var(--color-primary-dark);
   }
-  
+
   &--secondary {
     background-color: var(--color-secondary);
   }
-  
+
   &--accent {
     background-color: var(--color-accent);
   }
-  
+
   &--neutral {
     background-color: var(--color-neutral);
   }
@@ -239,4 +239,3 @@
     @apply text-xl md:text-base;
   }
 }
-

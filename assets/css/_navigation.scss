@@ -1,227 +1,308 @@
-@layer components {
-  /* Site navigation */
-  .site-nav {
-    @apply border-b relative;
-    background-color: var(--color-white);
+/* Site navigation */
+.site-nav {
+  border-bottom: 1px solid var(--color-gray-200);
+  position: relative;
+  background-color: var(--color-white);
+}
+
+.site-nav__container {
+  max-width: 80rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.site-nav__brand {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-text);
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    color: var(--color-link);
+    outline: none;
+    box-shadow: 0 0 0 2px var(--color-link), 0 0 0 4px var(--color-white);
+  }
+}
+
+/* Hamburger menu toggle button */
+.site-nav__toggle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 1px solid var(--color-gray-300);
+  border-radius: 0.25rem;
+  background-color: transparent;
+  cursor: pointer;
+  transition: background-color 0.2s;
+
+  &:hover {
+    background-color: var(--color-gray-50);
   }
 
-  .site-nav__container {
-    @apply max-w-7xl mx-auto px-4 py-4 flex justify-between items-center;
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--color-link), 0 0 0 4px var(--color-white);
   }
 
-  .site-nav__brand {
-    @apply text-2xl font-bold;
-    color: var(--color-text);
-    text-decoration: none;
+  &[aria-expanded="true"] {
+    .site-nav__toggle-icon {
+      &:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+      }
 
-    &:hover,
-    &:focus {
-      color: var(--color-link);
-      @apply outline-none ring-2 ring-offset-2;
-      --tw-ring-color: var(--color-link);
-    }
-  }
+      &:nth-child(2) {
+        opacity: 0;
+      }
 
-  /* Hamburger menu toggle button */
-  .site-nav__toggle {
-    @apply md:hidden flex flex-col justify-center items-center w-10 h-10;
-    @apply border rounded;
-    border-color: var(--color-gray-300);
-    background-color: transparent;
-    cursor: pointer;
-    transition: background-color 0.2s;
-
-    &:hover {
-      background-color: var(--color-gray-50);
-    }
-
-    &:focus {
-      @apply outline-none ring-2 ring-offset-2;
-      --tw-ring-color: var(--color-link);
-    }
-
-    &[aria-expanded="true"] {
-      .site-nav__toggle-icon {
-        &:nth-child(1) {
-          transform: rotate(45deg) translate(5px, 5px);
-        }
-
-        &:nth-child(2) {
-          opacity: 0;
-        }
-
-        &:nth-child(3) {
-          transform: rotate(-45deg) translate(7px, -6px);
-        }
+      &:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -6px);
       }
     }
   }
+}
 
-  .site-nav__toggle-icon {
-    @apply block w-5 h-0.5 mb-1 transition-all duration-200;
-    background-color: var(--color-text);
-
-    &:last-child {
-      @apply mb-0;
-    }
+@media (min-width: 768px) {
+  .site-nav__toggle {
+    display: none;
   }
+}
 
-  /* Navigation menu */
+.site-nav__toggle-icon {
+  display: block;
+  width: 1.25rem;
+  height: 0.125rem;
+  margin-bottom: 0.25rem;
+  background-color: var(--color-text);
+  transition: all 0.2s;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+/* Navigation menu */
+.site-nav__menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  flex-direction: column;
+  background-color: white;
+  border-top: 1px solid var(--color-gray-200);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+
+  &[aria-expanded="true"],
+  &.site-nav__menu--open {
+    display: flex;
+  }
+}
+
+@media (min-width: 768px) {
   .site-nav__menu {
-    @apply hidden md:flex md:items-center md:space-x-6;
-    @apply absolute md:relative top-full left-0 right-0 md:top-auto;
-    @apply flex-col md:flex-row bg-white md:bg-transparent;
-    @apply border-t md:border-t-0 shadow-lg md:shadow-none;
-    @apply py-4 md:py-0;
+    display: flex;
+    position: relative;
+    top: auto;
+    flex-direction: row;
+    align-items: center;
+    gap: 1.5rem;
+    background-color: transparent;
+    border-top: 0;
+    box-shadow: none;
+    padding: 0;
+  }
+}
 
-    &[aria-expanded="true"],
-    &.site-nav__menu--open {
-      @apply flex;
-    }
+.site-nav__link {
+  padding: 0.5rem 1rem;
+  font-size: 1.125rem;
+  font-weight: 500;
+  transition: color 0.2s;
+  display: block;
+  color: var(--color-text);
+  text-decoration: none;
+
+  &:hover {
+    color: var(--color-link);
   }
 
+  &:focus {
+    color: var(--color-link);
+    outline: none;
+    box-shadow: 0 0 0 2px var(--color-link), 0 0 0 4px var(--color-white);
+  }
+}
+
+@media (min-width: 768px) {
   .site-nav__link {
-    @apply px-4 py-2 text-lg font-medium transition-colors duration-200;
-    @apply block md:inline-block;
-    color: var(--color-text);
-    text-decoration: none;
-
-    &:hover {
-      color: var(--color-link);
-    }
-
-    &:focus {
-      color: var(--color-link);
-      @apply outline-none ring-2 ring-offset-2;
-      --tw-ring-color: var(--color-link);
-    }
+    display: inline-block;
   }
+}
 
-  /* Dropdown menu */
-  .site-nav__dropdown {
-    @apply relative;
+/* Dropdown menu */
+.site-nav__dropdown {
+  position: relative;
+}
+
+.site-nav__link--dropdown {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  i {
+    font-size: 0.75rem;
+    transition: transform 0.2s;
   }
+}
 
-  .site-nav__link--dropdown {
-    @apply flex items-center gap-2;
-
-    i {
-      @apply text-xs transition-transform duration-200;
-    }
-  }
-
-  .site-nav__dropdown:hover,
-  .site-nav__dropdown:focus-within {
-    .site-nav__link--dropdown i {
-      transform: rotate(180deg);
-    }
-
-    .site-nav__dropdown-menu {
-      @apply block;
-    }
+.site-nav__dropdown:hover,
+.site-nav__dropdown:focus-within {
+  .site-nav__link--dropdown i {
+    transform: rotate(180deg);
   }
 
   .site-nav__dropdown-menu {
-    @apply hidden md:absolute md:top-full md:left-0 md:mt-2;
-    @apply md:bg-white md:border md:rounded-lg md:shadow-lg;
-    @apply md:py-2 md:z-50;
-    /* min-width: 200px - ensures dropdown menu has adequate width */
-    @media (min-width: 768px) {
-      min-width: 200px;
-    }
-    @apply list-none p-0 m-0;
-    border-color: var(--color-gray-200);
+    display: block;
+  }
+}
 
-    /* On mobile, show as normal list items with indentation */
-    @apply pl-8 pt-2 space-y-2 md:pl-6;
+.site-nav__dropdown-menu {
+  display: none;
+  padding-left: 2rem;
+  padding-top: 0.5rem;
+  list-style: none;
+  padding-right: 0;
+  margin: 0;
 
-    &.site-nav__dropdown-menu--open {
-      @apply block;
-    }
+  &.site-nav__dropdown-menu--open {
+    display: block;
+  }
+}
+
+@media (min-width: 768px) {
+  .site-nav__dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    margin-top: 0.5rem;
+    background-color: white;
+    border: 1px solid var(--color-gray-200);
+    border-radius: 0.5rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    padding: 0.5rem 1.5rem;
+    z-index: 50;
+    min-width: 200px;
+  }
+}
+
+.site-nav__dropdown-link {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: color 0.2s;
+  display: block;
+  color: var(--color-text);
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    color: var(--color-link);
+    background-color: var(--color-gray-50);
+    outline: none;
+  }
+}
+
+/* Navigation CTA Button */
+.site-nav__button {
+  padding: 0.5rem 1.25rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.2s;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  margin-top: 1rem;
+
+  &:hover {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    transform: translateY(-1px);
   }
 
-  .site-nav__dropdown-link {
-    @apply px-4 py-2 text-base font-medium transition-colors duration-200;
-    @apply block;
-    color: var(--color-text);
-    text-decoration: none;
-
-    &:hover,
-    &:focus {
-      color: var(--color-link);
-      background-color: var(--color-gray-50);
-      @apply outline-none;
-    }
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px;
   }
 
-  /* Navigation CTA Button */
-  .site-nav__button {
-    @apply px-5 py-2 rounded-lg font-semibold text-base;
-    @apply transition-all duration-200 no-underline;
-    @apply block md:inline-block text-center;
-    @apply mt-4 md:mt-0 md:ml-4;
+  /* Color variants */
+  &--primary {
+    background-color: var(--color-primary);
+    color: white;
 
     &:hover {
-      @apply shadow-lg;
-      transform: translateY(-1px);
+      background-color: var(--color-primary-dark);
     }
 
     &:focus {
-      @apply outline-none ring-2 ring-offset-2;
+      box-shadow: 0 0 0 2px var(--color-primary), 0 0 0 4px var(--color-white);
+    }
+  }
+
+  &--secondary {
+    background-color: var(--color-secondary);
+    color: var(--color-text);
+
+    &:hover {
+      opacity: 0.9;
     }
 
-    /* Color variants */
-    &--primary {
-      background-color: var(--color-primary);
-      color: white;
+    &:focus {
+      box-shadow: 0 0 0 2px var(--color-secondary), 0 0 0 4px var(--color-white);
+    }
+  }
 
-      &:hover {
-        background-color: var(--color-primary-dark);
-      }
+  &--accent {
+    background-color: var(--color-accent);
+    color: white;
 
-      &:focus {
-        --tw-ring-color: var(--color-primary);
-      }
+    &:hover {
+      opacity: 0.9;
     }
 
-    &--secondary {
-      background-color: var(--color-secondary);
-      color: var(--color-text);
+    &:focus {
+      box-shadow: 0 0 0 2px var(--color-accent), 0 0 0 4px var(--color-white);
+    }
+  }
 
-      &:hover {
-        opacity: 0.9;
-      }
+  &--neutral {
+    background-color: var(--color-neutral);
+    color: white;
 
-      &:focus {
-        --tw-ring-color: var(--color-secondary);
-      }
+    &:hover {
+      opacity: 0.9;
     }
 
-    &--accent {
-      background-color: var(--color-accent);
-      color: white;
-
-      &:hover {
-        opacity: 0.9;
-      }
-
-      &:focus {
-        --tw-ring-color: var(--color-accent);
-      }
+    &:focus {
+      box-shadow: 0 0 0 2px var(--color-neutral), 0 0 0 4px var(--color-white);
     }
+  }
+}
 
-    &--neutral {
-      background-color: var(--color-neutral);
-      color: white;
-
-      &:hover {
-        opacity: 0.9;
-      }
-
-      &:focus {
-        --tw-ring-color: var(--color-neutral);
-      }
-    }
+@media (min-width: 768px) {
+  .site-nav__button {
+    display: inline-block;
+    margin-top: 0;
+    margin-left: 1rem;
   }
 }
 
