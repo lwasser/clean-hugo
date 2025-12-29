@@ -1,33 +1,35 @@
-@layer components {
-  .filter-row {
-    @apply flex flex-wrap gap-3 mb-8 justify-center;
-  }
-
-  .filter-btn {
-    @apply px-4 py-2 rounded-full
-           text-sm font-medium
-           border
-           transition-all duration-200
-           cursor-pointer;
-    background-color: var(--color-white);
-    border-color: var(--color-gray-300);
-    color: var(--color-gray-700);
-
-    &[aria-pressed="true"] {
-      @apply text-white;
-      background-color: var(--color-primary);
-      border-color: var(--color-primary);
-    }
-
-    &[aria-pressed="false"]:hover {
-      background-color: var(--color-gray-50);
-      border-color: var(--color-gray-400);
-    }
-
-    &:focus {
-      @apply outline-none ring-2 ring-offset-2;
-      --tw-ring-color: var(--color-primary);
-    }
-  }
+/* Filter Components */
+.filter-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+  justify-content: center;
 }
 
+.filter-btn {
+  padding: 0.5rem 1rem;
+  border-radius: $radius-full;
+  font-size: 0.875rem;
+  font-weight: 500;
+  border: 1px solid var(--color-gray-300);
+  background-color: var(--color-white);
+  color: var(--color-gray-700);
+  cursor: pointer;
+  transition: all $transition-base;
+
+  &[aria-pressed="true"] {
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
+    color: white;
+  }
+
+  &[aria-pressed="false"]:hover {
+    background-color: var(--color-gray-50);
+    border-color: var(--color-gray-400);
+  }
+
+  &:focus {
+    @include focus-ring;
+  }
+}

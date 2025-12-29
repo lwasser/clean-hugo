@@ -1,24 +1,22 @@
-@layer components {
-  /* Figure shortcode styles */
-  .figure {
-    @apply my-6;
+/* Figure shortcode styles */
+.figure {
+  margin: 1.5rem 0;
+
+  &__link,
+  &__picture {
+    display: block;
   }
 
-  .figure__link {
-    @apply block;
+  &__image {
+    width: 100%;
+    height: auto;
+    border-radius: $radius-md;
   }
 
-  .figure__picture {
-    @apply block;
-  }
-
-  .figure__image {
-    @apply w-full h-auto rounded-lg;
-  }
-
-  .figure__caption {
-    @apply mt-2 text-sm text-center;
+  &__caption {
+    margin-top: 0.5rem;
+    font-size: 0.875rem;
+    text-align: center;
     color: var(--color-gray-600);
   }
 }
-

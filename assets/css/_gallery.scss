@@ -1,113 +1,163 @@
-@layer components {
-  /* Gallery list page wrapper */
-  .gallery-list-wrapper {
-    @apply max-w-7xl mx-auto px-4 md:px-6 py-8;
+/* Gallery Components - Using Mixins */
+
+/* Shared container styles - max-width 80rem with responsive padding */
+.gallery-list-wrapper,
+.gallery-grid-container,
+.gallery-images {
+  @include container;
+}
+
+.gallery-images {
+  @include responsive-padding($spacing-section, 1rem);
+}
+
+/* Gallery grid elements with BEM nesting */
+.gallery-grid {
+  &__title {
+    @include responsive(font-size, 1.5rem, 1.875rem);
+    font-weight: 700;
+    margin-bottom: 1rem;
   }
 
-  /* Gallery grid container */
-  .gallery-grid-container {
-    @apply max-w-7xl mx-auto px-4 md:px-6 py-8;
+  &__category-title {
+    @include responsive(font-size, 1.25rem, 1.5rem);
+    font-weight: 600;
+    margin-bottom: 1rem;
+    text-transform: capitalize;
   }
 
-  .gallery-grid__title {
-    @apply text-2xl md:text-3xl font-bold mb-4;
+  &__section {
+    margin-bottom: $spacing-section;
   }
 
-  .gallery-grid__category-title {
-    @apply text-xl md:text-2xl font-semibold mb-4 capitalize;
-  }
-
-  .gallery-grid__section {
-    @apply mb-12;
-  }
-
-  .gallery-grid__items {
-    @apply grid gap-6 grid-cols-[repeat(auto-fill,minmax(250px,1fr))];
-  }
-
-  /* Gallery content wrapper */
-  .gallery-content { @apply max-w-4xl mx-auto px-4 md:px-6 py-12; }
-
-  /* Header */
-  .gallery-header { @apply mb-8; }
-  .gallery-header h2 { @apply text-2xl md:text-3xl lg:text-4xl mb-2; /* Uses base h2 scale */ }
-  .gallery-header .common-name {
-    @apply text-lg mb-4;
-    color: var(--color-gray-600);
-  }
-
-  /* Markdown body */
-  .gallery-description {
-    @apply max-w-none;
-    /* Uses base typography from main.scss */
-
-    /* Hide h1 in gallery description - title should only be in hero */
-    h1 {
-      @apply hidden;
-    }
-
-    /* Links use base styles from main.scss */
-  }
-
-  /* Gallery section wrapper */
-  .gallery-images { @apply max-w-7xl mx-auto px-4 md:px-6 py-12; }
-  .gallery-images h2 { @apply text-xl md:text-2xl lg:text-3xl mb-4; /* Uses base h3 scale for section headings */ }
-
-  /* Masonry (CSS columns) */
-  .gallery-grid {
-    @apply columns-1 sm:columns-2 lg:columns-3 space-y-4;
-    column-gap: 1rem;
-  }
-
-  .gallery-grid figure { @apply break-inside-avoid mb-4; }
-
-  .gallery-grid a { @apply block; }
-
-  .gallery-grid img {
-    @apply w-full h-auto rounded-lg transition-transform duration-200 ease-out cursor-zoom-in;
-  }
-
-  .gallery-grid a.group:hover img { @apply scale-[1.03]; }
-
-  .gallery-caption {
-    @apply p-2.5 text-sm;
-    color: var(--color-gray-700);
-  }
-
-  /* Gallery card component */
-  .gallery-card {
-    @apply relative flex flex-col rounded-2xl shadow-md overflow-hidden border w-full;
-    /* Standard transition: 200ms for shadow changes */
-    transition: box-shadow 200ms ease-out;
-    /* max-width: 340px - arbitrary value for card sizing consistency */
-    max-width: 340px;
-    background-color: var(--color-white);
-    border-color: var(--color-gray-200);
-
-    &__link {
-      @apply block focus:outline-none focus:ring-2;
-      --tw-ring-color: var(--color-primary);
-    }
-
-    /* Top image area */
-    &__image {
-      @apply w-full h-40 overflow-hidden;
-      img {
-        @apply w-full h-full object-cover hover:scale-110;
-        /* 300ms for smooth image zoom effect */
-        transition: transform 300ms ease-out;
-      }
-    }
-
-    /* Content area */
-    &__content {
-      @apply flex flex-col gap-3 p-6;
-    }
-
-    &__title {
-      @apply font-sora font-bold text-lg md:text-lg py-2 px-3;
-      color: var(--color-gray-900);
-    }
+  &__items {
+    @include grid-auto-fit;
   }
 }
 
+/* Gallery content wrapper - narrower max-width */
+.gallery-content {
+  @include container($container-narrow);
+  @include responsive-padding($spacing-section, 1rem);
+}
+
+/* Gallery header with nested elements */
+.gallery-header {
+  margin-bottom: 2rem;
+
+  h2 {
+    @include responsive(font-size, 1.5rem, 1.875rem, 2.25rem);
+    margin-bottom: 0.5rem;
+  }
+
+  .common-name {
+    font-size: 1.125rem;
+    margin-bottom: 1rem;
+    color: var(--color-gray-600);
+  }
+}
+
+/* Markdown body */
+.gallery-description {
+  max-width: none;
+
+  /* Hide h1 in gallery description - title should only be in hero */
+  h1 {
+    display: none;
+  }
+}
+
+/* Gallery images section heading */
+.gallery-images h2 {
+  @include responsive(font-size, 1.25rem, 1.5rem, 1.875rem);
+  margin-bottom: 1rem;
+}
+
+/* Masonry layout using CSS columns */
+.gallery-grid {
+  columns: 1;
+  column-gap: 1rem;
+
+  @media (min-width: $breakpoint-sm) {
+    columns: 2;
+  }
+
+  @media (min-width: $breakpoint-lg) {
+    columns: 3;
+  }
+
+  > * + * {
+    margin-top: 1rem;
+  }
+
+  figure {
+    break-inside: avoid;
+    margin-bottom: 1rem;
+  }
+
+  a {
+    display: block;
+
+    &.group:hover img {
+      transform: scale(1.03);
+    }
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+    border-radius: $radius-md;
+    transition: transform $transition-base ease-out;
+    cursor: zoom-in;
+  }
+}
+
+.gallery-caption {
+  padding: 0.625rem;
+  font-size: 0.875rem;
+  color: var(--color-gray-700);
+}
+
+/* Gallery card component with BEM nesting */
+.gallery-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 340px;
+  border: 1px solid var(--color-gray-200);
+  border-radius: $radius-lg;
+  overflow: hidden;
+  background-color: var(--color-white);
+  box-shadow: $shadow-md;
+  transition: box-shadow $transition-base ease-out;
+
+  &__link {
+    display: block;
+
+    &:focus {
+      @include focus-ring;
+    }
+  }
+
+  &__image {
+    @include image-zoom;
+    width: 100%;
+    height: 10rem;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    padding: 1.5rem;
+  }
+
+  &__title {
+    font-family: 'Sora', sans-serif;
+    font-weight: 700;
+    font-size: 1.125rem;
+    padding: 0.5rem 0.75rem;
+    color: var(--color-gray-900);
+  }
+}
