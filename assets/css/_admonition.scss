@@ -1,11 +1,11 @@
-/* Admonition Component */
-.admonition {
+  /* Admonition Component */
+  .admonition {
   border-left-width: 4px;
   border-radius: 0 0.5rem 0.5rem 0;
   padding: 1rem;
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
   margin: 1rem 0;
-  display: flex;
+    display: flex;
   gap: 0.75rem;
 
   &__icon {
@@ -71,6 +71,6 @@
 
   &--note {
     --base-color: var(--color-admonition-note, #6B7280);
+    }
   }
-}
 
