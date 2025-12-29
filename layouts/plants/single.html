@@ -9,7 +9,7 @@
 
     <section class="gallery-images">
       <h2>Gallery</h2>
-      <div class="gallery-grid">
+      <div class="gallery-masonry">
         {{ $images := .Resources.ByType "image" }}
         {{ range $images }}
           {{ $filename := .Name | replaceRE "\\.[^.]+$" "" | replaceRE "-" " " | title }}

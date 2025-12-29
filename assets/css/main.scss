@@ -305,6 +305,12 @@ xl: 1280px
     background-color: var(--color-secondary);
   }
 
+  /* Spacing utilities */
+  .py-12 {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+
   /* Container utilities - standardize container widths across the site */
   /* Standard container - used throughout site (max-w-7xl) */
   .container {

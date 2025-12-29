@@ -1,6 +1,6 @@
 /* Impact Cards Section - Hero/splash page cards */
 .impact-cards {
-  max-width: 80rem;
+  max-width: $container-max-width;
   margin: 0 auto;
   padding: 5rem 1.5rem;
 }
@@ -8,62 +8,82 @@
 .impact-cards__grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 2rem;
+  gap: 1.25rem;
 
-  @media (min-width: 768px) {
+  @media (min-width: $breakpoint-md) {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (min-width: $breakpoint-lg) {
     gap: 2rem;
   }
 
-  @media (min-width: 1024px) {
+  @media (min-width: $breakpoint-xl) {
     gap: 2.5rem;
-  }
-
-  @media (min-width: 1280px) {
-    gap: 3rem;
   }
 }
 
+/* Impact cards - more spacious padding */
+.impact-cards .card {
+  padding: 4rem;
+}
+
   .card--text  {
-    @apply rounded-2xl p-10 md:p-12 h-full;
+    border-radius: $radius-lg;
+    @include responsive-padding(2.5rem, 2.5rem, 3rem, 3rem);
+    display: flex;
+    flex-direction: column;
     background-color: var(--color-white);
-    /* min-height: 260px on medium+ screens - arbitrary value for design consistency */
-    @media (min-width: 768px) {
+
+    @media (min-width: $breakpoint-md) {
       min-height: 260px;
     }
 
     > div {
-      @apply flex items-center justify-center text-center h-full;
+      @include flex-center;
+      text-align: center;
+      flex: 1;
 
       h2 {
-        @apply text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight max-w-lg; /* Hero card: intentionally larger than base h2 */
+        @include responsive(font-size, 2.25rem, 3.75rem);
+        font-weight: 800;
+        line-height: 1.25;
+        max-width: 32rem;
         color: var(--color-gray-900);
         margin-top: 0; /* Override global h2 margin */
         margin-bottom: 0; /* Override global h2 margin */
+
+        @media (min-width: $breakpoint-md) {
+          font-size: 3rem;
+        }
       }
 
       p {
-        @apply text-lg md:text-xl lg:text-2xl;
+        @include responsive(font-size, 1.125rem, 1.5rem);
         color: var(--color-gray-700);
-        transition: color 200ms ease;
+        transition: color $transition-base ease;
         margin-bottom: 0; /* Override global p margin */
+
+        @media (min-width: $breakpoint-md) {
+          font-size: 1.25rem;
+        }
       }
 
       > div:last-child {
-        @apply mt-6;
+        margin-top: 1.5rem;
       }
     }
   }
 
   /* Unused - kept for potential future use */
   .card-hover {
-    @apply transition-transform duration-200 ease-in-out;
+    transition: transform $transition-base ease-in-out;
     will-change: transform, box-shadow;
 
     &:hover,
     &:focus-visible {
       transform: translateY(-4px);
-      box-shadow: 0 10px 30px rgba(17,24,39,0.08);
+      box-shadow: $shadow-xl;
     }
 
     /* ensure hover does NOT change text color */
@@ -79,29 +99,40 @@
   }
 
   .card {
-    @apply rounded-2xl border shadow-sm
-         p-5 sm:p-6 md:p-8 lg:p-10  /* smaller padding on narrow screens */
-         h-full
-         flex flex-col
-         transition-transform duration-200 ease-in-out;
+    border-radius: $radius-lg;
+    border: 1px solid var(--color-gray-200);
+    box-shadow: $shadow-sm;
+    @include responsive-padding(1.25rem, 1.25rem, 2.5rem, 2.5rem);
+    display: flex;
+    flex-direction: column;
+    transition: transform $transition-base ease-in-out;
     background-color: var(--color-white);
-    border-color: var(--color-gray-200);
 
     &:hover {
       transform: translateY(-4px);
-      box-shadow: 0 10px 30px rgba(17,24,39,0.08);
+      box-shadow: $shadow-xl;
     }
 
     h3 {
-      @apply text-xl md:text-2xl lg:text-3xl font-extrabold mb-4; /* Card-specific: uses base h3 scale but with extrabold weight */
-      transition: color 200ms ease;
+      @include responsive(font-size, 1.25rem, 1.875rem);
+      font-weight: 800;
+      margin-bottom: 1rem;
+      transition: color $transition-base ease;
       margin-top: 0; /* Override global h3 margin */
+
+      @media (min-width: $breakpoint-md) {
+        font-size: 1.5rem;
+      }
     }
 
     > div > h3 + div {
-      @apply text-base md:text-lg lg:text-xl;
+      @include responsive(font-size, 1rem, 1.25rem);
       color: var(--color-gray-700);
-      transition: color 200ms ease;
+      transition: color $transition-base ease;
+
+      @media (min-width: $breakpoint-md) {
+        font-size: 1.125rem;
+      }
 
       p {
         margin-bottom: 0.5rem; /* Controlled spacing for card content paragraphs */
@@ -116,7 +147,7 @@
   /* Highlight card - can also use bg-primary utility */
   .card--highlight {
     background-color: var(--color-primary-light);
-    @apply transition-colors duration-200 ease-in-out;
+    transition: background-color $transition-base ease-in-out;
   }
 
   /* White card variant - plain white background */
@@ -125,19 +156,20 @@
   }
 
   .card__icon {
-    @apply text-4xl md:text-5xl mb-4;
+    @include responsive(font-size, 2.25rem, 3rem);
+    margin-bottom: 1rem;
     display: inline-block; /* Prevent icon from creating extra layout space */
     margin-top: 0; /* Ensure no top margin */
   }
 
   .card__cta {
-    @apply mt-4 text-sm md:text-base;
+    margin-top: 1rem;
+    @include responsive(font-size, 0.875rem, 1rem);
     color: var(--color-link);
-    transition: color 200ms ease;
+    transition: color $transition-base ease;
 
     &:hover,
     &:focus {
       color: var(--color-link-hover);
     }
   }
-

@@ -1,0 +1,12 @@
+{{/*
+  Masonry Gallery Shortcode
+  Creates a responsive masonry layout for images using CSS columns
+  
+  Usage:
+  masonry shortcode with inner content containing markdown images
+*/}}
+
+<div class="gallery-masonry">
+  {{ .Inner | .Page.RenderString }}
+</div>
+
