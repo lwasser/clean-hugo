@@ -16,8 +16,9 @@
     {{ end }}
     style="background: linear-gradient(135deg, {{ $colors.from }} 0%, {{ $colors.to }} 100%);"
   {{ end }}>
-    {{ with .Params.image }}
-    <img src="{{ . | relURL }}" alt="{{ $.Params.image_alt | default $.Title }}" />
+    {{ $img := partial "get-image.html" (dict "image" .Params.image "fallbackAlt" .Title) }}
+    {{ if $img.exists }}
+    <img src="{{ $img.src | relURL }}" alt="{{ $img.alt }}" />
     {{ end }}
 
     <!-- Dark gradient overlay -->
@@ -30,11 +31,9 @@
     </div>
 
     <!-- Photo credit in bottom right -->
-    {{ if or .Params.photo_credit_author .Params.photo_credit_description }}
+    {{ if $img.credit }}
     <div>
-      {{ with .Params.photo_credit_author }}{{ . }}{{ end }}
-      {{ if and .Params.photo_credit_author .Params.photo_credit_description }} • {{ end }}
-      {{ with .Params.photo_credit_description }}{{ . }}{{ end }}
+      {{ $img.credit }}
     </div>
     {{ end }}
   </header>

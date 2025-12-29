@@ -6,6 +6,9 @@
   <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
   <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Summary | plainify | truncate 160 }}{{ end }}">
 
+  {{/* SEO: Open Graph, Canonical URLs, and Social Metadata */}}
+  {{ partial "seo.html" . }}
+
   {{/* Self-hosted fonts via @font-face (defined in main.scss) */}}
 
   {{/* Font Awesome (CDN) */}}

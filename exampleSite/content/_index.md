@@ -5,9 +5,11 @@ draft: false
 layout: "splash"
 hero:
   title: "Clean Hugo Theme"
-  subtitle: "A modern, customizable Hugo theme built with Tailwind CSS"
-  excerpt: "Create beautiful websites with responsive design, customizable colors, and powerful shortcodes—all with simple configuration."
-  image: "/images/hero-image.svg"
+  subtitle: "A modern, customizable Hugo theme built with Tailwind CSS & Alpine.js"
+  excerpt: "A simple yet beautiful responsive design with customizable colors, and ready-to-use shortcodes for cards, figures, metrics, sections, and more."
+  image:
+    src: "images/hero-image.svg"
+    alt: "Clean Hugo Theme hero illustration"
 cards:
   - grid: "md:row-start-1 md:col-start-1"
     modifier: "card--white"
@@ -18,19 +20,19 @@ cards:
     modifier: "card--white"
     icon: "fa-solid fa-mobile-screen"
     title: "Responsive Design"
-    excerpt: "Built mobile-first with Tailwind CSS. Your site looks great on any device—from smartphones to desktop displays. Every component adapts seamlessly to screen size."
+    excerpt: "Built mobile-first with Tailwind CSS. The site looks great on any device—from smartphones to desktop displays."
   - grid: "md:row-start-2 md:col-start-1"
     icon: "fa-solid fa-images"
     title: "Gallery Support"
-    excerpt: "Create stunning image galleries with built-in filtering and responsive layouts. Perfect for portfolios, photo collections, or showcasing your work."
+    excerpt: "Create masonry-style image galleries or grid-style card galleries with built-in filtering and responsive layouts."
   - grid: "md:row-start-2 md:col-start-2"
     icon: "fa-solid fa-blog"
     title: "Modern Blog System"
-    excerpt: "Full-featured blog with pagination, categories, tags, and customizable layouts. Syntax highlighting, admonitions, and rich formatting out of the box."
+    excerpt: "Full-featured blog with a beautiful layout, archive section, categories, tags, and customizable layouts. Syntax highlighting, admonitions, and rich formatting are available out of the box."
   - grid: "md:row-start-3 md:col-start-1"
     icon: "fa-solid fa-code"
     title: "Powerful Shortcodes"
-    excerpt: "Create dynamic layouts with built-in shortcodes for cards, metrics, sections, and more. No custom HTML needed—just simple, semantic markup."
+    excerpt: "Create dynamic layouts with built-in shortcodes for cards, metrics, sections, and more."
   - grid: "md:row-start-3 md:col-start-2"
     modifier: "card--white"
     icon: "fa-solid fa-bolt"
@@ -57,12 +59,12 @@ cards:
 
 {{< card title="Key Features" icon="fa-solid fa-star" >}}
 
-- **Multiple page layouts** – Splash, blog, gallery, and default
+- **Multiple page layouts:** – Splash, blog, gallery, and default
 - **Customizable color palette** – All colors configurable via hugo.toml
 - **Google Fonts integration** – Or use system fonts for speed
 - **Syntax highlighting** – Beautiful code blocks with multiple themes
 - **Responsive navigation** – Mobile-friendly menu system
-- **SEO optimized** – Proper meta tags and semantic HTML
+- Coming soon.... **SEO optimized** – Proper meta tags and semantic HTML
 
 {{</ card >}}
 
@@ -71,8 +73,7 @@ cards:
 - **Hugo** – Fast static site generator
 - **Tailwind CSS v3** – Modern utility-first CSS framework
 - **PostCSS** – For CSS processing and optimization
-- **Font Awesome** – Optional icon support
-- **Accessible design** – WCAG AA compliant color contrasts
+- **Font Awesome** – Icon support
 
 {{</ card >}}
 
@@ -86,9 +87,8 @@ cards:
 
 - **Rich shortcode library** – Pre-built components for cards, hero sections, metrics bars, image galleries, admonitions, and more—all easily customizable
 
-- **Simple configuration** – Control colors, fonts, and features from a single hugo.toml file. No CSS knowledge required for basic customization
+- **Simple configuration** – Control colors, fonts, and features from a single hugo.toml file.
 
-- **Documentation included** – Comprehensive README with setup instructions, configuration examples, and best practices for customization
 
 {{</ single-card-wide >}}
 

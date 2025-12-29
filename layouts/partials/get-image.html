@@ -1,0 +1,34 @@
+{{/*
+  Helper partial to extract image src, alt, and credit from nested image front matter
+
+  Usage:
+    {{ $img := partial "get-image.html" (dict "image" .Params.image "fallbackAlt" .Title) }}
+    {{ $img.src }} - Image path
+    {{ $img.alt }} - Alt text
+    {{ $img.credit }} - Image credit/attribution (optional)
+    {{ $img.exists }} - Boolean, true if image exists
+
+  Expected front matter format:
+    image:
+      src: "images/photo.jpg"
+      alt: "Description of image"
+      credit: "Photo by Jane Doe on Unsplash"  # optional
+*/}}
+
+{{ $image := .image }}
+{{ $fallbackAlt := .fallbackAlt | default "" }}
+{{ $result := dict "src" "" "alt" $fallbackAlt "credit" "" "exists" false }}
+
+{{ if $image }}
+  {{ if $image.src }}
+    {{ $result = dict
+      "src" $image.src
+      "alt" ($image.alt | default $fallbackAlt)
+      "credit" ($image.credit | default "")
+      "exists" true
+    }}
+  {{ end }}
+{{ end }}
+
+{{ return $result }}
+
