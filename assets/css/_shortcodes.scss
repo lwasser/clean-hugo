@@ -1,22 +1,41 @@
   /* Metrics Bar */
   .metrics-bar {
-    @apply w-full pt-24 pb-24 mt-12 mb-20;
+    width: 100%;
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+    margin-top: 3rem;
+    margin-bottom: 5rem;
     background-color: color-mix(in srgb, var(--color-primary) 8%, var(--color-bg));
 
     /* Grid container */
     > div {
-      @apply w-full px-6 grid gap-8 grid-cols-2 lg:grid-cols-4;
+      width: 100%;
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+      display: grid;
+      gap: 2rem;
+      grid-template-columns: repeat(2, 1fr);
       max-width: 1280px;
       margin: 0 auto;
 
+      @media (min-width: $breakpoint-lg) {
+        grid-template-columns: repeat(4, 1fr);
+      }
+
       /* Items */
       > div {
-        @apply text-center text-base md:text-lg leading-relaxed;
+        text-align: center;
+        @include responsive(font-size, 1rem, 1.125rem);
+        line-height: 1.625;
         color: var(--color-gray-700);
 
         /* Numbers */
         strong {
-          @apply block text-4xl md:text-5xl lg:text-6xl font-black mb-2 md:mb-3 leading-tight;
+          display: block;
+          @include responsive(font-size, 2.25rem, 3rem, 3.75rem);
+          @include responsive(margin-bottom, 0.5rem, 0.75rem);
+          font-weight: 900;
+          line-height: 1.25;
           color: var(--color-text);
           letter-spacing: -0.02em;
         }
@@ -26,62 +45,77 @@
 
   /* Two Card Row */
   .two-card-row {
-    @apply pt-6 pb-6;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
     background-color: var(--color-bg);
   }
 
   .two-card-row__container {
-    @apply grid grid-cols-1 md:grid-cols-2 gap-6 items-start;
+    @include responsive-grid($mobile: 1, $tablet: 2, $gap: 1.5rem);
+    align-items: start;
   }
 
   /* Card Shortcode (used in two-card-row) - can use bg-card, bg-primary, or bg-secondary utilities */
   .card-shortcode {
-    @apply w-full md:w-auto rounded-2xl border shadow-sm
-         p-6 md:p-8 lg:p-10
-         h-full
-         transition-transform duration-200 ease-in-out;
+    width: 100%;
+    border-radius: $radius-lg;
+    border: 1px solid var(--color-gray-200);
+    box-shadow: $shadow-sm;
+    @include responsive-padding(1.5rem, 1.5rem, 2.5rem, 2.5rem);
+    height: 100%;
+    transition: transform $transition-base ease-in-out;
     background-color: var(--color-white);
-    border-color: var(--color-gray-200);
+
+    @media (min-width: $breakpoint-md) {
+      width: auto;
+    }
 
     &:hover {
       transform: translateY(-4px);
-      box-shadow: 0 10px 30px rgba(17,24,39,0.08);
+      box-shadow: $shadow-xl;
     }
 
     div {
-      @apply flex flex-col;
+      display: flex;
+      flex-direction: column;
     }
 
     .card-shortcode__icon {
-      @apply text-4xl md:text-5xl mb-4;
+      @include responsive(font-size, 2.25rem, 3rem);
+      margin-bottom: 1rem;
 
       i {
-        @apply text-inherit;
+        color: inherit;
       }
     }
 
     h3 {
-      @apply text-2xl md:text-3xl font-extrabold mb-6;
+      @include responsive(font-size, 1.5rem, 1.875rem);
+      font-weight: 800;
+      margin-bottom: 1.5rem;
       color: var(--color-text);
     }
 
     div div:last-child {
-      @apply text-lg leading-[1.7];
+      font-size: 1.125rem;
+      line-height: 1.7;
       color: var(--color-gray-700);
 
       ul {
-        @apply space-y-2;
-        /* Reduce left padding on mobile to align bullets with text */
-        @apply pl-4 md:pl-6;
+        @include responsive(padding-left, 1rem, 1.5rem);
+
+        > li + li {
+          margin-top: 0.5rem;
+        }
       }
 
       li {
-        @apply leading-[1.7];
+        line-height: 1.7;
       }
 
       a {
         color: var(--color-link);
-        @apply underline;
+        text-decoration: underline;
         transition: color .2s ease;
 
         &:hover,
@@ -99,52 +133,63 @@
 
   /* Single Card Wide */
   .single-card-wide {
-    @apply pt-8 pb-16 mt-10 mb-16;
+    padding-top: 2rem;
+    padding-bottom: 4rem;
+    margin-top: 2.5rem;
+    margin-bottom: 4rem;
     background-color: var(--color-bg);
 
     .container > div {
-      @apply rounded-2xl border shadow-sm
-           p-6 md:p-8 lg:p-10
-           transition-transform duration-200 ease-in-out;
+      border-radius: $radius-lg;
+      border: 1px solid var(--color-gray-200);
+      box-shadow: $shadow-sm;
+      @include responsive-padding(1.5rem, 1.5rem, 2.5rem, 2.5rem);
+      transition: transform $transition-base ease-in-out;
       background-color: color-mix(in srgb, var(--color-primary-dark) 12%, var(--color-primary-light));
-      border-color: var(--color-gray-200);
 
       &:hover {
         transform: translateY(-4px);
-        box-shadow: 0 10px 30px rgba(17,24,39,0.08);
+        box-shadow: $shadow-xl;
       }
     }
 
     .single-card-wide__icon {
-      @apply text-4xl md:text-5xl mb-4;
+      @include responsive(font-size, 2.25rem, 3rem);
+      margin-bottom: 1rem;
 
       i {
-        @apply text-inherit;
+        color: inherit;
       }
     }
 
     h3 {
-      @apply text-2xl md:text-3xl font-extrabold mb-6;
+      @include responsive(font-size, 1.5rem, 1.875rem);
+      font-weight: 800;
+      margin-bottom: 1.5rem;
       color: var(--color-text);
     }
 
     .container > div > div:last-child {
-      @apply text-lg leading-[1.7];
+      font-size: 1.125rem;
+      line-height: 1.7;
       color: var(--color-gray-700);
 
       ul {
-        @apply space-y-3;
-        /* Reduce left padding on mobile to align bullets with text */
-        @apply pl-4 md:pl-6;
+        @include responsive(padding-left, 1rem, 1.5rem);
+
+        > li + li {
+          margin-top: 0.75rem;
+        }
       }
 
       li {
-        @apply leading-[1.7];
+        line-height: 1.7;
       }
 
       a {
         color: var(--color-link);
-        @apply underline font-medium;
+        text-decoration: underline;
+        font-weight: 500;
         transition: color .2s ease;
 
         &:hover,
@@ -162,7 +207,8 @@
 
   /* YouTube Video Embed */
   .youtube-container {
-    @apply my-8;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
     /* Automatically breaks out to full-width in blog posts via auto-detection */
   }
 
@@ -177,46 +223,58 @@
   }
 
   .youtube-wrapper {
-    @apply relative;
+    position: relative;
     padding-bottom: 56.25%; /* 16:9 aspect ratio */
     height: 0;
     overflow: hidden;
   }
 
   .youtube-iframe {
-    @apply absolute top-0 left-0 w-full h-full;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     border: 0;
   }
 
   /* Section Heading Shortcode */
   .section-heading {
-    @apply text-center pt-20 pb-8 mb-8;
+    text-align: center;
+    padding-top: 5rem;
+    padding-bottom: 2rem;
+    margin-bottom: 2rem;
   }
 
   .section-heading__title {
-    @apply text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4;
+    @include responsive(font-size, 2.25rem, 3rem, 3.75rem);
+    font-weight: 700;
+    margin-bottom: 1rem;
     color: var(--color-text);
+
+    @media (min-width: $breakpoint-xl) {
+      font-size: 4.5rem;
+    }
   }
 
   .section-heading__subtitle {
-    @apply text-center text-lg md:text-xl opacity-80;
+    text-align: center;
+    @include responsive(font-size, 1.125rem, 1.25rem);
+    opacity: 0.8;
     color: var(--color-gray-600);
   }
 
   /* Theme Colors Shortcode Styling */
   .theme-colors {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 1.5rem;
+    @include grid-auto-fit($min-width: 280px, $gap: 1.5rem);
     margin: 2rem 0;
 
     > div {
-      display: flex;
-      align-items: center;
+      @include flex-center;
       gap: 1rem;
       padding: 1rem;
       border: 1px solid var(--color-gray-200);
-      border-radius: 0.5rem;
+      border-radius: $radius-md;
       background: var(--color-white);
       box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 
@@ -224,7 +282,7 @@
       > div:first-child {
         width: 80px;
         height: 80px;
-        border-radius: 0.5rem;
+        border-radius: $radius-md;
         border: 2px solid rgba(0, 0, 0, 0.1);
         flex-shrink: 0;
       }
@@ -248,13 +306,13 @@
           color: var(--color-gray-600);
           background: var(--color-gray-100);
           padding: 0.25rem 0.5rem;
-          border-radius: 0.25rem;
+          border-radius: $radius-sm;
           display: inline-block;
         }
       }
     }
 
-    @media (max-width: 640px) {
+    @media (max-width: $breakpoint-sm) {
       grid-template-columns: 1fr;
 
       > div {

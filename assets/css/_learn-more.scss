@@ -1,14 +1,23 @@
   .learn-more {
-    @apply my-12 rounded-3xl p-8 shadow-lg;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    border-radius: $radius-xl;
+    padding: 2rem;
+    box-shadow: $shadow-lg;
     background-color: var(--color-bg);
   }
 
   .learn-more__header {
-    @apply flex items-center gap-3 mb-6;
+    @include flex-center;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+    justify-content: flex-start;
   }
 
   .learn-more__title {
-    @apply text-2xl font-bold m-0;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0;
     color: var(--color-gray-900);
 
     i {
@@ -17,13 +26,23 @@
   }
 
   .learn-more__list {
-    @apply space-y-4 list-none p-0 m-0;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    > li + li {
+      margin-top: 1rem;
+    }
   }
 
   .learn-more__item {
     a {
-      @apply flex items-center gap-4 no-underline transition-colors duration-200;
+      @include flex-center;
+      gap: 1rem;
+      text-decoration: none;
+      transition: color $transition-base;
       color: var(--color-gray-900);
+      justify-content: flex-start;
 
       &:hover,
       &:focus {
@@ -33,11 +52,10 @@
   }
 
   .learn-more__item-text {
-    @apply text-lg font-semibold;
+    font-size: 1.125rem;
+    font-weight: 600;
 
     i {
-      @apply mr-2;
+      margin-right: 0.5rem;
     }
   }
-
-
