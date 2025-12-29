@@ -6,6 +6,15 @@ theme = 'clean-hugo'
 # Build future-dated posts (for development/testing)
 buildFuture = true
 
+# SEO: Enable robots.txt generation
+enableRobotsTXT = true
+
+# Sitemap configuration
+[sitemap]
+  changefreq = 'weekly'
+  filename = 'sitemap.xml'
+  priority = 0.5
+
 # Syntax highlighting configuration
 [markup]
   [markup.highlight]
@@ -115,7 +124,7 @@ buildFuture = true
 [[menu.main]]
   name = "Documentation"
   parent = "resources"
-  url = "/resources/docs/"
+  url = "/resources/documentation/"
   weight = 1
 
 [[menu.main]]

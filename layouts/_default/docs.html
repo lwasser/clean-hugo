@@ -1,0 +1,33 @@
+{{ define "main" }}
+<div class="docs-layout">
+  <!-- Sidebar Navigation -->
+  <aside class="docs-sidebar">
+    <nav class="docs-nav" id="docs-nav">
+      <!-- JavaScript will populate this -->
+    </nav>
+  </aside>
+
+  <!-- Main Content -->
+  <article class="docs-content">
+    <h1 class="docs-title">{{ .Title }}</h1>
+
+    {{ with .Params.excerpt }}
+    <p class="docs-excerpt">{{ . }}</p>
+    {{ end }}
+
+    <div class="docs-body">
+      {{ .Content }}
+    </div>
+
+    {{ partial "last-modified.html" . }}
+  </article>
+
+  <!-- Scroll to Top Button -->
+  <button id="scroll-to-top" class="docs-scroll-top" aria-label="Scroll to top">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+</div>
+
+<script src="{{ "js/docs-nav.js" | relURL }}" defer></script>
+{{ end }}
+
