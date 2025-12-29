@@ -352,6 +352,10 @@ xl: 1280px
     margin-right: -50vw;
   }
 
+/* Variables and Mixins - Import First */
+@import 'variables';
+@import 'mixins';
+
 /* Component Imports */
 @import 'navigation';
 @import 'content';

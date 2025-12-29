@@ -94,21 +94,27 @@ enableRobotsTXT = true
 
 [[menu.main]]
   name = "Filterable Grids"
-  url = "/filterable-grids/"
+  url = "#"
   weight = 2
   identifier = "filterable-grids"
+
+[[menu.main]]
+  name = "Filterable Grids"
+  parent = "filterable-grids"
+  url = "/filterable-grids/"
+  weight = 1
 
 [[menu.main]]
   name = "Packages"
   parent = "filterable-grids"
   url = "/packages/"
-  weight = 1
+  weight = 2
 
 [[menu.main]]
   name = "People"
   parent = "filterable-grids"
   url = "/people/"
-  weight = 2
+  weight = 3
 
 [[menu.main]]
   name = "Documentation"

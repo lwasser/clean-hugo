@@ -117,10 +117,10 @@
         {{ range .Site.Menus.main }}
           {{ if .HasChildren }}
             <div class="site-nav__dropdown">
-              <a href="{{ .URL }}" class="site-nav__link site-nav__link--dropdown" aria-haspopup="true" aria-expanded="false">
+              <button class="site-nav__link site-nav__link--dropdown" aria-haspopup="true" aria-expanded="false">
                 {{ .Name }}
                 <i class="fas fa-chevron-down" aria-hidden="true"></i>
-              </a>
+              </button>
               <ul class="site-nav__dropdown-menu">
                 {{ range .Children }}
                   <li>

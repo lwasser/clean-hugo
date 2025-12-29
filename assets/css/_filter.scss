@@ -1,38 +1,35 @@
 /* Filter Components */
-  .filter-row {
+.filter-row {
   display: flex;
   flex-wrap: wrap;
   gap: 0.75rem;
   margin-bottom: 2rem;
   justify-content: center;
-  }
+}
 
-  .filter-btn {
+.filter-btn {
   padding: 0.5rem 1rem;
-  border-radius: 9999px;
+  border-radius: $radius-full;
   font-size: 0.875rem;
   font-weight: 500;
   border: 1px solid var(--color-gray-300);
-    background-color: var(--color-white);
-    color: var(--color-gray-700);
+  background-color: var(--color-white);
+  color: var(--color-gray-700);
   cursor: pointer;
-  transition: all 200ms;
+  transition: all $transition-base;
 
-    &[aria-pressed="true"] {
-      background-color: var(--color-primary);
-      border-color: var(--color-primary);
+  &[aria-pressed="true"] {
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
     color: white;
-    }
-
-    &[aria-pressed="false"]:hover {
-      background-color: var(--color-gray-50);
-      border-color: var(--color-gray-400);
-    }
-
-    &:focus {
-    outline: none;
-    box-shadow: 0 0 0 2px var(--color-white), 0 0 0 4px var(--color-primary);
-    }
   }
 
+  &[aria-pressed="false"]:hover {
+    background-color: var(--color-gray-50);
+    border-color: var(--color-gray-400);
+  }
 
+  &:focus {
+    @include focus-ring;
+  }
+}
