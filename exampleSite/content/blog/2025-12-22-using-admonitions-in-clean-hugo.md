@@ -9,7 +9,9 @@ tags:
   - shortcodes
   - tutorial
   - clean-hugo
-image: "/images/unsplash-water.webp"
+image:
+  src: "images/unsplash-water.webp"
+  alt: "Calm water surface with ripples and reflections"
 ---
 
 The Clean Hugo theme includes a powerful admonition shortcode that lets you create beautiful, color-coded callout boxes in your content. Perfect for highlighting important information, warnings, tips, and more!
@@ -266,12 +268,14 @@ excerpt: "A brief description of what this post is about."
 If you don't provide an excerpt, Hugo will automatically generate one from the first few sentences of your post content.
 {{< /admonition >}}
 
-**`image`** - Path to featured image displayed in listings and as header on single post page
+**`image`** - Featured image with alt text (nested format recommended)
 ```yaml
-image: "/images/my-featured-image.jpg"
+image:
+  src: "images/my-featured-image.jpg"
+  alt: "Description of the image for accessibility"
 ```
 {{< admonition type="note" >}}
-Images should be placed in your `static/images/` directory. Use a leading slash `/` to reference them from the site root.
+Images should be placed in your `static/images/` directory. The nested format with `src` and `alt` is recommended for better accessibility and SEO. Simple string format (`image: "images/file.jpg"`) still works for backward compatibility.
 {{< /admonition >}}
 
 **`category`** - Single category for organizing posts (used for filtering on blog listing page)
@@ -320,7 +324,9 @@ title: "Getting Started with Clean Hugo Theme"
 date: 2024-12-22
 draft: false
 excerpt: "Learn how to set up and customize the Clean Hugo theme for your website."
-image: "/images/hero-image.jpg"
+image:
+  src: "images/hero-image.jpg"
+  alt: "Modern workspace with laptop and coffee"
 photo_credit_author: "Jane Smith"
 photo_credit_description: "Modern workspace setup"
 category: "Tutorial"

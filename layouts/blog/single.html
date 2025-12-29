@@ -17,7 +17,16 @@
     style="background: linear-gradient(135deg, {{ $colors.from }} 0%, {{ $colors.to }} 100%);"
   {{ end }}>
     {{ with .Params.image }}
-    <img src="{{ . | relURL }}" alt="{{ $.Params.image_alt | default $.Title }}" />
+    {{/* Support both nested (image.src) and simple string formats */}}
+    {{ $imgSrc := "" }}
+    {{ $imgAlt := $.Title }}
+    {{ if reflect.IsMap . }}
+      {{ $imgSrc = .src }}
+      {{ $imgAlt = .alt | default $.Title }}
+    {{ else }}
+      {{ $imgSrc = . }}
+    {{ end }}
+    <img src="{{ $imgSrc | relURL }}" alt="{{ $imgAlt }}" />
     {{ end }}
 
     <!-- Dark gradient overlay -->

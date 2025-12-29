@@ -16,7 +16,16 @@
   <a href="{{ $post.Permalink }}">
     {{ if $post.Params.image }}
     <figure class="blog-card__image">
-      <img src="{{ $post.Params.image | relURL }}" alt="{{ $post.Title }}" loading="lazy" />
+      {{/* Support both nested (image.src) and simple string formats */}}
+      {{ $imgSrc := "" }}
+      {{ $imgAlt := $post.Title }}
+      {{ if reflect.IsMap $post.Params.image }}
+        {{ $imgSrc = $post.Params.image.src }}
+        {{ $imgAlt = $post.Params.image.alt | default $post.Title }}
+      {{ else }}
+        {{ $imgSrc = $post.Params.image }}
+      {{ end }}
+      <img src="{{ $imgSrc | relURL }}" alt="{{ $imgAlt }}" loading="lazy" />
     </figure>
     {{ else }}
     {{/* Get gradient colors based on category - map categories to color pairs */}}

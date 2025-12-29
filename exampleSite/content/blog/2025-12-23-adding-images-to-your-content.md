@@ -10,7 +10,9 @@ tags:
   - images
   - tutorial
   - clean-hugo
-image: "/images/unsplash-green-fields.webp"
+image:
+  src: "images/unsplash-green-fields.webp"
+  alt: "Rolling green hills and fields under blue sky"
 ---
 
 Images bring your content to life, and the Clean Hugo theme gives you multiple ways to add them to your posts and pages. Whether you need simple inline images or advanced figures with captions and optimized formats, this guide covers everything you need to know.

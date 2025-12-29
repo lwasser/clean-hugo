@@ -19,6 +19,12 @@ buildFuture = true
   author = "Example Author"
   tagline = "A clean, modern Hugo theme example"
   blog_title = "Example Blog"
+  description = "A modern, customizable Hugo theme built with Tailwind CSS & Alpine.js"
+
+  [params.seo]
+    # Default image for social sharing (when page doesn't have one)
+    # Should be at least 1200x630px for best results
+    default_image = "images/hero-image.svg"
 
   [params.blog]
     sidebar_count = 2

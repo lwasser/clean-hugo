@@ -10,7 +10,9 @@ tags:
   - hugo
   - tutorial
   - layouts
-image: "/images/unsplash-images.webp"
+image:
+  src: "images/unsplash-images.webp"
+  alt: "Collection of scattered vintage photographs"
 ---
 
 Hugo shortcodes are reusable snippets that let you add complex content to your pages without writing HTML. Think of them as pre-built components you can insert anywhere in your content files.
