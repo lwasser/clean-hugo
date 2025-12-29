@@ -51,8 +51,11 @@
   }
 
   .two-card-row__container {
-    @include responsive-grid($mobile: 1, $tablet: 2, $gap: 1.5rem);
+    @include responsive-grid($mobile: 1, $tablet: 2, $desktop: 2, $gap: 1.5rem);
     align-items: start;
+    max-width: $container-max-width;
+    margin: 0 auto;
+    padding: 0 1.5rem;
   }
 
   /* Card Shortcode (used in two-card-row) - can use bg-card, bg-primary, or bg-secondary utilities */

@@ -8,25 +8,31 @@
 .impact-cards__grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 2rem;
+  gap: 1.25rem;
 
   @media (min-width: $breakpoint-md) {
     grid-template-columns: repeat(2, 1fr);
   }
 
   @media (min-width: $breakpoint-lg) {
-    gap: 2.5rem;
+    gap: 2rem;
   }
 
   @media (min-width: $breakpoint-xl) {
-    gap: 3rem;
+    gap: 2.5rem;
   }
+}
+
+/* Impact cards - more spacious padding */
+.impact-cards .card {
+  padding: 4rem;
 }
 
   .card--text  {
     border-radius: $radius-lg;
     @include responsive-padding(2.5rem, 2.5rem, 3rem, 3rem);
-    height: 100%;
+    display: flex;
+    flex-direction: column;
     background-color: var(--color-white);
 
     @media (min-width: $breakpoint-md) {
@@ -36,7 +42,7 @@
     > div {
       @include flex-center;
       text-align: center;
-      height: 100%;
+      flex: 1;
 
       h2 {
         @include responsive(font-size, 2.25rem, 3.75rem);
