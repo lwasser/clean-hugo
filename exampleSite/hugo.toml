@@ -116,28 +116,9 @@ enableRobotsTXT = true
   weight = 2
 
 [[menu.main]]
-  name = "Resources"
-  url = "/resources/"
-  weight = 4
-  identifier = "resources"
-
-[[menu.main]]
   name = "Documentation"
-  parent = "resources"
-  url = "/resources/documentation/"
-  weight = 1
-
-[[menu.main]]
-  name = "Tutorials"
-  parent = "resources"
-  url = "/resources/tutorials/"
-  weight = 2
-
-[[menu.main]]
-  name = "Examples"
-  parent = "resources"
-  url = "/resources/examples/"
-  weight = 3
+  url = "/documentation/"
+  weight = 4
 
 [[menu.main]]
   name = "About"

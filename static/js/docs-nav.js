@@ -5,16 +5,76 @@
  */
 
 document.addEventListener('DOMContentLoaded', function() {
-  const docsContent = document.querySelector('.docs-body');
+  const docsContent = document.querySelector('.docs-content');
   const docsNav = document.getElementById('docs-nav');
   const scrollToTopBtn = document.getElementById('scroll-to-top');
 
   if (!docsContent || !docsNav) return;
 
-  // Generate navigation from headings
-  function generateNav() {
+  // Generate section navigation (links to other docs pages)
+  function generateSectionNav() {
+    const currentPath = window.location.pathname;
+    
+    // Get base path from current URL (handles subdirectory deployments)
+    const pathParts = currentPath.split('/').filter(p => p);
+    const baseIndex = pathParts.indexOf('documentation');
+    const basePath = baseIndex > 0 ? '/' + pathParts.slice(0, baseIndex).join('/') + '/' : '/';
+    
+    const docsSections = [
+      { title: 'Documentation Home', url: basePath + 'documentation/' },
+      { title: 'Getting Started', url: basePath + 'documentation/getting-started/' },
+      { title: 'Layouts & Shortcodes', url: basePath + 'documentation/layouts-shortcodes/' },
+      { title: 'Working with Images', url: basePath + 'documentation/images/' },
+      { title: 'SEO & Social Sharing', url: basePath + 'documentation/seo/' }
+    ];
+
+    const sectionNav = document.createElement('div');
+    sectionNav.className = 'docs-section-nav';
+    
+    const sectionTitle = document.createElement('h4');
+    sectionTitle.textContent = 'Documentation';
+    sectionTitle.className = 'docs-section-title';
+    sectionNav.appendChild(sectionTitle);
+
+    const sectionList = document.createElement('ul');
+    sectionList.className = 'docs-nav__list docs-section-list';
+
+    docsSections.forEach(section => {
+      const item = document.createElement('li');
+      item.className = 'docs-nav__item';
+
+      const link = document.createElement('a');
+      link.href = section.url;
+      link.textContent = section.title;
+      link.className = 'docs-nav__link';
+
+      // Highlight current page
+      if (currentPath.includes(section.url) || (section.url === '/documentation/' && currentPath.endsWith('/documentation/'))) {
+        link.classList.add('docs-nav__link--active');
+      }
+
+      item.appendChild(link);
+      sectionList.appendChild(item);
+    });
+
+    sectionNav.appendChild(sectionList);
+    docsNav.appendChild(sectionNav);
+
+    // Add separator
+    const separator = document.createElement('div');
+    separator.className = 'docs-nav-separator';
+    docsNav.appendChild(separator);
+  }
+
+  // Generate page navigation from headings
+  function generatePageNav() {
     const headings = docsContent.querySelectorAll('h2, h3');
     if (headings.length === 0) return;
+
+    const pageNavTitle = document.createElement('h4');
+    pageNavTitle.textContent = 'On This Page';
+    pageNavTitle.className = 'docs-section-title';
+    docsNav.appendChild(pageNavTitle);
 
     const nav = document.createElement('ul');
     nav.className = 'docs-nav__list';
@@ -103,9 +163,9 @@ document.addEventListener('DOMContentLoaded', function() {
   // Show/hide scroll to top button
   function toggleScrollButton() {
     if (window.pageYOffset > 300) {
-      scrollToTopBtn.classList.add('docs-scroll-top--visible');
+      scrollToTopBtn.classList.add('docs-scroll-btn--visible');
     } else {
-      scrollToTopBtn.classList.remove('docs-scroll-top--visible');
+      scrollToTopBtn.classList.remove('docs-scroll-btn--visible');
     }
   }
 
@@ -117,7 +177,8 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   // Initialize
-  generateNav();
+  generateSectionNav();
+  generatePageNav();
   updateActiveLink();
 
   // Update on scroll (throttled)

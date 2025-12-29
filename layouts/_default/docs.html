@@ -1,29 +1,26 @@
 {{ define "main" }}
+{{ $header := .Params.header | default dict }}
+{{ $headerColor := $header.color | default "primaryDark" }}
+{{ $headerTitle := $header.title | default .Title }}
+{{ $isHex := hasPrefix $headerColor "#" }}
+<div class="docs-header {{ if not $isHex }}docs-header--{{ $headerColor }}{{ end }}"{{ if $isHex }} style="background-color: {{ $headerColor }};"{{ end }}>
+  <div class="docs-header__inner">
+    <h1 class="docs-header__title">{{ $headerTitle }}</h1>
+  </div>
+</div>
+
 <div class="docs-layout">
-  <!-- Sidebar Navigation -->
   <aside class="docs-sidebar">
-    <nav class="docs-nav" id="docs-nav">
-      <!-- JavaScript will populate this -->
-    </nav>
+    <nav id="docs-nav"></nav>
   </aside>
 
-  <!-- Main Content -->
   <article class="docs-content">
-    <h1 class="docs-title">{{ .Title }}</h1>
-
-    {{ with .Params.excerpt }}
-    <p class="docs-excerpt">{{ . }}</p>
-    {{ end }}
-
-    <div class="docs-body">
-      {{ .Content }}
-    </div>
-
+    {{ with .Params.excerpt }}<p class="docs-excerpt">{{ . }}</p>{{ end }}
+    {{ .Content }}
     {{ partial "last-modified.html" . }}
   </article>
 
-  <!-- Scroll to Top Button -->
-  <button id="scroll-to-top" class="docs-scroll-top" aria-label="Scroll to top">
+  <button id="scroll-to-top" class="docs-scroll-btn" aria-label="Scroll to top">
     <i class="fas fa-arrow-up"></i>
   </button>
 </div>
