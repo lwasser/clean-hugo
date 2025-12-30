@@ -1,3 +1,24 @@
+/* Filterable grid page container and headings to match blog layout */
+.filterable-grid-container {
+  max-width: $container-narrow;
+  margin: 0 auto;
+  padding: 0 $fluid-container-padding;
+}
+
+.filterable-grid-title {
+  @include responsive(font-size, 2rem, 2.5rem, 3rem);
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+
+.filterable-grid-body {
+  font-size: 1rem;
+  line-height: 1.625;
+  color: var(--color-gray-700);
+  @media (min-width: $breakpoint-lg) {
+    font-size: 1.25rem;
+  }
+}
 /* Filter Components */
 .filter-row {
   display: flex;

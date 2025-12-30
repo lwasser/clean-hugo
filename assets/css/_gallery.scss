@@ -38,7 +38,7 @@
 /* Gallery content wrapper - narrower max-width */
 .gallery-content {
   @include container($container-narrow);
-  @include responsive-padding($spacing-section, 1rem);
+  padding: 0 $fluid-container-padding-lg;
 }
 
 /* Gallery header with nested elements */
