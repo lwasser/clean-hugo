@@ -38,7 +38,7 @@
 /* Gallery content wrapper - narrower max-width */
 .gallery-content {
   @include container($container-narrow);
-  @include responsive-padding($spacing-section, 1rem);
+  padding: 0 $fluid-container-padding-lg;
 }
 
 /* Gallery header with nested elements */
@@ -75,30 +75,37 @@
 
 /* Masonry layout using CSS columns */
 .gallery-masonry {
-  columns: 1;
-  column-gap: 1rem;
-
-  @media (min-width: $breakpoint-sm) {
-    columns: 2;
-  }
-
-  @media (min-width: $breakpoint-lg) {
-    columns: 3;
-  }
+    columns: 1;
+    column-gap: clamp(0.5rem, 2vw, 1.5rem);
+    padding: clamp(0.5rem, 2vw, 1.5rem);
 
   figure {
     break-inside: avoid;
-    margin-bottom: 1rem;
-    display: inline-block;
+    margin-bottom: clamp(0.25rem, 1vw, .5rem);
+    display: block;
+  }
+
+  img {
     width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
   }
 
   a {
     display: block;
-
     &:hover img {
       transform: scale(1.03);
     }
+  }
+
+  @media (min-width: $breakpoint-sm) {
+    columns: 2;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  @media (min-width: $breakpoint-lg) {
+    columns: 3;
   }
 
   img {

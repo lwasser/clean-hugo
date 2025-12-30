@@ -279,9 +279,34 @@
     left: 0;
     right: 0;
     color: white;
-    padding: 2rem;
-    max-width: 56rem;
+    padding: 2rem 1rem;
+    max-width: $container-narrow;
     margin: 0 auto;
+    word-break: break-word;
+    hyphens: auto;
+    @media (min-width: $breakpoint-md) {
+      padding: 2.5rem 2rem;
+    }
+    h1 {
+      font-size: 2rem;
+      font-weight: 800;
+      line-height: 1.15;
+      margin: 0 0 0.5rem 0;
+      max-width: 100%;
+      word-break: break-word;
+      hyphens: auto;
+      @media (min-width: $breakpoint-md) {
+        font-size: 2.5rem;
+      }
+      @media (min-width: $breakpoint-lg) {
+        font-size: 3rem;
+      }
+    }
+    p {
+      font-size: 1rem;
+      margin: 0;
+      color: var(--color-gray-200);
+    }
   }
 
   > div:last-child {
@@ -299,6 +324,7 @@
   margin: 0 auto;
   padding: 0 2rem;
   margin-bottom: 2rem;
+  font-weight: 700;
 
   p {
     font-size: 1.25rem;
@@ -310,7 +336,7 @@
 .blog-post__content {
   max-width: 56rem;
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0 1rem;
   /* Constrained width for readable text (matches excerpt and tags footer) */
   /* Uses base typography from main.scss - no prose plugin needed */
 

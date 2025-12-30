@@ -1,22 +1,110 @@
-/* Center h2 headings in content (blog posts override this with left alignment) */
-/* Headings use base typography scale from main.scss */
-.content h2,
-article h2 {
-  text-align: center;
+
+/* Unified content container and headings (formerly blog styles) */
+.content-container,
+.content-page {
+  max-width: $container-narrow;
+  margin: 0 auto;
+  padding: 0 $fluid-container-padding;
 }
 
-/* General content/article styles */
-.content-container {
-  max-width: 48rem;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 1rem 1rem 4rem;
+.content-title {
+  @include responsive(font-size, 2rem, 2.5rem, 3rem);
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
 
-  /* Wider container for pages with hero sections (like filterable-grids) */
-  &:has(.content-page) {
-    max-width: 56rem;
-    padding-left: 2rem;
-    padding-right: 2rem;
+.content-body {
+  max-width: 65ch;
+  margin: 0 auto;
+  font-size: 1rem;
+  line-height: 1.625;
+  color: var(--color-gray-700);
+  @media (min-width: $breakpoint-lg) {
+    font-size: 1.25rem;
+  }
+
+  a {
+    color: var(--color-link);
+    &:hover,
+    &:focus {
+      color: var(--color-link-hover);
+    }
+  }
+
+  pre {
+    border-radius: 0.5rem;
+    padding: 1rem;
+    overflow-x: auto;
+    margin-bottom: 1rem;
+    background-color: #272822;
+    color: #f8f8f2;
+    font-size: 0.875rem;
+    line-height: 1.5;
+  }
+
+  code {
+    border-radius: 0.25rem;
+    padding: 0.125rem 0.375rem;
+    font-size: 0.875em;
+    background-color: rgba(0, 0, 0, 0.05);
+    color: #e83e8c;
+  }
+
+  pre code {
+    padding: 0;
+    background-color: transparent;
+    color: inherit;
+    font-size: inherit;
+  }
+
+  .highlight {
+    margin-bottom: 1rem;
+    pre {
+      margin: 0;
+    }
+  }
+
+  h1 {
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    @media (min-width: $breakpoint-md) {
+      font-size: 2.5rem;
+    }
+    @media (min-width: $breakpoint-lg) {
+      font-size: 3rem;
+    }
+  }
+  h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    @media (min-width: $breakpoint-md) {
+      font-size: 1.875rem;
+    }
+    @media (min-width: $breakpoint-lg) {
+      font-size: 2.25rem;
+    }
+  }
+  h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    @media (min-width: $breakpoint-md) {
+      font-size: 1.5rem;
+    }
+    @media (min-width: $breakpoint-lg) {
+      font-size: 1.75rem;
+    }
+  }
+  p {
+    font-size: 1.125rem;
+    line-height: 1.625;
+    color: var(--color-gray-700);
+    margin-bottom: 1rem;
+    @media (min-width: $breakpoint-md) {
+      font-size: 1.25rem;
+    }
   }
 }
 
@@ -25,55 +113,19 @@ article h2 {
   color: var(--color-gray-600);
 }
 
-.content-body {
-  /* Base prose styles */
-  max-width: 65ch;
-
-  /* Override prose link colors for accessibility */
-  a {
-    color: var(--color-link);
-
-    &:hover,
-    &:focus {
-      color: var(--color-link-hover);
-    }
-  }
-
-  /* Code block styles */
-  pre {
-    border-radius: 0.5rem;
-    padding: 1rem;
-    overflow-x: auto;
-    margin-bottom: 1rem;
-    background-color: #272822;
-    color: #f8f8f2;
-    font-size: 0.875rem;
-    line-height: 1.5;
-  }
-
-  code {
-    border-radius: 0.25rem;
-    padding: 0.125rem 0.375rem;
-    font-size: 0.875em;
-    background-color: rgba(0, 0, 0, 0.05);
-    color: #e83e8c;
-  }
-
-  pre code {
-    padding: 0;
-    background-color: transparent;
-    color: inherit;
-    font-size: inherit;
-  }
-
-  /* Hugo syntax highlighting wrapper */
-  .highlight {
-    margin-bottom: 1rem;
-
-    pre {
-      margin: 0;
-    }
-  }
+// Headings left aligned for all content
+.content-body h2,
+.content-body h3,
+.content-body h4,
+.content-body h5,
+.content-body h6,
+.content-page h2,
+.content-page h3,
+.content-page h4,
+.content-page h5,
+.content-page h6 {
+  text-align: left !important;
+  text-transform: none;
 }
 
 @media (min-width: 1024px) {
@@ -82,109 +134,42 @@ article h2 {
   }
 }
 
-/* Generic content page style (similar to blog posts but for documentation pages) */
-.content-page {
-  max-width: 56rem;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 2rem;
-  padding-right: 2rem;
+// Full-width shortcodes for .content-page
+.content-page > .metrics-bar,
+.content-page > .blog-highlight,
+.content-page > .single-card-wide,
+.content-page > .youtube-container:not(.youtube-container--constrained),
+.content-page > .two-card-row {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+}
 
-  /* Auto-detect and make full-width shortcodes break out of container */
-  /* These shortcodes automatically become full-width */
-  > .metrics-bar,
-  > .blog-highlight,
-  > .single-card-wide,
-  > .youtube-container:not(.youtube-container--constrained),
-  > .two-card-row {
-    width: 100vw;
-    position: relative;
-    left: 50%;
-    right: 50%;
-    margin-left: -50vw;
-    margin-right: -50vw;
-  }
-
-  /* Left align all headings (h2 and below) and ensure sentence case */
-  /* Headings use base typography scale from main.scss, only override alignment */
-  h2, h3, h4, h5, h6 {
-    text-align: left !important;
-    text-transform: none;
-  }
-
-  /* Code block styles */
-  pre {
-    border-radius: 0.5rem;
-    padding: 1rem;
-    overflow-x: auto;
-    margin-bottom: 1rem;
-    background-color: #272822;
-    color: #f8f8f2;
-    font-size: 0.875rem;
-    line-height: 1.5;
-  }
-
-  code {
-    border-radius: 0.25rem;
-    padding: 0.125rem 0.375rem;
-    font-size: 0.875em;
-    background-color: rgba(0, 0, 0, 0.05);
-    color: #e83e8c;
-  }
-
-  pre code {
-    padding: 0;
-    background-color: transparent;
-    color: inherit;
-    font-size: inherit;
-  }
-
-  /* Hugo syntax highlighting wrapper */
-  .highlight {
-    margin-bottom: 1rem;
-
-    pre {
-      margin: 0;
-    }
-  }
-
-  /* Links use base styles from main.scss */
-  a {
-    color: var(--color-link);
-
-    &:hover,
-    &:focus {
-      color: var(--color-link-hover);
-    }
-  }
-
-  /* Lists */
-  ul, ol {
-    margin-bottom: 1rem;
-  }
-
-  li {
-    margin-bottom: 0.5rem;
-  }
-
-  /* Paragraphs */
-  p {
-    margin-bottom: 1rem;
-    line-height: 1.625;
-    color: var(--color-gray-700);
-  }
-
-  /* Blockquotes */
-  blockquote {
-    border-left: 4px solid;
-    padding-left: 1rem;
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    border-color: var(--color-primary);
-    background-color: var(--color-gray-50);
-  }
+// List and blockquote styles (shared with blog)
+.content-page ul,
+.content-page ol {
+  margin-bottom: 1rem;
+}
+.content-page li {
+  margin-bottom: 0.5rem;
+}
+.content-page p {
+  margin-bottom: 1rem;
+  line-height: 1.625;
+  color: var(--color-gray-700);
+}
+.content-page blockquote {
+  border-left: 4px solid;
+  padding-left: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border-color: var(--color-primary);
+  background-color: var(--color-gray-50);
 }
 
 /* Section styles for list pages */
@@ -256,10 +241,11 @@ article h2 {
 
 /* Last modified date footer */
 .content-last-modified {
-  margin-top: 3rem;
+  margin: 3rem .5rem .5rem .5rem;
   padding-top: 2rem;
   border-top: 1px solid;
   border-color: var(--color-gray-200);
+  font-style: italic;
 
   p {
     font-size: 0.875rem;
