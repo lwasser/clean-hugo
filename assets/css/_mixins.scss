@@ -1,3 +1,22 @@
+/* Card base mixin - shared border, radius, shadow, background, and hover */
+@mixin card-base(
+  $radius: $radius-lg,
+  $border: 1px solid var(--color-gray-200),
+  $shadow: $shadow-sm,
+  $bg: var(--color-white),
+  $hover-lift: -4px,
+  $hover-shadow: $shadow-xl
+) {
+  border-radius: $radius;
+  border: $border;
+  box-shadow: $shadow;
+  background-color: $bg;
+  transition: transform $transition-base ease-in-out, box-shadow $transition-base ease-in-out;
+  &:hover {
+    transform: translateY($hover-lift);
+    box-shadow: $hover-shadow;
+  }
+}
 /**
  * Reusable SCSS Mixins - Mobile First
  * Base styles target mobile (320px+), breakpoints enhance for larger screens
