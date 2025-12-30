@@ -52,30 +52,6 @@
     {{ partial "learn-more.html" . }}
   </div>
 
-  <!-- Image Gallery (if images exist) -->
-  {{ $heroImage := .Params.image.src | default .Params.image }}
-  {{ $images := .Resources.ByType "image" }}
-  {{ $galleryImages := slice }}
-  {{ range $images }}
-    {{ if ne .Name $heroImage }}
-      {{ $galleryImages = $galleryImages | append . }}
-    {{ end }}
-  {{ end }}
-  {{ if gt (len $galleryImages) 0 }}
-  <section class="gallery-images">
-    <h2>Gallery</h2>
-    <div class="gallery-masonry">
-      {{ range $galleryImages }}
-        {{ $filename := .Name | replaceRE "\\.[^.]+$" "" | replaceRE "-" " " | title }}
-        <figure>
-          <img src="{{ .RelPermalink }}" alt="{{ or .Title $filename }}" loading="lazy">
-          <figcaption class="gallery-caption">{{ $filename }}</figcaption>
-        </figure>
-      {{ end }}
-    </div>
-  </section>
-  {{ end }}
-
   <!-- Tags footer -->
   <footer class="blog-post__tags">
     {{ with .Params.tags }}Tags: {{ range $i, $t := . }}{{ if $i }}, {{ end }}<a href="{{ "/tags/" | relURL }}{{ urlize $t }}">{{ $t }}</a>{{ end }}{{ end }}
@@ -84,5 +60,12 @@
   <!-- Last modified date -->
   {{ partial "last-modified.html" . }}
 </article>
+{{ end }}
+
+{{ define "scripts" }}
+  {{/* Load GLightbox only if masonry shortcode was used */}}
+  {{ if .Page.Scratch.Get "hasGallery" }}
+    {{ partial "glightbox-scripts.html" . }}
+  {{ end }}
 {{ end }}
 

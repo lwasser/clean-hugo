@@ -19,7 +19,7 @@
                 class="glightbox"
                 data-gallery="gallery-images"
                 data-glightbox="title: {{ $caption }};">
-              <img src="{{ .RelPermalink }}" alt="{{ or .Title $.Title }}" loading="lazy">
+              <img src="{{ .RelPermalink }}" alt="{{ or .Title $.Title }}" loading="lazy" style="image-orientation: from-image;">
             </a>
             <p class="gallery-caption">
                 {{ $caption }}
@@ -32,16 +32,6 @@
 {{ end }}
 
 {{ define "scripts" }}
-  {{ if .Site.Params.theme.enableGallery | default true }}
-    <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
-    <script>
-      GLightbox({
-        selector: '.glightbox',
-        touchNavigation: true,
-        loop: false,
-        autoplayVideos: true
-      });
-    </script>
-  {{ end }}
+  {{ partial "glightbox-scripts.html" . }}
 {{ end }}
 
