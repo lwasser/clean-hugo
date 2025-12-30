@@ -1,23 +1,46 @@
 /**
- * Theme Variables
- * Breakpoints, sizes, and other reusable values
+ * Theme Variables - Mobile First
+ * Base values target mobile (320px+), use breakpoints to enhance
  */
 
-/* Breakpoints */
-$breakpoint-sm: 640px;
-$breakpoint-md: 768px;
-$breakpoint-lg: 1024px;
-$breakpoint-xl: 1280px;
-$breakpoint-2xl: 1536px;
+/* Breakpoints - min-width (mobile first) */
+$breakpoint-sm: 640px;            /* Large phones / small tablets */
+$breakpoint-md: 768px;            /* Tablets */
+$breakpoint-lg: 1024px;           /* Desktop */
+$breakpoint-xl: 1280px;           /* Large desktop */
+$breakpoint-2xl: 1536px;          /* Extra large */
 
 /* Container Max Widths */
 $container-max-width: 80rem;      /* 1280px - standard container */
 $container-narrow: 56rem;         /* 896px - content/blog posts */
 $container-wide: 42rem;           /* 672px - narrow content */
 
-/* Spacing */
-$spacing-section: 3rem;           /* Standard section padding */
-$spacing-section-lg: 4rem;        /* Large section padding */
+/* Spacing - mobile base values */
+$spacing-xs: 0.5rem;              /* 8px - minimal spacing */
+$spacing-sm: 1rem;                /* 16px - small spacing */
+$spacing-md: 1.5rem;              /* 24px - medium spacing */
+$spacing-lg: 2rem;                /* 32px - large spacing */
+$spacing-xl: 3rem;                /* 48px - extra large spacing */
+$spacing-section: 2rem;           /* Mobile section padding */
+$spacing-section-lg: 3rem;        /* Desktop section padding */
+
+/* Fluid Spacing - Using clamp() for smooth mobile-first scaling */
+$fluid-space-xs: clamp(0.5rem, 1vw, 0.75rem);          /* 8px → 12px */
+$fluid-space-sm: clamp(0.75rem, 2vw, 1.5rem);          /* 12px → 24px */
+$fluid-space-md: clamp(1rem, 3vw, 2rem);               /* 16px → 32px */
+$fluid-space-lg: clamp(1.5rem, 4vw, 3rem);             /* 24px → 48px */
+$fluid-space-xl: clamp(2rem, 6vw, 4rem);               /* 32px → 64px */
+$fluid-space-2xl: clamp(2rem, 8vw, 5rem);              /* 32px → 80px */
+$fluid-space-3xl: clamp(2.5rem, 10vw, 6rem);           /* 40px → 96px */
+
+/* Fluid Container Padding */
+$fluid-container-padding: clamp(0.75rem, 3vw, 1.5rem); /* Container horizontal */
+$fluid-container-padding-lg: clamp(1rem, 4vw, 2rem);   /* Narrow containers */
+
+/* Fluid Card/Component Padding */
+$fluid-card-padding-sm: clamp(1rem, 3vw, 1.5rem);      /* Small cards */
+$fluid-card-padding-md: clamp(1.25rem, 4vw, 2.5rem);   /* Medium cards */
+$fluid-card-padding-lg: clamp(1.5rem, 5vw, 4rem);      /* Large impact cards */
 
 /* Border Radius */
 $radius-sm: 0.25rem;              /* 4px */

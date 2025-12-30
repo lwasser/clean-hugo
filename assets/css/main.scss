@@ -7,7 +7,20 @@ xl: 1280px
 2xl: 1536px
 */
 
+/* Variables and Mixins - Import First */
+@import 'variables';
+@import 'mixins';
+
 /* Base Styles */
+  /* Universal box-sizing and overflow fix */
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    overflow-x: hidden;
+  }
+
   /*
     Self-hosted font declarations using variable fonts
     Font files are in themes/clean-hugo/static/fonts/
@@ -85,6 +98,9 @@ xl: 1280px
     color: var(--color-text);
     background-color: var(--color-bg);
     margin: 0;
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
   }
 
   /* Typography System - Base Heading Styles */
@@ -233,7 +249,8 @@ xl: 1280px
 
   /* List-specific styling */
   ul, ol {
-    margin-left: 1.5rem;
+    margin-left: clamp(1rem, 2.5vw, 1.5rem);
+    padding-left: 0;
   }
 
   li {
@@ -316,52 +333,33 @@ xl: 1280px
   /* Standard container - used throughout site (max-w-7xl) */
   .container {
     max-width: 80rem;
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
+    margin: 0 auto;
+    padding: 0 $fluid-container-padding;
   }
 
   /* Narrow container for content (blog posts, etc.) - max-w-4xl */
   .container-narrow {
     max-width: 56rem;
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 2rem;
-    padding-right: 2rem;
+    margin: 0 auto;
+    padding: 0 $fluid-container-padding-lg;
   }
 
-  /* Wide container for hero sections - responsive padding */
+  /* Wide container for hero sections - fluid padding */
   .container-wide {
     max-width: 80rem;
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
-
-  @media (min-width: 768px) {
-    .container-wide {
-      padding-left: 1.5rem;
-      padding-right: 1.5rem;
-    }
+    margin: 0 auto;
+    padding: 0 $fluid-container-padding;
   }
 
   /* Full-width breakout utility - breaks out of constrained containers */
   /* Use this class on any element that needs to span full viewport width */
   /* Works within blog posts, packages page, or any constrained container */
   .full-width {
-    width: 100vw;
-    position: relative;
-    left: 50%;
-    right: 50%;
-    margin-left: -50vw;
-    margin-right: -50vw;
+    width: 100%;
+    max-width: 100%;
+    margin-left: calc(-1 * $fluid-container-padding);
+    margin-right: calc(-1 * $fluid-container-padding);
   }
-
-/* Variables and Mixins - Import First */
-@import 'variables';
-@import 'mixins';
 
 /* Component Imports */
 @import 'navigation';

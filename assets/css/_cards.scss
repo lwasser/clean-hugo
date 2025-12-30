@@ -2,7 +2,7 @@
 .impact-cards {
   max-width: $container-max-width;
   margin: 0 auto;
-  padding: 5rem 1.5rem;
+  padding: $fluid-space-2xl $fluid-container-padding;
 }
 
 .impact-cards__grid {
@@ -23,14 +23,26 @@
   }
 }
 
-/* Impact cards - more spacious padding */
+/* Impact cards - fluid padding scales from mobile to desktop */
 .impact-cards .card {
-  padding: 4rem;
+  padding: $fluid-card-padding-lg;
+  margin: 0;
+
+  /* Consistent typography for all card types */
+  p {
+    font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+    line-height: 1.6;
+    color: var(--color-gray-700);
+  }
+
+  h2, h3 {
+    line-height: 1.25;
+  }
 }
 
   .card--text  {
     border-radius: $radius-lg;
-    @include responsive-padding(2.5rem, 2.5rem, 3rem, 3rem);
+    padding: $fluid-card-padding-md clamp(1.5rem, 5vw, 3rem);
     display: flex;
     flex-direction: column;
     background-color: var(--color-white);
@@ -59,14 +71,11 @@
       }
 
       p {
-        @include responsive(font-size, 1.125rem, 1.5rem);
+        font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+        line-height: 1.6;
         color: var(--color-gray-700);
         transition: color $transition-base ease;
         margin-bottom: 0; /* Override global p margin */
-
-        @media (min-width: $breakpoint-md) {
-          font-size: 1.25rem;
-        }
       }
 
       > div:last-child {
@@ -114,25 +123,19 @@
     }
 
     h3 {
-      @include responsive(font-size, 1.25rem, 1.875rem);
+      font-size: clamp(1.5rem, 3vw, 1.875rem);
       font-weight: 800;
+      line-height: 1.3;
       margin-bottom: 1rem;
-      transition: color $transition-base ease;
       margin-top: 0; /* Override global h3 margin */
-
-      @media (min-width: $breakpoint-md) {
-        font-size: 1.5rem;
-      }
+      transition: color $transition-base ease;
     }
 
     > div > h3 + div {
-      @include responsive(font-size, 1rem, 1.25rem);
+      font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+      line-height: 1.6;
       color: var(--color-gray-700);
       transition: color $transition-base ease;
-
-      @media (min-width: $breakpoint-md) {
-        font-size: 1.125rem;
-      }
 
       p {
         margin-bottom: 0.5rem; /* Controlled spacing for card content paragraphs */
@@ -140,6 +143,31 @@
         &:last-child {
           margin-bottom: 0;
         }
+      }
+
+      ul, ol {
+        padding-left: clamp(1rem, 2.5vw, 1.5rem);
+
+        li {
+          line-height: 1.6;
+          margin-bottom: 0.5rem;
+        }
+      }
+
+      a {
+        color: var(--color-link);
+        text-decoration: underline;
+        transition: color .2s ease;
+
+        &:hover,
+        &:focus {
+          color: var(--color-link-hover);
+        }
+      }
+
+      strong {
+        color: var(--color-text);
+        font-weight: 600;
       }
     }
   }
