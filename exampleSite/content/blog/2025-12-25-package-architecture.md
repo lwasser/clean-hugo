@@ -5,6 +5,10 @@ author: "Clean Hugo Theme"
 categories: ["documentation", "architecture"]
 tags: ["packages", "javascript", "architecture"]
 excerpt: "Complete technical documentation for the package filtering system architecture, including AlpineJS integration, data flow, and maintenance guidelines."
+image:
+  src: "images/unsplash-water.webp"
+  alt: "Calm water surface with ripples and reflections"
+  credit: "Photo by Unsplash"
 ---
 
 This document provides technical documentation for the package filtering system used on the  "our-packages" page.

@@ -16,9 +16,9 @@
     {{ end }}
     style="background: linear-gradient(135deg, {{ $colors.from }} 0%, {{ $colors.to }} 100%);"
   {{ end }}>
-    {{ $img := partial "get-image.html" (dict "image" .Params.image "fallbackAlt" .Title) }}
+    {{ $img := partial "get-image.html" (dict "image" .Params.image "fallbackAlt" .Title "page" .) }}
     {{ if $img.exists }}
-    <img src="{{ $img.src | relURL }}" alt="{{ $img.alt }}" />
+    <img src="{{ $img.src }}" alt="{{ $img.alt }}" />
     {{ end }}
 
     <!-- Dark gradient overlay -->

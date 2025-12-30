@@ -9,6 +9,10 @@ tags:
   - testing
   - shortcodes
   - typography
+image:
+  src: "images/unsplash-green-fields.webp"
+  alt: "Lush green agricultural fields"
+  credit: "Photo by Unsplash"
 ---
 
 ## Introduction
