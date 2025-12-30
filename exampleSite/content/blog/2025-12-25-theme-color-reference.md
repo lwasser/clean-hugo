@@ -5,6 +5,10 @@ author: "Clean Hugo Theme"
 categories: ["documentation", "customization"]
 tags: ["colors", "theme", "configuration"]
 excerpt: "Complete reference guide to all customizable theme colors with visual swatches and hex codes."
+image:
+  src: "images/unsplash-images.webp"
+  alt: "Collection of scattered vintage photographs"
+  credit: "Photo by Unsplash"
 ---
 
 # Theme Color Reference Guide

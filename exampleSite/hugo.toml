@@ -1,7 +1,11 @@
-baseURL = 'https://leahwasser.com/clean-hugo/'  # Update path if needed
+baseURL = '/'  # Default for local development
 languageCode = 'en-us'
 title = 'Clean Hugo Theme Example'
 theme = 'clean-hugo'
+
+# Production environment configuration
+[environments.production]
+  baseURL = 'https://leahwasser.com/clean-hugo/'
 
 # Build future-dated posts (for development/testing)
 buildFuture = true
@@ -126,3 +130,6 @@ enableRobotsTXT = true
   url = "/about/"
   weight = 4
 
+
+[permalinks]
+  blog = "/blog/:title/"

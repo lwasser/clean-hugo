@@ -9,6 +9,10 @@ tags:
   - testing
   - code
   - syntax-highlighting
+image:
+  src: "images/unsplash-green-fields.webp"
+  alt: "Lush green agricultural fields"
+  credit: "Photo by Unsplash"
 ---
 
 This post tests code block styling and syntax highlighting with various code examples.

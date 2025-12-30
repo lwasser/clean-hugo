@@ -14,10 +14,10 @@
 
 <article class="blog-card {{ $modifier }}" data-category="{{ if $postCategory }}{{ $postCategory | urlize }}{{ end }}">
   <a href="{{ $post.Permalink }}">
-    {{ $img := partial "get-image.html" (dict "image" $post.Params.image "fallbackAlt" $post.Title) }}
+    {{ $img := partial "get-image.html" (dict "image" $post.Params.image "fallbackAlt" $post.Title "page" $post) }}
     {{ if $img.exists }}
     <figure class="blog-card__image">
-      <img src="{{ $img.src | relURL }}" alt="{{ $img.alt }}" loading="lazy" />
+      <img src="{{ $img.src }}" alt="{{ $img.alt }}" loading="lazy" />
     </figure>
     {{ else }}
     {{/* Get gradient colors based on category - map categories to color pairs */}}
@@ -26,6 +26,9 @@
       "Open Science" (dict "from" "#EDB88B" "to" "#D6A570")
       "Community" (dict "from" "#AC87A0" "to" "#8B6A8F")
       "Science Communication" (dict "from" "#71B3B5" "to" "#5A9A9C")
+      "Tutorial" (dict "from" "#71B3B5" "to" "#5A9A9C")
+      "Gardening" (dict "from" "#22C55E" "to" "#16A34A")
+      "Images" (dict "from" "#3B82F6" "to" "#2563EB")
     }}
     {{ $defaultColors := dict "from" "#71B3B5" "to" "#2E6060" }}
     {{ $colors := $defaultColors }}
