@@ -32,8 +32,11 @@
         if (window.innerWidth < 768) {
           e.preventDefault();
           const isOpen = dropdownMenu.classList.contains('site-nav__dropdown-menu--open');
+          // Toggle menu visibility
           dropdownMenu.classList.toggle('site-nav__dropdown-menu--open');
-          dropdownToggle.setAttribute('aria-expanded', !isOpen);
+          // Toggle aria-expanded and update it based on new state
+          const newState = !isOpen;
+          dropdownToggle.setAttribute('aria-expanded', newState.toString());
         }
         // On desktop, let hover handle it
       });

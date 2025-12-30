@@ -174,22 +174,30 @@
     font-size: 0.75rem;
     transition: transform 0.2s;
   }
-}
 
-.site-nav__dropdown:hover,
-.site-nav__dropdown:focus-within {
-  .site-nav__link--dropdown i {
+  /* Icon rotation when dropdown is open (mobile) */
+  &[aria-expanded="true"] i {
     transform: rotate(180deg);
   }
+}
 
-  .site-nav__dropdown-menu {
-    display: block;
+/* Desktop hover behavior */
+@media (min-width: 768px) {
+  .site-nav__dropdown:hover,
+  .site-nav__dropdown:focus-within {
+    .site-nav__link--dropdown i {
+      transform: rotate(180deg);
+    }
+
+    .site-nav__dropdown-menu {
+      display: block;
+    }
   }
 }
 
 .site-nav__dropdown-menu {
   display: none;
-  padding-left: 2rem;
+  padding-left: 0;
   padding-top: 0.5rem;
   list-style: none;
   padding-right: 0;
@@ -197,6 +205,10 @@
 
   &.site-nav__dropdown-menu--open {
     display: block;
+  }
+
+  li {
+    width: 100%;
   }
 }
 
@@ -226,19 +238,28 @@
 }
 
 .site-nav__dropdown-link {
-  padding: 0.5rem 1rem;
+  padding: 0.75rem 1rem;
   font-size: 1rem;
   font-weight: 500;
-  transition: color 0.2s;
+  transition: all 0.2s;
   display: block;
+  width: 100%;
   color: var(--color-text);
   text-decoration: none;
+  border-radius: 0.25rem;
 
   &:hover,
   &:focus {
-    color: var(--color-link);
-    background-color: var(--color-gray-50);
+    color: var(--color-text);
+    background-color: var(--color-gray-100);
     outline: none;
+  }
+}
+
+/* On mobile, make dropdown links indent slightly for hierarchy */
+@media (max-width: 767px) {
+  .site-nav__dropdown-link {
+    padding-left: 2rem;
   }
 }
 

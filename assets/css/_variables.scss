@@ -69,3 +69,11 @@ $z-fixed: 200;
 $z-overlay: 300;
 $z-modal: 400;
 
+/* Card Typography - Shared across homepage content cards */
+/* (impact cards, two-card-row, single-card-wide) */
+$card-heading-size: clamp(1.7rem, 3vw, 1.875rem);     /* H3 headings */
+$card-text-size: clamp(1.25rem, 2.5vw, 1.5rem);       /* Paragraphs & list items */
+$card-list-padding: clamp(0.25rem, 2.5vw, 1.5rem);    /* List padding-left - minimal on mobile */
+$card-text-color: var(--color-gray-700);              /* Body text color */
+$card-line-height: 1.6;                                /* Text line height */
+
