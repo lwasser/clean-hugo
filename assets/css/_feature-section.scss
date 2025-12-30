@@ -1,8 +1,8 @@
   /* Container classes for both feature and feature-section */
   .feature,
   .feature-section {
-    @include responsive(padding-top, 4rem, 5rem);
-    @include responsive(padding-bottom, 4rem, 5rem);
+    padding-top: $fluid-space-2xl;
+    padding-bottom: $fluid-space-2xl;
 
     header {
       @include responsive(margin-bottom, 2.5rem, 3rem);
@@ -43,7 +43,7 @@
     border-radius: $radius-lg;
     border: 1px solid var(--color-gray-300);
     box-shadow: $shadow-sm;
-    @include responsive-padding(1.25rem, 1.25rem, 2.5rem, 2.5rem);
+    padding: $fluid-card-padding-md;
     background-color: var(--color-feature-card);  /* Default background - can be overridden with bg-primary or bg-secondary utility classes */
   }
 

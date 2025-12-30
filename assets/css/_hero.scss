@@ -7,6 +7,8 @@
   overflow: hidden;
   margin-bottom: 3rem;
   background-color: var(--color-primary-dark);
+  width: 100%;
+  max-width: 100vw;
 
   /* Direct child .container gets additional padding */
   > .container {
@@ -80,8 +82,8 @@
   }
 
   &__image-container {
-    @include responsive(width, 10rem, 16rem);
-    @include responsive(height, 10rem, 16rem);
+    width: clamp(8rem, 25vw, 10rem);
+    height: clamp(8rem, 25vw, 10rem);
     border-radius: $radius-full;
     overflow: hidden;
     border: 8px solid var(--color-white);
@@ -90,6 +92,16 @@
     @media (min-width: $breakpoint-sm) {
       width: 12rem;
       height: 12rem;
+    }
+
+    @media (min-width: $breakpoint-md) {
+      width: 14rem;
+      height: 14rem;
+    }
+
+    @media (min-width: $breakpoint-lg) {
+      width: 16rem;
+      height: 16rem;
     }
   }
 

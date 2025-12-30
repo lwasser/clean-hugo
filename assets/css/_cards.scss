@@ -2,35 +2,39 @@
 .impact-cards {
   max-width: $container-max-width;
   margin: 0 auto;
-  padding: 5rem 1.5rem;
+  padding: $fluid-space-2xl $fluid-container-padding;
 }
 
 .impact-cards__grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 1.25rem;
+  gap: $card-gap;
 
   @media (min-width: $breakpoint-md) {
     grid-template-columns: repeat(2, 1fr);
   }
-
-  @media (min-width: $breakpoint-lg) {
-    gap: 2rem;
-  }
-
-  @media (min-width: $breakpoint-xl) {
-    gap: 2.5rem;
-  }
 }
 
-/* Impact cards - more spacious padding */
+/* Impact cards - fluid padding scales from mobile to desktop */
 .impact-cards .card {
-  padding: 4rem;
+  padding: $fluid-card-padding-lg;
+  margin: 0;
+
+  /* Consistent typography for all card types */
+  p {
+    font-size: $card-text-size;
+    line-height: $card-line-height;
+    color: $card-text-color;
+  }
+
+  h2, h3 {
+    line-height: 1.25;
+  }
 }
 
   .card--text  {
-    border-radius: $radius-lg;
-    @include responsive-padding(2.5rem, 2.5rem, 3rem, 3rem);
+    border-radius: $card-border-radius;
+    padding: $fluid-card-padding-md clamp(1.5rem, 5vw, 3rem);
     display: flex;
     flex-direction: column;
     background-color: var(--color-white);
@@ -59,14 +63,11 @@
       }
 
       p {
-        @include responsive(font-size, 1.125rem, 1.5rem);
-        color: var(--color-gray-700);
+        font-size: $card-text-size;
+        line-height: $card-line-height;
+        color: $card-text-color;
         transition: color $transition-base ease;
         margin-bottom: 0; /* Override global p margin */
-
-        @media (min-width: $breakpoint-md) {
-          font-size: 1.25rem;
-        }
       }
 
       > div:last-child {
@@ -99,40 +100,29 @@
   }
 
   .card {
-    border-radius: $radius-lg;
-    border: 1px solid var(--color-gray-200);
-    box-shadow: $shadow-sm;
+    border-radius: $card-border-radius;
+    border: $card-border;
+    box-shadow: $card-shadow;
     @include responsive-padding(1.25rem, 1.25rem, 2.5rem, 2.5rem);
     display: flex;
     flex-direction: column;
-    transition: transform $transition-base ease-in-out;
     background-color: var(--color-white);
-
-    &:hover {
-      transform: translateY(-4px);
-      box-shadow: $shadow-xl;
-    }
+    @include card-hover($lift: -4px, $shadow: $card-shadow-hover);
 
     h3 {
-      @include responsive(font-size, 1.25rem, 1.875rem);
+      font-size: $card-heading-size;
       font-weight: 800;
+      line-height: 1.3;
       margin-bottom: 1rem;
-      transition: color $transition-base ease;
       margin-top: 0; /* Override global h3 margin */
-
-      @media (min-width: $breakpoint-md) {
-        font-size: 1.5rem;
-      }
+      transition: color $transition-base ease;
     }
 
     > div > h3 + div {
-      @include responsive(font-size, 1rem, 1.25rem);
-      color: var(--color-gray-700);
+      font-size: $card-text-size;
+      line-height: $card-line-height;
+      color: $card-text-color;
       transition: color $transition-base ease;
-
-      @media (min-width: $breakpoint-md) {
-        font-size: 1.125rem;
-      }
 
       p {
         margin-bottom: 0.5rem; /* Controlled spacing for card content paragraphs */
@@ -140,6 +130,32 @@
         &:last-child {
           margin-bottom: 0;
         }
+      }
+
+      ul, ol {
+        padding-left: $card-list-padding;
+
+        li {
+          font-size: $card-text-size;
+          line-height: $card-line-height;
+          margin-bottom: 0.5rem;
+        }
+      }
+
+      a {
+        color: var(--color-link);
+        text-decoration: underline;
+        transition: color .2s ease;
+
+        &:hover,
+        &:focus {
+          color: var(--color-link-hover);
+        }
+      }
+
+      strong {
+        color: var(--color-text);
+        font-weight: 600;
       }
     }
   }
@@ -156,7 +172,7 @@
   }
 
   .card__icon {
-    @include responsive(font-size, 2.25rem, 3rem);
+    font-size: $card-icon-size;
     margin-bottom: 1rem;
     display: inline-block; /* Prevent icon from creating extra layout space */
     margin-top: 0; /* Ensure no top margin */

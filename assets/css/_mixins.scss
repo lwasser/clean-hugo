@@ -1,10 +1,10 @@
 /**
- * Reusable SCSS Mixins
- * Common patterns used across components
+ * Reusable SCSS Mixins - Mobile First
+ * Base styles target mobile (320px+), breakpoints enhance for larger screens
  */
 
 /* Container mixin - centered with max-width and responsive padding */
-@mixin container($max-width: $container-max-width, $padding-mobile: 1rem, $padding-tablet: 1.5rem) {
+@mixin container($max-width: $container-max-width, $padding-mobile: 0.75rem, $padding-tablet: 1.5rem) {
   max-width: $max-width;
   margin: 0 auto;
   padding: 0 $padding-mobile;
@@ -47,8 +47,8 @@
   }
 }
 
-/* Responsive padding - shorthand for vertical/horizontal padding */
-@mixin responsive-padding($mobile-y: 2rem, $mobile-x: 1rem, $tablet-y: null, $tablet-x: 1.5rem) {
+/* Responsive padding - mobile base with optional tablet/desktop values */
+@mixin responsive-padding($mobile-y: 1.5rem, $mobile-x: 0.75rem, $tablet-y: null, $tablet-x: 1.5rem) {
   padding: $mobile-y $mobile-x;
 
   @if $tablet-y and $tablet-x {
@@ -151,3 +151,29 @@
   }
 }
 
+/* Mobile-first font sizing - base size with optional scaling */
+@mixin fluid-font($mobile-size, $desktop-size: null) {
+  font-size: $mobile-size;
+
+  @if $desktop-size {
+    @media (min-width: $breakpoint-lg) {
+      font-size: $desktop-size;
+    }
+  }
+}
+
+/* Stack to row - mobile stacks, desktop horizontal */
+@mixin stack-to-row($gap: 1rem, $breakpoint: $breakpoint-md) {
+  display: flex;
+  flex-direction: column;
+  gap: $gap;
+
+  @media (min-width: $breakpoint) {
+    flex-direction: row;
+  }
+}
+
+/* Mobile safe area - accounts for notches/home indicators */
+@mixin mobile-safe-padding($padding: 1rem) {
+  padding: max($padding, env(safe-area-inset-top)) max($padding, env(safe-area-inset-right)) max($padding, env(safe-area-inset-bottom)) max($padding, env(safe-area-inset-left));
+}
