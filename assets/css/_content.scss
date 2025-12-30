@@ -256,10 +256,11 @@ article h2 {
 
 /* Last modified date footer */
 .content-last-modified {
-  margin-top: 3rem;
+  margin: 3rem .5rem .5rem .5rem;
   padding-top: 2rem;
   border-top: 1px solid;
   border-color: var(--color-gray-200);
+  font-style: italic;
 
   p {
     font-size: 0.875rem;
