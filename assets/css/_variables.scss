@@ -77,3 +77,12 @@ $card-list-padding: clamp(0.25rem, 2.5vw, 1.5rem);    /* List padding-left - min
 $card-text-color: var(--color-gray-700);              /* Body text color */
 $card-line-height: 1.6;                                /* Text line height */
 
+/* Card Layout & Styling - Shared styles for card components */
+$card-border-radius: $radius-lg;                       /* Card corner rounding */
+$card-border: 1px solid var(--color-gray-200);        /* Card border */
+$card-shadow: $shadow-sm;                              /* Card shadow */
+$card-shadow-hover: $shadow-xl;                        /* Card shadow on hover */
+$card-hover-transform: translateY(-4px);               /* Card lift on hover */
+$card-icon-size: clamp(2.25rem, 4vw, 3rem);           /* Icon size in cards */
+$card-gap: clamp(1.25rem, 3vw, 2.5rem);               /* Gap between cards in grid */
+
