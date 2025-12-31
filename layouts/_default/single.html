@@ -7,19 +7,11 @@
     {{/* Only show date at top for pages without hero sections */}}
     <p class="content-date">{{ .Date.Format "January 2, 2006" }}</p>
   {{ end }}
-  {{ if .Params.hero }}
-    {{/* Pages with hero sections use content-page style (like filterable-grids) */}}
-    <div class="content-page">
-      {{ .Content }}
-      {{ partial "last-modified.html" . }}
-    </div>
-  {{ else }}
-    {{/* Regular pages use content-body style */}}
-    <div class="content-body">
-      {{ .Content }}
-      {{ partial "last-modified.html" . }}
-    </div>
-  {{ end }}
+  {{/* All pages now use unified content-main style with prose constraints and full-width support */}}
+  <div class="content-main">
+    {{ .Content }}
+    {{ partial "last-modified.html" . }}
+  </div>
 </article>
 {{ end }}
 
