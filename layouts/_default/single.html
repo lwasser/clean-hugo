@@ -1,13 +1,13 @@
 {{ define "main" }}
+
+{{ partial "hero.html" . }}
+
 <article class="content-container">
-  <header class="content-header">
-    <h1>{{ .Title }}</h1>
-  </header>
+
   {{ if and (not .Params.hero) (not .Params.hideDate) }}
     {{/* Only show date at top for pages without hero sections */}}
     <p class="content-date">{{ .Date.Format "January 2, 2006" }}</p>
   {{ end }}
-  {{/* All pages now use unified content-main style with prose constraints and full-width support */}}
   <div class="content-main">
     {{ .Content }}
     {{ partial "last-modified.html" . }}

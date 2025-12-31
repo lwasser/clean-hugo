@@ -1,9 +1,10 @@
 ---
-title: "Filterable Grids"
+title: "Filterable Card Layouts"
 hero:
-  title: "Filterable Grids"
-  subtitle: "Interactive filtering and search for collections"
-  excerpt: "Browse our collections with powerful filtering and search capabilities. Filter by category, search by name, and explore our community."
+  title: "Filterable Card Layouts"
+  subtitle: "Interactive filtering and search for card collections"
+  excerpt: "Filtering is driven by Alpine.js. The layout for these pages is vanilla css and the data come from yaml files stored in the hugo data folder.."
+  color: "#b57195"
 layout: single
 ---
 
