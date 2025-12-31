@@ -1,5 +1,5 @@
 {{ define "main" }}
-<article>
+<article class="content-container">
   <!-- Hero Banner with Title Overlay -->
   <header class="blog-post__header"{{ if not .Params.image }}{{/* Get gradient colors based on category when no image */}}
     {{ $gradientColors := dict
@@ -46,7 +46,7 @@
   {{ end }}
 
   <!-- Main content -->
-  <div class="blog-post__content">
+  <div class="content-main">
     {{ .Content }}
 
     {{ partial "learn-more.html" . }}

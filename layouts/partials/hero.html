@@ -1,4 +1,5 @@
 {{ $hero := .Params.hero | default dict }}
+{{ $heroColor := $hero.color }}
 {{ $isGallery := or (eq .Section "gallery") (eq .Section "plants") }}
 {{/* For plant pages, always use main front matter title; otherwise use hero.title if available */}}
 {{ $title := "" }}
@@ -14,7 +15,7 @@
 {{/* Get hero image using helper partial */}}
 {{ $heroImg := partial "get-image.html" (dict "image" $hero.image "fallbackAlt" ($title | default (printf "Image for %s" .Title))) }}
 
-<section class="hero">
+<section class="hero"{{ if $heroColor }} style="background-color: {{ $heroColor }};"{{ end }}>
   <div class="container">
     <div class="hero__grid">
       <div class="hero__content">

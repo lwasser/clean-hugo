@@ -333,61 +333,15 @@
   }
 }
 
-.blog-post__content {
-  max-width: 56rem;
-  margin: 0 auto;
-  padding: 0 1rem;
-  /* Constrained width for readable text (matches excerpt and tags footer) */
-  /* Uses base typography from main.scss - no prose plugin needed */
+// Blog content styles now handled by unified .content-main class
 
-  /* Auto-detect and make full-width shortcodes break out of container */
-  /* These shortcodes automatically become full-width */
-  /* Note: youtube-container--constrained is excluded to stay within content width */
-  > .metrics-bar,
-  > .blog-highlight,
-  > .single-card-wide,
-  > .youtube-container:not(.youtube-container--constrained),
-  > .two-card-row {
-    width: 100vw;
-    position: relative;
-    left: 50%;
-    right: 50%;
-    margin-left: -50vw;
-    margin-right: -50vw;
-  }
-
+/* Blog-specific typography overrides */
+.blog-post__header + .content-main {
   /* Left align all headings (h2 and below) and ensure sentence case */
   /* Headings use base typography scale from main.scss, only override alignment */
   h2, h3, h4, h5, h6 {
     text-align: left !important;
     text-transform: none;
-  }
-
-  /* Code block styles */
-  pre {
-    border-radius: 0.5rem;
-    padding: 1rem;
-    overflow-x: auto;
-    margin-bottom: 1rem;
-    background-color: #272822;
-    color: #f8f8f2;
-    font-size: 0.875rem;
-    line-height: 1.5;
-  }
-
-  code {
-    border-radius: 0.25rem;
-    padding: 0.125rem 0.375rem;
-    font-size: 0.875em;
-    background-color: rgba(0, 0, 0, 0.05);
-    color: #e83e8c;
-  }
-
-  pre code {
-    padding: 0;
-    background-color: transparent;
-    color: inherit;
-    font-size: inherit;
   }
 
   /* Hugo syntax highlighting wrapper */
@@ -398,9 +352,6 @@
       margin: 0;
     }
   }
-
-  /* Links use base styles from main.scss */
-  /* Code block styles are handled globally in _code.scss */
 }
 
 .blog-post__tags {
@@ -422,8 +373,8 @@
 }
 
 /* Last modified date for blog posts */
-.blog-post__content + .content-last-modified {
-  max-width: 56rem;
+.content-main + .content-last-modified {
+  max-width: 65ch;
   margin: 0 auto;
   padding: 0 2rem;
 }
