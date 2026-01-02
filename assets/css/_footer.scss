@@ -1,7 +1,7 @@
 .site-footer {
   padding-top: 2.5rem;
   padding-bottom: 2.5rem;
-  background-color: var(--color-footer-bg);
+  background-color: color-mix(in srgb, var(--color-hero-bg) 70%, black);
 
   > .container {
     max-width: 80rem;

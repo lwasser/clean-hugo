@@ -61,7 +61,7 @@
       display: block;
       margin-top: 0.5rem;
       font-size: 0.75rem;
-      color: var(--color-gray-500);
+      color: var(--color-gray-700);
     }
 
     .excerpt {
@@ -87,7 +87,7 @@
 /* Blog highlight section - home page cards with dark theme */
 .blog-highlight {
   padding: $spacing-section-lg 0 6rem;
-  background-color: var(--color-blog-highlight);
+  background-color: var(--color-gray-900);
 
   .container {
     @include container($container-max-width, 1.5rem, 2rem);
@@ -140,10 +140,10 @@
     transition: all $transition-slow ease-out;
 
     &:hover {
-      background-color: color-mix(in srgb, var(--color-gray-800) 30%, transparent);
+      background-color: color-mix(in srgb, var(--color-gray-900) 30%, transparent);
 
       h3 {
-        color: var(--color-gray-300);
+        color: var(--color-gray-200);
       }
     }
 
@@ -154,7 +154,7 @@
       font-size: 0.75rem;
 
       time {
-        color: var(--color-gray-400);
+        color: var(--color-gray-600);
       }
 
       .category {
@@ -207,7 +207,7 @@
       margin-top: 1.25rem;
       font-size: 0.875rem;
       line-height: 1.5;
-      color: var(--color-gray-400);
+      color: var(--color-gray-600);
     }
 
     .read-more {
