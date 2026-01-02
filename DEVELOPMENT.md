@@ -1,7 +1,7 @@
 # Development
 
 If you want to modify the theme or develop your site locally, you'll need to
-work with the CSS. This theme uses Tailwind CSS, which is a utility-first CSS
+work with the CSS. This theme uses Vanilla CSS, which is a utility-first CSS
 framework that makes it easy to build custom designs.
 
 ## Get started with development
@@ -30,7 +30,7 @@ Or from the theme root:
 npm run serve
 ```
 
-**Note:** The exampleSite requires `postcss.config.js` and `tailwind.config.js` to be present in the exampleSite directory for CSS processing to work correctly. These files are included in the exampleSite.
+**Note:** The exampleSite requires `postcss.config.js` to be present in the exampleSite directory for CSS processing to work correctly. These files are included in the exampleSite.
 
 When you're ready to create the final version of your site, build it for
 production. This generates optimized, minified CSS and creates your static

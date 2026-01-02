@@ -11,7 +11,7 @@ header:
 
 ## Welcome to Clean Hugo Documentation
 
-Clean Hugo is a modern, customizable Hugo theme built with Tailwind CSS that gives you a responsive, mobile-first website. This documentation covers everything you need to build, customize, and deploy your site.
+Clean Hugo is a modern, customizable Hugo theme built with CSS that gives you a responsive, mobile-first website. This documentation covers everything you need to build, customize, and deploy your site.
 
 ### Documentation Sections
 
@@ -35,7 +35,7 @@ Meta tags, Open Graph, favicons, robots.txt, and optimizing your site for search
 
 ## Features at a Glance
 
-- **Responsive Design** - Mobile-first with Tailwind CSS
+- **Responsive Design** - Mobile-first CSS for all screen sizes
 - **Customizable Colors** - Full color palette control via hugo.toml
 - **Multiple Layouts** - Splash, blog, gallery, and documentation layouts
 - **Rich Shortcodes** - Cards, admonitions, figures, metrics, and more
