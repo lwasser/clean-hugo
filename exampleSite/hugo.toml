@@ -32,7 +32,7 @@ enableRobotsTXT = true
   author = "Example Author"
   tagline = "A clean, modern Hugo theme example"
   blog_title = "Example Blog"
-  description = "A modern, customizable Hugo theme built with Tailwind CSS & Alpine.js"
+  description = "A modern, customizable Hugo theme built with Hugo + SCSS and a few sprinkles of Alpine.js"
 
   [params.seo]
     # Default image for social sharing (when page doesn't have one)
@@ -50,7 +50,7 @@ enableRobotsTXT = true
     bluesky = "https://bsky.app/profile/username.bsky.social"
 
   [params.footer]
-    title = "Connect With Us"
+    title = "Connect"
 
 [params.theme]
   enableGallery = true
@@ -61,13 +61,14 @@ enableRobotsTXT = true
     body = "Inter"
 
   [params.theme.colors]
-    primary = "#71B3B5"
-    primaryDark = "#2E6060"
-    primaryLight = "#D6E3E3"
+    primary = "#332F4A"
+    primaryDark = "#1F1A38"
+    primaryLight = "#7B506F"
     secondary = "#EDB88B"
     accent = "#42213D"
     accentLight = "#AC87A0"
     neutral = "#395E66"
+    heroBg = "#2E6060"
     blogHighlight = "#111827"
     link = "#2E6060"
     linkOnDark = "#2DD4BF"
@@ -76,20 +77,16 @@ enableRobotsTXT = true
     featureCard = "#EBC1D3"
 
     # Admonition colors (one base color per type)
-    admonition-info = "#3B82F6"
-    admonition-success = "#22C55E"
-    admonition-warning = "#EAB308"
-    admonition-danger = "#EF4444"
-    admonition-note = "#6B7280"
+    admonitionInfo = "#3B82F6"
+    admonitionSuccess = "#22C55E"
+    admonitionWarning = "#EAB308"
+    admonitionDanger = "#EF4444"
+    admonitionNote = "#6B7280"
 
 [params.nav_button]
-  text = "Donate Now"
+  text = "Donate"
   url = "#donate"
-  # Option 1: Use a preset color variant
-  # color = "primary"  # Options: primary, secondary, accent, neutral
-  # Option 2: Use custom colors (overrides 'color' if both are set)
-  background = "#115E59"  # Dark teal background
-  textColor = "#FFFFFF"   # White text
+  variant = "primary"
 
 [[menu.main]]
   name = "Blog"

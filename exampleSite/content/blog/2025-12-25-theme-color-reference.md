@@ -11,9 +11,8 @@ image:
   credit: "Photo by Unsplash"
 ---
 
-# Theme Color Reference Guide
 
-The Clean Hugo theme provides a comprehensive color system that you can customize to match your brand. All colors are defined in your `hugo.toml` configuration file under `[params.theme.colors]`.
+The Clean Hugo theme provides a customizable color system that you can adjust to match your brand. All colors are defined in your `hugo.toml` configuration file under `[params.theme.colors]`.
 
 ## How to Customize Colors
 

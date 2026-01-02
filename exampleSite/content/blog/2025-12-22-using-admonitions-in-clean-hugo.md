@@ -2,23 +2,21 @@
 title: "Using Admonitions in Clean Hugo Theme"
 date: 2025-12-22
 draft: false
-excerpt: "Learn how to use the admonition shortcode to add beautiful callout boxes to your Hugo content. This post demonstrates all five admonition types with code examples."
+excerpt: "Learn how to use the admonition shortcodes to add callout boxes to your Hugo content."
 category: "Tutorial"
 show_author: false
 tags:
   - shortcodes
   - tutorial
-  - clean-hugo
 image:
   src: "images/unsplash-water.webp"
   alt: "Calm water surface with ripples and reflections"
   credit: "Photo by Unsplash"
 ---
 
-The Clean Hugo theme includes a powerful admonition shortcode that lets you create beautiful, color-coded callout boxes in your content. Perfect for highlighting important information, warnings, tips, and more!
+The Clean Hugo theme includes an admonition shortcode that lets you create beautiful, color-coded callout boxes in your content. These callouts are perfect for highlighting important information.
 
-## What Are Admonitions?
-
+## About admonitions
 Admonitions are visual callout boxes that draw attention to specific types of content. They're commonly used in documentation and tutorials to highlight:
 
 - **Info** - General information or tips
@@ -27,9 +25,9 @@ Admonitions are visual callout boxes that draw attention to specific types of co
 - **Danger** - Critical warnings or errors
 - **Note** - Additional context or side notes
 
-## Basic Usage
+## Basic usage
 
-The admonition shortcode is simple to use. Here's the basic syntax:
+To add an admonition to a page, you can use the following syntax: 
 
 ```markdown
 {{</* admonition type="info" title="Optional Title" */>}}
@@ -37,22 +35,22 @@ Your content here
 {{</* /admonition */>}}
 ```
 
-## All Admonition Types
+Exach admonition type has a custom color. you can override these colors in your `hugo.toml` configuration file under `[params.theme.colors]`.
 
-Let's see each type in action:
+## All admonition types
 
 ### Info Admonition
 
 Use info admonitions for general tips, helpful information, or useful context.
 
-{{< admonition type="info" title="Pro Tip" >}}
+{{< admonition type="info" title="Tip" >}}
 You can customize admonition colors by adding them to your `hugo.toml` configuration file under `[params.theme.colors]`. All colors are defined as CSS variables, making them easy to override.
 {{< /admonition >}}
 
 **Code example:**
 
 ```markdown
-{{</* admonition type="info" title="Pro Tip" */>}}
+{{</* admonition type="info" title="Tip" */>}}
 You can customize admonition colors by adding them to your hugo.toml configuration file.
 {{</* admonition */>}}
 ```
@@ -78,7 +76,7 @@ Great! Your Clean Hugo theme is now installed and ready to use.
 Use warning admonitions to alert readers about potential issues or important cautions.
 
 {{< admonition type="warning" title="Important Notice" >}}
-Make sure to run `npm install` in your site directory before building. The theme requires PostCSS and Tailwind CSS to process styles correctly.
+Make sure to run `npm install` in your site directory before building. The theme requires PostCSS to process styles correctly.
 {{< /admonition >}}
 
 **Code example:**

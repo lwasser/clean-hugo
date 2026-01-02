@@ -1,6 +1,6 @@
 # Clean Hugo Theme
 
-A clean, modern Hugo theme built with Tailwind CSS v3 that gives you a
+A clean, modern Hugo theme built with Hugo + vanilla SCSS that gives you a
 responsive, mobile-first website that's easy to customize. Whether you're
 building a personal blog, portfolio, or gallery site, this theme provides a
 solid foundation that looks great out of the box while letting you personalize
@@ -65,6 +65,7 @@ theme = 'clean-hugo'
     accent = "#42213D"
     accentLight = "#AC87A0"
     neutral = "#395E66"
+    heroBg = "#2E6060"
     blogHighlight = "#111827"
     link = "#2E6060"
     linkOnDark = "#2DD4BF"
@@ -139,6 +140,7 @@ The theme includes a full gray scale that you can customize. These are used for 
 
 **Specific use colors:**
 
+- `heroBg` - Default hero background color (falls back to primaryDark)
 - `blogHighlight` - Background color for the blog highlight section
 - `link` - Default hyperlink color on light backgrounds (should meet WCAG AA
   contrast requirements)
@@ -147,6 +149,11 @@ The theme includes a full gray scale that you can customize. These are used for 
 - `linkHover` - Link hover state color (darker variant for better contrast)
 - `footerBg` - Footer background color
 - `featureCard` - Default background color for feature section cards
+
+**Hero color overrides:**
+
+- Global: set `[params.theme.colors].heroBg` in `hugo.toml` to retheme all hero sections.
+- Per page: set `hero.color` in front matter. You can pass a theme token name (`primary`, `primary-dark`, `accent`, `neutral`, `heroBg`) or any valid CSS color (e.g., `#123456`, `rgb(...)`). If omitted, heroes use `heroBg`.
 
 #### Color accessibility
 
@@ -578,6 +585,42 @@ You can display a list of recent blog posts on any page using the `blog-list` sh
 - `limit` - Number of posts to display (default: 3)
 
 This shortcode shows the specified number of most recent blog posts with their categories, dates, and excerpts. It's perfect for adding a blog preview to your homepage or other pages.
+
+### Add buttons
+
+The theme includes a unified button component system that provides consistent, accessible buttons throughout your site. You can use buttons in any markdown content with the `button` shortcode:
+
+```markdown
+{{< button href="/get-started/" variant="primary" >}}Get Started{{< /button >}}
+{{< button href="/learn-more/" variant="secondary" size="lg" >}}Learn More{{< /button >}}
+{{< button href="/download/" variant="accent" icon="download" >}}Download{{< /button >}}
+```
+
+**Parameters:**
+- `href` (required) - URL the button links to
+- `variant` - Button color: `primary` (default), `secondary`, `accent`, `neutral`
+- `size` - Button size: `sm`, `lg`, `full` (omit for default size)
+- `icon` - Font Awesome icon name (without `fa-` prefix)
+- `iconPosition` - Icon position: `left` (default) or `right`
+- `target` - Use `_blank` for external links
+- `class` - Additional CSS classes (optional)
+
+**Button variants:**
+- **Primary** - Main call-to-action (teal background)
+- **Secondary** - Alternative action (outlined style)
+- **Accent** - Special emphasis (accent color)
+- **Neutral** - Subtle action (gray background)
+
+**Example button group:**
+
+```markdown
+<div class="btn-group btn-group--center">
+  {{< button href="/start/" variant="primary" >}}Get Started{{< /button >}}
+  {{< button href="/learn/" variant="secondary" >}}Learn More{{< /button >}}
+</div>
+```
+
+For a complete guide with visual examples of all button variants, sizes, and usage patterns, see the [Button Components Guide](/blog/button-components-guide/) blog post.
 
 ## License
 

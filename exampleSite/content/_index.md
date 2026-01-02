@@ -65,7 +65,6 @@ cards:
 {{< card title="Built With" icon="fa-solid fa-wrench" >}}
 
 - **Hugo** – Fast static site generator
-- **Tailwind CSS v3** – Modern utility-first CSS framework
 - **PostCSS** – For CSS processing and optimization
 - **Font Awesome** – Icon support
 

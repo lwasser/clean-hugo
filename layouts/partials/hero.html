@@ -1,5 +1,31 @@
 {{ $hero := .Params.hero | default dict }}
-{{ $heroColor := $hero.color }}
+{{/* Determine hero background color: default to theme token, allow per-page override */}}
+{{ $heroColorParam := $hero.color }}
+{{ $heroColor := "var(--color-hero-bg)" }}
+{{ if $heroColorParam }}
+  {{/* Support token names (primary, primary-dark, accent, heroBg) or raw CSS colors */}}
+  {{ $colorTokens := dict
+      "primary" "var(--color-primary)"
+      "primarydark" "var(--color-primary-dark)"
+      "primary-dark" "var(--color-primary-dark)"
+      "primarylight" "var(--color-primary-light)"
+      "primary-light" "var(--color-primary-light)"
+      "secondary" "var(--color-secondary)"
+      "accent" "var(--color-accent)"
+      "accentlight" "var(--color-accent-light)"
+      "accent-light" "var(--color-accent-light)"
+      "neutral" "var(--color-neutral)"
+      "herobg" "var(--color-hero-bg)"
+      "hero" "var(--color-hero-bg)"
+    }}
+  {{ $normalized := lower (replace $heroColorParam " " "") }}
+  {{ $lookup := index $colorTokens $normalized }}
+  {{ if $lookup }}
+    {{ $heroColor = $lookup }}
+  {{ else }}
+    {{ $heroColor = $heroColorParam }}
+  {{ end }}
+{{ end }}
 {{ $isGallery := or (eq .Section "gallery") (eq .Section "plants") }}
 {{/* For plant pages, always use main front matter title; otherwise use hero.title if available */}}
 {{ $title := "" }}
@@ -15,7 +41,7 @@
 {{/* Get hero image using helper partial */}}
 {{ $heroImg := partial "get-image.html" (dict "image" $hero.image "fallbackAlt" ($title | default (printf "Image for %s" .Title))) }}
 
-<section class="hero"{{ if $heroColor }} style="background-color: {{ $heroColor }};"{{ end }}>
+<section class="hero" style="background-color: {{ $heroColor }};">
   <div class="container">
     <div class="hero__grid">
       <div class="hero__content">

@@ -63,9 +63,9 @@
     {{/* Category filter */}}
     {{ if gt (len $uniqueCategories) 0 }}
     <div>
-      <button class="active" data-category="all" aria-pressed="true" aria-label="View all blog posts">View All</button>
+      <button class="filter-btn" data-category="all" aria-pressed="true" aria-label="View all blog posts">View All</button>
       {{ range $uniqueCategories }}
-        <button data-category="{{ . | urlize }}" aria-pressed="false" aria-label="Filter by {{ . }} category">{{ . }}</button>
+        <button class="filter-btn" data-category="{{ . | urlize }}" aria-pressed="false" aria-label="Filter by {{ . }} category">{{ . }}</button>
       {{ end }}
     </div>
     {{ end }}
@@ -74,12 +74,12 @@
     {{ if or $featuredPost (gt (len $sidebarPosts) 0) }}
     <div class="blog-grid__featured">
       {{ if $featuredPost }}
-        {{ partial "blog-card.html" (dict "." $featuredPost "modifier" "blog-card--featured" "showExcerpt" true) }}
+        {{ partial "blog-card.html" (dict "." $featuredPost "modifier" "card--blog--featured" "showExcerpt" true) }}
       {{ end }}
 
       <div class="blog-grid__sidebar">
         {{ range $sidebarPosts }}
-          {{ partial "blog-card.html" (dict "." . "showExcerpt" false) }}
+          {{ partial "blog-card.html" (dict "." . "modifier" "card--blog--sidebar" "showExcerpt" false) }}
         {{ end }}
       </div>
     </div>
