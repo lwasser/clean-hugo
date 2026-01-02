@@ -87,7 +87,7 @@
 /* Blog highlight section - home page cards with dark theme */
 .blog-highlight {
   padding: $spacing-section-lg 0 6rem;
-  background-color: var(--color-blog-highlight);
+  background-color: var(--color-gray-900);
 
   .container {
     @include container($container-max-width, 1.5rem, 2rem);

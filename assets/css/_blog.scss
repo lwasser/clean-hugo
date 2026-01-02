@@ -208,7 +208,7 @@
 .blog-highlight {
   width: 100%;
   padding: 3rem 0;
-  background-color: var(--color-blog-highlight);
+  background-color: var(--color-gray-900);
 
   > .container > div:first-child {
     margin-bottom: 2rem;
@@ -221,7 +221,7 @@
 
 /* Dark cards for blog-highlight section */
 .blog-highlight .highlight-grid article {
-  background-color: var(--color-blog-highlight);
+  background-color: var(--color-gray-900);
   border-color: var(--color-gray-700);
   transition: background-color 200ms ease-in-out;
 

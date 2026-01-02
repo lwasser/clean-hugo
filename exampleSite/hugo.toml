@@ -92,7 +92,6 @@ enableRobotsTXT = true
 
     # Section backgrounds (kept as references for semantic clarity)
     "hero-bg" = "#2E6060"
-    "footer-bg" = "#71B3B5"
 
     # Admonition colors
     "admonition-info" = "#3B82F6"
