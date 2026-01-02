@@ -11,6 +11,9 @@ xl: 1280px
 @import 'variables';
 @import 'mixins';
 
+/* Button System */
+@import 'buttons';
+
 /* Base Styles */
   /* Universal box-sizing and overflow fix */
   *, *::before, *::after {
@@ -59,13 +62,14 @@ xl: 1280px
     (injected via inline <style> block in baseof.html)
   */
   :root {
-    --color-primary: #71B3B5;        /* Verdigris (teal/cyan) - default */
-    --color-primary-dark: #2E6060;  /* Darker verdigris */
-    --color-primary-light: #D6E3E3; /* Light verdigris background */
-    --color-secondary: #EDB88B;     /* Buff (warm peachy/tan) */
-    --color-accent: #42213D;        /* Dark purple */
-    --color-accent-light: #AC87A0;  /* Mountbatten pink */
-    --color-neutral: #395E66;       /* Dark slate gray */
+    --color-primary: #71B3B5;        /* Primary teal */
+    --color-primary-dark: #2E6060;  /* Darker teal */
+    --color-primary-light: #D6E3E3; /* Light teal background */
+    --color-secondary: #F1E0A6;     /* Warm secondary */
+    --color-accent: #42213D;        /* Accent deep purple */
+    --color-accent-light: #E4B8C6;  /* Accent light */
+    --color-neutral: #395E66;       /* Neutral slate */
+    --color-hero-bg: var(--color-primary-dark); /* Hero background (defaults to primary dark) */
     --color-text: #111827;         /* Base text color */
     --color-bg: #F9FAFB;           /* Background (gray-50) */
     --color-white: #FFFFFF;        /* White */
@@ -80,17 +84,17 @@ xl: 1280px
     --color-gray-900: #111827;     /* Gray-900 */
     --color-blog-highlight: #111827; /* Blog highlight section background (RGB: 17, 24, 39) */
     --color-link: #2E6060;         /* Link color on light backgrounds - using primaryDark for accessibility (WCAG AA compliant) */
-    --color-link-on-dark: #2DD4BF; /* Link color on dark backgrounds (RGB: 45, 212, 191) - lighter variant for dark bg */
+    --color-link-on-dark: #2DD4BF; /* Link color on dark backgrounds */
     --color-link-hover: #1F4345;   /* Link hover color - darker variant of primaryDark */
-    --color-footer-bg: #115E59;    /* Footer background (RGB: 17, 94, 89) */
+    --color-footer-bg: var(--color-primary);    /* Footer background (RGB: 17, 94, 89) */
     --color-feature-card: #EBC1D3;   /* Feature section card background (RGB: 235, 193, 211) */
 
     /* Admonition base colors - variants generated with color-mix() */
-    --color-admonition-info: #3B82F6;      /* Blue-500 */
-    --color-admonition-success: #22C55E;   /* Green-500 */
-    --color-admonition-warning: #EAB308;   /* Yellow-500 */
-    --color-admonition-danger: #EF4444;    /* Red-500 */
-    --color-admonition-note: #6B7280;      /* Gray-500 */
+    --color-admonition-info: var(--color-accent-light);
+    --color-admonition-success: #22C55E;
+    --color-admonition-warning: #EAB308;
+    --color-admonition-danger: #EF4444;
+    --color-admonition-note: #6B7280;
   }
 
   body {

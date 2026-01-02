@@ -1,8 +1,8 @@
 name = "clean-hugo"
-license = "MIT"
+license = "BSD-3-Clause"
 licenselink = "https://github.com/lwasser/clean-hugo/blob/main/LICENSE"
 description = "A clean, modern Hugo theme with configurable colors and optional gallery feature"
-tags = ["blog", "gallery", "minimal", "modern", "tailwind"]
+tags = ["blog", "gallery", "minimal", "modern", "hugo", "scss"]
 features = ["blog", "gallery", "responsive", "customizable"]
 min_version = "0.118.2"
 
@@ -17,29 +17,32 @@ min_version = "0.118.2"
 
 # Default theme parameters (can be overridden in site's hugo.toml)
 [params.theme.colors]
-  # Admonition colors
-  admonitionInfoBg = "#EFF6FF"      # Blue-50
-  admonitionInfoBorder = "#3B82F6"  # Blue-500
-  admonitionInfoText = "#1E40AF"    # Blue-800
-  admonitionInfoIcon = "#2563EB"    # Blue-600
+  # Brand colors (defaults) — can be overridden in site hugo.toml
+  primary = "#71B3B5"
+  primaryDark = "#2E6060"
+  primaryLight = "#D6E3E3"
+  secondary = "#EDB88B"
+  accent = "#42213D"
+  accentLight = "#AC87A0"
+  neutral = "#395E66"
 
-  admonitionSuccessBg = "#F0FDF4"   # Green-50
-  admonitionSuccessBorder = "#22C55E" # Green-500
-  admonitionSuccessText = "#166534" # Green-800
-  admonitionSuccessIcon = "#16A34A" # Green-600
+  # Section backgrounds
+  heroBg = "#2E6060"
 
-  admonitionWarningBg = "#FEFCE8"   # Yellow-50
-  admonitionWarningBorder = "#EAB308" # Yellow-500
-  admonitionWarningText = "#854D0E" # Yellow-800
-  admonitionWarningIcon = "#CA8A04" # Yellow-600
+  # Links
+  link = "#2E6060"
+  linkOnDark = "#2DD4BF"
+  linkHover = "#1F4345"
 
-  admonitionDangerBg = "#FEF2F2"   # Red-50
-  admonitionDangerBorder = "#EF4444" # Red-500
-  admonitionDangerText = "#991B1B" # Red-800
-  admonitionDangerIcon = "#DC2626" # Red-600
+  # Specific use
+  blogHighlight = "#111827"
+  footerBg = "#115E59"
+  featureCard = "#EBC1D3"
 
-  admonitionNoteBg = "#F9FAFB"     # Gray-50
-  admonitionNoteBorder = "#6B7280"  # Gray-500
-  admonitionNoteText = "#1F2937"   # Gray-800
-  admonitionNoteIcon = "#4B5563"    # Gray-600
+  # Admonition colors (base values)
+  admonitionInfo = "#3B82F6"
+  admonitionSuccess = "#22C55E"
+  admonitionWarning = "#EAB308"
+  admonitionDanger = "#EF4444"
+  admonitionNote = "#6B7280"
 

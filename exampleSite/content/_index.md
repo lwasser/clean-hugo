@@ -5,7 +5,7 @@ draft: false
 layout: "splash"
 hero:
   title: "Clean Hugo Theme"
-  subtitle: "A modern, customizable Hugo theme built with Tailwind CSS & Alpine.js"
+  subtitle: "A modern, customizable Hugo theme built with Vanilla CSS & Alpine.js"
   excerpt: "A simple yet beautiful responsive design with customizable colors, and ready-to-use shortcodes for cards, figures, metrics, sections, and more."
   image:
     src: "images/hero-image.svg"
@@ -18,7 +18,7 @@ cards:
   - modifier: "card--white"
     icon: "fa-solid fa-mobile-screen"
     title: "Responsive Design"
-    excerpt: "Built mobile-first with Tailwind CSS. The site looks great on any device—from smartphones to desktop displays."
+    excerpt: "Built mobile-first with CSS. The site looks great on any device—from smartphones to desktop displays."
   - icon: "fa-solid fa-images"
     title: "Gallery Support"
     excerpt: "Create masonry-style image galleries or grid-style card galleries with built-in filtering and responsive layouts."
@@ -65,7 +65,6 @@ cards:
 {{< card title="Built With" icon="fa-solid fa-wrench" >}}
 
 - **Hugo** – Fast static site generator
-- **Tailwind CSS v3** – Modern utility-first CSS framework
 - **PostCSS** – For CSS processing and optimization
 - **Font Awesome** – Icon support
 

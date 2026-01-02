@@ -277,7 +277,6 @@ Shortcode styles live in `assets/css/`. For example, metrics bar styles:
 }
 ```
 
-Use Tailwind's `@apply` directive for consistent styling across the theme.
 
 ## Common Use Cases
 

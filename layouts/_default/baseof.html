@@ -41,6 +41,7 @@
       {{ with $colors.accent }}--color-accent: {{ . }};{{ end }}
       {{ with $colors.accentLight }}--color-accent-light: {{ . }};{{ end }}
       {{ with $colors.neutral }}--color-neutral: {{ . }};{{ end }}
+      {{ with $colors.heroBg }}--color-hero-bg: {{ . }};{{ end }}
       {{ with $colors.white }}--color-white: {{ . }};{{ end }}
       {{ with $colors.gray50 }}--color-gray-50: {{ . }};{{ end }}
       {{ with $colors.gray200 }}--color-gray-200: {{ . }};{{ end }}
@@ -59,11 +60,17 @@
       {{ with $colors.featureCard }}--color-feature-card: {{ . }};{{ end }}
 
       /* Admonition base colors - variants generated with color-mix() */
-      {{ with $colors.admonitionInfo }}--color-admonition-info: {{ . }};{{ end }}
-      {{ with $colors.admonitionSuccess }}--color-admonition-success: {{ . }};{{ end }}
-      {{ with $colors.admonitionWarning }}--color-admonition-warning: {{ . }};{{ end }}
-      {{ with $colors.admonitionDanger }}--color-admonition-danger: {{ . }};{{ end }}
-      {{ with $colors.admonitionNote }}--color-admonition-note: {{ . }};{{ end }}
+      {{ $admonitionInfo := or ($colors.admonitionInfo) (index $colors "admonition-info") }}
+      {{ $admonitionSuccess := or ($colors.admonitionSuccess) (index $colors "admonition-success") }}
+      {{ $admonitionWarning := or ($colors.admonitionWarning) (index $colors "admonition-warning") }}
+      {{ $admonitionDanger := or ($colors.admonitionDanger) (index $colors "admonition-danger") }}
+      {{ $admonitionNote := or ($colors.admonitionNote) (index $colors "admonition-note") }}
+
+      {{ with $admonitionInfo }}--color-admonition-info: {{ . }};{{ end }}
+      {{ with $admonitionSuccess }}--color-admonition-success: {{ . }};{{ end }}
+      {{ with $admonitionWarning }}--color-admonition-warning: {{ . }};{{ end }}
+      {{ with $admonitionDanger }}--color-admonition-danger: {{ . }};{{ end }}
+      {{ with $admonitionNote }}--color-admonition-note: {{ . }};{{ end }}
     }
   </style>
 
@@ -136,15 +143,10 @@
 
         {{/* Optional CTA Button */}}
         {{ with .Site.Params.nav_button }}
-          {{ if and .background .textColor }}
-            <a href="{{ .url }}" class="site-nav__button" style="background-color: {{ .background }}; color: {{ .textColor }};">
-              {{ .text }}
-            </a>
-          {{ else }}
-            <a href="{{ .url }}" class="site-nav__button site-nav__button--{{ .color | default "primary" }}">
-              {{ .text }}
-            </a>
-          {{ end }}
+          <a href="{{ .url }}"
+             class="btn btn--{{ .variant | default "primary" }} site-nav__button{{ with .class }} {{ . }}{{ end }}">
+            {{ .text }}
+          </a>
         {{ end }}
       </div>
     </div>

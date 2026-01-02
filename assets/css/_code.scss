@@ -1,17 +1,16 @@
 /* Code block and syntax highlighting styles */
 /* These styles apply globally across all pages (blog, content, packages, etc.) */
 
-/* Base inline code styles */
 code {
   border-radius: 0.25rem;
   padding: 0.125rem 0.375rem;
-  font-size: 0.875em;
+  font-size: 0.95rem;
   font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', 'source-code-pro', monospace;
   background-color: rgba(0, 0, 0, 0.05);
   color: #e83e8c;
 }
 
-/* Code blocks (pre elements) */
+/* Code blocks (pre elements) - base and syntax highlighted */
 pre {
   border-radius: 0.5rem;
   padding: 1rem;
@@ -19,7 +18,7 @@ pre {
   margin-bottom: 1rem;
   background-color: #272822;
   color: #f8f8f2;
-  font-size: 0.875rem;
+  font-size: 0.95rem;
   line-height: 1.5;
   font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', 'source-code-pro', monospace;
 
@@ -39,8 +38,7 @@ pre {
 
   pre {
     margin: 0;
-    border-radius: 0.5rem;
-    padding: 1rem;
+    padding: 2rem;
   }
 }
 
@@ -95,4 +93,3 @@ pre,
 article pre {
   margin-bottom: 1rem;
 }
-

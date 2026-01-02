@@ -3,7 +3,7 @@
 
   Parameters:
   - "." (context): The blog post page object (passed as "." in dict)
-  - "modifier" (string): Optional modifier class (e.g., "blog-card--featured")
+  - "modifier" (string): Optional modifier class (e.g., "card--blog--featured", "card--blog--sidebar")
   - "showExcerpt" (bool): Whether to show excerpt (default: false for sidebar/grid, true for featured)
 */}}
 {{ $post := index . "." }}
@@ -12,11 +12,11 @@
 {{ $postCategory := $post.Params.category }}
 {{ $excerptLength := $post.Site.Params.blog.excerpt_length | default 200 }}
 
-<article class="blog-card {{ $modifier }}" data-category="{{ if $postCategory }}{{ $postCategory | urlize }}{{ end }}">
+<article class="card card--blog {{ $modifier }}" data-category="{{ if $postCategory }}{{ $postCategory | urlize }}{{ end }}">
   <a href="{{ $post.Permalink }}">
     {{ $img := partial "get-image.html" (dict "image" $post.Params.image "fallbackAlt" $post.Title "page" $post) }}
     {{ if $img.exists }}
-    <figure class="blog-card__image">
+    <figure class="card--blog__image">
       <img src="{{ $img.src }}" alt="{{ $img.alt }}" loading="lazy" />
     </figure>
     {{ else }}
@@ -35,7 +35,7 @@
     {{ if $postCategory }}
       {{ $colors = index $gradientColors $postCategory | default $defaultColors }}
     {{ end }}
-    <div class="blog-card__image-placeholder" style="background: linear-gradient(135deg, {{ $colors.from }} 0%, {{ $colors.to }} 100%);"></div>
+    <div class="card--blog__image-placeholder" style="background: linear-gradient(135deg, {{ $colors.from }} 0%, {{ $colors.to }} 100%);"></div>
     {{ end }}
     <div>
       {{ if $postCategory }}
