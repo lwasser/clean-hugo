@@ -41,7 +41,7 @@
       {{ with $colors.accent }}--color-accent: {{ . }};{{ end }}
       {{ with $colors.accentLight }}--color-accent-light: {{ . }};{{ end }}
       {{ with $colors.neutral }}--color-neutral: {{ . }};{{ end }}
-      {{ with $colors.heroBg }}--color-hero-bg: {{ . }};{{ end }}
+      {{ with (index $colors "hero-bg") }}--color-hero-bg: {{ . }};{{ end }}
       {{ with $colors.white }}--color-white: {{ . }};{{ end }}
       {{ with $colors.gray50 }}--color-gray-50: {{ . }};{{ end }}
       {{ with $colors.gray200 }}--color-gray-200: {{ . }};{{ end }}
@@ -60,11 +60,11 @@
       {{ with $colors.featureCard }}--color-feature-card: {{ . }};{{ end }}
 
       /* Admonition base colors - variants generated with color-mix() */
-      {{ $admonitionInfo := or ($colors.admonitionInfo) (index $colors "admonition-info") }}
-      {{ $admonitionSuccess := or ($colors.admonitionSuccess) (index $colors "admonition-success") }}
-      {{ $admonitionWarning := or ($colors.admonitionWarning) (index $colors "admonition-warning") }}
-      {{ $admonitionDanger := or ($colors.admonitionDanger) (index $colors "admonition-danger") }}
-      {{ $admonitionNote := or ($colors.admonitionNote) (index $colors "admonition-note") }}
+      {{ $admonitionInfo := index $colors "admonition-info" }}
+      {{ $admonitionSuccess := index $colors "admonition-success" }}
+      {{ $admonitionWarning := index $colors "admonition-warning" }}
+      {{ $admonitionDanger := index $colors "admonition-danger" }}
+      {{ $admonitionNote := index $colors "admonition-note" }}
 
       {{ with $admonitionInfo }}--color-admonition-info: {{ . }};{{ end }}
       {{ with $admonitionSuccess }}--color-admonition-success: {{ . }};{{ end }}
