@@ -41,7 +41,7 @@
   /* Unified feature card - uses utility classes for background colors */
   .feature-card {
     border-radius: $radius-lg;
-    border: 1px solid var(--color-gray-300);
+    border: 1px solid var(--color-gray-200);
     box-shadow: $shadow-sm;
     padding: $fluid-card-padding-md;
     background-color: var(--color-feature-card);  /* Default background - can be overridden with bg-primary or bg-secondary utility classes */

@@ -226,11 +226,11 @@
   transition: background-color 200ms ease-in-out;
 
   &:hover {
-    background-color: var(--color-gray-800);
+    background-color: var(--color-gray-900);
   }
 
   > div:first-child {
-    color: var(--color-gray-300);
+    color: var(--color-gray-200);
   }
 
   > div:last-child {
@@ -246,7 +246,7 @@
     }
 
     > p {
-      color: var(--color-gray-300);
+      color: var(--color-gray-200);
     }
 
     > a {
@@ -370,7 +370,7 @@
 /* Archive cards - closer to background color, slightly lighter */
 .blog-archives .highlight-grid article {
   background-color: color-mix(in srgb, var(--color-primary-light) 60%, white 40%);
-  border-color: var(--color-gray-300);
+  border-color: var(--color-gray-200);
 
   &:hover {
     background-color: color-mix(in srgb, white 60%, var(--color-primary-light) 40%);
