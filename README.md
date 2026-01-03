@@ -147,7 +147,6 @@ The theme includes a full gray scale that you can customize. These are used for 
 - `linkOnDark` - Link color for use on dark backgrounds (lighter variant for
   better visibility)
 - `linkHover` - Link hover state color (darker variant for better contrast)
-- `footerBg` - Footer background color
 - `featureCard` - Default background color for feature section cards
 
 **Hero color overrides:**

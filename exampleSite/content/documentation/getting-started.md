@@ -93,7 +93,6 @@ All colors are specified using hex codes:
   link = "#2E6060"
   linkOnDark = "#2DD4BF"
   linkHover = "#1F4345"
-  footerBg = "#115E59"
   featureCard = "#EBC1D3"
   
   # Admonition colors
