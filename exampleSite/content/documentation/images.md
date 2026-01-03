@@ -3,6 +3,7 @@ title: "Work with Images"
 date: 2025-12-28
 draft: false
 layout: "docs"
+weight: 3
 excerpt: "Featured images, figure shortcode, optimization, and best practices"
 header:
   color: "primaryDark"
@@ -186,7 +187,7 @@ Front matter with all options:
 
 ```yaml
 ---
-title: "Getting Started with Hugo"
+title: "Get Started with Hugo"
 date: 2025-12-28
 draft: false
 excerpt: "A beginner's guide"

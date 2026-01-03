@@ -1,11 +1,12 @@
 ---
-title: "Documentation"
+title: "Docs Home"
 date: 2025-12-28
 draft: false
 layout: "docs"
+weight: 1
 excerpt: "Complete guide to using and customizing the Clean Hugo theme"
 header:
-  color: "primaryDark"
+  color: "accent"
   title: "Clean Hugo Documentation"
 ---
 
@@ -15,7 +16,7 @@ Clean Hugo is a modern, customizable Hugo theme built with CSS that gives you a 
 
 ### Documentation Sections
 
-**[Getting Started](/documentation/getting-started/)**  
+**[Get Started](/documentation/get-started/)**  
 Installation, configuration, and theme setup. Start here if you're new to Clean Hugo.
 
 **[Layouts & Shortcodes](/documentation/layouts-shortcodes/)**  

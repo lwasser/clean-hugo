@@ -1,9 +1,10 @@
 ---
-title: "Getting Started"
+title: "Get Started"
 date: 2025-12-28
 draft: false
 layout: "docs"
-excerpt: "Install and configure the Clean Hugo theme for your site"
+weight: 2
+excerpt: "Featured images, figure shortcode, optimization, and best practices"
 header:
   color: "primaryDark"
 ---
