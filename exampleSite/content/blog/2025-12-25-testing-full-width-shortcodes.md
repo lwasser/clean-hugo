@@ -19,11 +19,11 @@ image:
 
 This blog post tests the new content width constraints and full-width shortcode functionality. Regular text content should be constrained to a readable width (max-w-4xl), while certain shortcodes should automatically break out to full viewport width.
 
-## Regular Content Section
+## Regular content section
 
 This is regular paragraph text that should be constrained to a readable width. The text should not stretch across the entire screen, making it easier to read on large displays. This is especially important for long-form content where readability is key.
 
-### Subsection with Lists
+### Subsection with lists
 
 Here's a list of items to test list styling:
 
@@ -38,7 +38,7 @@ And here's a numbered list:
 2. Second numbered item
 3. Third numbered item
 
-## Metrics Bar Shortcode (Full-Width)
+## Metrics bar shortcode (full-width)
 
 The metrics bar shortcode below should automatically break out to full width, even though it's inside the constrained content area:
 
@@ -60,11 +60,11 @@ The metrics bar shortcode below should automatically break out to full width, ev
 */>}}
 ```
 
-## More Regular Content
+## More regular content
 
 After the metrics bar, regular text content should return to the constrained width. This allows for a nice visual rhythm where full-width elements create visual breaks while maintaining readability for text content.
 
-### Code Example
+### Code example
 
 Here's some inline code: `const example = "test"` and a code block:
 
@@ -84,7 +84,7 @@ def hello_world():
 ```
 ````
 
-## Image Section
+## Image section
 
 The image below should be constrained to the content width (not full-width). Images within regular content should respect the readable width. The figure shortcode automatically supports webp format:
 
@@ -104,7 +104,7 @@ The figure shortcode automatically:
 - Supports optional caption
 - Links to the full-size image when clicked
 
-## YouTube Video (Full-Width)
+## YouTube video (full-width)
 
 The YouTube video shortcode below should automatically break out to full width. This is a PyOpenSci lightning talk from SciPy 2023:
 
@@ -122,7 +122,7 @@ Or explicitly set full-width:
 {{</* youtube id="XAq-HnPU4XM" full="true" */>}}
 ```
 
-## Constrained YouTube Video
+## Constrained YouTube video
 
 This YouTube video should stay within the content width (not full-width). Use `full="false"` to constrain it:
 
@@ -134,7 +134,7 @@ This YouTube video should stay within the content width (not full-width). Use `f
 {{</* youtube id="XAq-HnPU4XM" full="false" */>}}
 ```
 
-## Final Thoughts
+## Final thoughts
 
 After the YouTube video, this text should again be constrained to the readable width. This creates a nice visual pattern where:
 

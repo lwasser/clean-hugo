@@ -41,7 +41,7 @@
       {{ with $colors.accent }}--color-accent: {{ . }};{{ end }}
       {{ with $colors.accentLight }}--color-accent-light: {{ . }};{{ end }}
       {{ with $colors.neutral }}--color-neutral: {{ . }};{{ end }}
-      {{ with (index $colors "hero-bg") }}--color-hero-bg: {{ . }};{{ end }}
+      {{ with $colors.heroBg }}--color-hero-bg: {{ . }};{{ end }}
       {{ with $colors.white }}--color-white: {{ . }};{{ end }}
       {{ with $colors.gray50 }}--color-gray-50: {{ . }};{{ end }}
       {{ with $colors.gray200 }}--color-gray-200: {{ . }};{{ end }}
@@ -53,7 +53,7 @@
       {{ with $colors.linkHover }}--color-link-hover: {{ . }};{{ end }}
       {{ with $colors.featureCard }}--color-feature-card: {{ . }};{{ end }}
 
-      /* Admonition base colors - variants generated with color-mix() */
+
       {{ $admonitionInfo := index $colors "admonition-info" }}
       {{ $admonitionSuccess := index $colors "admonition-success" }}
       {{ $admonitionWarning := index $colors "admonition-warning" }}

@@ -39,7 +39,7 @@ Exach admonition type has a custom color. you can override these colors in your 
 
 ## All admonition types
 
-### Info Admonition
+### Info admonition
 
 Use info admonitions for general tips, helpful information, or useful context.
 
@@ -55,7 +55,7 @@ You can customize admonition colors by adding them to your hugo.toml configurati
 {{</* admonition */>}}
 ```
 
-### Success Admonition
+### Success admonition
 
 Success admonitions are perfect for highlighting achievements, completed tasks, or positive outcomes.
 
@@ -71,7 +71,7 @@ Great! Your Clean Hugo theme is now installed and ready to use.
 {{</* /admonition */>}}
 ```
 
-### Warning Admonition
+### Warning admonition
 
 Use warning admonitions to alert readers about potential issues or important cautions.
 
@@ -87,7 +87,7 @@ Make sure to run `npm install` before building your site.
 {{</* /admonition */>}}
 ```
 
-### Danger Admonition
+### Danger admonition
 
 Danger admonitions should be used sparingly for critical warnings or potential data loss scenarios.
 
@@ -103,7 +103,7 @@ Danger admonitions should be used sparingly for critical warnings or potential d
 {{</* /admonition */>}}
 ```
 
-### Note Admonition
+### Note admonition
 
 Note admonitions are great for additional context, side notes, or supplementary information.
 
@@ -119,7 +119,7 @@ The default admonition type is "note" if you don't specify a type.
 {{</* /admonition */>}}
 ```
 
-## Advanced Usage
+## Advanced usage
 
 ### Without a Title
 
@@ -135,7 +135,7 @@ This is an info admonition without a title.
 {{</* /admonition */>}}
 ```
 
-### With Markdown Content
+### With markdown content
 
 Admonitions support full Markdown syntax, including:
 
@@ -153,11 +153,11 @@ You can use **bold**, *italic*, [links](https://example.com), and even code `inl
 - And code blocks
 {{< /admonition >}}
 
-## Code Examples in Different Languages
+## Code examples in different languages
 
 Here are some examples showing how code blocks work with syntax highlighting:
 
-### Python Example
+### Python example
 
 ```python
 def create_admonition(admonition_type, title=None, content=""):
@@ -170,7 +170,7 @@ info_box = create_admonition("info", "Pro Tip", "This is helpful information!")
 print(info_box)
 ```
 
-### Bash/Shell Example
+### Bash/shell example
 
 ```bash
 #!/bin/bash
@@ -187,7 +187,7 @@ EOF
 echo "Example file created!"
 ```
 
-### Console Output Example
+### Console output example
 
 ```console
 $ hugo new blog/my-post.md
@@ -236,11 +236,11 @@ All admonition colors can be customized in your `hugo.toml` file. Here's an exam
   # ... and so on for other types
 ```
 
-## Blog Post Front Matter Configuration
+## Blog post front matter configuration
 
 Every blog post in Clean Hugo uses front matter (the YAML or TOML section at the top of the file) to configure how the post appears on your site. Here's a complete guide to all available front matter options:
 
-### Required Fields
+### Required fields
 
 **`title`** - The title of your blog post
 ```yaml
@@ -252,7 +252,7 @@ title: "My Amazing Blog Post"
 date: 2024-12-22
 ```
 
-### Optional Fields
+### Optional fields
 
 **`draft`** - Set to `true` to hide the post from listings (default: `false`)
 ```yaml
@@ -304,7 +304,7 @@ show_author: false
 hideDate: false
 ```
 
-### Complete Front Matter Example
+### Complete front matter example
 
 Here's a complete example showing all available front matter options:
 
@@ -329,7 +329,7 @@ tags:
 ---
 ```
 
-### How Front Matter Affects Display
+### How front matter affects display
 
 **Blog Listing Page:**
 - **Featured Post** - The most recent post (by date) appears as a large featured card
@@ -346,7 +346,7 @@ tags:
 - **Content** - Full post content with proper typography
 - **Tags** - Displayed at the bottom of the post
 
-### Front Matter Best Practices
+### Front matter best practices
 
 {{< admonition type="info" title="Pro Tips" >}}
 1. **Always include an excerpt** - Helps with SEO and makes your listings more engaging
@@ -356,7 +356,7 @@ tags:
 5. **Set draft status** - Use `draft: true` while writing, then change to `false` when ready to publish
 {{< /admonition >}}
 
-### Configuration Options in hugo.toml
+### Configuration options in hugo.toml
 
 You can customize blog listing behavior in your site's `hugo.toml`:
 
@@ -369,7 +369,7 @@ You can customize blog listing behavior in your site's `hugo.toml`:
   blog_title = "My Blog"  # Title shown at top of blog listing page
 ```
 
-## Best Practices
+## Best practices
 
 1. **Use sparingly** - Too many admonitions can overwhelm readers
 2. **Choose the right type** - Match the admonition type to the content's importance

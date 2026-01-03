@@ -25,7 +25,7 @@ The primary button is by default, used for the main call-to-action on a page.
 <a href="/get-started/" class="btn btn--primary">Get Started</a>
 ```
 
-### Secondary Button
+### Secondary button
 
 The secondary button is used for less prominent actions, providing an outlined style.
 
@@ -39,7 +39,7 @@ The secondary button is used for less prominent actions, providing an outlined s
 <a href="/learn-more/" class="btn btn--secondary">Learn More</a>
 ```
 
-### Accent Button
+### Accent button
 
 The accent button is used for special actions that need to stand out.
 
@@ -53,7 +53,7 @@ The accent button is used for special actions that need to stand out.
 <a href="/special-offer/" class="btn btn--accent">Special Offer</a>
 ```
 
-### Neutral Button
+### Neutral button
 
 The neutral button provides a subtle, less prominent option.
 
@@ -67,11 +67,11 @@ The neutral button provides a subtle, less prominent option.
 <a href="/cancel/" class="btn btn--neutral">Cancel</a>
 ```
 
-## Button Sizes
+## Button sizes
 
 Buttons come in three sizes: small, default, and large.
 
-### Small Buttons
+### Small buttons
 
 {{< button href="#" variant="primary" size="sm" >}}Small Button{{< /button >}}
 {{< button href="#" variant="secondary" size="sm" >}}Small Secondary{{< /button >}}
@@ -81,7 +81,7 @@ Buttons come in three sizes: small, default, and large.
 <a href="#" class="btn btn--primary btn--sm">Small Button</a>
 ```
 
-### Default Size (No size parameter needed)
+### Default size (No size parameter needed)
 
 {{< button href="#" variant="primary" >}}Default Button{{< /button >}}
 {{< button href="#" variant="secondary" >}}Default Secondary{{< /button >}}
@@ -91,7 +91,7 @@ Buttons come in three sizes: small, default, and large.
 <a href="#" class="btn btn--primary">Default Button</a>
 ```
 
-### Large Buttons
+### Large buttons
 
 {{< button href="#" variant="primary" size="lg" >}}Large Button{{< /button >}}
 {{< button href="#" variant="secondary" size="lg" >}}Large Secondary{{< /button >}}
@@ -101,7 +101,7 @@ Buttons come in three sizes: small, default, and large.
 <a href="#" class="btn btn--primary btn--lg">Large Button</a>
 ```
 
-### Full Width Buttons
+### Full width buttons
 
 {{< button href="#" variant="primary" size="full" >}}Full Width Button{{< /button >}}
 
@@ -110,11 +110,11 @@ Buttons come in three sizes: small, default, and large.
 <a href="#" class="btn btn--primary btn--full">Full Width Button</a>
 ```
 
-## Buttons with Icons
+## Buttons with icons
 
 Add Font Awesome icons to your buttons for enhanced visual communication.
 
-### Icon on the Left (Default)
+### Icon on the left (default)
 
 {{< button href="#" variant="primary" icon="download" >}}Download{{< /button >}}
 {{< button href="#" variant="secondary" icon="book" >}}Read Docs{{< /button >}}
@@ -127,7 +127,7 @@ Add Font Awesome icons to your buttons for enhanced visual communication.
 </a>
 ```
 
-### Icon on the Right
+### Icon on the right
 
 {{< button href="#" variant="primary" icon="arrow-right" iconPosition="right" >}}Continue{{< /button >}}
 {{< button href="#" variant="accent" icon="external-link" iconPosition="right" >}}External Link{{< /button >}}
@@ -140,18 +140,18 @@ Add Font Awesome icons to your buttons for enhanced visual communication.
 </a>
 ```
 
-### More Icon Examples
+### More icon examples
 
 {{< button href="#" variant="primary" icon="rocket" >}}Launch{{< /button >}}
 {{< button href="#" variant="secondary" icon="heart" >}}Favorite{{< /button >}}
 {{< button href="#" variant="accent" icon="star" >}}Featured{{< /button >}}
 {{< button href="#" variant="neutral" icon="gear" >}}Settings{{< /button >}}
 
-## Button Groups
+## Button groups
 
 Group multiple buttons together for related actions.
 
-### Centered Button Group
+### Centered button group
 
 <div class="btn-group btn-group--center">
   {{< button href="#" variant="primary" >}}Get Started{{< /button >}}
@@ -171,7 +171,7 @@ Group multiple buttons together for related actions.
 </div>
 ```
 
-### Left-Aligned Button Group (Default)
+### Left-aligned button group (default)
 
 <div class="btn-group">
   {{< button href="#" variant="primary" icon="download" >}}Download{{< /button >}}
@@ -187,7 +187,7 @@ Group multiple buttons together for related actions.
 </div>
 ```
 
-### Right-Aligned Button Group
+### Right-aligned button group
 
 <div class="btn-group btn-group--right">
   {{< button href="#" variant="secondary" >}}Cancel{{< /button >}}
@@ -201,7 +201,7 @@ Group multiple buttons together for related actions.
 </div>
 ```
 
-## External Links
+## External links
 
 For external links, the shortcode automatically adds `rel="noopener noreferrer"` when you specify `target="_blank"`.
 
@@ -220,11 +220,11 @@ For external links, the shortcode automatically adds `rel="noopener noreferrer"`
 </a>
 ```
 
-## All Sizes and Variants Together
+## All sizes and variants together
 
 Here's a visual comparison of all button variants in different sizes:
 
-### Small Buttons
+### Small buttons
 
 <div class="btn-group">
 {{< button href="#" variant="primary" size="sm" >}}Primary{{< /button >}}
@@ -233,7 +233,7 @@ Here's a visual comparison of all button variants in different sizes:
 {{< button href="#" variant="neutral" size="sm" >}}Neutral{{< /button >}}
 </div>
 
-### Default Size
+### Default size
 
 <div class="btn-group">
 {{< button href="#" variant="primary" >}}Primary{{< /button >}}
@@ -242,7 +242,7 @@ Here's a visual comparison of all button variants in different sizes:
 {{< button href="#" variant="neutral" >}}Neutral{{< /button >}}
 </div>
 
-### Large Buttons
+### Large buttons
 
 <div class="btn-group">
 {{< button href="#" variant="primary" size="lg" >}}Primary{{< /button >}}
@@ -251,7 +251,7 @@ Here's a visual comparison of all button variants in different sizes:
 {{< button href="#" variant="neutral" size="lg" >}}Neutral{{< /button >}}
 </div>
 
-## Accessibility Features
+## Accessibility features
 
 All buttons in the Clean Hugo theme include:
 
@@ -261,16 +261,16 @@ All buttons in the Clean Hugo theme include:
 - **Screen Reader Support**: Icons use `aria-hidden="true"` to prevent duplication
 - **Color Contrast**: All button variants meet WCAG AA contrast requirements
 
-## Best Practices
+## Best practices
 
-### When to Use Each Variant
+### When to use each variant
 
 - **Primary**: Main call-to-action on a page (e.g., "Get Started", "Sign Up", "Download")
 - **Secondary**: Supporting actions or alternative paths (e.g., "Learn More", "View Demo")
 - **Accent**: Special promotions or time-sensitive actions (e.g., "Limited Offer", "New Feature")
 - **Neutral**: Less important actions or cancel operations (e.g., "Cancel", "Skip", "Maybe Later")
 
-### Button Hierarchy
+### Button hierarchy
 
 On any given page:
 - Use **one primary button** for the main action
@@ -278,14 +278,14 @@ On any given page:
 - Limit the total number of buttons visible at once
 - Place the most important action on the right in horizontal button groups
 
-### Size Guidelines
+### Size guidelines
 
 - **Small**: Use in compact spaces, cards, or when space is limited
 - **Default**: Use for most button instances throughout the site
 - **Large**: Use for prominent CTAs, especially above the fold on landing pages
 - **Full Width**: Use in mobile layouts or forms where buttons should span the container
 
-## Shortcode Parameters Reference
+## Shortcode parameters reference
 
 | Parameter | Type | Default | Description |
 |-----------|------|---------|-------------|
@@ -298,7 +298,7 @@ On any given page:
 | `rel` | string | auto | Link relationship (auto-set for `target="_blank"`) |
 | `class` | string | - | Additional CSS classes |
 
-## Custom Styling
+## Custom styling
 
 If you need custom button colors for specific use cases, you can add inline styles:
 
@@ -317,6 +317,6 @@ If you need custom button colors for specific use cases, you can add inline styl
 </style>
 ```
 
-## Questions or Issues?
+## Questions or issues?
 
 If you have questions about using buttons or need help implementing them in your theme, please refer to the [theme documentation](#) or open an issue on GitHub.

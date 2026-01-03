@@ -17,7 +17,7 @@ This document provides technical documentation for the package filtering system 
 
 The package listing page uses a **client-side filtering system** built with AlpineJS to provide instant search and category filtering without page reloads.
 
-## Data Flow
+## Data flow
 
 1. Hugo reads `packages.yml` at build time
 2. Package data is injected into AlpineJS via `initPackages({{ .Site.Data.packages | jsonify }})`
@@ -25,7 +25,7 @@ The package listing page uses a **client-side filtering system** built with Alpi
 4. JavaScript file handles filter logic
 5. HTML templates display filtered results
 
-## File Structure
+## File structure
 
 ```text
 ├── data/packages.yml                        # Package data (YAML)
@@ -36,7 +36,7 @@ The package listing page uses a **client-side filtering system** built with Alpi
 └── static/js/package-filter.js              # AlpineJS filter component logic
 ```
 
-## AlpineJS Integration
+## AlpineJS integration
 
 The page uses these key AlpineJS directives:
 
@@ -47,20 +47,20 @@ The page uses these key AlpineJS directives:
 - `x-model="searchQuery"` - Two-way binding for search input
 - `@click="activeFilter = '*'"` - Updates filter state
 
-## Filtering Logic (package-filter.js)
+## Filtering logic (package-filter.js)
 
-### Component State
+### Component state
 
 - `packages: []` - All packages loaded from Hugo
 - `searchQuery: ''` - Current search text
 - `activeFilter: '*'` - Current category filter ('*' = show all)
 
-### Computed Properties
+### Computed properties
 
 - `activePackages` - Returns filtered active packages
 - `archivedPackages` - Returns all archived packages (never filtered)
 
-### Filter Methods
+### Filter methods
 
 The `filterPackages(activeOnly)` method:
 
@@ -69,7 +69,7 @@ The `filterPackages(activeOnly)` method:
 3. Filters by search query (name, description, maintainer)
 4. Returns filtered array
 
-## Grid Rendering
+## Grid rendering
 
 ### Structure
 
@@ -86,7 +86,7 @@ The `filterPackages(activeOnly)` method:
 
 **Key Point:** Card HTML is INSIDE the AlpineJS template, not a separate partial, because Hugo partials cannot be called from client-side JavaScript.
 
-## Card Markup Architecture
+## Card markup architecture
 
 Package cards exist in **two places** due to the nature of AlpineJS:
 
@@ -102,7 +102,7 @@ Package cards exist in **two places** due to the nature of AlpineJS:
 - Renders server-side at build time
 - Used on static partner pages (no filtering needed)
 
-### Why the Duplication?
+### Why the duplication?
 
 - Hugo partials are processed at **BUILD time** (server-side)
 - AlpineJS templates execute at **RUN time** (client-side)
@@ -113,7 +113,7 @@ Package cards exist in **two places** due to the nature of AlpineJS:
 
 ## Styling (_packages.scss)
 
-### Key Classes
+### Key classes
 
 - `.packages-page__controls` - Filter/search container
 - `.packages-page__partner-nav` - Partner button section
@@ -125,7 +125,7 @@ Package cards exist in **two places** due to the nature of AlpineJS:
 - `.partner-badge` - Astropy badge image styling
 - `.partner-button` - Partner navigation button
 
-## Adding New Packages
+## Adding new packages
 
 To add a new package:
 
@@ -135,7 +135,7 @@ To add a new package:
 4. Optionally add `partners: ["astropy"]` for partner affiliation
 5. Hugo will rebuild and AlpineJS will automatically include it
 
-### Example Package Entry
+### Example package entry
 
 ```yaml
 - package_name: MyPackage
@@ -160,7 +160,7 @@ To add a new package:
     documentation: https://mypackage.readthedocs.io
 ```
 
-## Adding New Filter Categories
+## Adding new filter categories
 
 To add a new category filter:
 
@@ -169,7 +169,7 @@ To add a new category filter:
 3. Ensure packages in `packages.yml` use matching category name
 4. No JavaScript changes needed - filter logic is generic
 
-### Example Filter Button
+### Example filter button
 
 ```html
 <button @click="activeFilter = 'machine-learning'"
@@ -178,7 +178,7 @@ To add a new category filter:
 </button>
 ```
 
-## Performance Considerations
+## Performance considerations
 
 - All packages loaded on page load (~340 items = ~500KB JSON)
 - Filtering happens in browser (instant, no network requests)
@@ -189,9 +189,9 @@ To add a new category filter:
   - Lazy loading
   - Search indexes
 
-## Debugging Tips
+## Debugging tips
 
-### Browser Console Commands
+### Browser console commands
 
 ```javascript
 Alpine.version           // Check AlpineJS is loaded
@@ -201,7 +201,7 @@ activeFilter            // See current filter
 searchQuery             // See current search
 ```
 
-### Common Issues
+### Common issues
 
 | Issue | Solution |
 |-------|----------|
@@ -210,7 +210,7 @@ searchQuery             // See current search
 | Search not working | Check `x-model` on input |
 | Cards not rendering | Check packages data in console |
 
-## Future Enhancements
+## Future enhancements
 
 Potential improvements:
 
@@ -224,7 +224,7 @@ Potential improvements:
 - **Advanced Search** - Boolean operators, field-specific search
 - **Package Comparison** - Compare multiple packages side-by-side
 
-## Architecture Decision Records
+## Architecture decision records
 
 ### Why AlpineJS?
 
@@ -234,7 +234,7 @@ Potential improvements:
 - Works well with Hugo's server-side rendering
 - Easy to learn for theme users
 
-### Why Client-Side Filtering?
+### Why client-side filtering?
 
 - Instant filtering with no page reloads
 - Better user experience
@@ -242,7 +242,7 @@ Potential improvements:
 - Package count is manageable (<1000)
 - No backend infrastructure needed
 
-### Why Duplicate Card Markup?
+### Why duplicate card markup?
 
 **Alternative Considered:** Web Components
 
@@ -256,7 +256,7 @@ Potential improvements:
 - Two copies is acceptable for ~70 lines of markup
 - Card structure is relatively stable
 
-### Why YAML for Package Data?
+### Why YAML for package data?
 
 - Human-readable and editable
 - Supports structured data (nested objects, arrays)
@@ -264,9 +264,9 @@ Potential improvements:
 - Version controlled with site code
 - Hugo has excellent YAML support
 
-## Maintenance Guidelines
+## Maintenance guidelines
 
-### When Updating Card Markup
+### When updating card markup
 
 1. Update `layouts/partials/packages/grid.html` (AlpineJS version)
 2. Update `layouts/partners/single.html` (Hugo version)
@@ -274,14 +274,14 @@ Potential improvements:
 4. Verify filtering still works
 5. Check responsive layout on mobile
 
-### When Adding New Fields to packages.yml
+### When adding new fields to packages.yml
 
 1. Update all existing packages with new field (or make it optional)
 2. Update card markup in both locations
 3. Update this documentation
 4. Consider if field should be searchable/filterable
 
-### Testing Checklist
+### Testing checklist
 
 - [ ] All categories filter correctly
 - [ ] Search works for name, description, maintainer
@@ -292,7 +292,7 @@ Potential improvements:
 - [ ] Metrics bar calculates correctly
 - [ ] Links open in correct target
 
-## Related Documentation
+## Related documentation
 
 - [Theme Color Reference Guide](/blog/2025-12-25-theme-color-reference/) - Theme colors and customization
 - [AlpineJS Documentation](https://alpinejs.dev/) - Official AlpineJS docs
