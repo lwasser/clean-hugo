@@ -1,10 +1,10 @@
 ---
-title: "Theme Color Reference Guide"
+title: "Clean Hugo Theme Color Reference Guide"
 date: 2025-12-25
 author: "Clean Hugo Theme"
 categories: ["documentation", "customization"]
-tags: ["colors", "theme", "configuration"]
-excerpt: "Complete reference guide to all customizable theme colors with visual swatches and hex codes."
+tags: ["colors", "theme-config"]
+excerpt: "View the default colors available in this theme and learn how to customize them. This is a complete reference guide to all customizable theme colors with visual swatches and hex codes."
 image:
   src: "images/unsplash-images.webp"
   alt: "Collection of scattered vintage photographs"
@@ -12,9 +12,14 @@ image:
 ---
 
 
-The Clean Hugo theme provides a customizable color system that you can adjust to match your brand. All colors are defined in your `hugo.toml` configuration file under `[params.theme.colors]`.
+The Clean Hugo theme comes with a sensible teal theme 
+out of the box. You can fully customize it to match your brand. to customize, simply update the colors defined in the `hugo.toml` configuration file under `[params.theme.colors]`. 
 
-## How to Customize Colors
+{{< admonition type="info" title="How Colors Work in This Theme" >}}
+Hugo colors in the theme are defined by default in the hugo.toml file using hex color codes. These colors are injected into the CSS using Hugo's templating system, allowing for easy customization without modifying the theme's CSS files directly.
+{{< /admonition >}}
+
+## How to customize colors
 
 Add or modify colors in your `hugo.toml`:
 
@@ -25,21 +30,21 @@ Add or modify colors in your `hugo.toml`:
   # ... more colors
 ```
 
-## Color Palette
+## Color palette
 
 Below are all the theme colors currently defined in your `hugo.toml` configuration. These colors are dynamically read from your config, so when you add or update colors, they'll automatically appear here.
 
 {{< theme-colors >}}
 
-## Color Accessibility
+## Color accessibility
 
 All default theme colors are designed to meet **WCAG AA accessibility standards** for color contrast (4.5:1 for normal text, 3:1 for large text). When customizing colors, please ensure your color choices maintain adequate contrast ratios.
 
-### Testing Your Colors
+### Testing your colors
 
 Use tools like [WebAIM's Contrast Checker](https://webaim.org/resources/contrastchecker/) to verify that your custom colors meet accessibility standards.
 
-## Example Configuration
+## Example configuration
 
 Here's a complete example showing all color options in `hugo.toml`:
 
@@ -72,7 +77,7 @@ Here's a complete example showing all color options in `hugo.toml`:
   admonition-note = "#6B7280"
 ```
 
-## Quick Start
+## Quick start
 
 To get started customizing your theme colors:
 

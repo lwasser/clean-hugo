@@ -17,11 +17,11 @@ image:
 
 This post tests code block styling and syntax highlighting with various code examples.
 
-## Inline Code Examples
+## Inline code examples
 
 Here's some inline `code` with backticks. You can also use `console.log('hello')` or `import pandas as pd` inline.
 
-## Python Code Block
+## Python code block
 
 Here's a Python example with syntax highlighting:
 
@@ -60,7 +60,7 @@ if __name__ == "__main__":
     print(data.head())
 ```
 
-## Console/Shell Commands
+## Console/shell commands
 
 Here are some shell commands:
 
@@ -82,7 +82,7 @@ cd ~/projects
 pwd
 ```
 
-## JavaScript/TypeScript Code
+## JavaScript/TypeScript code
 
 ```javascript
 // JavaScript example
@@ -114,7 +114,7 @@ processData('/api/data')
   .catch(err => console.error(err));
 ```
 
-## Markdown Code Block
+## Markdown code block
 
 Here's a markdown example:
 
@@ -137,7 +137,7 @@ Here's a markdown example:
 | Data 1   | Data 2   |
 ```
 
-## YAML Configuration
+## YAML configuration
 
 ```yaml
 # Configuration file
@@ -159,7 +159,7 @@ features:
   - api
 ```
 
-## JSON Data
+## JSON data
 
 ```json
 {
@@ -177,7 +177,7 @@ features:
 }
 ```
 
-## HTML Example
+## HTML example
 
 ```html
 <!DOCTYPE html>
@@ -197,7 +197,7 @@ features:
 </html>
 ```
 
-## CSS Example
+## CSS example
 
 ```css
 /* Stylesheet example */
@@ -227,7 +227,7 @@ features:
 }
 ```
 
-## R Code Example
+## R code example
 
 ```r
 # R code example
@@ -255,7 +255,7 @@ ggplot(processed_data, aes(x = category, y = value)) +
   labs(title = "Value by Category")
 ```
 
-## Code Without Language Specified
+## Code without language specified
 
 ```
 This is plain text code block
@@ -264,7 +264,7 @@ It should still be styled
 as a code block
 ```
 
-## Mixed Content
+## Mixed content
 
 Here's a paragraph with inline `code` and then a code block:
 
@@ -277,11 +277,11 @@ And here's more text with `more inline code`.
 
 ---
 
-## Customizing Syntax Highlighting Theme
+## Customizing syntax highlighting theme
 
 The Clean Hugo theme uses Hugo's built-in Chroma syntax highlighter with the **Monokai** theme by default. You can easily change to a different theme if you prefer.
 
-### Available Themes
+### Available themes
 
 Hugo supports many Chroma themes. Popular options include:
 - `monokai` (default) - Dark theme with vibrant colors
@@ -293,7 +293,7 @@ Hugo supports many Chroma themes. Popular options include:
 
 See the [Chroma Style Gallery](https://xyproto.github.io/sublime/docs/) for all available themes.
 
-### How to Change the Theme
+### How to change the theme
 
 **Step 1:** Update your `hugo.toml` configuration:
 

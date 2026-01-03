@@ -12,25 +12,25 @@ tags:
 
 This is an example of an archived blog post. Posts are automatically moved to the archive section when they meet certain criteria.
 
-## How Posts Become Archived
+## How posts become archived
 
 A blog post becomes an archive post when **both** of these conditions are met:
 
 1. **Date is before the cutoff date** - Currently set to `2025-01-01` in `layouts/blog/list.html`
 2. **No featured image** - The post doesn't have an `image` field in its front matter
 
-## Archive Post Characteristics
+## Archive post characteristics
 
 - **No featured image** - Archive posts don't display images in listings
 - **Simpler layout** - Shown in a grid layout in the "From the Archives" section
 - **Still accessible** - Archive posts are fully accessible and can be viewed normally
 - **Automatic organization** - No manual work needed, Hugo automatically categorizes them
 
-## Example Content
+## Example content
 
 Here's some example content to show how archive posts look:
 
-### Code Example
+### Code example
 
 ```python
 def hello_world():
@@ -48,7 +48,7 @@ def hello_world():
 
 > This is a blockquote example in an archive post.
 
-## When to Use Archive Posts
+## When to use archive posts
 
 Archive posts are perfect for:
 - Older content that's still valuable but doesn't need prominent placement
@@ -56,7 +56,7 @@ Archive posts are perfect for:
 - Historical content that's part of your site's timeline
 - Tutorials or guides that remain relevant but aren't current
 
-## Customizing Archive Behavior
+## Customizing archive behavior
 
 To change when posts become archived, edit `layouts/blog/list.html`:
 

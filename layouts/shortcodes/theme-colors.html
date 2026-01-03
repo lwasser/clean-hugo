@@ -1,8 +1,7 @@
-{{- /* 
-  Renders all theme colors from hugo.toml as color swatches
-  Styles defined in assets/css/_shortcodes.scss
-  Usage: {{< theme-colors >}}
+{{- /*
+  Renders all theme colors defined in the hugo.toml as color swatches.
 */ -}}
+
 {{- $colors := .Site.Params.theme.colors | default dict -}}
 
 {{- /* Generate dynamic color classes for each theme color */ -}}
