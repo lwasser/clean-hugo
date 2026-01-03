@@ -20,7 +20,7 @@ min_version = "0.118.2"
   # Brand colors (defaults) — can be overridden in site hugo.toml
   primary = "#2E6060"
   primaryDark = "#142929"
-  primaryLight = "#CAE4E4"
+  primaryLight = "#D6E3E3"
   secondary = "#F1E0A6"
   accent = "#42213D"
   accentLight = "#E4B8C6"
@@ -43,12 +43,12 @@ min_version = "0.118.2"
   featureCard = "#EBC1D3"
 
   # Section backgrounds (kept as references for semantic clarity)
-  "heroBg" = "#2E6060" # The default hero color - same as primary
+  "heroBg" = "#2E6060"
 
   # Admonition colors
-  "admonition-info" = "#3B82F6"
-  "admonition-success" = "#22C55E"
-  "admonition-warning" = "#EAB308"
-  "admonition-danger" = "#EF4444"
-  "admonition-note" = "#6B7280"
+  "admonition-info" = "#53354F"      # deep purple
+  "admonition-success" = "#71B3B5"   # brighter teal
+  "admonition-warning" = "#E4B8C6"   # Soft blossom
+  "admonition-danger" = "#F1E0A6"    # yellow custard
+  "admonition-note" = "#CAE4E4"      # soft teal
 

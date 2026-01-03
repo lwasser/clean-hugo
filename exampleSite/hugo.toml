@@ -87,7 +87,7 @@ enableRobotsTXT = true
   featureCard = "#EBC1D3"
 
   # Section backgrounds (kept as references for semantic clarity)
-  "hero-bg" = "#2E6060"
+  "heroBg" = "#2E6060"
 
   # Admonition colors
   "admonition-info" = "#53354F"      # deep purple
