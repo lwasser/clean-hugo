@@ -140,6 +140,5 @@ enableRobotsTXT = true
   url = "/about/"
   weight = 4
 
-
 [permalinks]
   blog = "/blog/:title/"

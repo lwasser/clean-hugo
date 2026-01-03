@@ -310,7 +310,7 @@ Here's a complete example showing all available front matter options:
 
 ```yaml
 ---
-title: "Getting Started with Clean Hugo Theme"
+title: "Get Started with Clean Hugo Theme"
 date: 2024-12-22
 draft: false
 excerpt: "Learn how to set up and customize the Clean Hugo theme for your website."

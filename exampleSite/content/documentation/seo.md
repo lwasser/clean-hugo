@@ -3,6 +3,7 @@ title: "SEO & Social Sharing"
 date: 2025-12-28
 draft: false
 layout: "docs"
+weight: 40
 excerpt: "Optimize your site for search engines and social platforms"
 header:
   color: "primaryDark"
@@ -258,7 +259,7 @@ excerpt: "Page description for search results and social sharing"
 
 ## Next Steps
 
-- **[Getting Started](/documentation/getting-started/)** - Configure your site
+- **[Get Started](/documentation/get-started/)** - Configure your site
 - **[Working with Images](/documentation/images/)** - Optimize images for SEO
 - **[Layouts & Shortcodes](/documentation/layouts-shortcodes/)** - Create rich content
 

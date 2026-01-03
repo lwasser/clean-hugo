@@ -9,9 +9,17 @@
   </div>
 </div>
 
+<div class="overlay"></div>
+
+<button class="docs-toggle" aria-label="Toggle documentation sidebar">
+  <i class="fas fa-bars"></i>
+</button>
+
 <div class="docs-layout">
   <aside class="docs-sidebar">
-    <nav id="docs-nav"></nav>
+    <nav id="docs-nav">
+      {{- partial "docs-sidebar.html" . -}}
+    </nav>
   </aside>
 
   <article class="docs-content">
@@ -26,5 +34,6 @@
 </div>
 
 <script src="{{ "js/docs-nav.js" | relURL }}" defer></script>
+<script src="{{ "js/docs-sidebar.js" | relURL }}" defer></script>
 {{ end }}
 

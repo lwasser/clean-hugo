@@ -3,6 +3,7 @@ title: "Layouts & Shortcodes"
 date: 2025-12-28
 draft: false
 layout: "docs"
+weight: 4
 excerpt: "Page layouts and shortcodes for creating rich content"
 header:
   color: "primaryDark"

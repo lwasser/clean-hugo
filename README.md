@@ -70,7 +70,6 @@ theme = 'clean-hugo'
     link = "#2E6060"
     linkOnDark = "#2DD4BF"
     linkHover = "#1F4345"
-    footerBg = "#115E59"
     featureCard = "#EBC1D3"
 ```
 
@@ -211,36 +210,41 @@ mind:
 
 ```toml
 [params.theme.colors]
-  # Accessible link colors
-  link = "#2E6060"        # Dark teal - 6.2:1 contrast on white ✅
-  linkOnDark = "#2DD4BF"  # Light cyan - good contrast on dark bg ✅
-  linkHover = "#1F4345"   # Darker hover state for better focus ✅
-  
-  # Brand colors
-  primary = "#71B3B5"
-  primaryDark = "#2E6060"
+  # Brand colors (defaults) — can be overridden in site hugo.toml
+  primary = "#2E6060"
+  primaryDark = "#142929"
   primaryLight = "#D6E3E3"
-  secondary = "#EDB88B"
+  secondary = "#F1E0A6"
   accent = "#42213D"
-  accentLight = "#AC87A0"
+  accentLight = "#E4B8C6"
   neutral = "#395E66"
-  
-  # Gray scale (optional - defaults provided)
+
+  # Base/Text colors
   white = "#FFFFFF"
+
+  # Gray scale (for theme customization)
   gray50 = "#F9FAFB"
   gray200 = "#E5E7EB"
-  gray300 = "#D1D5DB"
-  gray400 = "#9CA3AF"
-  gray500 = "#6B7280"
   gray600 = "#4B5563"
   gray700 = "#374151"
-  gray800 = "#1F2937"
-  gray900 = "#111827"
-  
-  # Specific use colors
+  gray900 = "#111827" # Used for dark background for blog highlights
+
+  # Semantic colors
+  link = "#2E6060"
+  linkOnDark = "#2DD4BF"
+  linkHover = "#1F4345"
   featureCard = "#EBC1D3"
-  blogHighlight = "#111827"
-  footerBg = "#115E59"
+
+  # Section backgrounds (kept as references for semantic clarity)
+  "heroBg" = "#2E6060"
+
+  # Admonition colors
+  "admonition-info" = "#53354F"      # deep purple
+  "admonition-success" = "#71B3B5"   # brighter teal
+  "admonition-warning" = "#E4B8C6"   # Soft blossom
+  "admonition-danger" = "#F1E0A6"    # yellow custard
+  "admonition-note" = "#CAE4E4"      # soft teal
+
 ```
 
 If you need help to choose accessible colors, consider using tools like:
@@ -377,7 +381,7 @@ Here's a complete example of a blog post:
 
 ```markdown
 ---
-title: "Getting Started with Hugo"
+title: "Get Started with Hugo"
 date: 2025-01-15
 excerpt: "Learn how to build a fast, modern website with Hugo static site generator."
 image: /images/headers/hugo-tutorial.jpg
