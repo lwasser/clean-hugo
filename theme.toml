@@ -18,9 +18,9 @@ min_version = "0.118.2"
 # Default theme parameters (can be overridden in site's hugo.toml)
 [params.theme.colors]
   # Brand colors (defaults) — can be overridden in site hugo.toml
-  primary = "#71B3B5"
-  primaryDark = "#2E6060"
-  primaryLight = "#D6E3E3"
+  primary = "#2E6060"
+  primaryDark = "#142929"
+  primaryLight = "#CAE4E4"
   secondary = "#F1E0A6"
   accent = "#42213D"
   accentLight = "#E4B8C6"
@@ -34,7 +34,7 @@ min_version = "0.118.2"
   gray200 = "#E5E7EB"
   gray600 = "#4B5563"
   gray700 = "#374151"
-  gray900 = "#111827"
+  gray900 = "#111827" # Used for dark background for blog highlights
 
   # Semantic colors
   link = "#2E6060"
@@ -43,7 +43,7 @@ min_version = "0.118.2"
   featureCard = "#EBC1D3"
 
   # Section backgrounds (kept as references for semantic clarity)
-  "hero-bg" = "#2E6060"
+  "heroBg" = "#2E6060" # The default hero color - same as primary
 
   # Admonition colors
   "admonition-info" = "#3B82F6"
