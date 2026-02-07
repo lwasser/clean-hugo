@@ -51,9 +51,82 @@ Every page includes a canonical URL tag to prevent duplicate content issues. Thi
 
 The theme includes:
 - Article metadata (author, published/modified dates, tags)
-- Image metadata with alt text
+- Image metadata with alt text (`og:image:alt`)
 - Keywords from tags
 - Author information
+- **JSON-LD** (Organization or Person) for search engines: set `[params.social]` and optionally `params.social.type` to `"Organization"` (default) or `"Person"`. For Person, set `params.social.name`. Social URLs (github, linkedin, etc.) are used as `sameAs` in the schema.
+- **Site verification**: optional meta tags for Google, Bing, Yandex, Naver, and Baidu under `[params.seo]` (see below).
+- **Rich results**: **BlogPosting** on blog posts; **TechArticle** on documentation pages; **HowTo** when you add steps in front matter; **BreadcrumbList** on all pages.
+
+## Rich Results (Google Search)
+
+The theme outputs structured data so your pages can be eligible for **rich results** in Google Search:
+
+| Type | Where | What Google can show |
+|------|--------|----------------------|
+| **BlogPosting** | Blog posts only | Article rich result: image, date, author in search snippet |
+| **TechArticle** | Pages with `tech_article: true` (set on page or via cascade for a path) | Article-style rich result for docs/tutorials |
+| **HowTo** | Any page with `howto: true` and `steps` in front matter | How-to rich result: steps in search (expandable) |
+| **BreadcrumbList** | Every page | Breadcrumb trail under the result (e.g. Home › Documentation › Page title) |
+
+- **Blog**: BlogPosting is added automatically for the blog section.
+- **Docs/tutorials (TechArticle)**: Set `tech_article: true` on a page, or use Hugo’s **cascade** in `hugo.toml` to apply it to whole paths like `/lessons/` or `/peer-review/peer-review-guide/` (see below).
+- **Breadcrumbs**: Built from your site structure (Home → section → page).
+- **How-to / tutorials**: Add `howto: true` and a `steps` list in front matter (see below).
+
+### TechArticle: per-page or whole path
+
+**Option 1 – Single page:** In front matter, set `tech_article: true` on any page (any section) to output TechArticle for that page.
+
+**Option 2 – Whole path:** In `hugo.toml`, use Hugo’s [cascade](https://gohugo.io/configuration/cascade/) to set `tech_article = true` for all pages under a path. Paths use the **logical path** (leading slash, `**` for “this section and all descendants”):
+
+```toml
+# Cascade: default front matter for paths
+[[cascade]]
+  [cascade.params]
+    tech_article = true
+  [cascade.target]
+    path = "/documentation/**"
+
+[[cascade]]
+  [cascade.params]
+    tech_article = true
+  [cascade.target]
+    path = "/lessons/**"
+
+[[cascade]]
+  [cascade.params]
+    tech_article = true
+  [cascade.target]
+    path = "/peer-review/peer-review-guide/**"
+```
+
+- Use one `[[cascade]]` block per path (e.g. `/lessons/`, `/peer-review/peer-review-guide/`, `/handbook/`).
+- A page can still override by setting `tech_article: false` in its own front matter.
+
+**Test your pages:** Paste a live URL or your JSON-LD into [Google’s Rich Results Test](https://search.google.com/test/rich-results).
+
+### HowTo for step-by-step docs and tutorials
+
+For guides that are step-by-step (e.g. “How to install”, “Tutorial: …”), add **HowTo** schema via front matter so Google can show steps in search. In your doc’s front matter:
+
+```yaml
+howto: true
+steps:
+  - name: "Step title"
+    text: "Short description of what to do."
+  - name: "Next step"
+    text: "Description."
+# Optional: total time in ISO 8601 (e.g. PT5M = 5 minutes, PT1H30M = 1h 30m)
+total_time: "PT5M"
+```
+
+- **name** (required): Short title for the step.
+- **text** (optional but recommended): Plain-text description.
+- **url** (optional): Link to an anchor or section for this step.
+- **total_time** (optional): Total time to complete (e.g. `PT10M`, `PT1H`).
+
+Example: see [Get Started](/documentation/get-started/) in this example site, which uses `howto: true` and `steps` for HowTo rich results.
 
 ## Robots.txt
 
@@ -197,6 +270,38 @@ Set a site-wide description:
 ```
 
 This is used when pages don't have their own excerpt.
+
+### JSON-LD (Organization or Person)
+
+The theme outputs Schema.org JSON-LD so search engines can recognize your site as an organization or person. Configure in `hugo.toml`:
+
+```toml
+[params.social]
+  type = "Organization"   # default; use "Person" for a personal site
+  # name = "Your Name"    # required when type = "Person"
+  github = "https://github.com/yourorg"
+  linkedin = "https://www.linkedin.com/company/yourorg"
+  mastodon = "https://mastodon.social/@yourorg"
+```
+
+- **Organization** (default): uses site title, home URL, optional logo from `params.seo.default_image`, and `sameAs` from social URLs.
+- **Person**: uses `params.social.name` (or site title), home URL, and `sameAs` from social URLs.
+
+Validate with [Google's Rich Results Test](https://search.google.com/test/rich-results) or [validator.schema.org](https://validator.schema.org).
+
+### Site Verification
+
+Optional verification codes for search console / webmaster tools. Add under `[params.seo]`:
+
+```toml
+[params.seo]
+  default_image = "images/default-share.jpg"
+  google_site_verification = "your-google-code"
+  bing_site_verification = "your-bing-code"
+  # Optional regional: yandex_site_verification, naver_site_verification, baidu_site_verification
+```
+
+Only set the ones you use; unset keys are omitted from the page.
 
 ### Page-Level SEO
 

@@ -90,3 +90,170 @@
   <meta name="keywords" content="{{ delimit . ", " }}">
 {{ end }}
 
+{{/*
+  JSON-LD structured data (Organization or Person).
+  Current practice: Schema.org types with url, logo (Organization), sameAs for social links.
+  Set params.social.type to "Organization" (default) or "Person".
+  For Person, set params.social.name; sameAs is built from params.social URL values (github, linkedin, etc.).
+*/}}
+{{ $schemaType := .Site.Params.social.type | default "Organization" }}
+{{ $sameAs := slice }}
+{{ range $key, $val := .Site.Params.social }}
+  {{ $v := printf "%v" $val }}
+  {{ if and (ne $key "type") (ne $key "name") (or (hasPrefix $v "http://") (hasPrefix $v "https://")) }}
+    {{ $sameAs = $sameAs | append $v }}
+  {{ end }}
+{{ end }}
+
+{{ $schemaName := .Site.Title }}
+{{ if eq $schemaType "Person" }}
+  {{ $schemaName = .Site.Params.social.name | default .Site.Title }}
+{{ end }}
+{{ $schema := dict "@context" "https://schema.org" "@type" $schemaType "name" $schemaName "url" ("" | absURL) }}
+{{ if $sameAs }}
+  {{ $schema = merge $schema (dict "sameAs" $sameAs) }}
+{{ end }}
+{{ if and (eq $schemaType "Organization") .Site.Params.seo.default_image }}
+  {{ $schema = merge $schema (dict "logo" (.Site.Params.seo.default_image | absURL)) }}
+{{ end }}
+
+<script type="application/ld+json">
+  {{ $schema | jsonify | safeJS }}
+</script>
+
+{{/*
+  BlogPosting JSON-LD for blog posts. Enables article rich results in Google (image, date, author in search).
+  See: https://developers.google.com/search/docs/appearance/structured-data/article
+*/}}
+{{ if and .IsPage (eq .Section "blog") }}
+  {{ $authorName := .Params.author | default .Site.Params.author | default .Site.Title }}
+  {{ $publisher := dict "@type" "Organization" "name" .Site.Title }}
+  {{ with .Site.Params.seo.default_image }}
+    {{ $publisher = merge $publisher (dict "logo" (dict "@type" "ImageObject" "url" (. | absURL))) }}
+  {{ end }}
+  {{ $article := dict "@context" "https://schema.org" "@type" "BlogPosting" "headline" .Title "url" .Permalink "datePublished" (.Date.Format "2006-01-02T15:04:05Z07:00") "author" (dict "@type" "Person" "name" $authorName) "publisher" $publisher }}
+  {{ with .Lastmod }}
+    {{ $article = merge $article (dict "dateModified" (.Format "2006-01-02T15:04:05Z07:00")) }}
+  {{ end }}
+  {{ if $image }}
+    {{ $article = merge $article (dict "image" $image) }}
+  {{ end }}
+  {{ with .Description }}
+    {{ $article = merge $article (dict "description" .) }}
+  {{ else }}
+    {{ with .Summary }}
+      {{ $article = merge $article (dict "description" (. | plainify | truncate 160)) }}
+    {{ end }}
+  {{ end }}
+<script type="application/ld+json">
+  {{ $article | jsonify | safeJS }}
+</script>
+{{ end }}
+
+{{/*
+  TechArticle JSON-LD for doc/tutorial pages. Enables article-style rich results.
+  Set tech_article: true on a page, or use [cascade] in hugo.toml to apply to whole paths (e.g. /lessons/, /peer-review/peer-review-guide/).
+  See: https://schema.org/TechArticle and https://developers.google.com/search/docs/appearance/structured-data/article
+*/}}
+{{ if and .IsPage .Params.tech_article }}
+  {{ $authorName := .Params.author | default .Site.Params.author | default .Site.Title }}
+  {{ $publisher := dict "@type" "Organization" "name" .Site.Title }}
+  {{ with .Site.Params.seo.default_image }}
+    {{ $publisher = merge $publisher (dict "logo" (dict "@type" "ImageObject" "url" (. | absURL))) }}
+  {{ end }}
+  {{ $tech := dict "@context" "https://schema.org" "@type" "TechArticle" "headline" .Title "url" .Permalink "datePublished" (.Date.Format "2006-01-02T15:04:05Z07:00") "author" (dict "@type" "Person" "name" $authorName) "publisher" $publisher }}
+  {{ with .Lastmod }}
+    {{ $tech = merge $tech (dict "dateModified" (.Format "2006-01-02T15:04:05Z07:00")) }}
+  {{ end }}
+  {{ if $image }}
+    {{ $tech = merge $tech (dict "image" $image) }}
+  {{ end }}
+  {{ with .Description }}
+    {{ $tech = merge $tech (dict "description" .) }}
+  {{ else }}
+    {{ with .Summary }}
+      {{ $tech = merge $tech (dict "description" (. | plainify | truncate 160)) }}
+    {{ end }}
+  {{ end }}
+<script type="application/ld+json">
+  {{ $tech | jsonify | safeJS }}
+</script>
+{{ end }}
+
+{{/*
+  HowTo JSON-LD for docs/tutorials with step-by-step content. Set howto: true and steps in front matter.
+  See: https://developers.google.com/search/docs/appearance/structured-data/how-to
+  Each step: name (required) and text or url (optional but recommended).
+*/}}
+{{ if and .IsPage .Params.howto .Params.steps }}
+  {{ $howToSteps := slice }}
+  {{ range $i, $s := .Params.steps }}
+    {{ $step := dict "@type" "HowToStep" "position" (add $i 1) "name" ($s.name | default (printf "Step %d" (add $i 1))) }}
+    {{ with $s.text }}
+      {{ $step = merge $step (dict "text" .) }}
+    {{ end }}
+    {{ with $s.url }}
+      {{ $step = merge $step (dict "url" (. | absURL)) }}
+    {{ end }}
+    {{ $howToSteps = $howToSteps | append $step }}
+  {{ end }}
+  {{ $howTo := dict "@context" "https://schema.org" "@type" "HowTo" "name" .Title "url" .Permalink "step" $howToSteps }}
+  {{ with .Description }}
+    {{ $howTo = merge $howTo (dict "description" .) }}
+  {{ else }}
+    {{ with .Summary }}
+      {{ $howTo = merge $howTo (dict "description" (. | plainify | truncate 160)) }}
+    {{ end }}
+  {{ end }}
+  {{ if $image }}
+    {{ $howTo = merge $howTo (dict "image" $image) }}
+  {{ end }}
+  {{ with .Params.total_time }}
+    {{ $howTo = merge $howTo (dict "totalTime" .) }}
+  {{ end }}
+<script type="application/ld+json">
+  {{ $howTo | jsonify | safeJS }}
+</script>
+{{ end }}
+
+{{/*
+  BreadcrumbList JSON-LD for all pages. Enables breadcrumb trail in search results.
+  See: https://developers.google.com/search/docs/appearance/structured-data/breadcrumb
+  .Ancestors is ordered from immediate parent toward root (home can appear last); we add Home first, then non-home ancestors, then current page.
+*/}}
+{{ $crumbItems := slice (dict "@type" "ListItem" "position" 1 "name" .Site.Title "item" ("" | absURL)) }}
+{{ $pos := 2 }}
+{{ range .Ancestors }}
+  {{ if not .IsHome }}
+    {{ $crumbItems = $crumbItems | append (dict "@type" "ListItem" "position" $pos "name" .Title "item" .Permalink) }}
+    {{ $pos = add $pos 1 }}
+  {{ end }}
+{{ end }}
+{{ if not .IsHome }}
+  {{ $crumbItems = $crumbItems | append (dict "@type" "ListItem" "position" $pos "name" .Title "item" .Permalink) }}
+{{ end }}
+{{ $breadcrumbSchema := dict "@context" "https://schema.org" "@type" "BreadcrumbList" "itemListElement" $crumbItems }}
+<script type="application/ld+json">
+  {{ $breadcrumbSchema | jsonify | safeJS }}
+</script>
+
+{{/*
+  Site verification (optional). Add verification codes in hugo.toml under [params.seo].
+  Modern practice: Google and Bing are primary; others available for regional use.
+*/}}
+{{ with .Site.Params.seo.google_site_verification }}
+  <meta name="google-site-verification" content="{{ . }}">
+{{ end }}
+{{ with .Site.Params.seo.bing_site_verification }}
+  <meta name="msvalidate.01" content="{{ . }}">
+{{ end }}
+{{ with .Site.Params.seo.yandex_site_verification }}
+  <meta name="yandex-verification" content="{{ . }}">
+{{ end }}
+{{ with .Site.Params.seo.naver_site_verification }}
+  <meta name="naver-site-verification" content="{{ . }}">
+{{ end }}
+{{ with .Site.Params.seo.baidu_site_verification }}
+  <meta name="baidu-site-verification" content="{{ . }}">
+{{ end }}
+

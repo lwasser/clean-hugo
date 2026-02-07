@@ -19,6 +19,24 @@ enableRobotsTXT = true
   filename = 'sitemap.xml'
   priority = 0.5
 
+# Cascade: default front matter for paths. TechArticle for doc/tutorial sections (set tech_article = true for entire path).
+[[cascade]]
+  [cascade.params]
+    tech_article = true
+  [cascade.target]
+    path = "/documentation/**"
+# Example: add more paths (lessons, peer-review guide, handbook) as needed:
+# [[cascade]]
+#   [cascade.params]
+#     tech_article = true
+#   [cascade.target]
+#     path = "/lessons/**"
+# [[cascade]]
+#   [cascade.params]
+#     tech_article = true
+#   [cascade.target]
+#     path = "/peer-review/peer-review-guide/**"
+
 # Syntax highlighting configuration
 [markup]
   [markup.highlight]
@@ -38,12 +56,22 @@ enableRobotsTXT = true
     # Default image for social sharing (when page doesn't have one)
     # Should be at least 1200x630px for best results
     default_image = "images/hero-image.svg"
+    # Optional: search console / verification (uncomment and set values as needed)
+    # google_site_verification = "your-google-verification-code"
+    # bing_site_verification = "your-bing-verification-code"
+    # yandex_site_verification = "your-yandex-code"
+    # naver_site_verification = "your-naver-code"
+    # baidu_site_verification = "your-baidu-code"
 
   [params.blog]
     sidebar_count = 2
     excerpt_length = 200
 
+  # Social links (footer + JSON-LD sameAs). For Organization (default), sameAs is built from these URLs.
+  # Set type = "Person" and name = "Your Name" for a personal site.
   [params.social]
+    type = "Organization"  # or "Person"
+    # name = "Your Name"    # for type = "Person"
     github = "https://github.com/username"
     linkedin = "https://www.linkedin.com/in/username"
     mastodon = "https://mastodon.social/@username"
