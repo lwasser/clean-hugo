@@ -4,9 +4,24 @@ date: 2025-12-28
 draft: false
 layout: "docs"
 weight: 2
-excerpt: "Featured images, figure shortcode, optimization, and best practices"
+excerpt: "Install and configure the Clean Hugo theme in a few steps."
 header:
   color: "primaryDark"
+# HowTo schema for rich results (step-by-step tutorials). Optional; add howto: true and steps for HowTo rich results.
+howto: true
+steps:
+  - name: "Add the theme to your site"
+    text: "Add the theme as a git submodule or clone it into your themes directory."
+  - name: "Configure hugo.toml"
+    text: "Set theme = \"clean-hugo\" and add baseURL, title, and params."
+  - name: "Run the site"
+    text: "Run hugo server to preview your site locally."
+total_time: "PT5M"
+# LearningResource schema for lessons/tutorials (educational metadata)
+learning_resource: true
+skill_level: "beginner"
+duration: "45 minutes"
+prerequisites: ["Hugo installed", "Command line basics"]
 ---
 
 ## Installation

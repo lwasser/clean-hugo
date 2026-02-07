@@ -28,6 +28,9 @@ Featured images, figure shortcode, optimization tips, and best practices for ima
 **[SEO & Social Sharing](/documentation/seo/)**  
 Meta tags, Open Graph, favicons, robots.txt, and optimizing your site for search engines and social platforms.
 
+**[Schema & Front Matter Reference](/documentation/schema-reference/)**  
+All structured data (schema) in one place: when to use each type and how, with front matter examples for BlogPosting, TechArticle, HowTo, LearningResource, SoftwareApplication, VideoObject, Event, ItemList, and more.
+
 ## Quick Links
 
 - **[GitHub Repository](https://github.com/lwasser/clean-hugo)** - Source code and issues
