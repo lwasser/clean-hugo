@@ -59,8 +59,6 @@ enableRobotsTXT = true
     # Optional: search console / verification (uncomment and set values as needed)
     # google_site_verification = "your-google-verification-code"
     # bing_site_verification = "your-bing-verification-code"
-    # yandex_site_verification = "your-yandex-code"
-    # naver_site_verification = "your-naver-code"
 
   [params.blog]
     sidebar_count = 2

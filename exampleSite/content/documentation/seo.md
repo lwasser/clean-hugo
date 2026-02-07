@@ -57,7 +57,7 @@ The theme includes:
 - Keywords from tags
 - Author information
 - **JSON-LD** (Organization or Person) for search engines: set `[params.social]` and optionally `params.social.type` to `"Organization"` (default) or `"Person"`. For Person, set `params.social.name`. Social URLs (github, linkedin, etc.) are used as `sameAs` in the schema.
-- **Site verification**: optional meta tags for Google, Bing, Yandex, Naver, and Baidu under `[params.seo]` (see below).
+- **Site verification**: optional meta tags for Google and Bing under `[params.seo]` (see below).
 - **Rich results**: **BlogPosting** on blog posts; **TechArticle** on documentation pages; **HowTo** when you add steps in front matter; **BreadcrumbList** on all pages.
 
 ## Rich Results (Google Search)
@@ -407,7 +407,6 @@ Optional verification codes for search console / webmaster tools. Add under `[pa
   default_image = "images/default-share.jpg"
   google_site_verification = "your-google-code"
   bing_site_verification = "your-bing-code"
-  # Optional regional: yandex_site_verification, naver_site_verification, baidu_site_verification
 ```
 
 Only set the ones you use; unset keys are omitted from the page.
