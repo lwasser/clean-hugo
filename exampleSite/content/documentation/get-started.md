@@ -17,6 +17,11 @@ steps:
   - name: "Run the site"
     text: "Run hugo server to preview your site locally."
 total_time: "PT5M"
+# LearningResource schema for lessons/tutorials (educational metadata)
+learning_resource: true
+skill_level: "beginner"
+duration: "45 minutes"
+prerequisites: ["Hugo installed", "Command line basics"]
 ---
 
 ## Installation
