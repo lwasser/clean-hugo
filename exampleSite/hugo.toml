@@ -61,7 +61,6 @@ enableRobotsTXT = true
     # bing_site_verification = "your-bing-verification-code"
     # yandex_site_verification = "your-yandex-code"
     # naver_site_verification = "your-naver-code"
-    # baidu_site_verification = "your-baidu-code"
 
   [params.blog]
     sidebar_count = 2
