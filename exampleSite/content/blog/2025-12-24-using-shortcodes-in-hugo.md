@@ -18,7 +18,7 @@ image:
 
 Hugo shortcodes are reusable snippets that let you add complex content to your pages without writing HTML. Think of them as pre-built components you can insert anywhere in your content files.
 
-## Why Use Shortcodes?
+## Why use shortcodes?
 
 Shortcodes give you:
 
@@ -27,11 +27,11 @@ Shortcodes give you:
 - **Simplicity** - No HTML knowledge required
 - **Flexibility** - Pass parameters to customize each instance
 
-## Built-in Shortcodes
+## Built-in shortcodes
 
 The Clean Hugo theme includes several powerful shortcodes. Let's explore them!
 
-### Metrics Bar
+### Metrics bar
 
 Display key statistics or numbers in an eye-catching horizontal bar.
 
@@ -54,7 +54,7 @@ Display key statistics or numbers in an eye-catching horizontal bar.
 **Styling:**
 The metrics bar automatically adapts to your theme colors using CSS variables. Customize the appearance in `assets/css/_metrics-bar.scss`.
 
-### Section Heading
+### Section heading
 
 Create consistent section headers with title and subtitle.
 
@@ -113,7 +113,7 @@ Content for second card
 - `icon` (optional) - Font Awesome icon class
 - `modifier` (optional) - CSS class for styling variants (e.g., `"card--white"`)
 
-### Figure with Images
+### Figure with images
 
 Add images with captions and responsive sizing.
 
@@ -159,7 +159,7 @@ Shortcodes can be nested inside other shortcodes!
 
 See the [Using Admonitions](../2025-12-22-using-admonitions-in-clean-hugo/) post for complete details.
 
-### Blog List
+### Blog list
 
 Display recent blog posts anywhere on your site.
 
@@ -172,7 +172,7 @@ Display recent blog posts anywhere on your site.
 **Parameters:**
 - `count` (optional) - Number of posts to show (default: 3)
 
-## Creating Custom Shortcodes
+## Creating custom shortcodes
 
 You can create your own shortcodes in `layouts/shortcodes/`. Here's a simple example:
 
@@ -201,9 +201,9 @@ This content will be highlighted!
 {{</* /highlight-box */>}}
 ```
 
-## Advanced Techniques
+## Advanced techniques
 
-### Dynamic Metrics
+### Dynamic metrics
 
 For metrics that calculate from data (like the packages page), embed Hugo template code directly in your layout:
 
@@ -218,7 +218,7 @@ For metrics that calculate from data (like the packages page), embed Hugo templa
 </div>
 ```
 
-### Passing Complex Data
+### Passing complex data
 
 Use dictionaries to pass multiple values:
 
@@ -235,7 +235,7 @@ Access in shortcode:
 {{ $data.name }} - {{ $data.count }}
 ```
 
-### Conditional Content
+### Conditional content
 
 Check if parameters exist before rendering:
 
@@ -245,7 +245,7 @@ Check if parameters exist before rendering:
 {{ end }}
 ```
 
-## Shortcode Best Practices
+## Shortcode best practices
 
 1. **Keep them simple** - Each shortcode should do one thing well
 2. **Use defaults** - Provide sensible defaults with `| default "value"`
@@ -254,7 +254,7 @@ Check if parameters exist before rendering:
 5. **Make them accessible** - Include ARIA labels and semantic HTML
 6. **Test responsive** - Check how shortcodes look on mobile devices
 
-## Styling Shortcodes
+## Styling shortcodes
 
 Shortcode styles live in `assets/css/`. For example, metrics bar styles:
 
@@ -278,7 +278,7 @@ Shortcode styles live in `assets/css/`. For example, metrics bar styles:
 ```
 
 
-## Common Use Cases
+## Common use cases
 
 **Homepage features:**
 ```markdown
@@ -315,7 +315,7 @@ Complete guides for every feature
 */>}}
 ```
 
-## Debugging Shortcodes
+## Debugging shortcodes
 
 If a shortcode isn't working:
 
@@ -325,7 +325,7 @@ If a shortcode isn't working:
 4. **Review Hugo output** - Look for error messages in terminal
 5. **Check quotes** - Use straight quotes `"`, not curly quotes `""`
 
-## Next Steps
+## Next steps
 
 - Explore the [Filterable Grids feature](/filterable-grids/) for advanced data-driven components
 - Read about [Admonitions](../2025-12-22-using-admonitions-in-clean-hugo/) for callout boxes

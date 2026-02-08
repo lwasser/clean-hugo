@@ -121,7 +121,7 @@ The default admonition type is "note" if you don't specify a type.
 
 ## Advanced usage
 
-### Without a Title
+### Without a title
 
 You can omit the title parameter if you don't need one:
 
@@ -199,7 +199,7 @@ Built in 234 ms
 Web Server is available at http://localhost:1313/
 ```
 
-### Markdown Example
+### Markdown example
 
 ```markdown
 # Blog Post Title
@@ -210,12 +210,12 @@ Here's how to use admonitions in your content:
 Always escape shortcodes in code blocks using `{{</* */>}}` syntax.
 {{</* /admonition */>}}
 
-## More Content
+## More content
 
 Your regular content goes here...
 ```
 
-## Customizing Colors
+## Customizing colors
 
 All admonition colors can be customized in your `hugo.toml` file. Here's an example configuration:
 

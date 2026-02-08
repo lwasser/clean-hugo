@@ -9,11 +9,11 @@ header:
   color: "primaryDark"
 ---
 
-## Page Layouts
+## Page layouts
 
 The theme includes several pre-built layouts for different content types.
 
-### Splash Layout
+### Splash layout
 
 Perfect for homepages. Includes hero section, page content, and recent blog posts.
 
@@ -31,7 +31,7 @@ hero:
 ---
 ```
 
-### Docs Layout
+### Docs layout
 
 Documentation pages with automatic sidebar navigation (like this page!).
 
@@ -45,7 +45,7 @@ excerpt: "Page description"
 
 The sidebar automatically generates from your page headings (h2, h3).
 
-### Blog Layouts
+### Blog layouts
 
 **Single Post** (`blog/single`) - Individual blog post layout with clean typography
 
@@ -55,15 +55,15 @@ The sidebar automatically generates from your page headings (h2, h3).
 - Responsive grid layout
 - Pagination
 
-### Gallery Layouts
+### Gallery layouts
 
 **Single Item** (`gallery/single`) - Individual gallery item with images
 
 **Gallery Grid** (`gallery/list`) - Gallery grid with filtering capabilities
 
-## Creating Content
+## Creating content
 
-### Blog Posts
+### Blog posts
 
 Blog posts live in `content/blog/`. Each post requires front matter:
 
@@ -87,7 +87,7 @@ tags:
 Your post content in Markdown...
 ```
 
-### Gallery Items
+### Gallery items
 
 If you've enabled the gallery feature, create items in `content/gallery/`:
 
@@ -158,7 +158,7 @@ Card content with **Markdown** support.
 {{</* /card */>}}
 ```
 
-### Two-Card Row
+### Two-card row
 
 Display two cards side-by-side:
 
@@ -176,7 +176,7 @@ Content for second card
 {{</* /two-card-row */>}}
 ```
 
-### Single Card Wide
+### Single card wide
 
 Full-width card for emphasis:
 
@@ -186,7 +186,7 @@ Content that spans the full width
 {{</* /single-card-wide */>}}
 ```
 
-### Impact Cards
+### Impact cards
 
 Display front matter cards in an impact layout:
 
@@ -204,7 +204,7 @@ cards:
 {{</* impact-cards */>}}
 ```
 
-### Blog List
+### Blog list
 
 Display recent blog posts on any page:
 
@@ -212,7 +212,7 @@ Display recent blog posts on any page:
 {{</* blog-list title="Recent Posts" limit=3 */>}}
 ```
 
-### Section Heading
+### Section heading
 
 Add styled section headings:
 
@@ -223,7 +223,7 @@ Add styled section headings:
 */>}}
 ```
 
-### Metrics Bar
+### Metrics bar
 
 Display key statistics:
 
@@ -246,7 +246,7 @@ Embed YouTube videos:
 
 The video ID is the string after `v=` in the YouTube URL.
 
-### Feature Section
+### Feature section
 
 Display structured features from front matter:
 
@@ -279,7 +279,7 @@ Add custom styles in `assets/css/custom.scss` (create if it doesn't exist). The 
 
 Add custom scripts to `static/js/` and reference them in your templates or content.
 
-### Override Templates
+### Override templates
 
 To customize a template, copy it from `themes/clean-hugo/layouts/` to your site's `layouts/` directory with the same path. Your version will override the theme's version.
 
@@ -287,7 +287,7 @@ Example: To customize the footer, copy:
 - From: `themes/clean-hugo/layouts/partials/footer.html`
 - To: `layouts/partials/footer.html`
 
-## Next Steps
+## Next steps
 
 - **[Working with Images](/documentation/images/)** - Learn about featured images and optimization
 - **[SEO & Social Sharing](/documentation/seo/)** - Optimize for search engines
