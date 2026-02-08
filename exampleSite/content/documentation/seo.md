@@ -467,7 +467,7 @@ The theme is built with accessibility in mind (WCAG AA–oriented). The followin
 
 Theme colors are designed to meet contrast guidelines; if you override them in `[params.theme.colors]`, check contrast (e.g. with [WebAIM Contrast Checker](https://webaim.org/resources/contrastchecker/)).
 
-## Best Practices
+## SEO best practices
 
 ### For Search Engines
 
@@ -483,10 +483,6 @@ Theme colors are designed to meet contrast guidelines; if you override them in `
 2. **Compelling excerpts** - Write excerpts that encourage clicks
 3. **Test previews** - Always test how links look before sharing
 4. **Consistent branding** - Use your brand colors in images
-
-### For accessibility
-
-See the **Accessibility** section above for what the theme provides and what you should do (alt text, heading hierarchy, descriptive links, contrast).
 
 ## Next Steps
 
