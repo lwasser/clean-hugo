@@ -107,7 +107,7 @@
 <body>
   {{ partial "skip-link.html" . }}
   <!-- Navigation -->
-  <nav class="site-nav">
+  <nav id="site-nav" class="site-nav" aria-label="Primary">
     <div class="site-nav__container">
       <a href="{{ "" | relURL }}" class="site-nav__brand">{{ .Site.Params.author | default .Site.Title }}</a>
       <button class="site-nav__toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="site-nav-menu">
@@ -126,13 +126,13 @@
               <ul class="site-nav__dropdown-menu">
                 {{ range .Children }}
                   <li>
-                    <a href="{{ .URL }}" class="site-nav__dropdown-link">{{ .Name }}</a>
+                    <a href="{{ .URL }}" class="site-nav__dropdown-link"{{ if eq .URL $.RelPermalink }} aria-current="page"{{ end }}>{{ .Name }}</a>
                   </li>
                 {{ end }}
               </ul>
             </div>
           {{ else }}
-            <a href="{{ .URL }}" class="site-nav__link">{{ .Name }}</a>
+            <a href="{{ .URL }}" class="site-nav__link"{{ if eq .URL $.RelPermalink }} aria-current="page"{{ end }}>{{ .Name }}</a>
           {{ end }}
         {{ end }}
 
