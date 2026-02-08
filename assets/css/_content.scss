@@ -144,7 +144,9 @@
 .content-main > .blog-highlight,
 .content-main > .single-card-wide,
 .content-main > .youtube-container:not(.youtube-container--constrained),
-.content-main > .two-card-row {
+.content-main > .two-card-row,
+.content-main > .swoosh-section,
+.content-main > .swoosh-section__divider-wrap {
   width: 100vw;
   position: relative;
   left: 50%;
