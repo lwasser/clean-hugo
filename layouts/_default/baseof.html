@@ -105,6 +105,7 @@
   <script src="{{ "js/people-filter.js" | relURL }}"></script>
 </head>
 <body>
+  {{ partial "skip-link.html" . }}
   <!-- Navigation -->
   <nav class="site-nav">
     <div class="site-nav__container">
@@ -146,7 +147,9 @@
     </div>
   </nav>
 
-  {{ block "main" . }}{{ end }}
+  <main id="main">
+    {{ block "main" . }}{{ end }}
+  </main>
   {{ partial "footer.html" . }}
 
   {{/* Navigation bar toggle JavaScript */}}
