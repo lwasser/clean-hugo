@@ -446,6 +446,27 @@ excerpt: "Page description for search results and social sharing"
 - Production environment is set correctly
 - robots.txt file is correct
 
+## Accessibility
+
+The theme is built with accessibility in mind (WCAG AA–oriented). The following is provided by the theme; content authors should follow the guidelines below so pages stay accessible.
+
+### What the theme provides
+
+- **Skip link** — A “Skip to main content” link is the first focusable element. It’s visually hidden until focused (keyboard or screen reader). It jumps to the main content landmark (`#main`).
+- **Main landmark** — Page content is wrapped in `<main id="main">` so the skip link and assistive tech can target it.
+- **Language** — The `<html>` tag includes `lang` from `languageCode` in your config (e.g. `lang="en"`).
+- **ARIA** — Navigation and filters use appropriate ARIA: `aria-label` on buttons and icon links, `aria-expanded` / `aria-controls` on the nav toggle, `aria-pressed` on filter buttons. Decorative icons use `aria-hidden="true"`.
+- **Form inputs** — Filter search inputs (e.g. on Packages and People pages) have associated labels or `aria-label` so screen readers can identify them. (We don't have any forms yet in this template)
+- **Focus styles** — Interactive elements (links, buttons, filters) have visible focus indicators (outline or box-shadow).
+
+### What content authors should do
+
+- **Images** — Supply meaningful `alt` text in front matter (or in shortcodes) for content images. Use `alt=""` for purely decorative images so screen readers skip them.
+- **Headings** — Use a logical hierarchy (e.g. one `h1` per page, then `h2` → `h3` without skipping levels). The theme uses semantic headings; your content should follow the same structure.
+- **Links** — Use descriptive link text (e.g. “Read the packaging guide” instead of “click here”) so purpose is clear from the link alone.
+
+Theme colors are designed to meet contrast guidelines; if you override them in `[params.theme.colors]`, check contrast (e.g. with [WebAIM Contrast Checker](https://webaim.org/resources/contrastchecker/)).
+
 ## Best Practices
 
 ### For Search Engines
@@ -463,12 +484,9 @@ excerpt: "Page description for search results and social sharing"
 3. **Test previews** - Always test how links look before sharing
 4. **Consistent branding** - Use your brand colors in images
 
-### For Accessibility
+### For accessibility
 
-1. **Alt text** - Required for all content images
-2. **Descriptive links** - Use meaningful link text
-3. **Semantic HTML** - Theme uses proper heading hierarchy
-4. **Color contrast** - Theme meets WCAG AA standards
+See the **Accessibility** section above for what the theme provides and what you should do (alt text, heading hierarchy, descriptive links, contrast).
 
 ## Next Steps
 
