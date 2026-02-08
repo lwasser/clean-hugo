@@ -53,3 +53,32 @@
     border-radius: 0.25rem;
   }
 }
+
+/*
+  Print styles: hide non-content, keep focus on main content.
+*/
+@media print {
+  .skip-links,
+  .site-nav,
+  .site-footer,
+  .docs-toggle,
+  .docs-scroll-btn,
+  .docs-sidebar,
+  button.site-nav__toggle {
+    display: none !important;
+  }
+
+  body {
+    font-size: 12pt;
+    line-height: 1.4;
+  }
+
+  a[href]::after {
+    content: none;
+  }
+
+  main {
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+}
