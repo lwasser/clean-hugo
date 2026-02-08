@@ -7,6 +7,8 @@ weight: 50
 excerpt: "Learn how to customize theme colors."
 header:
   color: "primaryDark"
+# JSON-LD: TechArticle (article rich results)
+tech_article: true
 ---
 
 The Clean Hugo theme comes with a sensible teal theme. You can fully customize it to match your brand. To customize, simply update the colors defined in the `hugo.toml` configuration file under `[params.theme.colors]`. 

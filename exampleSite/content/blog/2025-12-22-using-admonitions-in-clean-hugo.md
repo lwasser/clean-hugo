@@ -8,6 +8,7 @@ show_author: false
 tags:
   - shortcodes
   - tutorial
+# JSON-LD: BlogPosting is output automatically for blog. Optional: author, image (below) for richer snippets.
 image:
   src: "images/unsplash-water.webp"
   alt: "Calm water surface with ripples and reflections"

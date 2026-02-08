@@ -7,6 +7,8 @@ weight: 3
 excerpt: "Featured images, figure shortcode, optimization, and best practices"
 header:
   color: "primaryDark"
+# JSON-LD: TechArticle (article rich results)
+tech_article: true
 ---
 
 ## Overview

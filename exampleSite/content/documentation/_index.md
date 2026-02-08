@@ -8,6 +8,8 @@ excerpt: "Complete guide to using and customizing the Clean Hugo theme"
 header:
   color: "accent"
   title: "Clean Hugo Documentation"
+# JSON-LD: TechArticle (article rich results)
+tech_article: true
 ---
 
 ## Welcome to Clean Hugo documentation

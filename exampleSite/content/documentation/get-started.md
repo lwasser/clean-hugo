@@ -7,6 +7,8 @@ weight: 2
 excerpt: "Install and configure the Clean Hugo theme in a few steps."
 header:
   color: "primaryDark"
+# JSON-LD: TechArticle (article rich results). Set tech_article: true or use cascade in hugo.toml for path.
+tech_article: true
 # HowTo schema for rich results (step-by-step tutorials). Optional; add howto: true and steps for HowTo rich results.
 howto: true
 steps:

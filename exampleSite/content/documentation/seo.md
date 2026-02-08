@@ -7,6 +7,8 @@ weight: 40
 excerpt: "Optimize your site for search engines and social platforms"
 header:
   color: "primaryDark"
+# JSON-LD: TechArticle (article rich results)
+tech_article: true
 ---
 
 ## Overview

@@ -7,6 +7,8 @@ weight: 4
 excerpt: "Page layouts and shortcodes for creating rich content"
 header:
   color: "primaryDark"
+# JSON-LD: TechArticle (article rich results)
+tech_article: true
 ---
 
 ## Page layouts
