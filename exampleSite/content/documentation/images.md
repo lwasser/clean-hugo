@@ -7,13 +7,15 @@ weight: 3
 excerpt: "Featured images, figure shortcode, optimization, and best practices"
 header:
   color: "primaryDark"
+# JSON-LD: TechArticle (article rich results)
+tech_article: true
 ---
 
 ## Overview
 
 The Clean Hugo theme provides multiple ways to add images to your content, from simple Markdown syntax to advanced features with automatic WebP support and social sharing optimization.
 
-## Standard Markdown Images
+## Standard Markdown images
 
 The simplest way to add an image is using standard Markdown syntax:
 
@@ -23,7 +25,7 @@ The simplest way to add an image is using standard Markdown syntax:
 
 This creates a responsive image that fits the content width. Always include descriptive alt text for accessibility.
 
-## The Figure Shortcode
+## The figure shortcode
 
 For more control, use the `figure` shortcode with these advantages:
 
@@ -32,7 +34,7 @@ For more control, use the `figure` shortcode with these advantages:
 - **Clickable images** linking to full-size versions
 - **Semantic HTML** (`<figure>` and `<figcaption>`)
 
-### Basic Usage
+### Basic usage
 
 ```markdown
 {{</* figure 
@@ -49,7 +51,7 @@ For more control, use the `figure` shortcode with these advantages:
 - **`caption`** (optional) - Caption displayed below image (supports Markdown)
 - **`link`** (optional) - Custom URL (defaults to the image itself)
 
-### WebP Support
+### WebP support
 
 The shortcode automatically uses WebP when available:
 
@@ -60,11 +62,11 @@ The shortcode automatically uses WebP when available:
 
 **Note:** You must create the WebP version yourself - the theme doesn't convert automatically.
 
-## Featured Images in Blog Posts
+## Featured images in blog posts
 
 Every blog post can have a featured image that appears in listings, at the top of the post, and in social media previews (LinkedIn, Discord, Slack, etc.).
 
-### Required Format
+### Required format
 
 Featured images use nested YAML in front matter:
 
@@ -95,7 +97,7 @@ image:
 - Use for proper attribution
 - Example: "Photo by John Smith on Unsplash"
 
-### Why This Format Matters
+### Why this format matters
 
 1. **Social Sharing** - Correct display on LinkedIn, Discord, Slack, Mastodon, Bluesky
 2. **Accessibility** - Screen readers can describe images
@@ -103,16 +105,16 @@ image:
 4. **Attribution** - Proper credit for photographers
 5. **Consistency** - One format across all content
 
-## Image Optimization
+## Image optimization
 
-### 1. Use Appropriate Formats
+### 1. Use appropriate formats
 
 - **WebP** - Best compression for modern browsers (with fallback)
 - **PNG** - Images with transparency or sharp edges
 - **JPG** - Photographs and complex images
 - **SVG** - Logos, icons, simple graphics
 
-### 2. Optimize File Size
+### 2. Optimize file size
 
 Target file sizes:
 - Hero images: < 200KB
@@ -121,7 +123,7 @@ Target file sizes:
 
 Use tools: ImageOptim, Squoosh, or ImageMagick
 
-### 3. Create WebP Versions
+### 3. Create WebP versions
 
 Using ImageMagick:
 
@@ -135,7 +137,7 @@ for file in *.jpg; do
 done
 ```
 
-### 4. Store Images Correctly
+### 4. Store images correctly
 
 Place images in `static/images/` directory:
 
@@ -154,20 +156,20 @@ your-hugo-site/
 - **In Markdown/shortcodes:** `/images/photo.jpg` (with leading slash)
 - **In front matter:** `images/photo.jpg` (without leading slash)
 
-## When to Use What
+## When to use what
 
-### Use Standard Markdown When:
+### Use standard Markdown when:
 - Quick, simple image needed
 - No caption required
 - WebP optimization not needed
 
-### Use Figure Shortcode When:
+### Use figure shortcode when:
 - Automatic WebP support desired
 - Captions with formatting needed
 - Semantic HTML important for SEO
 - Creating documentation or tutorials
 
-## Accessibility Best Practices
+## Accessibility best practices
 
 Always include descriptive alt text for screen readers and SEO.
 
@@ -181,7 +183,7 @@ Always include descriptive alt text for screen readers and SEO.
 - Empty alt for content images (use `alt=""` only for decorative images)
 - Repeating the caption verbatim
 
-## Complete Example
+## Complete example
 
 Front matter with all options:
 
@@ -212,7 +214,7 @@ Figure with all features:
 */>}}
 ```
 
-## Next Steps
+## Next steps
 
 - **[Layouts & Shortcodes](/documentation/layouts-shortcodes/)** - Learn about other shortcodes
 - **[SEO & Social Sharing](/documentation/seo/)** - Optimize images for search and social

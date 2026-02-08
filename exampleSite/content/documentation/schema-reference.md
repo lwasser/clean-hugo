@@ -7,6 +7,8 @@ weight: 41
 excerpt: "All structured data (schema) in one place: when to use each type and how with front matter examples."
 header:
   color: "primaryDark"
+# JSON-LD: TechArticle (article rich results)
+tech_article: true
 ---
 
 This page documents every **schema type** the theme outputs, **when to use which**, and **how to use it** with front matter examples and what the output looks like. For SEO overview, sitemap, and verification, see [SEO & Social Sharing](/documentation/seo/).

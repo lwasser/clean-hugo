@@ -7,13 +7,15 @@ weight: 40
 excerpt: "Optimize your site for search engines and social platforms"
 header:
   color: "primaryDark"
+# JSON-LD: TechArticle (article rich results)
+tech_article: true
 ---
 
 ## Overview
 
 The Clean Hugo theme is SEO optimized with comprehensive SEO features to help the site rank well in search engines and display beautifully when shared on social platforms.
 
-## Open Graph Tags
+## Open Graph tags
 
 The theme automatically generates Open Graph meta tags for social sharing on:
 - LinkedIn
@@ -24,7 +26,7 @@ The theme automatically generates Open Graph meta tags for social sharing on:
 - Discourse
 - Most blog platforms
 
-### What Gets Shared
+### What gets shared
 
 When someone shares your link, social platforms display:
 - **Title** - From page front matter
@@ -32,7 +34,7 @@ When someone shares your link, social platforms display:
 - **Image** - From featured image or site default
 - **URL** - Canonical page URL
 
-### Configure Default Image
+### Configure default image
 
 Set a default social sharing image in `hugo.toml`:
 
@@ -49,7 +51,7 @@ Every page includes a canonical URL tag to prevent duplicate content issues. Thi
 
 **Noindex:** To exclude a page from search engines, set `noindex: true` in its front matter. The theme outputs `<meta name="robots" content="noindex, nofollow">` for that page only. By default, pages are indexed.
 
-## Structured Metadata
+## Structured metadata
 
 The theme includes:
 - Article metadata (author, published/modified dates, tags)
@@ -60,7 +62,7 @@ The theme includes:
 - **Site verification**: optional meta tags for Google and Bing under `[params.seo]` (see below).
 - **Rich results**: **BlogPosting** on blog posts; **TechArticle** on documentation pages; **HowTo** when you add steps in front matter; **BreadcrumbList** on all pages.
 
-## Rich Results (Google Search)
+## Rich results (Google Search)
 
 The theme outputs structured data so your pages can be eligible for **rich results** in Google Search:
 
@@ -263,9 +265,9 @@ Configure sitemap generation in `hugo.toml`:
 
 Hugo automatically generates your sitemap at `/sitemap.xml`.
 
-## Favicons & Icons
+## Favicons & icons
 
-### Required Files
+### Required files
 
 Place these files in your `static/` directory:
 
@@ -280,7 +282,7 @@ static/
 └── site.webmanifest
 ```
 
-### Generate Favicons
+### Generate favicons
 
 The easiest way to create all required formats:
 
@@ -290,7 +292,7 @@ The easiest way to create all required formats:
 4. Download the package
 5. Replace files in `static/`
 
-### Web App Manifest
+### Web app manifest
 
 Edit `static/site.webmanifest` with your site information:
 
@@ -319,22 +321,22 @@ Edit `static/site.webmanifest` with your site information:
 
 This enables "Add to Home Screen" functionality on mobile devices, making your site feel like a native app.
 
-### Design Tips
+### Design tips
 
 - **Use brand colors** - Match your theme's primary color
 - **Keep it simple** - Favicons are tiny (16x16 to 32x32px)
 - **Test at different sizes** - Preview at 16px, 32px, and 180px
 - **High contrast** - Ensure visibility on browser tabs
 
-### Alternative Tools
+### Alternative tools
 
 - [Favicon.io](https://favicon.io/) - Generate from text, image, or emoji
 - [Favicon Generator](https://www.favicon-generator.org/) - Simple online tool
 - Figma/Sketch - Export at multiple sizes manually
 
-## Testing Social Previews
+## Testing social previews
 
-### Online Validators
+### Online validators
 
 **LinkedIn Post Inspector**
 - URL: https://www.linkedin.com/post-inspector/
@@ -350,7 +352,7 @@ This enables "Add to Home Screen" functionality on mobile devices, making your s
 - Most comprehensive OG validator
 - Shows all meta tags + preview
 
-### Test in Real Platforms
+### Test in real platforms
 
 **Discord** (easiest to test quickly)
 1. Create a private channel or DM yourself
@@ -361,15 +363,15 @@ This enables "Add to Home Screen" functionality on mobile devices, making your s
 1. DM yourself in a workspace
 2. Paste URL, see preview
 
-### View Source
+### View source
 
 Right-click page → "View Page Source" → Search for `og:` to see all Open Graph tags.
 
 **Note:** For local testing, you'll need to deploy to a public URL or use a tunneling tool like ngrok. The validators need a public URL to fetch metadata.
 
-## SEO Configuration
+## SEO configuration
 
-### Site Description
+### Site description
 
 Set a site-wide description:
 
@@ -398,7 +400,7 @@ The theme outputs Schema.org JSON-LD so search engines can recognize your site a
 
 Validate with [Google's Rich Results Test](https://search.google.com/test/rich-results) or [validator.schema.org](https://validator.schema.org).
 
-### Site Verification
+### Site verification
 
 Optional verification codes for search console / webmaster tools. Add under `[params.seo]`:
 
@@ -411,7 +413,7 @@ Optional verification codes for search console / webmaster tools. Add under `[pa
 
 Only set the ones you use; unset keys are omitted from the page.
 
-### Page-Level SEO
+### Page-level SEO
 
 In page front matter:
 
@@ -424,7 +426,7 @@ excerpt: "Page description for search results and social sharing"
 
 ## Troubleshooting
 
-### Images Not Showing in Social Previews
+### Images not showing in social previews
 
 **Check:**
 - Image path is correct (use `absURL` in templates)
@@ -432,14 +434,14 @@ excerpt: "Page description for search results and social sharing"
 - Image file size < 8MB
 - Image is publicly accessible
 
-### Social Platforms Not Updating
+### Social platforms not updating
 
 **Solution:**
 - Clear platform's cache using their debugging tools
 - LinkedIn Post Inspector has a "Refresh" button
 - Facebook Debugger has "Scrape Again" button
 
-### Robots.txt Blocking Site
+### Robots.txt blocking site
 
 **Check:**
 - You're building with `hugo` (not `hugo server`)
@@ -469,7 +471,7 @@ Theme colors are designed to meet contrast guidelines; if you override them in `
 
 ## SEO best practices
 
-### For Search Engines
+### For search engines
 
 1. **Unique titles** - Each page should have a unique, descriptive title
 2. **Descriptive excerpts** - Write compelling descriptions for each page
@@ -477,14 +479,14 @@ Theme colors are designed to meet contrast guidelines; if you override them in `
 4. **Internal linking** - Link between related pages
 5. **Fresh content** - Regularly update your site
 
-### For Social Sharing
+### For social sharing
 
 1. **High-quality images** - Use images at least 1200x630px
 2. **Compelling excerpts** - Write excerpts that encourage clicks
 3. **Test previews** - Always test how links look before sharing
 4. **Consistent branding** - Use your brand colors in images
 
-## Next Steps
+## Next steps
 
 - **[Get Started](/documentation/get-started/)** - Configure your site
 - **[Working with Images](/documentation/images/)** - Optimize images for SEO

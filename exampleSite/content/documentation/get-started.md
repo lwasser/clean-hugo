@@ -7,6 +7,8 @@ weight: 2
 excerpt: "Install and configure the Clean Hugo theme in a few steps."
 header:
   color: "primaryDark"
+# JSON-LD: TechArticle (article rich results). Set tech_article: true or use cascade in hugo.toml for path.
+tech_article: true
 # HowTo schema for rich results (step-by-step tutorials). Optional; add howto: true and steps for HowTo rich results.
 howto: true
 steps:
@@ -28,7 +30,7 @@ prerequisites: ["Hugo installed", "Command line basics"]
 
 Before you can use this theme, you need to add it to your Hugo site. The easiest way is to add it as a git submodule, which keeps everything organized and makes it easy to update the theme later.
 
-### Add Theme to Your Site
+### Add theme to your site
 
 If you're using git submodules (recommended):
 
@@ -48,7 +50,7 @@ Once the theme is in place, tell Hugo to use it by updating your `hugo.toml` con
 theme = 'clean-hugo'
 ```
 
-## Basic Configuration
+## Basic configuration
 
 The theme is controlled through your `hugo.toml` configuration file. Here's a minimal setup to get started:
 
@@ -67,7 +69,7 @@ enableRobotsTXT = true
   description = "Your site description for SEO"
 ```
 
-## Theme Features
+## Theme features
 
 Enable or disable optional features:
 
@@ -77,7 +79,7 @@ Enable or disable optional features:
   enableFontAwesome = true    # Include Font Awesome icons
 ```
 
-## Customize Fonts
+## Customize fonts
 
 Choose fonts from Google Fonts or use system fonts:
 
@@ -89,7 +91,7 @@ Choose fonts from Google Fonts or use system fonts:
 
 The theme includes Sora and Inter as vendored woff2 variable fonts. To use different fonts, you'll need to update both the CSS file and hugo.toml.
 
-## Customize Colors
+## Customize colors
 
 All colors are specified using hex codes:
 
@@ -119,7 +121,7 @@ All colors are specified using hex codes:
   admonition-note = "#6B7280"
 ```
 
-### Color Accessibility
+### Color accessibility
 
 All default colors meet **WCAG AA accessibility standards** for color contrast (4.5:1 for normal text, 3:1 for large text).
 
@@ -128,7 +130,7 @@ When customizing colors:
 - Use darker colors for links on light backgrounds
 - Use lighter colors for links on dark backgrounds
 
-## Social Media Links
+## Social media links
 
 Add social media links to your footer:
 
@@ -145,7 +147,7 @@ Add social media links to your footer:
 
 Only include platforms you actually use - missing ones won't appear.
 
-## Blog Configuration
+## Blog configuration
 
 Customize the blog listing page:
 
@@ -158,7 +160,7 @@ Customize the blog listing page:
     excerpt_length = 200   # Character length for excerpts
 ```
 
-## Navigation Menu
+## Navigation menu
 
 Configure your site navigation:
 
@@ -192,7 +194,7 @@ Configure your site navigation:
   weight = 1
 ```
 
-### Optional CTA Button
+### Optional CTA button
 
 Add a call-to-action button to your navigation:
 
@@ -206,7 +208,7 @@ Add a call-to-action button to your navigation:
 
 ## Development
 
-### Local Development
+### Local development
 
 Run Hugo's development server:
 
@@ -215,7 +217,7 @@ cd exampleSite
 hugo server --disableFastRender
 ```
 
-### Building for Production
+### Building for production
 
 Build your site:
 
@@ -225,7 +227,7 @@ hugo --minify
 
 The built site will be in the `public/` directory.
 
-### Directory Structure
+### Directory structure
 
 ```
 your-hugo-site/
@@ -243,7 +245,7 @@ your-hugo-site/
 └── public/            # Generated site (after build)
 ```
 
-## Next Steps
+## Next steps
 
 - **[Layouts & Shortcodes](/documentation/layouts-shortcodes/)** - Learn about page layouts and content components
 - **[Working with Images](/documentation/images/)** - Featured images and optimization

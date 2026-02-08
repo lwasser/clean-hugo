@@ -81,7 +81,7 @@ Buttons come in three sizes: small, default, and large.
 <a href="#" class="btn btn--primary btn--sm">Small Button</a>
 ```
 
-### Default size (No size parameter needed)
+### Default size (no size parameter needed)
 
 {{< button href="#" variant="primary" >}}Default Button{{< /button >}}
 {{< button href="#" variant="secondary" >}}Default Secondary{{< /button >}}
@@ -101,7 +101,7 @@ Buttons come in three sizes: small, default, and large.
 <a href="#" class="btn btn--primary btn--lg">Large Button</a>
 ```
 
-### Full width buttons
+### Full-width buttons
 
 {{< button href="#" variant="primary" size="full" >}}Full Width Button{{< /button >}}
 

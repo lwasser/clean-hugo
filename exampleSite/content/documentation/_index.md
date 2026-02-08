@@ -8,13 +8,15 @@ excerpt: "Complete guide to using and customizing the Clean Hugo theme"
 header:
   color: "accent"
   title: "Clean Hugo Documentation"
+# JSON-LD: TechArticle (article rich results)
+tech_article: true
 ---
 
-## Welcome to Clean Hugo Documentation
+## Welcome to Clean Hugo documentation
 
 Clean Hugo is a modern, customizable Hugo theme built with CSS that gives you a responsive, mobile-first website. This documentation covers everything you need to build, customize, and deploy your site.
 
-### Documentation Sections
+### Documentation sections
 
 **[Get Started](/documentation/get-started/)**  
 Installation, configuration, and theme setup. Start here if you're new to Clean Hugo.
@@ -31,13 +33,13 @@ Meta tags, Open Graph, favicons, robots.txt, and optimizing your site for search
 **[Schema & Front Matter Reference](/documentation/schema-reference/)**  
 All structured data (schema) in one place: when to use each type and how, with front matter examples for BlogPosting, TechArticle, HowTo, LearningResource, SoftwareApplication, VideoObject, Event, ItemList, and more.
 
-## Quick Links
+## Quick links
 
 - **[GitHub Repository](https://github.com/lwasser/clean-hugo)** - Source code and issues
 - **[Example Site](/)** - See the theme in action
 - **[Blog Posts](/blog/)** - Tutorials and examples
 
-## Features at a Glance
+## Features at a glance
 
 - **Responsive Design** - Mobile-first CSS for all screen sizes
 - **Customizable Colors** - Full color palette control via hugo.toml
@@ -46,7 +48,7 @@ All structured data (schema) in one place: when to use each type and how, with f
 - **SEO Optimized** - Open Graph, canonical URLs, structured metadata
 - **Accessible** - WCAG AA compliant color contrasts
 
-## Need Help?
+## Need help?
 
 - **Issues:** [GitHub Issues](https://github.com/lwasser/clean-hugo/issues)
 - **Discussions:** [GitHub Discussions](https://github.com/lwasser/clean-hugo/discussions)
